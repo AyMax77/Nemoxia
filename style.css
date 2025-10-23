@@ -850,7 +850,7 @@ details[open] summary::after {
   height: clamp(120px, 30vw, 250px);
   margin: 0 auto clamp(15px, 3vw, 25px);
   animation: swing 1.5s ease-in-out infinite alternate;
-  background: url('images/marteau_thor.png') no-repeat center / contain;
+  background: url('/images/marteau_thor.png') no-repeat center / contain;
 }
 
 @keyframes swing {
