@@ -853,19 +853,7 @@ document.addEventListener('keydown', function(event) {
     // ========================================
     // FORM SUBMISSION
     // ========================================
-    function handleSubmit(event) {
-      event.preventDefault();
       
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData);
-      
-      console.log('Données du formulaire:', data);
-      
-      // Simulation d'envoi
-      alert('Merci ! Votre demande a été envoyée avec succès.');
-      closeModal();
-      event.target.reset();
-    }
         
 
  window.addEventListener('scroll', function() {
