@@ -62,7 +62,7 @@ img {
 }
 
 .logo img {
-  width: clamp(100px, 15vw, 400px);
+  width: clamp(200px, 17vw, 400px);
   height: auto;
   transition: width 0.3s ease;
 }
@@ -956,7 +956,7 @@ footer {
   }
 
   .logo img {
-    width: 200px;
+    width: 125px;
     justify-content: center;
   }
 
