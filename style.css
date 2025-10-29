@@ -369,21 +369,57 @@ img {
   margin-top: 20px;
 }
 
-.service-button {
-  display: inline-block;
+.service-buttons-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
   margin-top: 30px;
+  align-items: center;
+}
+
+/* Style commun pour les deux boutons */
+.service-button,
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 35px;
-  background: white;
-  color: #0072BC;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
   border-radius: 30px;
-  font-weight: 600;
   transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  margin: 0;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Bouton principal (blanc) */
+.service-button {
+  background: white;
+  color: #0072BC;
+  border: 2px solid white;
 }
 
 .service-button:hover {
   transform: translateY(-3px);
   background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Bouton secondaire (outline) */
+.btn-hero-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-hero-secondary:hover {
+  background: white;
+  color: #0072BC;
+  transform: translateY(-3px);
 }
 
 .carousel-nav {
@@ -415,11 +451,11 @@ img {
 }
 
 .carousel-nav.prev {
-  left: 20px;  /* Bouton GAUCHE - toujours à 20px du bord */
+  left: -20px;  
 }
 
 .carousel-nav.next {
-  right: 20px;  /* Bouton DROITE - toujours à 20px du bord */
+  right: -20px;  
 }
 
 /* Carousel Dots */
@@ -1004,7 +1040,9 @@ footer {
     text-align: center;
   }
 
-
+  .slide{
+    padding: 10px 20px;
+  }
 
   .hero-buttons {
     justify-content: center;
@@ -1026,11 +1064,11 @@ footer {
   }
 
   .carousel-nav.prev {
-    left: 0px;
+    left: -10px;
   }
 
   .carousel-nav.next {
-    right: 0px;
+    right: -10px;
   }
 
   .slide {
@@ -1106,6 +1144,14 @@ footer {
     gap: 40px;
     text-align: center;
   }
+  .hero-slide h1{
+    font-size: 2.5rem;
+  }
+  .slide{
+    padding: 0px 10px;
+    padding-top: 60px;
+    display:block;
+  }
 
 
   .hero-buttons {
@@ -1122,6 +1168,19 @@ footer {
   details summary {
     display: contents;
   }
+  .service-buttons-container {
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+  }
+
+  .service-button,
+  .btn-hero-secondary {
+    min-width: auto;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
 }
 
 /* Tablet: 641px - 1023px */
@@ -1181,6 +1240,19 @@ footer {
   .carousel-track.transitioning {
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
+  .service-buttons-container {
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .service-button,
+  .btn-hero-secondary {
+    flex: 1;
+    max-width: 280px;
+    min-width: 220px;
+  }
+
 }
 
 /* Desktop Small: 1024px - 1189px */
@@ -1188,6 +1260,9 @@ footer {
   .hero-slide,
   .service-slide {
     text-align: left;
+  }
+  .hero-slide h1{
+    font-size: 2.5rem;
   }
 
   .hero-buttons {
@@ -1216,6 +1291,16 @@ footer {
   .carousel-track.transitioning {
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  .service-buttons-container {
+    justify-content: flex-start;
+  }
+
+  .service-button,
+  .btn-hero-secondary {
+    flex: 0 1 auto;
+    min-width: 240px;
+  }
 }
 
 /* Desktop Medium: 1190px - 1439px */
@@ -1233,6 +1318,9 @@ footer {
 
   .carousel-track.transitioning {
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hero-slide h1{
+    font-size: 3.5rem;
   }
 }
 
