@@ -90,8 +90,51 @@
       </div>
     </div>
   </footer>
+
+
+
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+
+    //Fonction scrolled navbar
+    window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.nav-container');
+  
+  if (window.scrollY > 50) {
+    // Si on a scrollé plus de 50px, on ajoute la classe
+    navbar.classList.add('scrolled');
+  } else {
+    // Sinon on la retire
+    navbar.classList.remove('scrolled');
+  }
+});
+
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.nav-container');
+  
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// ========================================
+// HAMBURGER MENU TOGGLE
+// ========================================
+
+document.querySelector('.hamburger').addEventListener('click', function() {
+  document.querySelector('.nav-container').classList.toggle('open');
+});
+
+// Fermer le menu quand on clique sur un lien
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelector('.nav-container').classList.remove('open');
+  });
+});
+
+// CREATION DE LA CLE EMAILJS//
     (function() {
   emailjs.init("CSG-1U1qvDoCAEnGX"); // ta clé publique EmailJS
 })();
@@ -201,12 +244,7 @@ document.addEventListener('keydown', function(event) {
       });
     }
 
-    // Auto-play
-    function startAutoPlay() {
-      return setInterval(() => {
-        moveCarousel(1);
-      }, 6000); // Change toutes les 6 secondes
-    }
+    
 
     // Initialisation
     createDots();
@@ -282,19 +320,7 @@ document.addEventListener('keydown', function(event) {
     // ========================================
     // FORM SUBMISSION
     // ========================================
-    function handleSubmit(event) {
-      event.preventDefault();
       
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData);
-      
-      console.log('Données du formulaire:', data);
-      
-      // Simulation d'envoi
-      alert('Merci ! Votre demande a été envoyée avec succès.');
-      closeModal();
-      event.target.reset();
-    }
         
 
  window.addEventListener('scroll', function() {

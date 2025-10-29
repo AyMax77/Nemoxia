@@ -40,95 +40,6 @@
   </section>
 
 
-  <section class="hero-container py-16 bg-white">
-    <div class="container mx-auto px-4 sm:px-8 md:px-12 lg:px-24 flex flex-col md:flex-row md:gap-8">
-    <!-- Texte principal -->
-    <div class="text-section md:w-1/2 text-center md:text-left space-y-6">
-      <h1>
-        O panne, O stress,<br>
-        <span class="relative inline-block">
-          <span class="absolute inset-0 border border-dashed border-slate-300 rounded-lg"></span>
-          <span class="relative px-2 font-extrabold text-slate-900"><strong>100% Productivité !</strong></span>
-        </span>
-      </h1>
-      <br>
-
-      <h2>
-        Infogérance, maintenance informatique, Cloud, Cybersécurité et Téléphonie d'entreprise pour PME !
-      </h2>
-
-    </div>
-
-      <div class="form-section md:w-1/2 mt-12 md:mt-0 bg-slate-50 p-6 sm:p-8 rounded-2xl shadow-md">
-        <h3 class="text-2xl font-bold text-center text-slate-800 mb-6">
-          Vous avez un projet IT ou télécom ? Parlons-en !
-        </h3>
-
-        <form id="contact-form" class="space-y-6" action="/contact.php" method="post">
-          <div>
-            <label class="block font-semibold mb-2">Société*</label>
-            <input type="text" name="societe" required class="w-full border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block font-semibold mb-2">Nom*</label>
-              <input type="text" name="nom" required class="w-full border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div>
-              <label class="block font-semibold mb-2">Prénom*</label>
-              <input type="text" name="prenom" required class="w-full border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
-            </div>
-          </div>
-
-          <div>
-            <label class="block font-semibold mb-2">Email*</label>
-            <input type="email" name="email" required class="w-full border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
-          </div>
-
-          <div>
-            <label class="block font-semibold mb-2">Numéro de téléphone*</label>
-            <input type="tel" name="telephone" placeholder="01 75 43 91 00 " required class="w-full border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block font-semibold mb-2">Taille de la Société*</label>
-              <select name="taille" required class="w-full border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
-                <option value="">Sélectionnez...</option>
-                <option>1-10</option>
-                <option>11-50</option>
-                <option>51-200</option>
-                <option>+200</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block font-semibold mb-2">Nature de la demande*</label>
-              <select name="nature" required class="w-full border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
-                <option value="">Sélectionnez...</option>
-                <option>Informatique & Infogérance</option>
-                <option>Cloud & Cybersécurité</option>
-                <option>Télécom & Téléphonie IP</option>
-                <option>Matériel & Infrastructure</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label class="block font-semibold mb-2">Décrivez votre projet (ex. : besoin d'infogérance pour 20 postes)</label><br>
-            <textarea name="message" rows="3" class="w-full border border-slate-300 rounded-lg p-2 focus:ring-2 focus:ring-blue-500"></textarea>
-          </div>
-
-          <div class="text-center">
-            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition">Contactez votre prestataire IT local</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-
 
 
      <footer>
@@ -179,8 +90,51 @@
       </div>
     </div>
   </footer>
+
+
+
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
+
+    //Fonction scrolled navbar
+    window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.nav-container');
+  
+  if (window.scrollY > 50) {
+    // Si on a scrollé plus de 50px, on ajoute la classe
+    navbar.classList.add('scrolled');
+  } else {
+    // Sinon on la retire
+    navbar.classList.remove('scrolled');
+  }
+});
+
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.nav-container');
+  
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// ========================================
+// HAMBURGER MENU TOGGLE
+// ========================================
+
+document.querySelector('.hamburger').addEventListener('click', function() {
+  document.querySelector('.nav-container').classList.toggle('open');
+});
+
+// Fermer le menu quand on clique sur un lien
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelector('.nav-container').classList.remove('open');
+  });
+});
+
+// CREATION DE LA CLE EMAILJS//
     (function() {
   emailjs.init("CSG-1U1qvDoCAEnGX"); // ta clé publique EmailJS
 })();
@@ -290,12 +244,7 @@ document.addEventListener('keydown', function(event) {
       });
     }
 
-    // Auto-play
-    function startAutoPlay() {
-      return setInterval(() => {
-        moveCarousel(1);
-      }, 6000); // Change toutes les 6 secondes
-    }
+    
 
     // Initialisation
     createDots();
@@ -371,19 +320,7 @@ document.addEventListener('keydown', function(event) {
     // ========================================
     // FORM SUBMISSION
     // ========================================
-    function handleSubmit(event) {
-      event.preventDefault();
       
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData);
-      
-      console.log('Données du formulaire:', data);
-      
-      // Simulation d'envoi
-      alert('Merci ! Votre demande a été envoyée avec succès.');
-      closeModal();
-      event.target.reset();
-    }
         
 
  window.addEventListener('scroll', function() {
