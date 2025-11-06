@@ -1356,8 +1356,42 @@ footer {
     font-size: 30px;
   }
 
+  .nav-links{
+    margin-right: 40px;
+  }
+
+  .phone-button{
+    margin-right: 400px;
+  }
+  .logo img{
+    margin-left: 200px;
+  }
   .carousel-track.transitioning {
     transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .carousel-nav.next{
+    right: 400px;
+  }
+  .carousel-nav.prev{
+    left: 400px;
+  }
+}
+
+@media (min-width: 3440px){
+  .nav-links{
+    margin-right: 100px;
+  }
+  .phone-button{
+    margin-right: 600px;
+  }
+  .logo img{
+    margin-left: 500px;
+  }
+  .carousel-nav.next{
+    right: 700px;
+  }
+  .carousel-nav.prev{
+    left: 700px;
   }
 }
 
