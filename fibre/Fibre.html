@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test d'Éligibilité Fibre - Nemoxia</title>
+    <link rel="stylesheet" href="Fibre.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+    <div class="navbar-content">
+        <div class="logo">
+            <img src="/images/Logo_Nemoxia_blanc.png" alt="Logo Nemoxia" class="logo-img">
+        </div>
+        <div class="nav-buttons">
+            <a class="home-button" href="/index.html">
+                Accueil
+            </a>
+            <a class="phone-button" href="tel:+330175439100">
+                <span class="phone-icon"></span>
+                01 75 43 91 00
+            </a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Section principale -->
+    <main class="main-content">
+        <div class="container">
+            <!-- En-tête -->
+            <header class="page-header">
+                <h1 class="title">Testez votre Éligibilité à la Fibre</h1>
+                <p class="subtitle">Découvrez en quelques clics si vous pouvez bénéficier de la connexion ultra-rapide par fibre optique</p>
+            </header>
+
+            <!-- Formulaire d'éligibilité -->
+            <div class="eligibility-card">
+                <div class="card-header">
+                    <h2>Vérifiez votre éligibilité !</h2>
+                    <p>Entrez votre adresse pour connaître les offres disponibles</p>
+                </div>
+                
+                <div class="card-body">
+                    <iframe 
+                        id="test-eligibilite" 
+                        src="https://iframe.api-eligibility.fr/?i=2201" 
+                        width="992" 
+                        height="308" 
+                        title="Test d'éligibilité fibre"
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+                <div class="card-footer">
+                    <div class="info-badge">
+                        <span class="badge-icon">✓</span>
+                        <span>Résultat instantané</span>
+                    </div>
+                    <div class="info-badge">
+                        <span class="badge-icon">✓</span>
+                        <span>100% gratuit</span>
+                    </div>
+                    <div class="info-badge">
+                        <span class="badge-icon">✓</span>
+                        <span>Sans engagement</span>
+                    </div>
+                </div>
+            </div>
+
+            
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Ajustement dynamique de la hauteur de l'iframe
+        (function() {
+            const eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+            const eventer = window[eventMethod];
+            const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+            const iframe = document.getElementById("test-eligibilite");
+            
+            eventer(messageEvent, function(e) {
+                if (e.data && e.data.h) {
+                    iframe.height = e.data.h;
+                    iframe.style.height = e.data.h + 'px';
+                }
+            }, false);
+        })();
+
+        // Effet scroll sur la navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animation au chargement
+        window.addEventListener('load', function() {
+            document.querySelector('.page-header').classList.add('fade-in');
+            document.querySelector('.eligibility-card').classList.add('slide-up');
+        });
+    </script>
+</body>
+</html>

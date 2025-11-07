@@ -9,6 +9,7 @@
    6. CONSTRUCTION SECTION
    7. FOOTER
    8. RESPONSIVE DESIGN
+   9. ANIMATIONS D'ENTRÉE
    ======================================== */
 
 /* ========================================
@@ -55,16 +56,41 @@ img {
   padding: 10px 5%;
   z-index: 1000;
   transition: background 0.4s ease, box-shadow 0.3s ease;
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .nav-container.scrolled {
- background: linear-gradient(to left, #030712 0%, #0d3b66 100%);  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to left, #030712 0%, #0d3b66 100%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .logo img {
   width: clamp(200px, 17vw, 400px);
   height: auto;
   transition: width 0.3s ease;
+  animation: fadeInScale 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .nav-links {
@@ -74,6 +100,26 @@ img {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.nav-links li {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.nav-links li:nth-child(1) { animation-delay: 0.3s; }
+.nav-links li:nth-child(2) { animation-delay: 0.4s; }
+.nav-links li:nth-child(3) { animation-delay: 0.5s; }
+.nav-links li:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .nav-links a {
@@ -105,7 +151,28 @@ img {
   width: 100%;
 }
 
-.phone-button {
+/* Conteneur des boutons CTA */
+.nav-actions {
+  display: flex;
+  gap: clamp(8px, 1vw, 12px);
+  align-items: center;
+  animation: fadeInRight 0.8s ease-out 0.7s both;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Style commun pour les boutons navbar */
+.phone-button,
+.eligibilite-button {
   background: #0072BC;
   color: white;
   border: none;
@@ -120,11 +187,11 @@ img {
   white-space: nowrap;
 }
 
-.phone-button:hover {
+.phone-button:hover,
+.eligibilite-button:hover {
   background: #005f9e;
   transform: scale(1.05);
 }
-
 
 /* Hamburger Menu */
 .hamburger {
@@ -184,6 +251,16 @@ img {
   bottom: 0;
   background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
   pointer-events: none;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 /* Carousel Container */
@@ -194,6 +271,16 @@ img {
   margin: 0 auto;
   padding: 40px 0;
   z-index: 1;
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .carousel-wrapper {
@@ -235,6 +322,18 @@ img {
 .hero-text-content {
   color: white;
   order: 1;
+  animation: slideInLeft 0.8s ease-out 0.5s both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .hero-subtitle {
@@ -273,6 +372,7 @@ img {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn-hero {
@@ -290,16 +390,19 @@ img {
 .btn-hero-primary {
   background: white;
   color: #0072BC;
+  animation: fadeInUp 0.8s ease-out 0.9s both;
 }
 
 .btn-hero-primary:hover {
   transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
 }
 
 .btn-hero-secondary {
   background: transparent;
   color: white;
   border: 2px solid white;
+  animation: fadeInUp 0.8s ease-out 1s both;
 }
 
 .btn-hero-secondary:hover {
@@ -313,6 +416,18 @@ img {
   align-items: center;
   justify-content: center;
   order: 2;
+  animation: slideInRight 0.8s ease-out 0.7s both;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .hero-image {
@@ -377,7 +492,7 @@ img {
   align-items: center;
 }
 
-/* Style commun pour les deux boutons */
+/* Style commun pour les boutons services */
 .service-button,
 .btn-hero-secondary {
   display: inline-flex;
@@ -396,7 +511,6 @@ img {
   text-align: center;
 }
 
-/* Bouton principal (blanc) */
 .service-button {
   background: white;
   color: #0072BC;
@@ -409,7 +523,6 @@ img {
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
-/* Bouton secondaire (outline) */
 .btn-hero-secondary {
   background: transparent;
   color: white;
@@ -422,6 +535,7 @@ img {
   transform: translateY(-3px);
 }
 
+/* Carousel Navigation */
 .carousel-nav {
   position: absolute;
   top: 50%;
@@ -441,6 +555,7 @@ img {
   justify-content: center;
   line-height: 1;
   backdrop-filter: blur(5px);
+  animation: fadeIn 1s ease-out 1.2s both;
 }
 
 .carousel-nav:hover {
@@ -451,11 +566,11 @@ img {
 }
 
 .carousel-nav.prev {
-  left: -20px;  
+  left: -20px;
 }
 
 .carousel-nav.next {
-  right: -20px;  
+  right: -20px;
 }
 
 /* Carousel Dots */
@@ -467,6 +582,7 @@ img {
   display: flex;
   gap: 12px;
   z-index: 100;
+  animation: fadeIn 1s ease-out 1.3s both;
 }
 
 .dot {
@@ -524,12 +640,12 @@ img {
 
 @keyframes modalSlideIn {
   from {
-    transform: translateY(-50px);
     opacity: 0;
+    transform: translateY(-50px);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -554,6 +670,7 @@ img {
 .modal-close:hover {
   color: #0072BC;
 }
+
 .form-section-modal {
   background: linear-gradient(to top, #0d3b66 0%, #030712 100%);
   backdrop-filter: blur(10px);
@@ -562,6 +679,7 @@ img {
   overflow-y: auto;
   max-height: 90vh;
 }
+
 .form-section-modal h3 {
   font-size: 1.8rem;
   color: white;
@@ -901,7 +1019,7 @@ details ul li {
   height: clamp(120px, 30vw, 250px);
   margin: 0 auto clamp(15px, 3vw, 25px);
   animation: swing 1.5s ease-in-out infinite alternate;
-  background: url('images/marteau_thor.png') no-repeat center / contain;
+  background: url('/images/marteau_thor.png') no-repeat center / contain;
 }
 
 @keyframes swing {
@@ -983,54 +1101,53 @@ footer {
    8. RESPONSIVE DESIGN
    ======================================== */
 
-/* Mobile Portrait: 320px - 480px */
+/* Mobile Portrait: jusqu'à 480px */
 @media (max-width: 480px) {
   .nav-container {
-    padding: 0;
-    justify-content: center;
-    align-items: center;
+    padding: 10px 3%;
   }
 
   .logo img {
-    width: 200px;
-    justify-content: center;
+    width: 180px;
   }
 
   .hamburger {
     display: flex;
-    position: absolute;
-    top: 12px;
-    right: 12px;
   }
 
   .nav-links {
     display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    background: rgba(5, 26, 48, 0.98);
-    padding: 20px 0;
-    position: absolute;
-    top: 55px;
-    left: 0;
+    padding: 30px 0;
+    gap: 20px;
   }
 
   .nav-container.open .nav-links {
     display: flex;
   }
 
-  .nav-links a {
-    font-size: 15px;
-    padding: 12px;
-    width: 100%;
-    text-align: center;
+  .nav-actions {
+    display: flex;
+    gap: 10px;
+    margin: auto;
   }
 
-  .phone-button {
-    padding: 8px 16px;
-    font-size: 14px;
-    display: block;
-    margin: auto;
+  .phone-button,
+  .eligibilite-button {
+    padding: 8px 10px;
+    font-size: 8px;
+  }
+
+  /* Carousel mobile */
+  .slide {
+    padding: 80px 20px 40px;
   }
 
   .hero-slide,
@@ -1038,41 +1155,6 @@ footer {
     grid-template-columns: 1fr;
     gap: 30px;
     text-align: center;
-  }
-
-  .slide{
-    padding: 10px 20px;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .btn-hero {
-    width: 70%;
-    text-align: center;
-  }
-
-  .carousel-container {
-    padding: 30px 0;
-  }
-
-  .carousel-nav {
-    width: 45px;
-    height: 45px;
-    font-size: 1.8rem;
-  }
-
-  .carousel-nav.prev {
-    left: -10px;
-  }
-
-  .carousel-nav.next {
-    right: -10px;
-  }
-
-  .slide {
-    padding: 10px 10px;
   }
 
   .hero-slide h1 {
@@ -1083,134 +1165,88 @@ footer {
     font-size: 1rem;
   }
 
+  .hero-buttons {
+    width: 100%;
+  }
+
   .service-text h3 {
     font-size: 1.5rem;
   }
 
-  .service-text p {
-    font-size: 1rem;
-  }
-
   .service-image {
-    height: 300px;
+    height: 250px;
+    object-fit: contain;
   }
 
-  .form-section-modal .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-section-modal {
-  padding: 50px 20px 30px;
-  border-radius: 20px;
-}
-
-  .carousel-dots {
-    bottom: 20px;
-  }
-}
-
-/* Mobile Landscape: 481px - 640px */
-@media (min-width: 481px) and (max-width: 640px) {
-  .hamburger {
-    display: flex;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background: rgba(5, 26, 48, 0.98);
-    padding: 20px 0;
-    position: absolute;
-    top: 60px;
-    left: 0;
-  }
-
-  .nav-container.open .nav-links {
-    display: flex;
-  }
-
-  .phone-button {
-    margin: auto;
-  }
-
-  .hero-slide,
-  .service-slide {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .hero-slide h1{
-    font-size: 2rem;
-  }
-  .slide{
-    padding: 0px 10px;
-    padding-top: 60px;
-    display:block;
-  }
-
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .carousel-container {
-    padding: 40px 0;
-  }
-}
-
-/* Details Summary Fix */
-@media (max-width: 670px) {
-  details summary {
-    display: contents;
-  }
   .service-buttons-container {
     flex-direction: column;
-    width: 80%;
-    margin: auto;
+    width: 100%;
   }
 
   .service-button,
   .btn-hero-secondary {
     min-width: auto;
-    padding: 12px 20px;
-    font-size: 0.95rem;
   }
 
+  .carousel-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .carousel-dots {
+    bottom: 15px;
+  }
+
+  .form-section-modal {
+    padding: 50px 20px 30px;
+  }
+
+  .form-section-modal .grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Tablet: 641px - 1023px */
-@media (min-width: 641px) and (max-width: 1023px) {
+/* Mobile Landscape: 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
   .hamburger {
     display: flex;
-    position: absolute;
-    top: 15px;
-    right: 20px;
+  }
+  .logo img{
+    width: 170px;
   }
 
   .nav-links {
     display: none;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background: rgba(5, 26, 48, 0.98);
-    padding: 25px 0;
-    position: absolute;
+    position: fixed;
     top: 65px;
     left: 0;
+    width: 100%;
+    height: calc(100vh - 65px);
+    background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    gap: 20px;
   }
 
   .nav-container.open .nav-links {
     display: flex;
   }
 
-  .phone-button {
-    margin: auto;
+  .nav-actions {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    font-size: 12px;
+    padding: 10px ;
+  }
+
+  .slide {
+    padding: 100px 30px 50px;
   }
 
   .hero-slide,
@@ -1218,35 +1254,79 @@ footer {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
-    
-    
   }
-  .hero-slide h1{
-    font-size: 2.25rem;
+
+  .hero-slide h1 {
+    font-size: 2.2rem;
   }
-  .service-slide{
-    margin: auto;
-    padding-top:80px;
-  }
-  .service-image{
+
+  .service-image {
     height: 300px;
-    width: 100%;
-    margin: auto;
     object-fit: contain;
   }
-  .slide{
-    padding: 0;
-    margin-top: 0;
-    max-height: 800px;
+
+  .service-buttons-container {
+    justify-content: center;
   }
 
-  .hero-image{
-    width:80%;
-    max-width: 400px;
+  details summary {
+    display: block;
+  }
+}
+
+/* Tablet: 769px - 1023px */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .hamburger {
+    display: flex;
   }
 
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    gap: 25px;
+  }
 
-  .hero-buttons {
+  .nav-container.open .nav-links {
+    display: flex;
+  }
+
+  .nav-actions {
+    margin-top: 20px;
+  }
+
+  .slide {
+    padding: 100px 40px 60px;
+  }
+
+  .hero-slide,
+  .service-slide {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .hero-slide h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-image {
+    max-width: 500px;
+  }
+
+  .service-image {
+    height: 350px;
+    object-fit: contain;
+  }
+
+  .service-buttons-container {
     justify-content: center;
   }
 
@@ -1258,153 +1338,122 @@ footer {
   .threecx-logo {
     flex: 0 0 40%;
   }
-
-  .threecx-content {
-    flex: 1;
-    text-align: center;
-  }
-
-  .carousel-track.transitioning {
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .service-buttons-container {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .service-button,
-  .btn-hero-secondary {
-    flex: 1;
-    max-width: 280px;
-    min-width: 220px;
-  }
-
 }
 
-/* Desktop Small: 1024px - 1189px */
-@media (min-width: 1024px) {
-  .hero-slide,
-  .service-slide {
-    text-align: left;
+@media (min-width: 1024px) and (max-width:1140px){
+  .nav-container{
+    padding-right: 10px;
+    padding-left: 10px;
   }
+}
+
+/* Desktop: à partir de 1024px */
+@media (min-width: 1024px) {
+  
+  .nav-links {
+    display: flex;
+  }
+
   .hero-slide h1{
     font-size: 2.5rem;
   }
 
+  .hero-slide,
+  .service-slide {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+
   .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .service-buttons-container {
     justify-content: flex-start;
   }
 
   .threecx-container {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: clamp(40px, 4vw, 60px);
     text-align: left;
   }
 
   .threecx-logo {
     flex: 0 0 40%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .threecx-content {
-    flex: 1;
-    text-align: center;
   }
 
   .carousel-track.transitioning {
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .service-buttons-container {
-    justify-content: flex-start;
-  }
-
-  .service-button,
-  .btn-hero-secondary {
-    flex: 0 1 auto;
-    min-width: 240px;
   }
 }
 
 /* Desktop Medium: 1190px - 1439px */
 @media (min-width: 1190px) and (max-width: 1439px) {
   .nav-links a {
-    font-size: large;
+    font-size: 15px;
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    font-size: 14px;
+    padding: 10px 18px;
   }
 }
 
 /* Desktop Large: 1440px - 1920px */
-@media (min-width: 1440px) {
+@media (min-width: 1440px) and (max-width: 1920px) {
   .nav-links a {
-    font-size: 25px;
+    font-size: 17px;
   }
 
-  .carousel-track.transitioning {
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  .phone-button,
+  .eligibilite-button {
+    font-size: 15px;
   }
-  .hero-slide h1{
+
+  .hero-slide h1 {
     font-size: 3.5rem;
   }
-  
 }
 
-/* Desktop Extra Large: 1921px+ */
+/* Desktop Extra Large: au-delà de 1920px */
 @media (min-width: 1921px) {
-  .nav-links a {
-    font-size: 30px;
+  .nav-container {
+    max-width: 2400px;
+    margin: 0 auto;
+    padding: 10px 8%;
   }
 
-  .nav-links{
-    margin-right: 40px;
+  .carousel-container {
+    max-width: 1800px;
   }
 
-  .phone-button{
-    margin-right: 400px;
+  .carousel-nav.prev {
+    left: 50px;
   }
-  .logo img{
-    margin-left: 200px;
+
+  .carousel-nav.next {
+    right: 50px;
   }
+
   .carousel-track.transitioning {
     transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .carousel-nav.next{
-    right: 400px;
-  }
-  .carousel-nav.prev{
-    left: 400px;
-  }
 }
 
-@media (min-width: 3440px){
-  .nav-links{
-    margin-right: 100px;
+/* Ultra Wide: au-delà de 3440px */
+@media (min-width: 3440px) {
+  .nav-container {
+    max-width: 3000px;
+    padding: 10px 12%;
   }
-  .phone-button{
-    margin-right: 600px;
-  }
-  .logo img{
-    margin-left: 500px;
-  }
-  .carousel-nav.next{
-    right: 700px;
-  }
-  .carousel-nav.prev{
-    left: 700px;
-  }
-}
 
-@media(width: 1920px){
-  .nav-links{
-    margin-right: 60px;
+  .carousel-nav.prev {
+    left: 100px;
   }
-  .phone-button{
-    margin-right: 70px;
-  }
-  .logo img{
-    margin-left:-30px;
+
+  .carousel-nav.next {
+    right: 100px;
   }
 }
 
