@@ -247,9 +247,9 @@
                      class="btn-hero btn-hero-primary">
                     Essai gratuit 3CX
                   </a>
-                  <button onclick="openModal()" class="btn-hero btn-hero-secondary">
+                  <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
                     Formulaire de contact
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -283,9 +283,9 @@
                       <a href="Informatique/informatique.html" class="service-button">
                           Découvrez nos services informatiques !
                       </a>
-                      <button onclick="openModal()" class="btn-hero-secondary">
-                          Formulaire de contact
-                      </button>
+                      <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
+                    Formulaire de contact
+                  </a>
                   </div>
               </div>
             </div>
@@ -315,9 +315,9 @@
                       <a href="Télécoms/Telecom.html" class="service-button">
                           Découvrez nos réseaux télécoms !
                       </a>
-                      <button onclick="openModal()" class="btn-hero-secondary">
-                          Formulaire de contact
-                      </button>
+                      <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
+                    Formulaire de contact
+                  </a>
                   </div>
             </div>
           </div>
@@ -347,9 +347,9 @@
                       <a href="Téléphonie/Telephonie.html" class="service-button">
                           Découvrez nos réseaux Téléphoniques !
                       </a>
-                      <button onclick="openModal()" class="btn-hero-secondary">
-                          Formulaire de contact
-                      </button>
+                      <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
+                    Formulaire de contact
+                  </a>
                   </div>
               </div>
             </div>
@@ -379,9 +379,9 @@
                       <a href="Infogérance/Infogerance.html" class="service-button">
                           Découvrez nos Inforgérances !
                       </a>
-                      <button onclick="openModal()" class="btn-hero-secondary">
-                          Formulaire de contact
-                      </button>
+                      <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
+                    Formulaire de contact
+                  </a>
                   </div>
               </div>
             </div>
@@ -411,9 +411,9 @@
                       <a href="Cybersécurité/Cybersecurite.html" class="service-button">
                           Découvrez notre expertise Cybersécurité !
                       </a>
-                      <button onclick="openModal()" class="btn-hero-secondary">
-                          Formulaire de contact
-                      </button>
+                      <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
+                    Formulaire de contact
+                  </a>
                   </div>
               </div>
             </div>
@@ -426,77 +426,7 @@
     </div>
   </section>
 
-  <!-- ========================================
-       MODAL POPUP AVEC FORMULAIRE
-       ======================================== -->
-  <div class="modal-overlay" id="contactModal" onclick="closeModalOnOverlay(event)">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()" aria-label="Fermer">×</button>
-      
-      <div class="form-section-modal">
-        <h3>Vous avez un projet IT ou télécom ? Parlons-en !</h3>
-
-        <form id="contact-form" onsubmit="handleSubmit(event)">
-          <div>
-            <label>Société*</label>
-            <input type="text" name="societe" required>
-          </div>
-
-          <div class="grid">
-            <div>
-              <label>Nom*</label>
-              <input type="text" name="nom" required>
-            </div>
-            <div>
-              <label>Prénom*</label>
-              <input type="text" name="prenom" required>
-            </div>
-          </div>
-
-          <div>
-            <label>Email*</label>
-            <input type="email" name="email" required>
-          </div>
-
-          <div>
-            <label>Numéro de téléphone*</label>
-            <input type="tel" name="telephone" placeholder="01 75 43 91 00" required>
-          </div>
-
-          <div class="grid">
-            <div>
-              <label>Taille de la Société*</label>
-              <select name="taille" required>
-                <option value="">Sélectionnez...</option>
-                <option>1-10</option>
-                <option>11-50</option>
-                <option>51-200</option>
-                <option>+200</option>
-              </select>
-            </div>
-
-            <div>
-              <label>Nature de la demande*</label>
-              <select name="nature" required>
-                <option value="">Sélectionnez...</option>
-                <option>Informatique & Infogérance</option>
-                <option>Cloud & Cybersécurité</option>
-                <option>Télécom & Téléphonie IP</option>
-                <option>Matériel & Infrastructure</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label>Décrivez votre projet</label>
-            <textarea name="message" rows="3" placeholder="Ex. : besoin d'infogérance pour 20 postes"></textarea>
-          </div>
-
-          <button type="submit">Envoyer ma demande</button>
-        </form>
-      </div>
-    </div>
-  </div>
+  
   
   <section class="threecx-section">
   <div class="threecx-container">
@@ -517,143 +447,7 @@
   </div>
 </section>
 
-  <section id="couverture" class="container" style="padding:2rem 1rem;">
-    <h2>Couverture nationale & proximité</h2>
-    <p>Nous accompagnons des PME partout en France avec des équipes locales en <strong>Seine-et-Marne (77)</strong>, <strong>Essonne (91)</strong>, <strong>Loiret (45)</strong> et un support à distance réactif.</p>
-    <ul class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
-      <li><strong>Île-de-France</strong> — 77, 91 & Paris/IDF</li>
-      <li><strong>Centre-Val de Loire</strong> — Loiret (45)</li>
-      <li><strong>Ouverture nationale</strong> — interventions & projets multi-sites</li>
-    </ul>
-  </section>
-
-   <!-- DÉPARTEMENTS (77/91/45) -->
-  <section id="departements" class="container" style="padding:2rem 1rem;">
-    <h2>Prestataire informatique / téléphonique par département</h2>
-
-    <details open>
-      <summary><strong>Seine-et-Marne (77)</strong> — Prestataire informatique 77 & prestataire télécom 77</summary>
-      <p>Interventions locales : Nemours, Melun, Fontainebleau, Montereau, Provins. Délais sur site : <strong>2–4 h ouvrées</strong> (selon SLA). Téléphonie IP (3CX), audit coûts mobiles pros, réseaux & Internet pro.</p>
-      <ul>
-        <li><strong>Prestataire informatique 77</strong> : infogérance, maintenance proactive, sauvegardes.</li>
-        <li><strong>Prestataire téléphonique 77</strong> : VoIP/3CX, portabilité, QoS, conferencing.</li>
-        <li><strong>Prestataire telecom 77</strong> : Wi-Fi pro, VPN, SD-WAN, liens Internet pro.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary><strong>Essonne (91)</strong> — Prestataire informatique 91 & prestataire telephonique 91</summary>
-      <p>Zones : Évry, Corbeil-Essonnes, Étampes, Yerres. Support à distance immédiat, résolutions first-call pour la majorité des tickets, visites planifiées.</p>
-      <ul>
-        <li>Infogérance PME 91 : supervision 24/7, helpdesk illimité.</li>
-        <li>Prestataire telephonique 91 (sans accent) & téléphonique (avec accent) : VoIP/3CX, mobiles pros.</li>
-        <li>Cybersécurité 91 : MFA, EDR, sensibilisation équipes.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary><strong>Loiret (45)</strong> — Prestataire informatique 45 & prestataire telecom 45</summary>
-      <p>Orléans, Montargis, Pithiviers, Sully-sur-Loire. Déploiements VoIP, migrations cloud, sécurisation des accès & sauvegardes 3-2-1.</p>
-      <ul>
-        <li>Prestataire informatique 45 : infogérance & modernisation parc.</li>
-        <li>Prestataire telecom 45 : réseaux d’entreprise, Internet pro & backup 4G/5G.</li>
-        <li>VoIP/3CX 45 : réduction coûts jusqu’à 40% selon l’existant.</li>
-      </ul>
-    </details>
-  </section>
-
-  <!-- VILLES PRIORITAIRES -->
-  <section id="villes" class="container" style="padding:2rem 1rem;">
-    <h2>Villes prioritaires (contenus uniques)</h2>
-
-    <details>
-      <summary><strong>Nemours</strong> — Prestataire informatique Nemours & téléphonie IP</summary>
-      <p>Contrats d’infogérance adaptés aux PME locales. Téléphonie IP (3CX) avec portabilité & intégrations. Cas client type : baisse des tickets récurrents de <strong>−40%</strong>, coûts télécom <strong>−30%</strong> après migration.</p>
-      <ul>
-        <li>Délais Nemours : visites sur site rapides, support immédiat à distance.</li>
-        <li>Prestataire télécom Nemours : Wi-Fi pro, VPN, liens Internet pro.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary><strong>Melun</strong> — Prestataire informatique Melun (77) & prestataire téléphonique</summary>
-      <p>PME industrielles & de services : supervision, PRA, VoIP/3CX multi-sites. Interventions sur site <strong>2–4 h</strong> selon SLA.</p>
-      <ul>
-        <li>Infogérance Melun : maintenance proactive & sauvegardes 3-2-1.</li>
-        <li>Prestataire telephonique Melun : VoIP, QoS, conferencing, CRM.</li>
-      </ul>
-    </details>
-
-    <details>
-      <summary><strong>Fontainebleau</strong> — Prestataire informatique & telecom</summary>
-      <p>Optimisation réseau (sites historiques), Wi-Fi pro, sécurité, télétravail sécurisé (VPN, MFA). Téléphonie IP 3CX & mobiles pros.</p>
-    </details>
-
-    <details>
-      <summary><strong>Évry / Corbeil-Essonnes</strong> — Prestataire informatique 91 & téléphonie IP</summary>
-      <p>Accompagnement PME tech & services : helpdesk illimité, EDR, VoIP/3CX + enregistrements.</p>
-    </details>
-
-    <details>
-      <summary><strong>Orléans / Montargis / Pithiviers</strong> — Prestataire informatique 45 & prestataire telecom</summary>
-      <p>Migrations cloud, continuité d’activité, backup 4G/5G, SD-WAN, sécurisation postes & serveurs.</p>
-    </details>
-  </section>
-
-  <!-- PREUVES / CAS CLIENTS (exemples génériques) -->
-  <section class="container" style="padding:2rem 1rem;">
-    <h2>Études de cas (exemples)</h2>
-    <div class="cards">
-      <article>
-        <h3>PME service (77) — Infogérance</h3>
-        <p>Résolution J+0 : 82% des tickets. Downtime mensuel <strong>−65%</strong>.</p>
-      </article>
-      <article>
-        <h3>Retail multi-sites (91) — Téléphonie IP (3CX)</h3>
-        <p>Coûts télécom <strong>−32%</strong>, taux d’appels manqués <strong>−45%</strong>.</p>
-      </article>
-      <article>
-        <h3>Industrie (45) — Cyber</h3>
-        <p>Blocage 99,8% des menaces connues, PRA testé 2×/an.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Ajout pour la section "Pourquoi choisir Nemoxia" -->
-  <section class="nemoxia-content-boost nemoxia-py-16 nemoxia-bg-white">
-    <div class="nemoxia-container nemoxia-mx-auto nemoxia-px-4 nemoxia-sm-px-8 nemoxia-md-px-12 nemoxia-lg-px-24">
-      <h2 class="nemoxia-text-3xl nemoxia-font-bold nemoxia-text-center nemoxia-text-slate-900 nemoxia-mb-8">Pourquoi Choisir Nemoxia comme Prestataire Informatique Local ?</h2>
-      <div class="nemoxia-grid nemoxia-md-grid-cols-3 nemoxia-gap-8">
-        <div class="nemoxia-text-center">
-          <h3 class="nemoxia-text-xl nemoxia-font-semibold nemoxia-mb-4">Expertise Depuis 2007</h3>
-          <p>Plus de 15 ans d'expérience en <strong>infogérance et maintenance IT</strong> pour PME en Île-de-France et France entière.</p>
-        </div>
-        <div class="nemoxia-text-center">
-          <h3 class="nemoxia-text-xl nemoxia-font-semibold nemoxia-mb-4">Support Proche et Réactif</h3>
-          <p>Intervention sur site à Nemours, Melun, Fontainebleau en moins de 4h pour tout <strong>prestataire informatique 77</strong>.</p>
-        </div>
-        <div class="nemoxia-text-center">
-          <h3 class="nemoxia-text-xl nemoxia-font-semibold nemoxia-mb-4">Solutions Sur Mesure</h3>
-          <p>De la <strong>téléphonie IP cloud</strong> à la cybersécurité, adaptées à votre budget PME en Essonne (91) ou Loiret (45).</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   
-
-
-  <section class="construction-section" id="top">
-    <div class="construction-container">
-      <div class="hammer"></div>
-      <h1>Site en Construction</h1>
-      <p>Notre site est en cours de finalisation et sera bientôt en ligne. Pour toute information, nous sommes à votre disposition !</p>
-      <div class="additional-info">
-        <p>Suivez l'avancement de notre projet et restez informé des dernières nouvelles ! 😁</p>
-        <a href="index.html" class="contact-button">Contactez-nous</a>
-      </div>
-    </div>
-  </section>
   
   <footer>
     <div class="container mx-auto px-4 py-12">
@@ -705,17 +499,17 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
+<script>
 
-    //Fonction scrolled navbar
-    window.addEventListener('scroll', function() {
+// ========================================
+// NAVBAR SCROLL & HAMBURGER
+// ========================================
+window.addEventListener('scroll', function() {
   const navbar = document.querySelector('.nav-container');
   
   if (window.scrollY > 50) {
-    // Si on a scrollé plus de 50px, on ajoute la classe
     navbar.classList.add('scrolled');
   } else {
-    // Sinon on la retire
     navbar.classList.remove('scrolled');
   }
 });
@@ -731,179 +525,96 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-// CREATION DE LA CLE EMAILJS//
-    (function() {
-  emailjs.init("CSG-1U1qvDoCAEnGX"); // ta clé publique EmailJS
-})();
-
-// Gérer la soumission du formulaire
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const form = this;
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData);
-
-  console.log('📨 Données du formulaire :', data);
-
-  // Envoi via EmailJS
-  emailjs.sendForm('service_krd25xa', 'template_1ss2u2z', form)
-    .then(() => {
-      alert('✅ Message envoyé avec succès !');
-      closeModal();
-      form.reset();
-    }, (error) => {
-      alert('❌ Une erreur est survenue : ' + JSON.stringify(error));
-    });
-});
-
-// Ouvrir le modal
-function openModal() {
-  const modal = document.getElementById('contactModal');
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-// Fermer le modal
-function closeModal() {
-  const modal = document.getElementById('contactModal');
-  modal.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Fermer en cliquant sur l’overlay
-function closeModalOnOverlay(event) {
-  if (event.target.id === 'contactModal') {
-    closeModal();
-  }
-}
-
-// Fermer avec la touche Échap
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    closeModal();
-  }
-});
-    
 // ========================================
-    // CAROUSEL FUNCTIONALITY
-    // ========================================
-    let currentSlide = 0;
-    const track = document.getElementById('carouselTrack');
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+// CAROUSEL FUNCTIONALITY
+// ========================================
+let currentSlide = 0;
+const track = document.getElementById('carouselTrack');
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
 
-    // Créer les points de navigation
-    function createDots() {
-      const dotsContainer = document.getElementById('dotsContainer');
-      dotsContainer.innerHTML = '';
-      
-      for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-      }
-    }
+// Créer les points de navigation
+function createDots() {
+  const dotsContainer = document.getElementById('dotsContainer');
+  dotsContainer.innerHTML = '';
+  
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'dot';
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  }
+}
 
-    // Aller à une diapositive spécifique
-    function goToSlide(index) {
-      currentSlide = index;
-      updateCarousel();
-    }
+// Aller à une diapositive spécifique
+function goToSlide(index) {
+  currentSlide = index;
+  updateCarousel();
+}
 
-    // Déplacer le carousel
-    function moveCarousel(direction) {
-      currentSlide += direction;
-      
-      // Boucle infinie
-      if (currentSlide < 0) {
-        currentSlide = totalSlides - 1;
-      } else if (currentSlide >= totalSlides) {
-        currentSlide = 0;
-      }
-      
-      updateCarousel();
-    }
+// Déplacer le carousel
+function moveCarousel(direction) {
+  currentSlide += direction;
+  
+  // Boucle infinie
+  if (currentSlide < 0) {
+    currentSlide = totalSlides - 1;
+  } else if (currentSlide >= totalSlides) {
+    currentSlide = 0;
+  }
+  
+  updateCarousel();
+}
 
-    // Mettre à jour l'affichage
-    function updateCarousel() {
-      const offset = -currentSlide * 100;
-      track.style.transform = `translateX(${offset}%)`;
-      
-      // Mettre à jour les points actifs
-      const dots = document.querySelectorAll('.dot');
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-      });
-    }
+// Mettre à jour l'affichage
+function updateCarousel() {
+  const offset = -currentSlide * 100;
+  track.style.transform = `translateX(${offset}%)`;
+  
+  // Mettre à jour les points actifs
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentSlide);
+  });
+}
 
-    
+// Initialiser les dots au chargement
+createDots();
 
-    
-    // Support clavier
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        moveCarousel(-1);
-      } else if (e.key === 'ArrowRight') {
-        moveCarousel(1);
-      }
-    });
+// Support clavier
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    moveCarousel(-1);
+  } else if (e.key === 'ArrowRight') {
+    moveCarousel(1);
+  }
+});
 
-    // Support touch pour mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
+// Support touch pour mobile
+let touchStartX = 0;
+let touchEndX = 0;
 
-    carouselContainer.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    });
+const carouselContainer = document.querySelector('.carousel-container');
 
-    carouselContainer.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    });
+carouselContainer.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
 
-    function handleSwipe() {
-      if (touchEndX < touchStartX - 50) {
-        moveCarousel(1);
-      }
-      if (touchEndX > touchStartX + 50) {
-        moveCarousel(-1);
-      }
-    }
+carouselContainer.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
 
-    // ========================================
-    // MODAL FUNCTIONALITY
-    // ========================================
-    function openModal() {
-      document.getElementById('contactModal').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+function handleSwipe() {
+  if (touchEndX < touchStartX - 50) {
+    moveCarousel(1);
+  }
+  if (touchEndX > touchStartX + 50) {
+    moveCarousel(-1);
+  }
+}
 
-    function closeModal() {
-      document.getElementById('contactModal').classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-
-    function closeModalOnOverlay(event) {
-      if (event.target === event.currentTarget) {
-        closeModal();
-      }
-    }
-
-    // Fermer avec Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    });
-
-    // ========================================
-    // FORM SUBMISSION
-    // ========================================
-      
-            
 </script>
 
 
