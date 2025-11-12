@@ -956,15 +956,25 @@ footer {
   max-width: 1400px;
   margin: 0 auto;
 }
+.footer-grid a{
+  color: #2054ff;
+  transition: color 0.3s;
+}
 
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid #334155;
+  border-top: 1px solid #4571af;
   margin-top: clamp(20px, 4vw, 30px);
   padding-top: clamp(15px, 3vw, 20px);
   font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   opacity: 0.8;
 }
+.footer-bottom p{
+  text-align: center;
+}
+.footer-bottom a{
+  color: #2054ff;
+  }
 
 /* ========================================
    8. RESPONSIVE DESIGN
