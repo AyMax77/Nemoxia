@@ -566,11 +566,11 @@ img {
 }
 
 .carousel-nav.prev {
-  left: 100px;
+  left: -20px;
 }
 
 .carousel-nav.next {
-  right: 100px;
+  right: -20px;
 }
 
 /* Carousel Dots */
@@ -787,85 +787,310 @@ details ul li {
   line-height: 1.6;
 }
 /* ========================================
-   5. EXPERTISE SECTION
+   EXPERTISE SECTION - RESPONSIVE
    ======================================== */
+
 .expertise-section {
-            background: linear-gradient(to top, #0d3561 20%, #071f36);
-            padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
-            color: white;
-        }
+  background: linear-gradient(to top, #0d3561 20%, #071f36);
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  color: white;
+}
 
-        .expertise-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+.expertise-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-        .expertise-header {
-            margin-bottom: clamp(2.5rem, 5vw, 4rem);
-            text-align: center;
-        }
+.expertise-header {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+}
 
-        .expertise-header h2 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
+.expertise-header h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
 
-        .expertise-header p {
-            font-size: clamp(1rem, 2vw, 1.125rem);
-            line-height: 1.8;
-            opacity: 0.95;
-        }
+.expertise-header p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.8;
+  opacity: 0.95;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: clamp(2rem, 4vw, 3rem);
-        }
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
 
-        .expertise-card {
-            background: #0072BC;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 16px;
-            padding: clamp(2rem, 4vw, 2.5rem);
-            transition: all 0.4s ease;
-        }
+.expertise-card {
+  background: #0072BC;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-        .expertise-card:hover {
-            background: #009BFF;
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
+.expertise-card:hover {
+  background: #009BFF;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+}
 
-        .expertise-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.95;
-            text-align: center;
-        }
-        
+.expertise-icon {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  opacity: 0.95;
+  text-align: center;
+  width: 100%;
+}
 
-        .expertise-card h3 {
-            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
+.expertise-card h3 {
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+  text-align: center;
+  width: 100%;
+}
 
-        .expertise-card p {
-            font-size: clamp(0.95rem, 1.8vw, 1.05rem);
-            line-height: 1.7;
-            opacity: 0.9;
-            text-align: center;
-        }
-        i {
-          color: white;
-          padding: 10px;
-          border-radius: 5px;
-          font-size: 52px;
+.expertise-card p {
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  line-height: 1.7;
+  opacity: 0.9;
+  text-align: center;
+  width: 100%;
+}
+
+i {
+  color: white;
+  padding: clamp(8px, 1.5vw, 10px);
+  border-radius: 5px;
+  font-size: clamp(40px, 8vw, 52px);
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablettes et petits écrans (max 968px) */
+@media (max-width: 968px) {
+  .expertise-section {
+    padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2.5rem);
   }
+
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  .expertise-header h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .expertise-header p {
+    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  }
+
+  .expertise-card {
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  .expertise-icon {
+    font-size: clamp(2.25rem, 5vw, 3rem);
+    margin-bottom: clamp(0.875rem, 1.5vw, 1.25rem);
+  }
+
+  i {
+    font-size: clamp(36px, 7vw, 48px);
+    padding: clamp(7px, 1.2vw, 9px);
+  }
+}
+
+/* Mobile (max 768px) */
+@media (max-width: 768px) {
+  .expertise-section {
+    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .expertise-header {
+    margin-bottom: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .expertise-header h2 {
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    margin-bottom: 1rem;
+  }
+
+  .expertise-header p {
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  .expertise-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 12px;
+  }
+
+  .expertise-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .expertise-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .expertise-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  i {
+    font-size: 40px;
+    padding: 7px;
+  }
+}
+
+/* Très petits mobiles (max 480px) */
+@media (max-width: 480px) {
+  .expertise-section {
+    padding: 1.75rem 0.875rem;
+  }
+
+  .expertise-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .expertise-header h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .expertise-header p {
+    font-size: 0.875rem;
+    padding: 0 0.25rem;
+  }
+
+  .expertise-grid {
+    gap: 1rem;
+  }
+
+  .expertise-card {
+    padding: 1.25rem 1rem;
+    border-radius: 10px;
+  }
+
+  .expertise-icon {
+    font-size: 2.25rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .expertise-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .expertise-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  i {
+    font-size: 36px;
+    padding: 6px;
+    border-radius: 4px;
+  }
+}
+
+/* Grands écrans (min 1400px) */
+@media (min-width: 1400px) {
+  .expertise-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
+  .expertise-card {
+    padding: 2.5rem;
+  }
+}
+
+/* Écrans moyens - optimisation layout (769px à 1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .expertise-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .expertise-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Mode paysage mobile (max height 600px) */
+@media (max-height: 600px) and (orientation: landscape) {
+  .expertise-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .expertise-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .expertise-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .expertise-header p {
+    font-size: 0.9rem;
+  }
+
+  .expertise-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .expertise-card {
+    padding: 1rem;
+  }
+
+  .expertise-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .expertise-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .expertise-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  i {
+    font-size: 32px;
+    padding: 5px;
+  }
+}
 
   /* ========================================
    6. Infrastructure SECTION
@@ -1436,6 +1661,16 @@ footer {
   .hero-slide h1 {
     font-size: 3.5rem;
   }
+  
+}
+@media(min-width: 1920px) and (max-width: 1920px){
+  .carousel-nav.prev {
+    left: 100px;
+  }
+
+  .carousel-nav.next {
+    right: 100px;
+  }
 }
 
 /* Desktop Extra Large: au-delà de 1920px */
@@ -1451,11 +1686,11 @@ footer {
   }
 
   .carousel-nav.prev {
-    left: 50px;
+    left: 200px;
   }
 
   .carousel-nav.next {
-    right: 50px;
+    right: 200px;
   }
 
   .carousel-track.transitioning {
@@ -1471,11 +1706,11 @@ footer {
   }
 
   .carousel-nav.prev {
-    left: 100px;
+    left: 600px;
   }
 
   .carousel-nav.next {
-    right: 100px;
+    right: 600px;
   }
 }
 
