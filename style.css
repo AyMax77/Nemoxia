@@ -71,8 +71,9 @@ img {
 }
 
 .nav-container.scrolled {
-  background: linear-gradient(to left, #030712 0%, #0d3b66 100%);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3); /* blanc avec 80% d'opacité */
+  box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
+  backdrop-filter: blur(5px);
 }
 
 .logo img {
@@ -232,7 +233,9 @@ img {
    ======================================== */
 
 .hero-3cx {
-  background: linear-gradient(to top, #0d3b66 0%, #030712 100%);
+  background: 
+    linear-gradient(135deg, rgba(3, 7, 18, 0.88) 0%, rgba(13, 59, 102, 0.85) 100%),
+    url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80') center/cover no-repeat fixed;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -249,9 +252,20 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
   animation: pulse 3s ease-in-out infinite;
+}
+
+.hero-3cx::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0072BC, transparent);
+  box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
 }
 
 @keyframes pulse {
@@ -300,11 +314,13 @@ img {
 /* Slides */
 .slide {
   min-width: 100%;
-  padding: 60px 40px;
+  padding: 30px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateY(-10px);
 }
+
 
 .slide-content {
   width: 100%;
@@ -317,6 +333,8 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.3); /* noir avec 60% d'opacité */
+  padding: 40px 40px;
 }
 
 .hero-text-content {
@@ -448,6 +466,8 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.4); /* noir avec 60% d'opacité */
+  padding: 60px 40px;
 }
 
 .service-image {
@@ -791,9 +811,34 @@ details ul li {
    ======================================== */
 
 .expertise-section {
-  background: linear-gradient(to top, #0d3561 20%, #071f36);
+  background: 
+    linear-gradient(135deg, rgba(13, 53, 97, 0.92) 0%, rgba(7, 31, 54, 0.70) 100%),
+    url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&q=80&blur=40') center/cover no-repeat fixed;
   padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
   color: white;
+  position: relative;
+}
+
+.expertise-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.expertise-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0072BC, transparent);
+  box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
 }
 
 .expertise-container {
@@ -828,7 +873,7 @@ details ul li {
 }
 
 .expertise-card {
-  background: #0072BC;
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
@@ -1092,139 +1137,119 @@ i {
   }
 }
 
-  /* ========================================
-   6. Infrastructure SECTION
-   ======================================== */
 /* ========================================
-   PARTNER SECTION (Partenaire unique)
+   10. NOS PARTENAIRES SECTION
    ======================================== */
-.partner-section {
-  background: rgba(255, 255, 255, 0.05);
-  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+
+.partners-section {
+  background: 
+    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
+    url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&q=80&blur=80') center/cover no-repeat fixed;
+  padding: clamp(60px, 8vw, 100px) 5%;
+  text-align: center;
   color: white;
+  position: relative;
 }
 
-.partner-container {
+.partners-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.partners-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0072BC, transparent);
+  box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
+}
+
+.partners-container {
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-.partner-header {
-  text-align: center;
-  margin-bottom: clamp(3rem, 6vw, 5rem);
+.partners-header {
+  margin-bottom: clamp(40px, 6vw, 60px);
 }
 
-.partner-header h2 {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+.partners-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  line-height: 1.3;
-  background: linear-gradient(135deg, #fff 0%, #a8d5ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.partner-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(2rem, 4vw, 3rem);
-}
-
-.partner-feature {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 114, 188, 0.15));
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: clamp(2rem, 4vw, 2.5rem);
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.partner-feature:hover {
-  transform: translateY(-8px);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(0, 114, 188, 0.25));
-  box-shadow: 0 15px 40px rgba(0, 114, 188, 0.3);
-}
-
-.partner-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-}
-
-.partner-feature p {
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-  line-height: 1.8;
-  opacity: 0.95;
-}
-
-/* ========================================
-   TECH PARTNERS SECTION (Partenaires technologiques)
-   ======================================== */
-.tech-partners-section {
-  background: linear-gradient(55deg, #0d3561 20%, #02070c);
-  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
-  color: white;
-}
-
-.tech-partners-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.tech-partners-container h2 {
-  font-size: clamp(2rem, 4.5vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(15px, 2.5vw, 25px);
   background: linear-gradient(135deg, #fff 0%, #4a9eff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.tech-partners-subtitle {
+.partners-header p {
   font-size: clamp(1rem, 2vw, 1.2rem);
   line-height: 1.8;
-  opacity: 0.9;
-  margin-bottom: clamp(3rem, 6vw, 5rem);
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  color: rgba(240, 240, 240, 0.9);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.tech-partners-grid {
+.partners-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: clamp(2rem, 4vw, 4rem);
+  gap: clamp(25px, 4vw, 40px);
   align-items: center;
   justify-items: center;
 }
 
-.partner-logo {
-  background: rgba(255, 255, 255, 0.05);
+.partner-logo-card {
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(25px, 4vw, 35px);
   width: 100%;
   max-width: 280px;
-  height: 140px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.partner-logo:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(74, 158, 255, 0.3);
-  border-color: rgba(74, 158, 255, 0.4);
+.partner-logo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
 }
 
-.partner-logo img {
+.partner-logo-card:hover::before {
+  left: 100%;
+}
+
+.partner-logo-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 114, 188, 0.4);
+  border-color: rgba(0, 114, 188, 0.5);
+}
+
+.partner-logo-card img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -1233,83 +1258,52 @@ i {
   transition: all 0.3s ease;
 }
 
-.partner-logo:hover img {
+.partner-logo-card:hover img {
   opacity: 1;
   transform: scale(1.1);
-}
-/* ========================================
-   7. Infogerance SECTION
-   ======================================== */
-   /* ========================================
-   8. Infrastructure SECTION
-   ======================================== */
-   /* ========================================
-   9. Infrastructure SECTION
-   ======================================== */
-
-/* ========================================
-   10. 3CX SECTION
-   ======================================== */
-
-.threecx-section {
-  background: rgba(255, 255, 255, 0.05);
-  padding: clamp(40px, 5vw, 80px) 5%;
-  text-align: center;
-  color: white;
+  filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
-.threecx-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  gap: clamp(20px, 3vw, 40px);
+/* Style spécifique pour certains logos si nécessaire */
+.partner-logo-card.featured {
+  background: linear-gradient(135deg, rgba(0, 114, 188, 0.15), rgba(0, 180, 216, 0.15));
+  border: 2px solid rgba(0, 114, 188, 0.3);
 }
 
-.threecx-logo img {
-  width: clamp(120px, 40vw, 600px);
-  height: auto;
-  transition: transform 0.3s ease;
+.partner-logo-card.featured:hover {
+  background: linear-gradient(135deg, rgba(0, 114, 188, 0.25), rgba(0, 180, 216, 0.25));
+  border-color: rgba(0, 114, 188, 0.6);
 }
 
-.threecx-logo img:hover {
-  transform: scale(1.05);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 3vw, 30px);
+  }
+
+  .partner-logo-card {
+    height: 140px;
+    max-width: 100%;
+  }
 }
 
-.threecx-content h2 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  color: lightskyblue;
-  margin-bottom: clamp(15px, 2vw, 25px);
+@media (max-width: 480px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .partner-logo-card {
+    max-width: 100%;
+  }
 }
 
-.threecx-content p {
-  font-size: clamp(0.95rem, 2vw, 1.2rem);
-  line-height: 1.6;
-  max-width: 800px;
-  margin: 0 auto clamp(20px, 3vw, 30px);
-  color: rgba(240, 240, 240, 0.9);
+@media (min-width: 1024px) {
+  .partners-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
-
-.threecx-button {
-  display: inline-block;
-  background: linear-gradient(90deg, #0072BC, #00B4D8);
-  color: white;
-  font-weight: 600;
-  border-radius: 9999px;
-  padding: clamp(10px, 1.5vw, 14px) clamp(20px, 4vw, 30px);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-}
-
-.threecx-button:hover {
-  background: linear-gradient(90deg, #009BFF, #00D0FF);
-  transform: translateY(-2px);
-}
-
-
-
 
 /* ========================================
    11. FOOTER
