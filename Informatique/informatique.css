@@ -957,7 +957,7 @@ img {
 }
 
 .avantage-card {
-  background: rgba(255, 255, 255, 0.05);
+  background:rgba(0, 0, 0, 0.568);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: clamp(20px, 2.5vw, 30px);
@@ -970,7 +970,7 @@ img {
   transform: translateY(-10px);
   border-color: #0072BC;
   box-shadow: 0 10px 30px rgba(0, 114, 188, 0.3);
-  background: rgba(49, 49, 49, 0.39);
+  background: rgba(0, 0, 0, 0.13);
 }
 
 .avantage-card .icon {
@@ -1278,9 +1278,38 @@ img {
    ======================================== */
 
 footer {
-  background: #1e293b;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   color: white;
   padding: clamp(30px, 5vw, 50px) 5%;
+  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
+}
+
+footer h3 {
+  color: lightskyblue;
+  margin-bottom: 15px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+footer a:hover {
+  color: #0072BC;
+  text-shadow: 0 0 8px rgba(0, 114, 188, 0.6);
 }
 
 .footer-grid {
@@ -1289,31 +1318,33 @@ footer {
   gap: clamp(20px, 4vw, 30px);
   max-width: 1400px;
   margin: 0 auto;
-}
-
-.footer-grid h3 {
-  color: #4db8ff;
-  margin-bottom: clamp(10px, 1.5vw, 15px);
-  font-size: clamp(15px, 1.7vw, 20px);
+  align-items: center;
 }
 
 .footer-grid a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
+  color: #0099ff;
   transition: color 0.3s;
 }
 
-.footer-grid a:hover {
-  color: #0072BC;
+.footer-grid div {
+  margin: auto;
 }
 
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid #334155;
+  border-top: 1px solid #0099ff;
   margin-top: clamp(20px, 4vw, 30px);
   padding-top: clamp(15px, 3vw, 20px);
-  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   opacity: 0.8;
+}
+
+.footer-bottom p {
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: #0099ff;
 }
 
 /* ========================================
