@@ -885,7 +885,7 @@ details ul li {
 }
 
 .expertise-card:hover {
-  background: #009BFF;
+  background: #0099ff31;
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   border-color: rgba(255, 255, 255, 0.4);
