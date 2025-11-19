@@ -759,13 +759,16 @@ img {
 }
 
 .container h2 {
-  font-size: clamp(24px, 3.5vw, 42px);
+  font-size: clamp(28px, 4vw, 42px);
   color: white;
-  text-align: center;
-  margin-bottom: clamp(30px, 4vh, 50px);
+  margin-bottom: clamp(20px, 3vw, 30px);
   font-weight: 700;
+  text-align: center;
+  text-shadow: 0 2px 20px rgba(135, 206, 250, 0.4),
+               0 4px 40px rgba(0, 114, 188, 0.2);
+  letter-spacing: 0.5px;
+  position: relative;
 }
-
 .section-badge {
   display: inline-block;
   background: rgba(0, 114, 188, 0.15);
@@ -954,7 +957,7 @@ img {
 }
 
 .avantage-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: clamp(20px, 2.5vw, 30px);
@@ -967,7 +970,7 @@ img {
   transform: translateY(-10px);
   border-color: #0072BC;
   box-shadow: 0 10px 30px rgba(0, 114, 188, 0.3);
-  background: white;
+  background: rgba(49, 49, 49, 0.39);
 }
 
 .avantage-card .icon {
@@ -977,14 +980,14 @@ img {
 
 .avantage-card h3 {
   font-size: clamp(16px, 1.8vw, 20px);
-  color: #0d3b66;
+  color: #0072BC;
   margin-bottom: clamp(10px, 1.5vw, 15px);
   font-weight: 600;
 }
 
 .avantage-card p {
   font-size: clamp(13px, 1.4vw, 15px);
-  color: #555;
+  color: #f3f3f3;
   line-height: 1.6;
 }
 

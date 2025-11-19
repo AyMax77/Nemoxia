@@ -655,7 +655,7 @@ img {
   transform: translateY(-10px);
   border-color: #0072BC;
   box-shadow: 0 10px 30px rgba(0, 114, 188, 0.3);
-  background: white;
+  background: rgba(41, 40, 40, 0.63);
 }
 
 .avantage-card .icon {
