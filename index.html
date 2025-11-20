@@ -200,7 +200,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
   <div class="nav-actions">
     <a href="tel:01 75 43 91 00" class="phone-button">01 75 43 91 00</a>
-    <a href="fibre/Fibre.html" class="eligibilite-button">Éligibilité Fibre</a>
+    <a href="Contact/contact.html" class="eligibilite-button">Contactez-nous !</a>
   </div>
   
   <button class="hamburger">
@@ -250,14 +250,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                      class="btn-hero btn-hero-primary">
                     Essai gratuit 3CX
                   </a>
-                  <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
-                    Formulaire de contact
+                  <a href="fibre/Fibre.html" class="btn-hero btn-hero-secondary">
+                    Eligibilité Fibre
                   </a>
                 </div>
               </div>
 
               <div class="hero-visual">
-                <img src="images/3CX.webp" 
+                <img src="images/telephonie_communications.png" 
                      alt="Dashboard 3CX" 
                      class="hero-image"
                      onerror="this.style.display='none'">
@@ -286,8 +286,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <a href="Informatique/informatique.html" class="service-button">
                           Découvrez nos services informatiques !
                       </a>
-                      <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
-                    Formulaire de contact
+                      <a href="fibre/Fibre.html" class="btn-hero btn-hero-secondary">
+                    Eligibilité Fibre
                   </a>
                   </div>
               </div>
@@ -318,8 +318,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <a href="Télécoms/Telecom.html" class="service-button">
                           Découvrez nos réseaux télécoms !
                       </a>
-                      <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
-                    Formulaire de contact
+                      <a href="fibre/Fibre.html" class="btn-hero btn-hero-secondary">
+                    Eligibilité Fibre
                   </a>
                   </div>
             </div>
@@ -350,8 +350,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <a href="Téléphonie/Telephonie.html" class="service-button">
                           Découvrez nos réseaux Téléphoniques !
                       </a>
-                      <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
-                    Formulaire de contact
+                      <a href="fibre/Fibre.html" class="btn-hero btn-hero-secondary">
+                    Eligibilité Fibre
                   </a>
                   </div>
               </div>
@@ -382,8 +382,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <a href="Infogérance/Infogerance.html" class="service-button">
                           Découvrez nos Inforgérances !
                       </a>
-                      <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
-                    Formulaire de contact
+                      <a href="fibre/Fibre.html" class="btn-hero btn-hero-secondary">
+                    Eligibilité Fibre
                   </a>
                   </div>
               </div>
@@ -414,8 +414,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                       <a href="Cybersécurité/Cybersecurite.html" class="service-button">
                           Découvrez notre expertise Cybersécurité !
                       </a>
-                      <a href="Contact/contact.html" class="btn-hero btn-hero-secondary">
-                    Formulaire de contact
+                      <a href="fibre/Fibre.html" class="btn-hero btn-hero-secondary">
+                    Eligibilité Fibre
                   </a>
                   </div>
               </div>
@@ -579,6 +579,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.getElementById("carouselTrack");
+  const slides = Array.from(track.children);
+
+  // Clone le tableau pour ne pas modifier le DOM durant le shuffle
+  const shuffled = slides.slice();
+
+  // Fisher-Yates Shuffle
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  // Réinsère toutes les slides dans le nouvel ordre
+  shuffled.forEach(slide => track.appendChild(slide));
+});
+</script>
+
 <script>
 
 // ========================================

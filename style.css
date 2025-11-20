@@ -29,7 +29,10 @@ html {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background: linear-gradient(65deg, #051a30 50%, #02070c);
+  background: 
+    linear-gradient(135deg, rgba(3, 7, 18, 0.85) 0%, rgba(13, 59, 102, 0.45) 100%),
+    url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed;
   color: #333;
   line-height: 1.6;
   font-size: clamp(14px, 1.2vw, 16px);
@@ -111,6 +114,8 @@ img {
 .nav-links li:nth-child(2) { animation-delay: 0.4s; }
 .nav-links li:nth-child(3) { animation-delay: 0.5s; }
 .nav-links li:nth-child(4) { animation-delay: 0.6s; }
+.nav-links li:nth-child(5) { animation-delay: 0.7s; }
+.nav-links li:nth-child(6) { animation-delay: 0.8s; }
 
 @keyframes fadeInUp {
   from {
@@ -233,9 +238,6 @@ img {
    ======================================== */
 
 .hero-3cx {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.88) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80') center/cover no-repeat fixed;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -334,6 +336,7 @@ img {
   gap: 60px;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3); /* noir avec 60% d'opacité */
+  border-radius: 20px;
   padding: 40px 40px;
 }
 
@@ -467,6 +470,7 @@ img {
   gap: 50px;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.4); /* noir avec 60% d'opacité */
+  border-radius: 20px;
   padding: 60px 40px;
 }
 
@@ -811,9 +815,6 @@ details ul li {
    ======================================== */
 
 .expertise-section {
-  background: 
-    linear-gradient(135deg, rgba(13, 53, 97, 0.92) 0%, rgba(7, 31, 54, 0.70) 100%),
-    url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&q=80&blur=40') center/cover no-repeat fixed;
   padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
   color: white;
   position: relative;
@@ -1142,9 +1143,6 @@ i {
    ======================================== */
 
 .partners-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&q=80&blur=80') center/cover no-repeat fixed;
   padding: clamp(60px, 8vw, 100px) 5%;
   text-align: center;
   color: white;

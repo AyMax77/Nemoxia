@@ -18,7 +18,10 @@ body {
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
-  background: linear-gradient(65deg, #051a30 50%, #02070c);
+  background: 
+    linear-gradient(135deg, rgba(3, 7, 18, 0.88) 0%, rgba(13, 59, 102, 0.45) 100%),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80') center/cover no-repeat;
+  background-attachment: fixed;
 }
 
 img {
@@ -27,7 +30,7 @@ img {
 }
 
 /* ========================================
-   NAVBAR
+   2. NAVBAR
    ======================================== */
 
 .nav-container {
@@ -56,7 +59,7 @@ img {
 }
 
 .nav-container.scrolled {
-  background-color: rgba(0, 0, 0, 0.1); /* blanc avec 80% d'opacité */
+  background-color: rgba(0, 0, 0, 0.3); /* blanc avec 80% d'opacité */
   box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
   backdrop-filter: blur(5px);
 }
@@ -139,6 +142,7 @@ img {
   width: 100%;
 }
 
+/* Conteneur des boutons CTA */
 .nav-actions {
   display: flex;
   gap: clamp(8px, 1vw, 12px);
@@ -157,6 +161,7 @@ img {
   }
 }
 
+/* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
   background: #0072BC;
@@ -179,6 +184,7 @@ img {
   transform: scale(1.05);
 }
 
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -212,6 +218,7 @@ img {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+
 /* ========================================
    HERO SECTION (100vh)
    ======================================== */
@@ -222,9 +229,6 @@ img {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.88) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80') center/cover no-repeat;
   padding: 70px clamp(20px, 5%, 40px) 0;
   overflow: hidden;
 }
@@ -373,9 +377,6 @@ img {
    ======================================== */
 
 .intro-image-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1920&q=80&blur=10') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -508,9 +509,6 @@ img {
    ======================================== */
 
 .stats-counter-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.92) 0%, rgba(13, 59, 102, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80&blur=40') center/cover no-repeat fixed;
   padding: clamp(60px, 10%, 100px) clamp(20px, 5%, 50px);
   position: relative;
 }
@@ -600,12 +598,6 @@ img {
   padding: clamp(40px, 5%, 60px) clamp(20px, 5%, 40px);
 }
 
-.importance-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80&blur=40') center/cover no-repeat fixed;
-}
-
 .importance-section::before {
   content: '';
   position: absolute;
@@ -617,11 +609,7 @@ img {
   pointer-events: none;
 }
 
-.vision-image-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.9) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80&blur=60') center/cover no-repeat fixed;
-}
+
 
 .vision-image-section::before {
   content: '';
@@ -634,11 +622,7 @@ img {
   pointer-events: none;
 }
 
-.avantages-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80&blur=30') center/cover no-repeat fixed;
-}
+
 
 .avantages-section::before {
   content: '';
@@ -651,11 +635,7 @@ img {
   pointer-events: none;
 }
 
-.solutions-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.99) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80&blur=70') center/cover no-repeat fixed;
-}
+
 
 .solutions-section::before {
   content: '';
@@ -668,11 +648,7 @@ img {
   pointer-events: none;
 }
 
-.usecases-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.99) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80&blur=20') center/cover no-repeat fixed;
-}
+
 
 .usecases-section::before {
   content: '';
@@ -685,11 +661,7 @@ img {
   pointer-events: none;
 }
 
-.technologies-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.9) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?w=1920&q=80&blur=80') center/cover no-repeat fixed;
-}
+
 
 .technologies-section::before {
   content: '';
@@ -702,11 +674,7 @@ img {
   pointer-events: none;
 }
 
-.methodologie-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80&blur=80') center/cover no-repeat fixed;
-}
+
 
 .methodologie-section::before {
   content: '';
@@ -1347,21 +1315,53 @@ footer a:hover {
   color: #0099ff;
 }
 
-/* ========================================
-   RESPONSIVE
-   ======================================== */
+/* ========================================================
+   RESPONSIVE – Version complète pour ta structure
+   ======================================================== */
 
-@media (max-width: 968px) {
+/* ---------- XS: téléphones <480px ---------- */
+@media (max-width: 480px) {
+  /* NAV */
+  .nav-container {
+    height: 58px;
+    padding: 8px 4%;
+  }
+
+  .logo img {
+    width: 110px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 58px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 58px);
+    background: linear-gradient(to bottom, #030712, #0d3b66);
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 20px;
+    gap: 18px;
+    overflow-y: auto;
+  }
+
+  .nav-container.open .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  /* GRIDS */
   .intro-content-wrapper,
-  .vision-content-wrapper {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .vision-stats {
-    grid-template-columns: 1fr;
-  }
-
+  .vision-content-wrapper,
+  .vision-stats,
   .importance-grid,
   .avantages-grid,
   .solutions-grid,
@@ -1370,9 +1370,10 @@ footer a:hover {
   .steps-container,
   .stats-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 18px;
   }
 
+  /* BUTTONS */
   .hero-buttons,
   .cta-buttons {
     flex-direction: column;
@@ -1384,91 +1385,104 @@ footer a:hover {
   .btn-cta,
   .btn-cta-secondary {
     width: 100%;
-    max-width: 350px;
+    max-width: 320px;
+  }
+
+  /* FOOTER */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
-@media (max-width: 768px) {
-  .nav-container {
-    padding: 10px 3%;
-    height: 60px;
-  }
-
-  .logo img {
-    width: 120px;
-  }
-
+/* ---------- SM: 481 – 576px ---------- */
+@media (min-width: 481px) and (max-width: 576px) {
   .hamburger {
     display: flex;
+  }
+
+  .nav-container {
+    height: 60px;
+    padding: 10px 5%;
   }
 
   .nav-links {
     display: none;
     position: fixed;
     top: 60px;
-    left: 0;
-    width: 100%;
     height: calc(100vh - 60px);
-    background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 30px 20px;
-    gap: 20px;
-    overflow-y: auto;
   }
 
   .nav-container.open .nav-links {
     display: flex;
   }
 
-  .nav-links a {
-    font-size: 16px;
-  }
-
-  .nav-actions {
-    gap: 6px;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    font-size: 10px;
-    padding: 7px 10px;
-  }
-
-  .hero-section {
-    padding-top: 60px;
-  }
-
-  .footer-grid {
+  .intro-content-wrapper,
+  .vision-content-wrapper,
+  .vision-stats,
+  .importance-grid,
+  .avantages-grid,
+  .solutions-grid,
+  .usecases-grid,
+  .tech-grid,
+  .steps-container,
+  .stats-grid {
     grid-template-columns: 1fr;
-    gap: 25px;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1023px) {
+/* ---------- MD: 577 – 768px (mobiles larges / petites tablettes) ---------- */
+@media (min-width: 577px) and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-container {
+    height: 60px;
+    padding: 10px 4%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-container.open .nav-links {
+    display: flex;
+  }
+
+  .intro-content-wrapper,
+  .vision-content-wrapper,
+  .vision-stats,
+  .importance-grid,
+  .avantages-grid,
+  .solutions-grid,
+  .usecases-grid,
+  .tech-grid,
+  .steps-container,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- LG: 769 – 992px (tablettes) ---------- */
+@media (min-width: 769px) and (max-width: 992px) {
   .hamburger {
     display: flex;
   }
 
   .nav-links {
     display: none;
-    position: fixed;
     top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 35px 20px;
-    gap: 25px;
-    overflow-y: auto;
   }
 
   .nav-container.open .nav-links {
     display: flex;
+  }
+
+  .intro-content-wrapper,
+  .vision-content-wrapper,
+  .vision-stats {
+    grid-template-columns: 1fr 1fr;
   }
 
   .importance-grid,
@@ -1476,32 +1490,38 @@ footer a:hover {
   .solutions-grid,
   .usecases-grid,
   .tech-grid,
-  .steps-container {
+  .steps-container,
+  .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
+/* ---------- XL: 993 – 1200px (petits laptops) ---------- */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .hamburger {
+    display: none;
+  }
+
   .nav-links {
     display: flex;
   }
 
-  .importance-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .intro-content-wrapper,
+  .vision-content-wrapper {
+    grid-template-columns: repeat(2, 1fr);
   }
 
+  .vision-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .importance-grid,
   .avantages-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .solutions-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .usecases-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
+  .solutions-grid,
+  .usecases-grid,
   .tech-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1511,7 +1531,72 @@ footer a:hover {
   }
 }
 
-/* Ajustement pour très petits écrans (mobile paysage) */
+/* ---------- XXL: 1201 – 1440px (desktop standard) ---------- */
+@media (min-width: 1201px) and (max-width: 1440px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .intro-content-wrapper,
+  .vision-content-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vision-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .importance-grid,
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .solutions-grid,
+  .usecases-grid,
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .steps-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ---------- UHD: >1440px ---------- */
+@media (min-width: 1441px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .vision-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+
+  .importance-grid,
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .solutions-grid,
+  .usecases-grid,
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+
+  .steps-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  .phone-button,
+  .eligibilite-button {
+    font-size: 15px;
+  }
+}
+
+/* ---------- Hauteurs faibles (paysage mobile, petits laptops) ---------- */
 @media (max-height: 600px) {
   .hero-section,
   .intro-image-section,
@@ -1525,6 +1610,6 @@ footer a:hover {
   .cta-section,
   .stats-counter-section {
     min-height: auto;
-    padding: clamp(30px, 5vh, 50px) clamp(15px, 4%, 30px);
+    padding: clamp(25px, 5vh, 50px) clamp(15px, 4%, 30px);
   }
 }

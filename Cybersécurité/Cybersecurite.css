@@ -18,6 +18,10 @@ body {
   color: #333;
   line-height: 1.6;
   overflow-x: hidden;
+  background: 
+    linear-gradient(135deg, rgba(3, 7, 18, 0.88) 0%, rgba(13, 59, 102, 0.35) 100%),
+    url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed;
 }
 
 img {
@@ -26,7 +30,7 @@ img {
 }
 
 /* ========================================
-   NAVBAR
+   2. NAVBAR
    ======================================== */
 
 .nav-container {
@@ -138,6 +142,7 @@ img {
   width: 100%;
 }
 
+/* Conteneur des boutons CTA */
 .nav-actions {
   display: flex;
   gap: clamp(8px, 1vw, 12px);
@@ -156,6 +161,7 @@ img {
   }
 }
 
+/* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
   background: #0072BC;
@@ -178,6 +184,7 @@ img {
   transform: scale(1.05);
 }
 
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -215,19 +222,12 @@ img {
    HERO SECTION (100vh)
    ======================================== */
 
-/* ========================================
-   HERO SECTION (100vh)
-   ======================================== */
-
 .cybersecurite-hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.88) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1920&q=80') center/cover no-repeat;
   padding: 70px clamp(20px, 5%, 40px) 0;
   overflow: hidden;
 }
@@ -341,9 +341,6 @@ img {
    ======================================== */
 
 .danger-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1920&q=80&blur=40') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -431,9 +428,6 @@ img {
    ======================================== */
 
 .threats-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.9) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80&blur=40') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -525,9 +519,6 @@ img {
    ======================================== */
 
 .solutions-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1920&q=80&blur=10') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -632,9 +623,6 @@ img {
    ======================================== */
 
 .methodologie-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.9) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1920&q=80&blur=80') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -729,9 +717,6 @@ img {
    ======================================== */
 
 .expertise-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&q=80&blur=30') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -860,22 +845,34 @@ footer {
 
 
 /* ========================================
-   RESPONSIVE
+   RESPONSIVE – ALL BREAKPOINTS
    ======================================== */
 
-@media (max-width: 968px) {
+/* ---------- XS : Mobile portrait (-480px) ---------- */
+@media (max-width: 480px) {
   .danger-stats,
   .threats-grid,
   .solutions-grid,
-  .steps-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
+  .steps-container,
   .expertise-stats {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
 
+  .btn-primary,
+  .btn-secondary,
+  .btn-cta-large,
+  .btn-cta-outline {
+    width: 100%;
+  }
+
+  .logo img {
+    width: 90px;
+  }
+}
+
+/* ---------- SM : Mobile standard (-576px) ---------- */
+@media (max-width: 576px) {
   .hero-buttons,
   .cta-buttons {
     flex-direction: column;
@@ -886,11 +883,16 @@ footer {
   .btn-secondary,
   .btn-cta-large,
   .btn-cta-outline {
-    width: 100%;
-    max-width: 350px;
+    max-width: 320px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
+/* ---------- MD : Mobile landscape / Phablet (-768px) ---------- */
 @media (max-width: 768px) {
   .nav-container {
     padding: 10px 3%;
@@ -925,30 +927,30 @@ footer {
     display: flex;
   }
 
-  .nav-links a {
-    font-size: 16px;
-  }
-
-  .nav-actions {
-    gap: 6px;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    font-size: 10px;
-    padding: 7px 10px;
-  }
-
   .cybersecurite-hero {
     padding-top: 60px;
   }
+}
 
-  .footer-grid {
+/* ---------- LG : Tablettes (-968px) ---------- */
+@media (max-width: 968px) {
+  .danger-stats,
+  .threats-grid,
+  .solutions-grid,
+  .steps-container,
+  .expertise-stats {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 20px;
+  }
+
+  .hero-buttons,
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
   }
 }
 
+/* ---------- XL : Tablettes larges / petits laptops (769px–1023px) ---------- */
 @media (min-width: 769px) and (max-width: 1023px) {
   .hamburger {
     display: flex;
@@ -982,6 +984,7 @@ footer {
   }
 }
 
+/* ---------- 2XL : Desktop standard (+1024px) ---------- */
 @media (min-width: 1024px) {
   .nav-links {
     display: flex;
@@ -1002,9 +1005,49 @@ footer {
   .steps-container {
     grid-template-columns: repeat(4, 1fr);
   }
+  .phone-button,
+  .eligibilite-button {
+    font-size: 15px;
+  }
 }
 
-/* Ajustement pour très petits écrans (mobile paysage) */
+/* ---------- 3XL : Large desktop (+1280px) ---------- */
+@media (min-width: 1280px) {
+  .page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* ---------- 4XL : Widescreen monitors (+1536px) ---------- */
+@media (min-width: 1536px) {
+  .page-wrapper {
+    max-width: 1400px;
+  }
+}
+
+/* ---------- 5XL : Ultra-wide (+1920px) ---------- */
+@media (min-width: 1920px) {
+  .page-wrapper {
+    max-width: 1600px;
+  }
+}
+
+/* ---------- 6XL : 4K screens (+2560px) ---------- */
+@media (min-width: 2560px) {
+  .page-wrapper {
+    max-width: 1900px;
+  }
+}
+
+/* ---------- Ultra 4K / 5K / 8K (+3200px) ---------- */
+@media (min-width: 3200px) {
+  .page-wrapper {
+    max-width: 2200px;
+  }
+}
+
+/* ---------- Small-height screens (phones landscape) ---------- */
 @media (max-height: 600px) {
   .cybersecurite-hero,
   .danger-section,

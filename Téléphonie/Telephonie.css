@@ -18,7 +18,10 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
-  background: linear-gradient(65deg, #051a30 50%, #02070c);
+  background: 
+    linear-gradient(135deg, rgba(3, 7, 18, 0.85) 0%, rgba(13, 59, 102, 0.30) 100%),
+    url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed;
   overflow-x: hidden;
 }
 
@@ -28,7 +31,7 @@ img {
 }
 
 /* ========================================
-   NAVBAR - Améliorée avec backdrop-filter
+   2. NAVBAR
    ======================================== */
 
 .nav-container {
@@ -62,13 +65,11 @@ img {
   backdrop-filter: blur(5px);
 }
 
-
 .logo img {
   width: clamp(200px, 17vw, 400px);
   height: auto;
   transition: width 0.3s ease;
   animation: fadeInScale 0.8s ease-out 0.2s both;
-  filter: drop-shadow(0 2px 8px rgba(0, 114, 188, 0.3));
 }
 
 @keyframes fadeInScale {
@@ -99,6 +100,8 @@ img {
 .nav-links li:nth-child(2) { animation-delay: 0.4s; }
 .nav-links li:nth-child(3) { animation-delay: 0.5s; }
 .nav-links li:nth-child(4) { animation-delay: 0.6s; }
+.nav-links li:nth-child(5) { animation-delay: 0.7s; }
+.nav-links li:nth-child(6) { animation-delay: 0.8s; }
 
 @keyframes fadeInUp {
   from {
@@ -140,6 +143,7 @@ img {
   width: 100%;
 }
 
+/* Conteneur des boutons CTA */
 .nav-actions {
   display: flex;
   gap: clamp(8px, 1vw, 12px);
@@ -158,6 +162,7 @@ img {
   }
 }
 
+/* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
   background: #0072BC;
@@ -168,20 +173,19 @@ img {
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background 0.3s, transform 0.2s;
   text-decoration: none;
   display: inline-block;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(0, 114, 188, 0.3);
 }
 
 .phone-button:hover,
 .eligibilite-button:hover {
   background: #005f9e;
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 114, 188, 0.5);
 }
 
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -215,14 +219,12 @@ img {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+
 /* ========================================
    HERO SECTION - Téléphonie IP moderne
    ======================================== */
 
 .hero-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.85) 0%, rgba(13, 59, 102, 0.75) 100%),
-    url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&q=80') center/cover no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -271,15 +273,15 @@ img {
   align-items: center;
   position: relative;
   z-index: 1;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .hero-content {
   animation: fadeInLeft 0.8s ease-out;
-  background: rgba(0, 0, 0, 0.2);
   padding: clamp(25px, 3vw, 40px);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @keyframes fadeInLeft {
@@ -340,9 +342,6 @@ img {
    ======================================== */
 
 .advantages-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&q=80&blur=80') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -446,9 +445,6 @@ img {
    ======================================== */
 
 .blue-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.9) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80&blur=80') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -491,6 +487,11 @@ img {
   justify-content: center;
   position: relative;
   z-index: 1;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 50px 50px;
 }
 
 .blue-section h2 {
@@ -572,9 +573,6 @@ img {
    ======================================== */
 
 .solutions-section {
-  background: 
-    linear-gradient(135deg, rgba(10, 37, 64, 0.92) 0%, rgba(13, 74, 115, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80&blur=80') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -694,9 +692,6 @@ img {
    ======================================== */
 
 .features-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.9) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1552581234-26160f608093?w=1920&q=80&blur=80') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -888,186 +883,261 @@ footer a:hover {
   }
 }
 
-/* ========================================
-   RESPONSIVE
-   ======================================== */
+/* ========================================================
+   RESPONSIVE - Ultra complete (Option B)
+   Breakpoints:
+   - xs: 0 - 480
+   - sm: 481 - 576
+   - md: 577 - 768
+   - lg: 769 - 992
+   - xl: 993 - 1200
+   - xxl: 1201 - 1440
+   - desktop-large: 1441 - 1920
+   - ultra-wide: 1921+
+   ======================================================== */
 
-@media (max-width: 968px) {
-  .hero-container,
-  .blue-container {
+/* Ensure base background sits on body; desktop-only fixed handled by queries below */
+
+/* ---------- Very small phones (xs: up to 480px) ---------- */
+@media (max-width: 480px) {
+  /* Disable fixed background on small devices (iOS behavior) */
+  body {
+    background-attachment: scroll;
+  }
+
+  /* Nav */
+  .nav-container {
+    padding: 8px 4%;
+    height: 56px;
+  }
+  .logo img { width: 140px; }
+
+  .hamburger { display: flex; }
+  .nav-links { display: none; } /* toggled by .open */
+
+  .nav-actions { gap: 8px; }
+  .phone-button, .eligibilite-button { padding: 7px 10px; font-size: 12px; }
+
+  /* Hero */
+  .hero-3cx { padding: 10px 4%; min-height: calc(100vh - 56px); }
+  .hero-slide, .service-slide { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+  .hero-slide h1 { font-size: 1.6rem; line-height: 1.15; }
+  .hero-description { font-size: 0.95rem; }
+
+  .hero-image, .service-image { max-width: 100%; height: 220px; object-fit: cover; border-radius: 12px; }
+
+  /* Grids */
+  .advantages-grid, .solutions-grid, .features-grid, .partners-grid, .cards {
     grid-template-columns: 1fr;
-    gap: clamp(25px, 4vw, 35px);
+    gap: 14px;
   }
 
-  .blue-container > div:last-child {
-    order: -1;
-  }
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 18px; padding: 20px 4%; }
 
-  .hero-image,
-  .blue-image {
-    height: clamp(200px, 30vh, 300px);
-  }
-
-  .advantages-grid,
-  .solutions-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-content {
-    padding: clamp(20px, 2.5vw, 30px);
-  }
+  /* Carousel nav/dots */
+  .carousel-nav { width: 40px; height: 40px; font-size: 1.1rem; }
+  .carousel-dots { gap: 8px; bottom: 12px; }
 }
 
-@media (max-width: 768px) {
-  .nav-container {
-    padding: 10px 3%;
-    height: 60px;
-  }
+/* ---------- Small phones (sm: 481 - 576px) ---------- */
+@media (min-width: 481px) and (max-width: 576px) {
+  body { background-attachment: scroll; }
 
-  .logo img {
-    width: 120px;
-  }
+  .nav-container { padding: 9px 4.5%; height: 60px; }
+  .logo img { width: 150px; }
 
-  .hamburger {
-    display: flex;
-  }
+  .hamburger { display: flex; }
+  .nav-links { display: none; }
 
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98) 0%, rgba(13, 59, 102, 0.98) 100%);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 30px 20px;
-    gap: 20px;
-    overflow-y: auto;
-  }
+  .hero-3cx { min-height: calc(100vh - 60px); padding: 12px 4.5%; }
+  .hero-slide h1 { font-size: 1.75rem; }
+  .hero-description { font-size: 1rem; }
 
-  .nav-container.open .nav-links {
-    display: flex;
-  }
+  .advantages-grid, .solutions-grid { grid-template-columns: repeat(1, 1fr); }
+  .features-grid { grid-template-columns: 1fr; }
+}
 
-  .nav-links a {
-    font-size: 16px;
-  }
+/* ---------- Medium phones / large mobiles (md: 577 - 768px) ---------- */
+@media (min-width: 577px) and (max-width: 768px) {
+  body { background-attachment: scroll; }
 
-  .nav-actions {
-    gap: 6px;
-  }
+  .nav-container { padding: 10px 5%; height: 64px; }
+  .logo img { width: 160px; }
+
+  .hamburger { display: flex; }
+  .nav-links { display: none; }
+
+  .hero-3cx { padding: 18px 5%; min-height: calc(100vh - 64px); }
+  .hero-slide h1 { font-size: 2.0rem; }
+  .hero-description { font-size: 1.05rem; }
+
+  .hero-image, .service-image { height: 260px; }
+
+  .advantages-grid, .solutions-grid { grid-template-columns: repeat(1, 1fr); gap: 16px; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .partner-logo-card { height: 130px; padding: 18px; }
+}
+
+/* ---------- Large (tablet) (lg: 769 - 992px) ---------- */
+@media (min-width: 769px) and (max-width: 992px) {
+  /* still keep background non-fixed for many tablets (some have buggy support) */
+  body { background-attachment: scroll; }
+
+  .nav-container { padding: 12px 6%; height: 70px; }
+  .logo img { width: 180px; }
+
+  .hamburger { display: flex; }
+  .nav-links { display: none; }
+
+  .hero-3cx { padding: 28px 6%; min-height: 85vh; }
+  .hero-slide { grid-template-columns: 1fr; gap: 28px; }
+  .hero-slide h1 { font-size: 2.2rem; }
+
+  .hero-image, .service-image { height: 320px; max-width: 100%; }
+
+  .advantages-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .partners-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .partner-logo-card { height: 150px; max-width: 240px; }
+}
+
+/* ---------- Extra large / small laptops (xl: 993 - 1200px) ---------- */
+@media (min-width: 993px) and (max-width: 1200px) {
+  /* enable fixed background for larger viewports */
+  body { background-attachment: fixed; -webkit-background-attachment: fixed; }
+
+  .nav-container { padding: 14px 6.5%; }
+  .logo img { width: 200px; }
+
+  .hamburger { display: none; }
+  .nav-links { display: flex; gap: clamp(12px, 2vw, 28px); }
+
+  .hero-3cx { padding: 36px 6.5%; min-height: 92vh; }
+  .hero-slide { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .hero-slide h1 { font-size: 2.6rem; }
+
+  .hero-image, .service-image { height: 360px; }
+
+  .advantages-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .partners-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .partner-logo-card { height: 160px; padding: 22px; }
+}
+
+/* ---------- Desktop / standard (xxl: 1201 - 1440px) ---------- */
+@media (min-width: 1201px) and (max-width: 1440px) {
+  body { background-attachment: fixed; -webkit-background-attachment: fixed; }
+
+  .nav-container { padding: 14px 7%; }
+  .logo img { width: clamp(220px, 12vw, 300px); }
+
+  .nav-links { display: flex; }
+  .hamburger { display: none; }
+
+  .hero-3cx { padding: 48px 7%; min-height: 100vh; }
+  .hero-slide { grid-template-columns: 1fr 1fr; gap: 50px; }
+  .hero-slide h1 { font-size: 3rem; }
+
+  .hero-image, .service-image { height: 420px; max-width: 100%; }
+
+  .advantages-grid { grid-template-columns: repeat(4, 1fr); }
+  .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .partners-grid { grid-template-columns: repeat(5, 1fr); gap: 28px; }
+  .partner-logo-card { height: 170px; padding: 26px; }
+
+  .carousel-nav.prev { left: -10px; }
+  .carousel-nav.next { right: -10px; }
+}
+
+/* ---------- Desktop large (1441 - 1920px) ---------- */
+@media (min-width: 1441px) and (max-width: 1920px) {
+  body { background-attachment: fixed; -webkit-background-attachment: fixed; }
+
+  .nav-container { padding: 14px 8%; max-width: 1800px; margin: 0 auto; }
+  .logo img { width: clamp(240px, 13vw, 360px); }
+
+  .hero-3cx { padding: 60px 8%; min-height: 110vh; }
+  .hero-slide h1 { font-size: 3.5rem; }
+
+  .hero-image, .service-image { height: 520px; }
+
+  .advantages-grid { grid-template-columns: repeat(4, 1fr); gap: 30px; }
+  .features-grid { grid-template-columns: repeat(5, 1fr); }
+
+  .partners-grid { grid-template-columns: repeat(6, 1fr); gap: 32px; }
+  .partner-logo-card { height: 180px; padding: 30px; }
+
+  .carousel-nav.prev { left: 80px; }
+  .carousel-nav.next { right: 80px; }
 
   .phone-button,
   .eligibilite-button {
-    font-size: 10px;
-    padding: 7px 10px;
+    font-size: 15px;
   }
 
-  .hero-section {
-    padding-top: 60px;
-  }
+}
 
-  .advantages-grid,
-  .solutions-grid,
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
+/* ---------- Ultra-wide (1921px and up) ---------- */
+@media (min-width: 1921px) {
+  body { background-attachment: fixed; -webkit-background-attachment: fixed; }
 
-  .advantage-card,
-  .solution-card,
-  .feature-card {
-    padding: 18px;
-  }
+  .nav-container { max-width: 2800px; padding: 18px 10%; margin: 0 auto; }
+  .logo img { width: clamp(260px, 12vw, 420px); }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
+  .carousel-container { max-width: 1800px; margin: 0 auto; }
+  .hero-3cx { padding: 80px 10%; min-height: 120vh; }
 
-  /* Désactiver parallax sur mobile */
-  .hero-section,
-  .advantages-section,
-  .blue-section,
-  .solutions-section,
-  .features-section {
-    background-attachment: scroll;
+  .hero-slide h1 { font-size: 4.5rem; }
+  .hero-image, .service-image { height: 680px; }
+
+  .advantages-grid { grid-template-columns: repeat(6, 1fr); gap: 36px; }
+  .features-grid { grid-template-columns: repeat(6, 1fr); }
+
+  .partners-grid { grid-template-columns: repeat(8, 1fr); gap: 40px; }
+  .partner-logo-card { height: 200px; padding: 36px; }
+
+  .carousel-nav.prev { left: 200px; }
+  .carousel-nav.next { right: 200px; }
+
+  /* Give more breathing room to container widths on ultra-wide screens */
+  .container, .expertise-container, .partners-container {
+    max-width: 2600px;
+    padding-left: clamp(60px, 6vw, 200px);
+    padding-right: clamp(60px, 6vw, 200px);
   }
 }
 
-@media (min-width: 769px) and (max-width: 1023px) {
-  .hamburger {
-    display: flex;
+/* ---------- Accessibility / touch targets improvements across small screens ---------- */
+@media (max-width: 1024px) {
+  .phone-button, .eligibilite-button, .service-button, .btn-hero {
+    min-height: 40px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98) 0%, rgba(13, 59, 102, 0.98) 100%);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 35px 20px;
-    gap: 25px;
-    overflow-y: auto;
-  }
-
-  .nav-container.open .nav-links {
-    display: flex;
-  }
-
-  .advantages-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .solutions-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .carousel-nav, .dot {
+    touch-action: manipulation;
   }
 }
 
-@media (min-width: 1024px) {
-  .nav-links {
-    display: flex;
-  }
-
-  .advantages-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .solutions-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .features-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* Ajustement pour très petits écrans */
+/* ---------- Minor utility: ensure components don't overflow on narrow heights ---------- */
 @media (max-height: 600px) {
-  .hero-section,
-  .advantages-section,
-  .blue-section,
-  .solutions-section,
-  .features-section {
-    min-height: auto;
-    padding: clamp(30px, 5vh, 50px) clamp(15px, 4%, 30px);
-  }
+  .hero-3cx, .carousel-container { padding-top: 48px; padding-bottom: 30px; }
+  .hero-image, .service-image { height: auto; max-height: 320px; object-fit: contain; }
 }
+
+/* ========================================================
+   Notes:
+   - Put this block at the END of your CSS so it overrides earlier rules where necessary.
+   - We enable `background-attachment: fixed` only on larger viewports to avoid iOS Safari issues.
+   - If you want true parity across iOS devices, replace the fixed background with a full-screen absolutely positioned <div> (I can provide the markup/CSS).
+   ======================================================== */

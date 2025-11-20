@@ -17,51 +17,195 @@ body {
     overflow-x: hidden;
 }
 
-/* ==================== NAVIGATION ==================== */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+/* ========================================
+   2. NAVBAR
+   ======================================== */
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5%;
+  z-index: 1000;
+  transition: background 0.4s ease, box-shadow 0.3s ease;
+  animation: slideDown 0.6s ease-out;
 }
 
-.navbar.scrolled {
-    background: linear-gradient(90deg, #0d3b66 0%, #1a1f3a 100%);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.navbar-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 15px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.nav-container.scrolled {
+  background-color: rgba(0, 0, 0, 0.3); /* blanc avec 80% d'opacité */
+  box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
+  backdrop-filter: blur(5px);
 }
 
-.logo {
-    flex: 0 0 auto;
+.logo img {
+  width: clamp(200px, 17vw, 400px);
+  height: auto;
+  transition: width 0.3s ease;
+  animation: fadeInScale 0.8s ease-out 0.2s both;
 }
 
-.logo-img {
-    width: 220px;
-    height: auto;
-    transition: transform 0.3s ease;
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.logo-img:hover {
-    transform: scale(1.05);
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(15px, 2vw, 35px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Conteneur des boutons */
-.nav-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+.nav-links li {
+  animation: fadeInUp 0.6s ease-out both;
 }
+
+.nav-links li:nth-child(1) { animation-delay: 0.3s; }
+.nav-links li:nth-child(2) { animation-delay: 0.4s; }
+.nav-links li:nth-child(3) { animation-delay: 0.5s; }
+.nav-links li:nth-child(4) { animation-delay: 0.6s; }
+.nav-links li:nth-child(5) { animation-delay: 0.7s; }
+.nav-links li:nth-child(6) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: clamp(13px, 1.1vw, 17px);
+  padding-bottom: 5px;
+  position: relative;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #0072BC;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0072BC;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Conteneur des boutons CTA */
+.nav-actions {
+  display: flex;
+  gap: clamp(8px, 1vw, 12px);
+  align-items: center;
+  animation: fadeInRight 0.8s ease-out 0.7s both;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Style commun pour les boutons navbar */
+.phone-button,
+.eligibilite-button {
+  background: #0072BC;
+  color: white;
+  border: none;
+  padding: clamp(8px, 1vw, 12px) clamp(15px, 2vw, 24px);
+  font-size: clamp(13px, 1.1vw, 20px);
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.phone-button:hover,
+.eligibilite-button:hover {
+  background: #005f9e;
+  transform: scale(1.05);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-container.open .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-container.open .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-container.open .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
 
 /* Bouton Accueil */
 .home-button {

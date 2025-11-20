@@ -17,7 +17,10 @@ html {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  background: linear-gradient(65deg, #051a30 50%, #02070c);
+  background: 
+    linear-gradient(135deg, rgba(3, 7, 18, 0.85) 0%, rgba(13, 59, 102, 0.45) 100%),
+    url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed;
   color: #333;
   line-height: 1.6;
   font-size: clamp(14px, 1.2vw, 16px);
@@ -30,7 +33,7 @@ img {
 }
 
 /* ========================================
-   NAVBAR
+   2. NAVBAR
    ======================================== */
 
 .nav-container {
@@ -45,7 +48,6 @@ img {
   z-index: 1000;
   transition: background 0.4s ease, box-shadow 0.3s ease;
   animation: slideDown 0.6s ease-out;
-  backdrop-filter: blur(10px);
 }
 
 @keyframes slideDown {
@@ -66,11 +68,10 @@ img {
 }
 
 .logo img {
-  width: clamp(180px, 15vw, 300px);
+  width: clamp(200px, 17vw, 400px);
   height: auto;
   transition: width 0.3s ease;
   animation: fadeInScale 0.8s ease-out 0.2s both;
-  filter: drop-shadow(0 2px 8px rgba(0, 114, 188, 0.3));
 }
 
 @keyframes fadeInScale {
@@ -87,7 +88,7 @@ img {
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(15px, 2vw, 30px);
+  gap: clamp(15px, 2vw, 35px);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -104,10 +105,21 @@ img {
 .nav-links li:nth-child(5) { animation-delay: 0.7s; }
 .nav-links li:nth-child(6) { animation-delay: 0.8s; }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: clamp(13px, 1.1vw, 16px);
+  font-size: clamp(13px, 1.1vw, 17px);
   padding-bottom: 5px;
   position: relative;
   transition: color 0.3s;
@@ -133,6 +145,7 @@ img {
   width: 100%;
 }
 
+/* Conteneur des boutons CTA */
 .nav-actions {
   display: flex;
   gap: clamp(8px, 1vw, 12px);
@@ -151,30 +164,30 @@ img {
   }
 }
 
+/* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
   background: #0072BC;
   color: white;
   border: none;
-  padding: clamp(8px, 1vw, 12px) clamp(12px, 1.5vw, 20px);
-  font-size: clamp(11px, 1vw, 15px);
+  padding: clamp(8px, 1vw, 12px) clamp(15px, 2vw, 24px);
+  font-size: clamp(13px, 1.1vw, 20px);
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background 0.3s, transform 0.2s;
   text-decoration: none;
   display: inline-block;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(0, 114, 188, 0.3);
 }
 
 .phone-button:hover,
 .eligibilite-button:hover {
   background: #005f9e;
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 114, 188, 0.5);
 }
 
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -208,6 +221,7 @@ img {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+
 /* ========================================
    HERO SECTION - Équipe IT collaborative
    ======================================== */
@@ -218,9 +232,6 @@ img {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.85) 0%, rgba(13, 59, 102, 0.75) 100%),
-    url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80') center/cover no-repeat;
   padding: clamp(80px, 10vw, 120px) 5% clamp(60px, 8vw, 80px);
   overflow: hidden;
 }
@@ -353,9 +364,6 @@ img {
    ======================================== */
 
 .infogerance-intro {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.9) 0%, rgba(13, 59, 102, 0.85) 100%),
-    url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80&blur=40') center/cover no-repeat fixed;
   color: white;
   position: relative;
   padding: clamp(60px, 8vw, 100px) 5%;
@@ -378,9 +386,6 @@ img {
    ======================================== */
 
 .solutions-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.92) 0%, rgba(13, 59, 102, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80&blur=80') center/cover no-repeat fixed;
   position: relative;
   padding: clamp(60px, 8vw, 100px) 5%;
 }
@@ -462,9 +467,6 @@ img {
    ======================================== */
 
 .avantages-section {
-  background: 
-    linear-gradient(135deg, rgba(13, 59, 102, 0.9) 0%, rgba(3, 7, 18, 0.92) 100%),
-    url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80&blur=40') center/cover no-repeat fixed;
   position: relative;
   padding: clamp(60px, 8vw, 100px) 5%;
 }
@@ -531,9 +533,6 @@ img {
    ======================================== */
 
 .stats-section {
-  background: 
-    linear-gradient(135deg, rgba(0, 114, 188, 0.85) 0%, rgba(13, 59, 102, 0.9) 100%),
-    url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80&blur=40') center/cover no-repeat fixed;
   padding: clamp(60px, 8vw, 100px) 5%;
   position: relative;
 }
@@ -598,9 +597,6 @@ img {
    ======================================== */
 
 .formules-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.92) 0%, rgba(13, 59, 102, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1920&q=80&blur=80') center/cover no-repeat fixed;
   padding: clamp(60px, 8vw, 100px) 5%;
   position: relative;
 }
@@ -735,9 +731,6 @@ img {
    ======================================== */
 
 .process-section {
-  background: 
-    linear-gradient(135deg, rgba(13, 59, 102, 0.9) 0%, rgba(3, 7, 18, 0.95) 100%),
-    url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80&blur=60') center/cover no-repeat fixed;
   position: relative;
   padding: clamp(60px, 8vw, 100px) 5%;
 }
@@ -817,9 +810,6 @@ img {
    ======================================== */
 
 .faq-section {
-  background: 
-    linear-gradient(135deg, rgba(3, 7, 18, 0.92) 0%, rgba(13, 59, 102, 0.88) 100%),
-    url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1920&q=80&blur=90') center/cover no-repeat fixed;
   position: relative;
   padding: clamp(60px, 8vw, 100px) 5%;
 }
@@ -879,9 +869,6 @@ img {
    ======================================== */
 
 .cta-section {
-  background: 
-    linear-gradient(135deg, rgba(0, 114, 188, 0.9) 0%, rgba(13, 59, 102, 0.95) 100%),
-    url('https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1920&q=80&blur=70') center/cover no-repeat fixed;
   text-align: center;
   padding: clamp(60px, 8vw, 100px) 5%;
   position: relative;
@@ -1034,10 +1021,49 @@ footer a:hover {
 }
 
 /* ========================================
-   RESPONSIVE
+   RESPONSIVE COMPLET (XS → 4K)
    ======================================== */
 
-/* Mobile: jusqu'à 768px */
+/* ---------- XS : Très petits mobiles (-480px) ---------- */
+@media (max-width: 480px) {
+  .logo img { width: 120px; }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-cta,
+  .btn-cta-secondary,
+  .btn-cta-large,
+  .btn-cta-outline {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .problemes-grid,
+  .avantages-grid,
+  .solutions-grid,
+  .stats-grid,
+  .formules-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* ---------- SM : Mobiles standards (-576px) ---------- */
+@media (max-width: 576px) {
+  .logo img { width: 135px; }
+
+  .hero-buttons,
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .formule-card.featured {
+    transform: scale(1);
+  }
+}
+
+/* ---------- MD : Mobiles / Phablets (-768px) ---------- */
 @media (max-width: 768px) {
   .nav-container {
     padding: 10px 3%;
@@ -1058,7 +1084,7 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: calc(100vh - 60px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98) 0%, rgba(13, 59, 102, 0.98) 100%);
+    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
     backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
@@ -1090,33 +1116,11 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 
-  .formule-card.featured {
-    transform: scale(1);
-  }
-
-  .formule-card.featured:hover {
-    transform: translateY(-10px);
-  }
-
-  .hero-buttons,
-  .cta-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn-primary,
-  .btn-secondary,
-  .btn-cta,
-  .btn-cta-secondary {
-    width: 100%;
-    max-width: 350px;
-  }
-
   .hero-content {
     padding: 30px 20px;
   }
 
-  /* Désactiver parallax sur mobile */
+  /* Désactiver parallax mobile */
   .infogerance-hero,
   .infogerance-intro,
   .problemes-section,
@@ -1131,11 +1135,21 @@ footer a:hover {
   }
 }
 
-/* Tablet: 769px - 1023px */
-@media (min-width: 769px) and (max-width: 1023px) {
-  .hamburger {
-    display: flex;
+/* ---------- LG : Tablettes (-968px) ---------- */
+@media (max-width: 968px) {
+  .formule-card.featured {
+    transform: scale(1);
   }
+
+  .formule-card.featured:hover {
+    transform: translateY(-10px);
+  }
+}
+
+/* ---------- XL : Tablettes larges (769px–1023px) ---------- */
+@media (min-width: 769px) and (max-width: 1023px) {
+
+  .hamburger { display: flex; }
 
   .nav-links {
     display: none;
@@ -1144,7 +1158,7 @@ footer a:hover {
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98) 0%, rgba(13, 59, 102, 0.98) 100%);
+    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
     backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
@@ -1161,25 +1175,17 @@ footer a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .solutions-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .formules-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  .solutions-grid,
+  .stats-grid,
+  .formules-grid,
   .process-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktop: à partir de 1024px */
+/* ---------- 2XL : Desktop ≥1024px ---------- */
 @media (min-width: 1024px) {
+
   .nav-links {
     display: flex;
   }
@@ -1207,13 +1213,90 @@ footer a:hover {
   .process-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .phone-button,
+  .eligibilite-button {
+    font-size: 15px;
+  }
+}
+
+/* ---------- 3XL : Desktop larges (≥1280px) ---------- */
+@media (min-width: 1280px) {
+  .page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* ---------- 4XL : Grands écrans (≥1536px) ---------- */
+@media (min-width: 1536px) {
+  .page-wrapper {
+    max-width: 1400px;
+  }
+}
+
+/* ---------- 5XL : Ultra-wide (≥1920px) ---------- */
+@media (min-width: 1920px) {
+  .page-wrapper {
+    max-width: 1600px;
+  }
+
+  .hero-title {
+    font-size: 3.4rem;
+  }
+}
+
+/* ---------- 6XL : 4K (≥2560px) ---------- */
+@media (min-width: 2560px) {
+  .page-wrapper {
+    max-width: 1900px;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.6rem;
+  }
+}
+
+/* ---------- 7XL : Ultra 4K / 5K / 8K (≥3200px) ---------- */
+@media (min-width: 3200px) {
+  .page-wrapper {
+    max-width: 2200px;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.8rem;
+  }
+}
+
+/* ---------- Petits écrans horizontaux ---------- */
+@media (max-height: 600px) {
+  .infogerance-hero,
+  .infogerance-intro,
+  .problemes-section,
+  .solutions-section,
+  .avantages-section,
+  .stats-section,
+  .formules-section,
+  .process-section,
+  .faq-section,
+  .cta-section {
+    min-height: auto;
+    padding: clamp(20px, 6vh, 50px) clamp(15px, 5vw, 30px);
+  }
 }
 
 /* ========================================
    ANIMATIONS AVANCÉES
    ======================================== */
 
-/* Floating animation pour certains éléments */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -1225,16 +1308,15 @@ footer a:hover {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Glow effect sur les cards au hover */
 .stat-card:hover,
 .formule-card.featured {
-  box-shadow: 
+  box-shadow:
     0 0 20px rgba(0, 114, 188, 0.4),
     0 0 40px rgba(0, 114, 188, 0.2),
     0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Parallax effect activé par défaut sur desktop */
+/* Parallax desktop uniquement */
 @media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
   .infogerance-hero,
   .infogerance-intro,
