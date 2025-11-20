@@ -1,13 +1,18 @@
 /* ========================================
-   INFOGÉRANCE PAGE - VERSION ULTRA-PUISSANTE
-   Avec images de fond sur TOUTES les sections
-   Effets visuels professionnels et modernes
+   INFOGÉRANCE PAGE - VERSION ULTRA-OPTIMISÉE
+   CSS Réorganisé et Corrigé
+   Structure: Base → Layout → Composants → Responsive
+   Maximum Performance & Cohérence
+   ======================================== */
+
+/* ========================================
+   1. BASE & RESET
    ======================================== */
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -16,39 +21,25 @@ html {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
+  line-height: 1.6;
+  color: #333;
   background: 
     linear-gradient(135deg, rgba(3, 7, 18, 0.85) 0%, rgba(13, 59, 102, 0.45) 100%),
-    url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80') center/cover no-repeat;
-    background-attachment: fixed;
-  color: #333;
-  line-height: 1.6;
-  font-size: clamp(14px, 1.2vw, 16px);
+    url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80') center/cover no-repeat fixed;
   overflow-x: hidden;
+  min-height: 100vh;
+  font-size: clamp(14px, 1.2vw, 16px);
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 /* ========================================
-   2. NAVBAR
+   2. ANIMATIONS GLOBALES
    ======================================== */
-
-.nav-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 5%;
-  z-index: 1000;
-  transition: background 0.4s ease, box-shadow 0.3s ease;
-  animation: slideDown 0.6s ease-out;
-}
 
 @keyframes slideDown {
   from {
@@ -59,19 +50,6 @@ img {
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-.nav-container.scrolled {
-  background-color: rgba(0, 0, 0, 0.3); /* blanc avec 80% d'opacité */
-  box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
-  backdrop-filter: blur(5px);
-}
-
-.logo img {
-  width: clamp(200px, 17vw, 400px);
-  height: auto;
-  transition: width 0.3s ease;
-  animation: fadeInScale 0.8s ease-out 0.2s both;
 }
 
 @keyframes fadeInScale {
@@ -85,6 +63,80 @@ img {
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 0.5; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+/* ========================================
+   3. NAVIGATION
+   ======================================== */
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 7%;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  animation: slideDown 0.6s ease-out;
+}
+
+.nav-container.scrolled {
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+
+/* Logo */
+.logo img {
+  width: clamp(180px, 15vw, 320px);
+  height: auto;
+  transition: width 0.3s ease;
+  animation: fadeInScale 0.8s ease-out 0.2s both;
+}
+
+/* Navigation Links */
 .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -104,17 +156,6 @@ img {
 .nav-links li:nth-child(4) { animation-delay: 0.6s; }
 .nav-links li:nth-child(5) { animation-delay: 0.7s; }
 .nav-links li:nth-child(6) { animation-delay: 0.8s; }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .nav-links a {
   color: white;
@@ -145,37 +186,25 @@ img {
   width: 100%;
 }
 
-/* Conteneur des boutons CTA */
+/* Navigation Actions */
 .nav-actions {
   display: flex;
-  gap: clamp(8px, 1vw, 12px);
+  gap: clamp(10px, 1.5vw, 15px);
   align-items: center;
   animation: fadeInRight 0.8s ease-out 0.7s both;
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
   background: #0072BC;
   color: white;
   border: none;
-  padding: clamp(8px, 1vw, 12px) clamp(15px, 2vw, 24px);
-  font-size: clamp(13px, 1.1vw, 20px);
+  padding: clamp(10px, 1.2vw, 14px) clamp(18px, 2.2vw, 28px);
+  font-size: clamp(13px, 1.1vw, 16px);
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
   white-space: nowrap;
@@ -221,22 +250,29 @@ img {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-
 /* ========================================
-   HERO SECTION - Équipe IT collaborative
+   4. SECTIONS COMMUNES
    ======================================== */
 
-.infogerance-hero {
+.infogerance-hero,
+.infogerance-intro,
+.solutions-section,
+.avantages-section,
+.stats-section,
+.formules-section,
+.process-section,
+.faq-section,
+.cta-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: clamp(80px, 10vw, 120px) 5% clamp(60px, 8vw, 80px);
-  overflow: hidden;
+  padding: clamp(60px, 8vh, 100px) clamp(20px, 5%, 40px);
 }
 
-.hero-overlay {
+/* Effets radiaux pour chaque section */
+.infogerance-hero .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -244,12 +280,126 @@ img {
   bottom: 0;
   background: radial-gradient(circle at 30% 50%, rgba(0, 114, 188, 0.2) 0%, transparent 70%);
   animation: pulse 4s ease-in-out infinite;
+  pointer-events: none;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+.infogerance-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
+  pointer-events: none;
 }
+
+.solutions-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(0, 114, 188, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.avantages-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.formules-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.process-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 60% 40%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.faq-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 40% 60%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Container standard */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 80px) clamp(20px, 5%, 40px);
+  position: relative;
+  z-index: 1;
+}
+
+.container h2 {
+  font-size: clamp(28px, 4vw, 48px);
+  color: lightskyblue;
+  text-align: center;
+  margin-bottom: clamp(25px, 4vh, 45px);
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(135, 206, 250, 0.3);
+}
+
+.container p {
+  font-size: clamp(15px, 1.6vw, 19px);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ========================================
+   5. HERO SECTION
+   ======================================== */
 
 .hero-content {
   position: relative;
@@ -259,34 +409,23 @@ img {
   color: white;
   animation: fadeInUp 0.8s ease-out;
   background: rgba(0, 0, 0, 0.2);
-  padding: 40px;
+  padding: clamp(35px, 5vw, 55px);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .hero-content h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(28px, 5vw, 56px);
   font-weight: 800;
-  margin-bottom: clamp(15px, 3vw, 25px);
+  margin-bottom: clamp(20px, 3vh, 30px);
   line-height: 1.2;
   text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  margin-bottom: clamp(30px, 5vw, 50px);
+  font-size: clamp(15px, 2vw, 22px);
+  margin-bottom: clamp(35px, 5vh, 55px);
   color: rgba(255, 255, 255, 0.95);
   line-height: 1.6;
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
@@ -301,8 +440,8 @@ img {
 
 .btn-primary,
 .btn-secondary {
-  padding: clamp(12px, 1.5vw, 16px) clamp(25px, 3vw, 40px);
-  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  padding: clamp(12px, 1.5vw, 18px) clamp(25px, 3vw, 45px);
+  font-size: clamp(14px, 1.4vw, 18px);
   font-weight: 600;
   border-radius: 50px;
   text-decoration: none;
@@ -313,12 +452,15 @@ img {
 .btn-primary {
   background: white;
   color: #0072BC;
+  border: 2px solid white;
   box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5);
+  background: #0072BC;
+  color: white;
 }
 
 .btn-secondary {
@@ -334,78 +476,14 @@ img {
 }
 
 /* ========================================
-   CONTAINER
+   6. SOLUTIONS SECTION
    ======================================== */
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: clamp(40px, 6vw, 80px) clamp(20px, 5%, 40px);
-}
-
-.container h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-  color: lightskyblue;
-  text-align: center;
-  margin-bottom: clamp(20px, 4vw, 40px);
-  font-weight: 700;
-  text-shadow: 0 2px 10px rgba(135, 206, 250, 0.3);
-}
-
-.container p {
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-/* ========================================
-   INTRO SECTION - Businessman working
-   ======================================== */
-
-.infogerance-intro {
-  color: white;
-  position: relative;
-  padding: clamp(60px, 8vw, 100px) 5%;
-}
-
-.infogerance-intro::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 70% 30%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-
-/* ========================================
-   SOLUTIONS SECTION - Dashboard analytics
-   ======================================== */
-
-.solutions-section {
-  position: relative;
-  padding: clamp(60px, 8vw, 100px) 5%;
-}
-
-.solutions-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(0, 114, 188, 0.2) 0%, transparent 60%);
-  pointer-events: none;
-}
 
 .solutions-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: clamp(25px, 3vw, 35px);
-  margin-top: 40px;
+  gap: clamp(25px, 3.5vw, 40px);
+  margin-top: clamp(35px, 5vh, 50px);
   position: relative;
   z-index: 1;
 }
@@ -414,7 +492,7 @@ img {
   background: linear-gradient(135deg, rgba(0, 114, 188, 0.15) 0%, rgba(13, 59, 102, 0.15) 100%);
   border: 1px solid rgba(0, 114, 188, 0.3);
   border-radius: 15px;
-  padding: clamp(25px, 3vw, 35px);
+  padding: clamp(25px, 3.5vw, 40px);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -425,20 +503,22 @@ img {
   box-shadow: 0 15px 50px rgba(0, 114, 188, 0.4);
   border-color: rgba(0, 114, 188, 0.6);
   background: linear-gradient(135deg, rgba(0, 114, 188, 0.25) 0%, rgba(13, 59, 102, 0.2) 100%);
+  animation: float 3s ease-in-out infinite;
 }
 
 .solution-card h3 {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(20px, 2.2vw, 26px);
   color: lightskyblue;
-  margin-bottom: 15px;
+  margin-bottom: clamp(15px, 2vh, 20px);
   font-weight: 600;
   text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
+  text-align: center;
 }
 
 .solution-card p {
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 20px;
-  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  margin-bottom: clamp(18px, 2.5vh, 25px);
+  font-size: clamp(14px, 1.4vw, 17px);
 }
 
 .solution-card ul {
@@ -447,10 +527,10 @@ img {
 }
 
 .solution-card ul li {
-  padding: 8px 0 8px 25px;
+  padding: clamp(8px, 1.2vh, 12px) 0 clamp(8px, 1.2vh, 12px) clamp(22px, 2.8vw, 28px);
   position: relative;
   color: rgba(255, 255, 255, 0.85);
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-size: clamp(13px, 1.3vw, 16px);
 }
 
 .solution-card ul li::before {
@@ -460,33 +540,18 @@ img {
   color: #00D0FF;
   font-weight: bold;
   text-shadow: 0 0 8px rgba(0, 208, 255, 0.8);
+  font-size: clamp(16px, 1.8vw, 20px);
 }
 
 /* ========================================
-   AVANTAGES SECTION - Team celebration
+   7. AVANTAGES SECTION
    ======================================== */
-
-.avantages-section {
-  position: relative;
-  padding: clamp(60px, 8vw, 100px) 5%;
-}
-
-.avantages-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
 
 .avantages-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(20px, 3vw, 30px);
-  margin-top: 40px;
+  gap: clamp(25px, 3.5vw, 35px);
+  margin-top: clamp(35px, 5vh, 50px);
   position: relative;
   z-index: 1;
 }
@@ -495,7 +560,7 @@ img {
   background: rgba(20, 30, 40, 0.6);
   border: 1px solid rgba(0, 114, 188, 0.3);
   border-radius: 15px;
-  padding: clamp(25px, 3vw, 35px);
+  padding: clamp(25px, 3.5vw, 40px);
   text-align: center;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -507,53 +572,37 @@ img {
   background: rgba(0, 114, 188, 0.15);
   box-shadow: 0 10px 40px rgba(0, 114, 188, 0.3);
   border-color: rgba(0, 114, 188, 0.6);
+  animation: float 3s ease-in-out infinite;
 }
 
 .avantage-card .icon {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  margin-bottom: 15px;
+  font-size: clamp(40px, 5.5vw, 56px);
+  margin-bottom: clamp(15px, 2vh, 22px);
   filter: drop-shadow(0 2px 8px rgba(0, 114, 188, 0.5));
 }
 
 .avantage-card h3 {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: clamp(18px, 2.2vw, 24px);
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: clamp(12px, 1.8vh, 18px);
   font-weight: 600;
 }
 
 .avantage-card p {
-  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  font-size: clamp(14px, 1.4vw, 17px);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
 }
 
 /* ========================================
-   STATISTIQUES SECTION - Data visualization
+   8. STATS SECTION
    ======================================== */
-
-.stats-section {
-  padding: clamp(60px, 8vw, 100px) 5%;
-  position: relative;
-}
-
-.stats-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: clamp(25px, 3vw, 40px);
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(30px, 4vw, 50px);
+  margin-top: clamp(35px, 5vh, 50px);
   position: relative;
   z-index: 1;
 }
@@ -562,7 +611,7 @@ img {
   background: rgba(12, 12, 12, 0.336);
   border: 2px solid rgba(255, 255, 255, 0.014);
   border-radius: 15px;
-  padding: clamp(30px, 4vw, 40px);
+  padding: clamp(35px, 5vw, 50px);
   text-align: center;
   transition: all 0.3s ease;
   backdrop-filter: blur(15px);
@@ -572,51 +621,38 @@ img {
 .stat-card:hover {
   transform: scale(1.05);
   border-color: rgba(255, 255, 255, 0.048);
-  box-shadow: 0 12px 50px rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 0 20px rgba(0, 114, 188, 0.4),
+    0 0 40px rgba(0, 114, 188, 0.2),
+    0 12px 50px rgba(255, 255, 255, 0.2);
   background: rgba(12, 12, 12, 0.555);
 }
 
 .stat-number {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(40px, 6vw, 72px);
   font-weight: 900;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: clamp(12px, 2vh, 18px);
   line-height: 1;
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .stat-card p {
-  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  font-size: clamp(14px, 1.5vw, 18px);
   color: rgba(255, 255, 255, 0.95);
   line-height: 1.5;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* ========================================
-   FORMULES SECTION - Pricing comparison
+   9. FORMULES SECTION
    ======================================== */
-
-.formules-section {
-  padding: clamp(60px, 8vw, 100px) 5%;
-  position: relative;
-}
-
-.formules-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 70%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
 
 .formules-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: clamp(30px, 4vw, 40px);
-  margin-top: 40px;
+  gap: clamp(30px, 4vw, 50px);
+  margin-top: clamp(35px, 5vh, 50px);
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
@@ -645,7 +681,10 @@ img {
   border-color: #0072BC;
   border-width: 3px;
   transform: scale(1.05);
-  box-shadow: 0 12px 50px rgba(0, 114, 188, 0.5);
+  box-shadow: 
+    0 0 20px rgba(0, 114, 188, 0.4),
+    0 0 40px rgba(0, 114, 188, 0.2),
+    0 12px 50px rgba(0, 114, 188, 0.5);
 }
 
 .formule-card.featured:hover {
@@ -659,7 +698,7 @@ img {
   background: linear-gradient(135deg, #0072BC 0%, #005f9e 100%);
   color: white;
   padding: 8px 50px;
-  font-size: 0.85rem;
+  font-size: clamp(12px, 1.2vw, 14px);
   font-weight: bold;
   transform: rotate(45deg);
   box-shadow: 0 3px 15px rgba(0, 114, 188, 0.6);
@@ -668,35 +707,35 @@ img {
 
 .formule-header {
   background: linear-gradient(135deg, rgba(0, 114, 188, 0.3) 0%, rgba(13, 59, 102, 0.3) 100%);
-  padding: clamp(30px, 4vw, 40px);
+  padding: clamp(30px, 4vw, 45px);
   text-align: center;
   border-bottom: 2px solid rgba(0, 114, 188, 0.4);
 }
 
 .formule-header h3 {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(24px, 3vw, 32px);
   color: lightskyblue;
-  margin-bottom: 15px;
+  margin-bottom: clamp(12px, 2vh, 18px);
   font-weight: 700;
   text-shadow: 0 2px 10px rgba(135, 206, 250, 0.5);
 }
 
 .formule-price {
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: clamp(32px, 4vw, 40px);
   font-weight: 900;
   color: white;
-  margin: 15px 0;
+  margin: clamp(12px, 2vh, 18px) 0;
   text-shadow: 0 2px 15px rgba(0, 114, 188, 0.8);
 }
 
 .formule-header p {
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-size: clamp(14px, 1.4vw, 17px);
   margin: 0;
 }
 
 .formule-content {
-  padding: clamp(25px, 3vw, 35px);
+  padding: clamp(25px, 3.5vw, 40px);
 }
 
 .formule-content ul {
@@ -705,10 +744,10 @@ img {
 }
 
 .formule-content ul li {
-  padding: 12px 0 12px 30px;
+  padding: clamp(10px, 1.5vh, 14px) 0 clamp(10px, 1.5vh, 14px) clamp(25px, 3vw, 32px);
   position: relative;
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-size: clamp(13px, 1.4vw, 16px);
   line-height: 1.6;
 }
 
@@ -718,7 +757,7 @@ img {
   left: 0;
   color: #00D0FF;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: clamp(18px, 2vw, 22px);
   text-shadow: 0 0 10px rgba(0, 208, 255, 0.8);
 }
 
@@ -727,30 +766,14 @@ img {
 }
 
 /* ========================================
-   PROCESS SECTION - Team collaboration
+   10. PROCESS SECTION
    ======================================== */
-
-.process-section {
-  position: relative;
-  padding: clamp(60px, 8vw, 100px) 5%;
-}
-
-.process-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 60% 40%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
 
 .process-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(25px, 3vw, 35px);
-  margin-top: 40px;
+  gap: clamp(25px, 3.5vw, 40px);
+  margin-top: clamp(35px, 5vh, 50px);
   position: relative;
   z-index: 1;
 }
@@ -759,7 +782,7 @@ img {
   background: rgba(20, 30, 40, 0.7);
   border: 1px solid rgba(0, 114, 188, 0.3);
   border-radius: 15px;
-  padding: clamp(25px, 3vw, 35px);
+  padding: clamp(25px, 3.5vw, 40px);
   position: relative;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
@@ -777,14 +800,14 @@ img {
   position: absolute;
   top: -20px;
   left: 20px;
-  width: 50px;
-  height: 50px;
+  width: clamp(45px, 6vw, 60px);
+  height: clamp(45px, 6vw, 60px);
   background: linear-gradient(135deg, #0072BC 0%, #005f9e 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: clamp(22px, 2.5vw, 28px);
   font-weight: bold;
   color: white;
   box-shadow: 0 5px 20px rgba(0, 114, 188, 0.6);
@@ -792,42 +815,26 @@ img {
 }
 
 .process-card h3 {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(18px, 2.2vw, 24px);
   color: lightskyblue;
-  margin: 20px 0 15px 0;
+  margin: clamp(18px, 2.5vh, 25px) 0 clamp(12px, 1.8vh, 18px) 0;
   font-weight: 600;
   text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
 }
 
 .process-card p {
-  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  font-size: clamp(14px, 1.4vw, 17px);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
 }
 
 /* ========================================
-   FAQ SECTION - Question marks
+   11. FAQ SECTION
    ======================================== */
-
-.faq-section {
-  position: relative;
-  padding: clamp(60px, 8vw, 100px) 5%;
-}
-
-.faq-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 40% 60%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
 
 .faq-list {
   max-width: 900px;
-  margin: 40px auto 0;
+  margin: clamp(35px, 5vh, 50px) auto 0;
   position: relative;
   z-index: 1;
 }
@@ -836,8 +843,8 @@ img {
   background: rgba(20, 30, 40, 0.7);
   border: 1px solid rgba(0, 114, 188, 0.3);
   border-radius: 15px;
-  padding: clamp(20px, 3vw, 30px);
-  margin-bottom: 20px;
+  padding: clamp(22px, 3vw, 35px);
+  margin-bottom: clamp(18px, 2.5vh, 25px);
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -850,45 +857,32 @@ img {
 }
 
 .faq-item h4 {
-  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  font-size: clamp(18px, 2vw, 22px);
   color: lightskyblue;
-  margin-bottom: 12px;
+  margin-bottom: clamp(12px, 1.8vh, 16px);
   font-weight: 600;
   text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
 }
 
 .faq-item p {
-  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  font-size: clamp(14px, 1.5vw, 17px);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
   margin: 0;
 }
 
 /* ========================================
-   CTA SECTION - Handshake partnership
+   12. CTA SECTION
    ======================================== */
 
 .cta-section {
   text-align: center;
-  padding: clamp(60px, 8vw, 100px) 5%;
-  position: relative;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  pointer-events: none;
 }
 
 .cta-section h2 {
   color: white;
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  margin-bottom: 15px;
+  font-size: clamp(28px, 4.5vw, 48px);
+  margin-bottom: clamp(15px, 2.5vh, 22px);
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 1;
@@ -896,11 +890,14 @@ img {
 
 .cta-section p {
   color: rgba(255, 255, 255, 0.95);
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
-  margin-bottom: 30px;
+  font-size: clamp(15px, 2vw, 22px);
+  margin-bottom: clamp(30px, 5vh, 45px);
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-buttons {
@@ -914,8 +911,8 @@ img {
 
 .btn-cta,
 .btn-cta-secondary {
-  padding: clamp(14px, 1.8vw, 18px) clamp(30px, 4vw, 45px);
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  padding: clamp(14px, 1.8vw, 20px) clamp(30px, 4vw, 50px);
+  font-size: clamp(14px, 1.5vw, 18px);
   font-weight: 600;
   border-radius: 50px;
   text-decoration: none;
@@ -926,12 +923,15 @@ img {
 .btn-cta {
   background: white;
   color: #0072BC;
+  border: 2px solid white;
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
 }
 
 .btn-cta:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 35px rgba(255, 255, 255, 0.5);
+  background: #0072BC;
+  color: white;
 }
 
 .btn-cta-secondary {
@@ -947,20 +947,20 @@ img {
 }
 
 /* ========================================
-   FOOTER
+   13. FOOTER
    ======================================== */
 
 footer {
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   color: white;
-  padding: clamp(30px, 5vw, 50px) 5%;
+  padding: clamp(40px, 6vh, 70px) 5%;
   box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
 }
 
 footer h3 {
   color: lightskyblue;
-  margin-bottom: 15px;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  margin-bottom: 18px;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
   text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
 }
 
@@ -970,8 +970,8 @@ footer ul {
 }
 
 footer ul li {
-  margin-bottom: 8px;
-  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  margin-bottom: 10px;
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
 }
 
 footer a {
@@ -987,11 +987,10 @@ footer a:hover {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: clamp(20px, 4vw, 30px);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(25px, 4vw, 40px);
   max-width: 1400px;
   margin: 0 auto;
-  align-items: center;
 }
 
 .footer-grid a {
@@ -1006,9 +1005,9 @@ footer a:hover {
 .footer-bottom {
   text-align: center;
   border-top: 1px solid #0099ff;
-  margin-top: clamp(20px, 4vw, 30px);
-  padding-top: clamp(15px, 3vw, 20px);
-  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  margin-top: clamp(25px, 4vh, 40px);
+  padding-top: clamp(18px, 3vh, 28px);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   opacity: 0.8;
 }
 
@@ -1021,56 +1020,140 @@ footer a:hover {
 }
 
 /* ========================================
-   RESPONSIVE COMPLET (XS → 4K)
+   14. RESPONSIVE - VERSION ULTRA-COMPLÈTE
    ======================================== */
 
-/* ---------- XS : Très petits mobiles (-480px) ---------- */
+/* ---------- XS: Très petits téléphones (0 - 480px) ---------- */
 @media (max-width: 480px) {
-  .logo img { width: 120px; }
+  body {
+    background-attachment: fixed;
+  }
 
+  /* Navigation */
+  .nav-container {
+    height: 58px;
+    padding: 8px 4%;
+  }
+
+  .logo img {
+    width: 110px;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 58px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 58px);
+    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 20px;
+    gap: 18px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-container.open .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .nav-actions {
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    padding: 8px 6px;
+    font-size: 9px;
+  }
+
+  /* Sections */
+  .infogerance-hero,
+  .infogerance-intro,
+  .solutions-section,
+  .avantages-section,
+  .stats-section,
+  .formules-section,
+  .process-section,
+  .faq-section,
+  .cta-section {
+    padding: 70px 45px;
+    min-height: auto;
+    margin-right: 15px;
+  }
+
+  /* Boutons full-width */
   .btn-primary,
   .btn-secondary,
   .btn-cta,
-  .btn-cta-secondary,
-  .btn-cta-large,
-  .btn-cta-outline {
+  .btn-cta-secondary {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
   }
 
-  .problemes-grid,
-  .avantages-grid,
+  .hero-buttons,
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  /* Grids */
   .solutions-grid,
+  .avantages-grid,
   .stats-grid,
   .formules-grid,
   .process-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
-}
 
-/* ---------- SM : Mobiles standards (-576px) ---------- */
-@media (max-width: 576px) {
-  .logo img { width: 135px; }
-
-  .hero-buttons,
-  .cta-buttons {
-    flex-direction: column;
-  }
-
+  /* Formules featured */
   .formule-card.featured {
     transform: scale(1);
   }
+
+  .formule-card.featured:hover {
+    transform: translateY(-10px);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
-/* ---------- MD : Mobiles / Phablets (-768px) ---------- */
-@media (max-width: 768px) {
+/* ---------- SM: Petits téléphones (481 - 576px) ---------- */
+@media (min-width: 481px) and (max-width: 576px) {
+  body {
+    background-attachment: fixed;
+  }
+
+  /* Navigation */
   .nav-container {
-    padding: 10px 3%;
+    height: 60px;
+    padding: 10px 5%;
   }
 
   .logo img {
-    width: 150px;
+    width: 130px;
   }
 
   .hamburger {
@@ -1085,45 +1168,27 @@ footer a:hover {
     width: 100%;
     height: calc(100vh - 60px);
     background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
-    backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
-    padding: 30px 0;
-    gap: 20px;
+    padding: 25px;
+    gap: 18px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
   }
 
   .nav-container.open .nav-links {
     display: flex;
   }
 
-  .nav-actions {
-    gap: 8px;
-    margin-top: 15px;
-  }
-
   .phone-button,
   .eligibilite-button {
-    font-size: 10px;
-    padding: 8px 12px;
+    padding: 9px 14px;
+    font-size: 12px;
   }
 
-  .problemes-grid,
-  .avantages-grid,
-  .solutions-grid,
-  .stats-grid,
-  .formules-grid,
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-content {
-    padding: 30px 20px;
-  }
-
-  /* Désactiver parallax mobile */
+  /* Sections */
   .infogerance-hero,
   .infogerance-intro,
-  .problemes-section,
   .solutions-section,
   .avantages-section,
   .stats-section,
@@ -1131,25 +1196,126 @@ footer a:hover {
   .process-section,
   .faq-section,
   .cta-section {
-    background-attachment: scroll;
+    padding: 75px 5% 40px;
   }
-}
 
-/* ---------- LG : Tablettes (-968px) ---------- */
-@media (max-width: 968px) {
+  /* Grids */
+  .solutions-grid,
+  .avantages-grid,
+  .stats-grid,
+  .formules-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Formules featured */
   .formule-card.featured {
     transform: scale(1);
   }
 
-  .formule-card.featured:hover {
-    transform: translateY(-10px);
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 }
 
-/* ---------- XL : Tablettes larges (769px–1023px) ---------- */
-@media (min-width: 769px) and (max-width: 1023px) {
+/* ---------- MD: Mobiles larges / petites tablettes (577 - 768px) ---------- */
+@media (min-width: 577px) and (max-width: 768px) {
+  body {
+    background-attachment: fixed;
+  }
 
-  .hamburger { display: flex; }
+  /* Navigation */
+  .nav-container {
+    height: 64px;
+    padding: 10px 4%;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-container.open .nav-links {
+    display: flex;
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  /* Sections */
+  .infogerance-hero,
+  .infogerance-intro,
+  .solutions-section,
+  .avantages-section,
+  .stats-section,
+  .formules-section,
+  .process-section,
+  .faq-section,
+  .cta-section {
+    padding: 85px 4% 45px;
+  }
+
+  /* Grids */
+  .solutions-grid,
+  .avantages-grid,
+  .stats-grid,
+  .formules-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* ---------- LG: Tablettes (769 - 992px) ---------- */
+@media (min-width: 769px) and (max-width: 992px) {
+  body {
+    background-attachment: fixed;
+  }
+
+  /* Navigation */
+  .nav-container {
+    height: 70px;
+    padding: 12px 5%;
+  }
+
+  .logo img {
+    width: 170px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 
   .nav-links {
     display: none;
@@ -1159,128 +1325,386 @@ footer a:hover {
     width: 100%;
     height: calc(100vh - 70px);
     background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
-    backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
-    padding: 30px 0;
-    gap: 25px;
+    padding: 35px;
+    gap: 22px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
   }
 
   .nav-container.open .nav-links {
     display: flex;
   }
 
-  .problemes-grid,
-  .avantages-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .phone-button,
+  .eligibilite-button {
+    padding: 11px 18px;
+    font-size: 13px;
   }
 
+  /* Sections */
+  .infogerance-hero,
+  .infogerance-intro,
+  .solutions-section,
+  .avantages-section,
+  .stats-section,
+  .formules-section,
+  .process-section,
+  .faq-section,
+  .cta-section {
+    padding: 95px 5% 50px;
+  }
+
+  /* Grids 2 colonnes */
   .solutions-grid,
+  .avantages-grid,
   .stats-grid,
   .formules-grid,
   .process-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  /* Formules featured */
+  .formule-card.featured {
+    transform: scale(1);
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
   }
 }
 
-/* ---------- 2XL : Desktop ≥1024px ---------- */
-@media (min-width: 1024px) {
+/* ---------- XL: Petits laptops (993 - 1200px) ---------- */
+@media (min-width: 993px) and (max-width: 1200px) {
+  body {
+    background-attachment: fixed;
+  }
+
+  /* Navigation */
+  .nav-container {
+    padding: 14px ;
+    padding-right: 80px;
+  }
+
+  .logo img {
+    width: 190px;
+  }
+
+  .hamburger {
+    display: none;
+  }
 
   .nav-links {
     display: flex;
-  }
-
-  .problemes-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .avantages-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .solutions-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .formules-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .process-grid {
-    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(15px, 2vw, 25px);
   }
 
   .phone-button,
   .eligibilite-button {
-    font-size: 15px;
+    padding: 10px 10px;
+    font-size: 12px;
+  }
+
+  /* Sections */
+  .infogerance-hero,
+  .infogerance-intro,
+  .solutions-section,
+  .avantages-section,
+  .stats-section,
+  .formules-section,
+  .process-section,
+  .faq-section,
+  .cta-section {
+    padding: clamp(80px, 10vh, 100px) 6% clamp(50px, 6vh, 70px);
+  }
+
+  /* Grids optimisés */
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .formules-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }
 
-/* ---------- 3XL : Desktop larges (≥1280px) ---------- */
-@media (min-width: 1280px) {
-  .page-wrapper {
-    max-width: 1200px;
+/* ---------- XXL: Desktop standard (1201 - 1440px) ---------- */
+@media (min-width: 1201px) and (max-width: 1440px) {
+  body {
+    background-attachment: fixed;
+  }
+
+  /* Navigation */
+  .nav-container {
+    padding: 14px 7%;
+  }
+
+  .logo img {
+    width: clamp(210px, 12vw, 280px);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: clamp(18px, 2.5vw, 32px);
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+
+  /* Sections */
+  .infogerance-hero,
+  .infogerance-intro,
+  .solutions-section,
+  .avantages-section,
+  .stats-section,
+  .formules-section,
+  .process-section,
+  .faq-section,
+  .cta-section {
+    padding: clamp(90px, 12vh, 120px) 7% clamp(60px, 8vh, 80px);
+  }
+
+  /* Grids */
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+  }
+
+  .formules-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 38px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+}
+
+/* ---------- Large Desktop (1441 - 1920px) ---------- */
+@media (min-width: 1441px) and (max-width: 1920px) {
+  body {
+    background-attachment: fixed;
+  }
+
+  /* Navigation */
+  .nav-container {
+    padding: 16px 8%;
+    max-width: 2000px;
     margin: 0 auto;
   }
-}
 
-/* ---------- 4XL : Grands écrans (≥1536px) ---------- */
-@media (min-width: 1536px) {
-  .page-wrapper {
-    max-width: 1400px;
+  .logo img {
+    width: clamp(240px, 13vw, 320px);
   }
-}
 
-/* ---------- 5XL : Ultra-wide (≥1920px) ---------- */
-@media (min-width: 1920px) {
-  .page-wrapper {
+  .nav-links {
+    display: flex;
+    gap: clamp(22px, 2.8vw, 38px);
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    padding: 12px 18px;
+    font-size: 15px;
+  }
+
+  /* Sections */
+  .infogerance-hero,
+  .infogerance-intro,
+  .solutions-section,
+  .avantages-section,
+  .stats-section,
+  .formules-section,
+  .process-section,
+  .faq-section,
+  .cta-section {
+    padding: clamp(100px, 13vh, 130px) 8% clamp(70px, 9vh, 90px);
+  }
+
+  /* Containers max-width */
+  .container,
+  .solutions-grid,
+  .avantages-grid,
+  .stats-grid,
+  .formules-grid,
+  .process-grid,
+  .faq-list {
     max-width: 1600px;
   }
 
-  .hero-title {
-    font-size: 3.4rem;
+  /* Grids */
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 38px;
+  }
+
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  .formules-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 42px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 38px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 38px;
+    max-width: 1600px;
   }
 }
 
-/* ---------- 6XL : 4K (≥2560px) ---------- */
-@media (min-width: 2560px) {
-  .page-wrapper {
+/* ---------- Ultra-wide (1921px+) ---------- */
+@media (min-width: 1921px) {
+  body {
+    background-attachment: fixed;
+  }
+
+  /* Navigation */
+  .nav-container {
+    margin: 0 auto;
+    padding: 18px 10%;
+  }
+
+  .logo img {
+    width: clamp(280px, 14vw, 420px);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: clamp(28px, 3vw, 45px);
+  }
+  .nav-links a {
+    font-size: 24px;
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    padding: 15px 30px;
+    font-size: 24px;
+  }
+
+  /* Sections */
+  .infogerance-hero,
+  .infogerance-intro,
+  .solutions-section,
+  .avantages-section,
+  .stats-section,
+  .formules-section,
+  .process-section,
+  .faq-section,
+  .cta-section {
+    padding: clamp(120px, 15vh, 150px) 10% clamp(80px, 10vh, 100px);
+  }
+
+  /* Containers max-width */
+  .container,
+  .solutions-grid,
+  .avantages-grid,
+  .stats-grid,
+  .formules-grid,
+  .process-grid,
+  .faq-list {
     max-width: 1900px;
   }
 
-  .hero-title {
-    font-size: 4rem;
+  /* Grids */
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
   }
 
-  .hero-subtitle {
-    font-size: 1.6rem;
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+  }
+
+  .formules-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 45px;
+    max-width: 1900px;
   }
 }
 
-/* ---------- 7XL : Ultra 4K / 5K / 8K (≥3200px) ---------- */
-@media (min-width: 3200px) {
-  .page-wrapper {
-    max-width: 2200px;
-  }
-
-  .hero-title {
-    font-size: 4.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.8rem;
-  }
-}
-
-/* ---------- Petits écrans horizontaux ---------- */
-@media (max-height: 600px) {
+/* ---------- Écrans en hauteur réduite ---------- */
+@media (max-height: 700px) {
   .infogerance-hero,
   .infogerance-intro,
-  .problemes-section,
   .solutions-section,
   .avantages-section,
   .stats-section,
@@ -1289,38 +1713,13 @@ footer a:hover {
   .faq-section,
   .cta-section {
     min-height: auto;
-    padding: clamp(20px, 6vh, 50px) clamp(15px, 5vw, 30px);
+    padding: 80px 5% 40px;
   }
 }
 
-/* ========================================
-   ANIMATIONS AVANCÉES
-   ======================================== */
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-.solution-card:hover,
-.avantage-card:hover,
-.probleme-card:hover {
-  animation: float 3s ease-in-out infinite;
-}
-
-.stat-card:hover,
-.formule-card.featured {
-  box-shadow:
-    0 0 20px rgba(0, 114, 188, 0.4),
-    0 0 40px rgba(0, 114, 188, 0.2),
-    0 8px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Parallax desktop uniquement */
-@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+@media (max-height: 600px) {
   .infogerance-hero,
   .infogerance-intro,
-  .problemes-section,
   .solutions-section,
   .avantages-section,
   .stats-section,
@@ -1328,6 +1727,43 @@ footer a:hover {
   .process-section,
   .faq-section,
   .cta-section {
-    background-attachment: fixed;
+    min-height: auto;
+    padding: 70px 5% 35px;
   }
 }
+
+/* ========================================
+   15. OPTIMISATIONS PERFORMANCES
+   ======================================== */
+
+/* Réduction des animations sur préférence utilisateur */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Amélioration des performances scroll */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* GPU acceleration pour les éléments animés */
+.solution-card,
+.avantage-card,
+.stat-card,
+.formule-card,
+.process-card,
+.faq-item {
+  will-change: transform;
+}
+
+/* ========================================
+   FIN DU CSS ULTRA-OPTIMISÉ
+   ======================================== */

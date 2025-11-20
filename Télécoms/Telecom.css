@@ -813,11 +813,16 @@ footer {
 @media (max-width: 480px) {
   .nav-container {
     height: 58px;
-    padding: 8px 4%;
-  }
+    padding: 5px;}
 
   .logo img {
-    width: 110px;
+    width: 100px;
+  }
+  .eligibilite-button,.phone-button{
+    font-size: 10px;
+  }
+  .nav-actions{
+    gap: 2px;
   }
 
   .hamburger {
@@ -874,6 +879,18 @@ footer {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  .intro-content-wrapper{
+    text-align: center;
+  }
+  .vision-content-wrapper{
+    text-align: center;
+  }
+  .importance-card{
+    text-align: center;
+  }
+  .solutions-section{
+    text-align: center;
+  }
 }
 
 /* ---------- SM: 481 – 576px ---------- */
@@ -916,6 +933,18 @@ footer {
   .btn-cta-secondary {
     max-width: 340px;
   }
+  .intro-content-wrapper{
+    text-align: center;
+  }
+  .vision-content-wrapper{
+    text-align: center;
+  }
+  .importance-card{
+    text-align: center;
+  }
+  .solutions-section{
+    text-align: center;
+  }
 }
 
 /* ---------- MD: 577 – 768px (mobiles large / petites tablettes) ---------- */
@@ -949,6 +978,18 @@ footer {
   .steps-container {
     grid-template-columns: repeat(1, 1fr);
   }
+  .intro-content-wrapper{
+    text-align: center;
+  }
+  .vision-content-wrapper{
+    text-align: center;
+  }
+  .importance-card{
+    text-align: center;
+  }
+  .solutions-section{
+    text-align: center;
+  }
 }
 
 /* ---------- LG: 769 – 992px (tablettes) ---------- */
@@ -973,6 +1014,18 @@ footer {
   .steps-container {
     grid-template-columns: repeat(2, 1fr);
   }
+  .intro-content-wrapper{
+    text-align: center;
+  }
+  .vision-content-wrapper{
+    text-align: center;
+  }
+  .importance-card{
+    text-align: center;
+  }
+  .solutions-section{
+    text-align: center;
+  }
 }
 
 /* ---------- XL: 993 – 1200px (laptop) ---------- */
@@ -983,6 +1036,12 @@ footer {
 
   .nav-links {
     display: flex;
+  }
+  .nav-links a {
+    font-size: 11px;
+  }
+  .eligibilite-button,.phone-button{
+    font-size: 10px;
   }
 
   .importance-grid {
@@ -1000,6 +1059,18 @@ footer {
 
   .steps-container {
     grid-template-columns: repeat(4, 1fr);
+  }
+  .intro-content-wrapper{
+    text-align: center;
+  }
+  .vision-content-wrapper{
+    text-align: center;
+  }
+  .importance-card{
+    text-align: center;
+  }
+  .solutions-section{
+    text-align: center;
   }
 }
 
