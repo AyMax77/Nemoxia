@@ -1031,18 +1031,16 @@ footer a:hover {
 
   /* Navigation */
   .nav-container {
-    height: 58px;
-    padding: 8px 4%;
+    padding: 10px 4%;
+    height: auto;
   }
 
   .logo img {
-    width: 110px;
+    width: 100px;
   }
-
+  
   .hamburger {
     display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
   .nav-links {
@@ -1065,22 +1063,14 @@ footer a:hover {
     display: flex;
   }
 
-  .nav-links a {
-    font-size: 15px;
-    width: 100%;
-    text-align: center;
-    padding: 12px 0;
-  }
-
   .nav-actions {
     gap: 8px;
-    justify-content: center;
   }
 
   .phone-button,
   .eligibilite-button {
-    padding: 8px 6px;
-    font-size: 9px;
+    padding: 4px 6px;
+    font-size: 8px;
   }
 
   /* Sections */
@@ -1095,7 +1085,6 @@ footer a:hover {
   .cta-section {
     padding: 70px 45px;
     min-height: auto;
-    margin-right: 15px;
   }
 
   /* Boutons full-width */
