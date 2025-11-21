@@ -1952,7 +1952,6 @@ footer a:hover {
   /* Navigation */
   .nav-container {
     padding: 16px 8%;
-    max-width: 2000px;
     margin: 0 auto;
   }
 
@@ -2044,18 +2043,20 @@ footer a:hover {
 
   /* Navigation */
   .nav-container {
-    max-width: 2400px;
     margin: 0 auto;
     padding: 18px 10%;
   }
 
   .logo img {
-    width: clamp(280px, 14vw, 420px);
+    width: 420px;
   }
 
   .nav-links {
     display: flex;
     gap: clamp(28px, 3vw, 45px);
+  }
+  .nav-links a{
+    font-size:24px;
   }
 
   .phone-button,

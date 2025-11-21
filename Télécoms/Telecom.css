@@ -1197,6 +1197,17 @@ footer {
   }
 }
 
+@media (min-width: 1921px) {
+  .nav-links a {
+    font-size: 24px;
+  }
+  .phone-button,
+  .eligibilite-button {
+    padding: 15px 20px;
+    font-size: 20px;
+  }
+}
+
 /* ---------- Hauteurs faibles (mobile paysage, petits laptops) ---------- */
 @media (max-height: 600px) {
   .telecom-hero,

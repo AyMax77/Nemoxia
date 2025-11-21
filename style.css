@@ -1746,20 +1746,11 @@ footer a:hover {
   }
   
 }
-@media(min-width: 1920px) and (max-width: 1920px){
-  .carousel-nav.prev {
-    left: 100px;
-  }
 
-  .carousel-nav.next {
-    right: 100px;
-  }
-}
 
 /* Desktop Extra Large: au-delà de 1920px */
 @media (min-width: 1921px) {
   .nav-container {
-    max-width: 2800px;
     margin: 0 auto;
     padding: 10px 8%;
   }
@@ -1769,15 +1760,23 @@ footer a:hover {
   }
 
   .carousel-nav.prev {
-    left: 200px;
+    left: 300px;
   }
 
   .carousel-nav.next {
-    right: 200px;
+    right: 300px;
   }
 
   .carousel-track.transitioning {
     transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .phone-button,
+  .eligibilite-button {
+    padding: 15px 20px;
+    font-size: 20px;
+  }
+  .nav-links a {
+    font-size: 24px;
   }
 }
 

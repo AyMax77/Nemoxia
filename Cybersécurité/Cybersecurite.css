@@ -1077,9 +1077,17 @@ footer {
 }
 
 /* ---------- 5XL : Ultra-wide (+1920px) ---------- */
-@media (min-width: 1920px) {
+@media (min-width: 1921px) {
   .page-wrapper {
     max-width: 1600px;
+  }
+  .nav-links a{
+    font-size:24px;
+  }
+  .phone-button,
+  .eligibilite-button {
+    padding: 15px 20px;
+    font-size: 20px;
   }
 }
 
