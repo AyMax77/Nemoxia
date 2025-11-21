@@ -232,7 +232,6 @@ img {
   justify-content: center;
   position: relative;
   padding: clamp(40px, 5%, 60px) clamp(20px, 5%, 40px);
- 
 }
 
 .intro-image-section::before {
@@ -244,6 +243,8 @@ img {
   bottom: 0;
   background: radial-gradient(circle at 70% 30%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .intro-image-section::after {
@@ -255,6 +256,8 @@ img {
   height: 3px;
   background: linear-gradient(to right, transparent, #0072BC, transparent);
   box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
+  transform: scaleX(0);
+  animation: lineExpand 1.2s ease-out 0.5s forwards;
 }
 
 .intro-content-wrapper {
@@ -264,9 +267,12 @@ img {
   align-items: center;
   max-width: 1200px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* noir avec 60% d'opacité */
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 40px 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFadeIn 0.8s ease-out 0.3s forwards;
 }
 
 .intro-text {
@@ -279,6 +285,9 @@ img {
   margin-bottom: clamp(20px, 3vw, 30px);
   font-weight: 700;
   line-height: 1.2;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInLeft 0.8s ease-out 0.6s forwards;
 }
 
 .intro-text p {
@@ -286,6 +295,9 @@ img {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
   margin-bottom: clamp(15px, 2.5vw, 20px);
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInLeft 0.8s ease-out 0.8s forwards;
 }
 
 .btn-intro {
@@ -299,6 +311,9 @@ img {
   text-decoration: none;
   transition: all 0.3s ease;
   margin-top: clamp(15px, 2vw, 20px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 1s forwards;
 }
 
 .btn-intro:hover {
@@ -311,6 +326,9 @@ img {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateX(30px) scale(0.95);
+  animation: slideInRight 0.8s ease-out 0.8s forwards;
 }
 
 .intro-image img {
@@ -322,6 +340,68 @@ img {
 
 .intro-image:hover img {
   transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineExpand {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Responsive - désactiver les animations sur mobile si nécessaire */
+@media (max-width: 768px) {
+  .intro-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-image-section::before,
+  .intro-image-section::after,
+  .intro-content-wrapper,
+  .intro-text h2,
+  .intro-text p,
+  .btn-intro,
+  .intro-image {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 /* ========================================
    VISION IMAGE SECTION (100vh)

@@ -288,6 +288,8 @@ img {
   background: radial-gradient(circle at 30% 50%, rgba(0, 114, 188, 0.2) 0%, transparent 70%);
   animation: pulse 4s ease-in-out infinite;
   pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards, pulse 4s ease-in-out 1s infinite;
 }
 
 .advantages-section::before {
@@ -299,6 +301,8 @@ img {
   bottom: 0;
   background: radial-gradient(circle at 70% 30%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .blue-section::before {
@@ -310,6 +314,8 @@ img {
   bottom: 0;
   background: radial-gradient(circle at 80% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .solutions-section::before {
@@ -321,6 +327,8 @@ img {
   bottom: 0;
   background: radial-gradient(circle at 30% 70%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .features-section::before {
@@ -332,6 +340,8 @@ img {
   bottom: 0;
   background: radial-gradient(circle at 50% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 /* Ligne lumineuse en bas de chaque section */
@@ -347,6 +357,8 @@ img {
   height: 3px;
   background: linear-gradient(to right, transparent, #0072BC, transparent);
   box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
+  transform: scaleX(0);
+  animation: lineExpand 1.2s ease-out 0.5s forwards;
 }
 
 /* Conteneurs standards */
@@ -358,6 +370,9 @@ img {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFadeIn 0.8s ease-out 0.3s forwards;
 }
 
 /* Titres H2 des sections */
@@ -370,6 +385,59 @@ img {
   margin-bottom: clamp(35px, 5vh, 60px);
   font-weight: 700;
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInDown 0.8s ease-out 0.6s forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineExpand {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Responsive - désactiver les animations sur mobile si nécessaire */
+@media (prefers-reduced-motion: reduce) {
+  .hero-section::before,
+  .advantages-section::before,
+  .blue-section::before,
+  .solutions-section::before,
+  .features-section::before,
+  .hero-section::after,
+  .advantages-section::after,
+  .blue-section::after,
+  .solutions-section::after,
+  .advantages-container,
+  .solutions-container,
+  .features-container,
+  .advantages-container h2,
+  .solutions-container h2,
+  .features-container h2 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ========================================
