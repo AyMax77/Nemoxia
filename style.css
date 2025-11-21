@@ -1202,9 +1202,9 @@ i {
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: clamp(25px, 4vw, 40px);
-  align-items: center;
+  align-items: stretch;
   justify-items: center;
 }
 
@@ -1216,13 +1216,14 @@ i {
   padding: clamp(25px, 4vw, 35px);
   width: 100%;
   max-width: 280px;
-  height: 160px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .partner-logo-card::before {
@@ -1247,19 +1248,53 @@ i {
   border-color: rgba(0, 114, 188, 0.5);
 }
 
-.partner-logo-card img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+/* Contenu des cartes partenaires */
+.partner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 15px);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.partner-icon {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.partner-logo-card:hover .partner-icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+
+.partner-name {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
   transition: all 0.3s ease;
 }
 
-.partner-logo-card:hover img {
-  opacity: 1;
-  transform: scale(1.1);
-  filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+.partner-logo-card:hover .partner-name {
+  color: #4a9eff;
+  text-shadow: 0 0 10px rgba(74, 158, 255, 0.5);
+}
+
+.partner-description {
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  line-height: 1.4;
+  color: rgba(240, 240, 240, 0.8);
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.partner-logo-card:hover .partner-description {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 /* Style spécifique pour certains logos si nécessaire */
@@ -1273,6 +1308,14 @@ i {
   border-color: rgba(0, 114, 188, 0.6);
 }
 
+.partner-logo-card.featured .partner-icon {
+  filter: drop-shadow(0 0 15px rgba(0, 180, 216, 0.5));
+}
+
+.partner-logo-card.featured:hover .partner-icon {
+  filter: drop-shadow(0 0 25px rgba(0, 180, 216, 0.7));
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .partners-grid {
@@ -1281,8 +1324,20 @@ i {
   }
 
   .partner-logo-card {
-    height: 140px;
+    min-height: 180px;
     max-width: 100%;
+  }
+
+  .partner-icon {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .partner-name {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+  }
+
+  .partner-description {
+    font-size: clamp(0.8rem, 1.3vw, 0.9rem);
   }
 }
 
@@ -1294,6 +1349,7 @@ i {
 
   .partner-logo-card {
     max-width: 100%;
+    min-height: 160px;
   }
 }
 
@@ -1302,7 +1358,6 @@ i {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
 /* ========================================
    11. FOOTER
    ======================================== */
