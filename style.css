@@ -256,8 +256,7 @@ img {
   bottom: 0;
   background: radial-gradient(circle at 20% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards, pulse 3s ease-in-out 1s infinite;
+  animation: pulse 3s ease-in-out infinite;
 }
 
 .hero-3cx::after {
@@ -269,8 +268,6 @@ img {
   height: 3px;
   background: linear-gradient(to right, transparent, #0072BC, transparent);
   box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
-  transform: scaleX(0);
-  animation: lineExpand 1.2s ease-out 0.5s forwards;
 }
 
 @keyframes pulse {
@@ -282,21 +279,6 @@ img {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes lineExpand {
-  to {
-    transform: scaleX(1);
-  }
-}
-
 /* Carousel Container */
 .carousel-container {
   position: relative;
@@ -305,15 +287,15 @@ img {
   margin: 0 auto;
   padding: 40px 0;
   z-index: 1;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideUpFadeIn 0.8s ease-out 0.3s forwards;
+  animation: fadeIn 1s ease-out 0.3s both;
 }
 
-@keyframes slideUpFadeIn {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -341,6 +323,7 @@ img {
   transform: translateY(-10px);
 }
 
+
 .slide-content {
   width: 100%;
   max-width: 1200px;
@@ -352,7 +335,7 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3); /* noir avec 60% d'opacité */
   border-radius: 20px;
   padding: 40px 40px;
 }
@@ -360,9 +343,7 @@ img {
 .hero-text-content {
   color: white;
   order: 1;
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: slideInLeft 0.8s ease-out 0.6s forwards;
+  animation: slideInLeft 0.8s ease-out 0.5s both;
 }
 
 @keyframes slideInLeft {
@@ -430,16 +411,7 @@ img {
 .btn-hero-primary {
   background: white;
   color: #0072BC;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out 0.9s forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  animation: fadeInUp 0.8s ease-out 0.9s both;
 }
 
 .btn-hero-primary:hover {
@@ -451,9 +423,7 @@ img {
   background: transparent;
   color: white;
   border: 2px solid white;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out 1s forwards;
+  animation: fadeInUp 0.8s ease-out 1s both;
 }
 
 .btn-hero-secondary:hover {
@@ -467,19 +437,17 @@ img {
   align-items: center;
   justify-content: center;
   order: 2;
-  opacity: 0;
-  transform: translateX(30px) scale(0.95);
-  animation: slideInRight 0.8s ease-out 0.8s forwards;
+  animation: slideInRight 0.8s ease-out 0.7s both;
 }
 
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(50px) scale(0.95);
+    transform: translateX(50px);
   }
   to {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: translateX(0);
   }
 }
 
@@ -501,7 +469,7 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4); /* noir avec 60% d'opacité */
   border-radius: 20px;
   padding: 60px 40px;
 }
@@ -611,8 +579,7 @@ img {
   justify-content: center;
   line-height: 1;
   backdrop-filter: blur(5px);
-  opacity: 0;
-  animation: fadeIn 1s ease-out 1.2s forwards;
+  animation: fadeIn 1s ease-out 1.2s both;
 }
 
 .carousel-nav:hover {
@@ -639,8 +606,7 @@ img {
   display: flex;
   gap: 12px;
   z-index: 100;
-  opacity: 0;
-  animation: fadeIn 1s ease-out 1.3s forwards;
+  animation: fadeIn 1s ease-out 1.3s both;
 }
 
 .dot {
@@ -664,35 +630,6 @@ img {
   background: rgba(0, 114, 188, 0.7);
   border-color: rgba(255, 255, 255, 0.8);
   transform: scale(1.1);
-}
-
-/* Responsive - désactiver les animations sur mobile si nécessaire */
-@media (prefers-reduced-motion: reduce) {
-  .hero-3cx::before,
-  .hero-3cx::after,
-  .carousel-container,
-  .hero-text-content,
-  .btn-hero-primary,
-  .btn-hero-secondary,
-  .hero-visual,
-  .carousel-nav,
-  .carousel-dots {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-  
-  .carousel-nav.prev {
-    transform: translateY(-50%);
-  }
-  
-  .carousel-nav.next {
-    transform: translateY(-50%);
-  }
-  
-  .carousel-dots {
-    transform: translateX(-50%);
-  }
 }
 
 
