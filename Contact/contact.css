@@ -35,122 +35,192 @@ img {
 }
 
 /* ========================================
-   NAVBAR
+   2. NAVBAR
    ======================================== */
 
 .nav-container {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Modifié de center à space-between */
-    padding: 15px 5%;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    background: transparent;
-    transition: background 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5%;
+  z-index: 1000;
+  transition: background 0.4s ease, box-shadow 0.3s ease;
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .nav-container.scrolled {
-    background: linear-gradient(40deg, #0d3b66 2%, #030712);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3); /* blanc avec 80% d'opacité */
+  box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
+  backdrop-filter: blur(5px);
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+.logo img {
+  width: clamp(200px, 17vw, 400px);
+  height: auto;
+  transition: width 0.3s ease;
+  animation: fadeInScale 0.8s ease-out 0.2s both;
 }
 
-.logo-img {
-    width: 250px;
-    height: auto;
-    transition: width 0.3s ease;
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* Bouton Fibre à gauche */
-.fiber-button {
-    background: #0072BC;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s, transform 0.2s;
-    text-decoration: none;
-    display: inline-block;
-    white-space: nowrap;
-    z-index: 10; /* Au-dessus du logo */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(15px, 2vw, 35px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.fiber-button:hover {
-    background: #005f9e;
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+.nav-links li {
+  animation: fadeInUp 0.6s ease-out both;
 }
 
-/* Bouton Accueil */
-.home-button {
-    background: linear-gradient(135deg, #0072BC 0%, #005f9e 100%);
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    font-size: px;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+.nav-links li:nth-child(1) { animation-delay: 0.3s; }
+.nav-links li:nth-child(2) { animation-delay: 0.4s; }
+.nav-links li:nth-child(3) { animation-delay: 0.5s; }
+.nav-links li:nth-child(4) { animation-delay: 0.6s; }
+.nav-links li:nth-child(5) { animation-delay: 0.7s; }
+.nav-links li:nth-child(6) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.home-button:hover {
-    background: linear-gradient(135deg, #005f9e 0%, #004a7c 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: clamp(13px, 1.1vw, 17px);
+  padding-bottom: 5px;
+  position: relative;
+  transition: color 0.3s;
+  white-space: nowrap;
 }
 
-.home-icon {
-    font-size: 18px;
+.nav-links a:hover {
+  color: #0072BC;
 }
 
-/* Bouton Téléphone à droite */
-.phone-button {
-    background: #0072BC;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    text-decoration: none;
-    display: inline-block;
-    white-space: nowrap;
-    z-index: 10; /* Au-dessus du logo */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0072BC;
+  transition: width 0.3s;
 }
 
-.phone-button:hover {
-    background: #005f9e;
-    transform: scale(1.05);
+.nav-links a:hover::after {
+  width: 100%;
 }
 
-/* Conteneur des boutons */
-.nav-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+/* Conteneur des boutons CTA */
+.nav-actions {
+  display: flex;
+  gap: clamp(8px, 1vw, 12px);
+  align-items: center;
+  animation: fadeInRight 0.8s ease-out 0.7s both;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Style commun pour les boutons navbar */
+.phone-button,
+.eligibilite-button {
+  background: #0072BC;
+  color: white;
+  border: none;
+  padding: clamp(8px, 1vw, 12px) clamp(15px, 2vw, 24px);
+  font-size: clamp(13px, 1.1vw, 20px);
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.phone-button:hover,
+.eligibilite-button:hover {
+  background: #005f9e;
+  transform: scale(1.05);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-container.open .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-container.open .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-container.open .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* ========================================
@@ -1148,20 +1218,30 @@ footer .container {
     font-size: 15px;
     padding: clamp(0.6rem, 1.2vh, 0.75rem) clamp(1rem, 2vw, 1.4rem);
   }
+  .phone-button{
+    font-size: 14px;
+  }
+  .eligibilite-button{
+    font-size: 14px;
 }
-
+}
 /* ========================================
    RESPONSIVE - EXTRA LARGE (1920px+)
    ======================================== */
 
-@media (min-width: 1920px) {
+@media (min-width: 1921px) {
+  .body {
+    max-width: 2400px;
+  }
   .phone-button{
     margin-right: 35px;
   }
   .fiber-button{
     margin-left: 60px;
   }
-
+  .nav-links a{
+    font-size: 24px;
+  }
   .text-section h1 .Titre {
     padding: clamp(1rem, 2.5vh, 1.5rem) clamp(2rem, 5vw, 3rem);
     border-radius: 1.8rem;
@@ -1243,18 +1323,14 @@ footer .container {
 }
 
 @media (min-width: 2800px) {
-  .phone-button{
-    margin-right: 430px;
-  }
+  
   .fiber-button{
     margin-left: 450px;
   }
 }
 
 @media (min-width: 3440px){
-  .phone-button{
-    margin-right: 720px;
-  }
+  
   .fiber-button{
     margin-left: 730px;
   }
