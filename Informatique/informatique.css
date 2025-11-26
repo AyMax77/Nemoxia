@@ -725,6 +725,8 @@ img {
   border: 2px solid rgba(0, 114, 188, 0.25);
   border-radius: 15px;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+
 }
 
 .stat-counter:hover {
@@ -763,6 +765,7 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(25px, 3.5vw, 35px);
   margin-top: clamp(30px, 5vh, 45px);
+  backdrop-filter: blur(10px);
 }
 
 .importance-card {
@@ -772,6 +775,7 @@ img {
   padding: clamp(25px, 3vw, 35px);
   transition: all 0.3s ease;
   text-align: center;
+
 }
 
 .importance-card:hover {
@@ -934,6 +938,7 @@ img {
   padding: clamp(25px, 3vw, 35px);
   text-align: center;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .avantage-card:hover {
@@ -979,6 +984,7 @@ img {
   padding: clamp(25px, 3.5vw, 35px);
   transition: all 0.3s ease;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .solution-card:hover {
@@ -1051,6 +1057,7 @@ img {
   border-radius: 15px;
   border: 2px solid transparent;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .usecase-card:hover {

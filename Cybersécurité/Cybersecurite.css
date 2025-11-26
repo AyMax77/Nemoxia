@@ -347,6 +347,7 @@ img {
   justify-content: center;
   padding: clamp(40px, 5%, 60px) clamp(20px, 5%, 40px);
   position: relative;
+  
 }
 
 .danger-section::before {
@@ -398,6 +399,7 @@ img {
   padding: clamp(30px, 4vw, 50px);
   text-align: center;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .danger-stat:hover {
@@ -479,6 +481,7 @@ img {
   padding: clamp(25px, 3.5vw, 35px);
   text-align: center;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .threat-card:hover {
@@ -570,6 +573,7 @@ img {
   padding: clamp(25px, 3vw, 30px);
   transition: all 0.3s ease;
   text-align: center;
+  backdrop-filter: blur(10px);
 }
 
 .solution-card:hover {
@@ -704,6 +708,7 @@ img {
   color: white;
   margin-bottom: clamp(10px, 1.5vw, 15px);
   font-weight: 600;
+  backdrop-filter: blur(10px);
 }
 
 .step-card p {
@@ -780,6 +785,7 @@ img {
   padding: clamp(25px, 3.5vw, 35px);
   text-align: center;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .expertise-stat:hover {
