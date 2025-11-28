@@ -1856,7 +1856,7 @@ footer a:hover {
 
   /* Footer */
   .footer-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 45px;
     max-width: 1900px;
   }
