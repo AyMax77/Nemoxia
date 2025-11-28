@@ -238,24 +238,26 @@ img {
 /* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
-  background: #0072BC;
+  background: linear-gradient(135deg, #0072BC 0%, #00bfff 100%);
   color: white;
   border: none;
-  padding: clamp(8px, 1vw, 12px) clamp(15px, 2vw, 24px);
-  font-size: clamp(13px, 1.1vw, 20px);
-  font-weight: bold;
-  border-radius: 5px;
+  padding: clamp(10px, 1.2vw, 14px) clamp(18px, 2.5vw, 28px);
+  font-size: clamp(13px, 1.1vw, 15px);
+  font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
   white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 114, 188, 0.3);
 }
 
 .phone-button:hover,
 .eligibilite-button:hover {
-  background: #005f9e;
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #005f9e 0%, #0099cc 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
 }
 
 /* Hamburger Menu */
