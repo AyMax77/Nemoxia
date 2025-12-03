@@ -164,7 +164,7 @@ img {
 /* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
-  background: linear-gradient(135deg, #0072BC 0%, #00bfff 100%);
+  background: #0099ff;
   color: white;
   border: none;
   padding: clamp(10px, 1.2vw, 14px) clamp(18px, 2.5vw, 28px);
