@@ -1075,6 +1075,7 @@ footer a:hover {
   }
 }
 
+
 /* ---------- Petits laptops (993px - 1200px) ---------- */
 @media (min-width: 993px) and (max-width: 1200px) {
   body {
@@ -1083,24 +1084,28 @@ footer a:hover {
 
   /* Navigation */
   .nav-container {
-    padding: 14px 6%;
+    padding: 10px 3%;
   }
 
   .logo img {
-    width: 200px;
+    width: 160px;
   }
   
   .nav-links a {
-    font-size: 10px;
+    font-size: 9px;
+    padding: 6px 8px;
   }
+  
   .phone-button,
   .eligibilite-button {
-    font-size: 10px;
-    padding: 8px 8px;
+    font-size: 9px;
+    padding: 6px 10px;
   }
-  .hero-section{
-    padding: 100px 60px;
+  
+  .hero-section {
+    padding: 60px 30px;
   }
+  
   .hamburger {
     display: none;
   }
@@ -1113,81 +1118,535 @@ footer a:hover {
   .hero-container,
   .blue-container {
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    padding: 45px;
+    gap: 30px;
+    padding: 25px;
+  }
+
+  .hero-content h1 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   .hero-image,
   .blue-image {
-    min-height: 320px;
-    max-height: 420px;
+    min-height: 240px;
+    max-height: 320px;
   }
 
   /* Grids */
   .advantages-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
-  .solutions-grid{
+
+  .advantage-card {
+    padding: 18px;
+  }
+
+  .advantage-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .advantage-card h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .advantage-card p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  
+  .solutions-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .solution-card {
+    padding: 20px;
+  }
+
+  .solution-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .solution-card p,
+  .solution-card li {
+    font-size: 11px;
+    line-height: 1.5;
   }
 
   .features-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .feature-card {
+    padding: 16px;
+  }
+
+  .feature-check {
+    font-size: 20px;
+  }
+
+  .feature-card h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .feature-card p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  /* Sections */
+  .advantages-container,
+  .solutions-container,
+  .features-container {
+    padding: 50px 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
   }
 
   /* Footer */
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
   }
 }
 
-@media (min-width: 1201px) and (max-width: 1400px) {
-  .solutions-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ---------- Desktop standard (1201px - 1920px) ---------- */
-@media (min-width: 1201px) and (max-width: 1920px) {
+/* ---------- Laptop medium (1201px - 1366px) ---------- */
+@media (min-width: 1201px) and (max-width: 1366px) {
   body {
     background-attachment: fixed;
   }
+
+  .nav-container {
+    padding: 12px 4%;
+  }
+
+  .logo img {
+    width: 180px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 7px 10px;
+  }
+
   .phone-button,
   .eligibilite-button {
-    font-size: 15px;
-    padding: 12px 24px;
+    font-size: 10px;
+    padding: 7px 12px;
   }
-  .logo img {
-    width: clamp(220px, 12vw, 320px);
+
+  .hero-section {
+    padding: 70px 40px;
   }
-  .hero-section{
-    padding: 120px ;
-  }
-  .hero-container,
-  .blue-container {
+
+  .hero-container{
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    padding: 50px;
+    gap: 35px;
+    padding: 30px;
+    margin-top:60px;
+  }
+  .blue-container {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .blue-image {
+    margin-top: 30px;
+    max-width: 500px;
+  }
+
+  .blue-section ul {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 550px;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+    line-height: 1.6;
   }
 
   .hero-image,
   .blue-image {
-    min-height: 350px;
-    max-height: 480px;
+    min-height: 260px;
+    max-height: 350px;
   }
 
   .advantages-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .advantage-card {
+    padding: 20px;
+  }
+
+  .advantage-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .advantage-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .advantage-card p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .solution-card {
+    padding: 22px;
+  }
+
+  .solution-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .solution-card p,
+  .solution-card li {
+    font-size: 12px;
+    line-height: 1.6;
   }
 
   .features-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .feature-card {
+    padding: 18px;
+  }
+
+  .feature-check {
+    font-size: 22px;
+  }
+
+  .feature-card h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .feature-card p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .advantages-container,
+  .solutions-container,
+  .features-container {
+    padding: 60px 40px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
   }
 
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
   }
-  
+}
+
+/* ---------- Laptop large (1367px - 1600px) ---------- */
+@media (min-width: 1367px) and (max-width: 1600px) {
+  body {
+    background-attachment: fixed;
+  }
+
+  .nav-container {
+    padding: 14px 4%;
+  }
+
+  .logo img {
+    width: 200px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    font-size: 11px;
+    padding: 8px 14px;
+  }
+
+  .hero-section {
+    padding: 80px 50px;
+  }
+
+  .hero-container,
+  .blue-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 35px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hero-image,
+  .blue-image {
+    min-height: 280px;
+    max-height: 380px;
+  }
+
+  .advantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .advantage-card {
+    padding: 22px;
+  }
+
+  .advantage-icon {
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+
+  .advantage-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .advantage-card p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .solution-card {
+    padding: 24px;
+  }
+
+  .solution-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+
+  .solution-card p,
+  .solution-card li {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  .feature-check {
+    font-size: 24px;
+  }
+
+  .feature-card h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .feature-card p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .advantages-container,
+  .solutions-container,
+  .features-container {
+    padding: 70px 50px;
+  }
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+/* ---------- Desktop Full HD (1601px - 1920px) ---------- */
+@media (min-width: 1601px) and (max-width: 1920px) {
+  body {
+    background-attachment: fixed;
+  }
+
+  .nav-container {
+    padding: 16px 5%;
+  }
+
+  .logo img {
+    width: 220px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    padding: 9px 14px;
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    font-size: 12px;
+    padding: 9px 16px;
+  }
+
+  .hero-section {
+    padding: 90px 60px;
+  }
+
+  .hero-container,
+  .blue-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    padding: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hero-image,
+  .blue-image {
+    min-height: 300px;
+    max-height: 400px;
+  }
+
+  .advantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  .advantage-card {
+    padding: 24px;
+  }
+
+  .advantage-icon {
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+
+  .advantage-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .advantage-card p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .solution-card {
+    padding: 26px;
+  }
+
+  .solution-card h3 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .solution-card p,
+  .solution-card li {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .feature-card {
+    padding: 22px;
+  }
+
+  .feature-check {
+    font-size: 26px;
+  }
+
+  .feature-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .feature-card p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .advantages-container,
+  .solutions-container,
+  .features-container {
+    padding: 80px 60px;
+  }
+
+  h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+  }
 }
 
 /* ---------- Ultra-wide (1921px+) ---------- */
