@@ -1154,6 +1154,9 @@ footer a:hover {
   .stat-number {
     font-size: 36px;
   }
+  .footer-grid{
+    text-align: center;
+  }
 }
 
 /* Écrans courts (paysage mobile) */

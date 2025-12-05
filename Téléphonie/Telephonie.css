@@ -973,6 +973,10 @@ footer a:hover {
     gap: 25px;
     padding: 25px;
   }
+  .btn-primary{
+    display: flex;
+    justify-content: center;
+  }
 
   .hero-image,
   .blue-image {
@@ -993,6 +997,9 @@ footer a:hover {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 25px;
+  }
+  .footer-grid{
+    text-align: center;
   }
 }
 

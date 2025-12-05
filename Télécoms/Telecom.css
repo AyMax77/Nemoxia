@@ -1207,6 +1207,7 @@ footer {
   }
   .intro-content-wrapper{
     text-align: center;
+    margin-top: 20px;
   }
   .vision-content-wrapper{
     text-align: center;
@@ -1215,6 +1216,9 @@ footer {
     text-align: center;
   }
   .solutions-section{
+    text-align: center;
+  }
+  .footer-grid{
     text-align: center;
   }
 }

@@ -1421,6 +1421,14 @@ footer a:hover {
   .vision-text {
     order: 2;
   }
+  .intro-text p{
+    text-align: center;
+  }
+  .btn-intro{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
 
   .intro-image,
   .vision-image {
@@ -1441,14 +1449,20 @@ footer a:hover {
     grid-template-columns: 1fr;
     gap: 18px;
   }
+  .vision-text p{
+    text-align: center;
+  }
 
   /* Buttons */
   .hero-buttons,
   .cta-buttons {
     flex-direction: column;
     width: 100%;
+    align-items: center;
   }
-
+  .hero-content{
+    margin-top:10px;
+  }
   .btn-hero-primary,
   .btn-hero-secondary,
   .btn-cta,
@@ -1461,6 +1475,9 @@ footer a:hover {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  .footer-grid{
+    text-align: center;
   }
 }
 

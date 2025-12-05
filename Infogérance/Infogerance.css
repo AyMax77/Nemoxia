@@ -826,7 +826,7 @@ footer a:hover {
   }
 
   .logo img {
-    height: 35px;
+    height: 65px;
   }
 
   .hamburger {
@@ -884,6 +884,7 @@ footer a:hover {
   .cta-buttons {
     flex-direction: column;
     width: 100%;
+    align-items: center;
   }
 
   .btn-primary,
@@ -955,7 +956,9 @@ footer a:hover {
     padding: 6px 6px;
     font-size: 8px;
   }
-
+  .logo img {
+    height: 35px;
+  }
   .hero-subtitle {
     font-size: 15px;
   }
@@ -970,6 +973,9 @@ footer a:hover {
 
   .formule-price {
     font-size: 32px;
+  }
+  .footer-grid{
+    text-align: center;
   }
 }
 
