@@ -93,9 +93,8 @@ img {
 }
 
 /* ========================================
-   3. NAVIGATION
+   3. NAVBAR - TAILLES FIXES ET RAISONNABLES
    ======================================== */
-
 .nav-container {
   position: fixed;
   top: 0;
@@ -104,36 +103,26 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 7%;
+  padding: 12px 40px;
   z-index: 1000;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   animation: slideDown 0.6s ease-out;
 }
 
 .nav-container.scrolled {
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
-/* Logo */
-.logo img {
-  width: clamp(180px, 15vw, 320px);
-  height: auto;
-  transition: width 0.3s ease;
-  animation: fadeInScale 0.8s ease-out 0.2s both;
-}
 
-/* Navigation Links */
+/* Navigation links */
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(15px, 2vw, 35px);
+  gap: 25px;
   list-style: none;
-  margin: 0;
-  padding: 0;
+  align-items: center;
 }
-
 .nav-links li {
   animation: fadeInUp 0.6s ease-out both;
 }
@@ -145,11 +134,23 @@ img {
 .nav-links li:nth-child(5) { animation-delay: 0.7s; }
 .nav-links li:nth-child(6) { animation-delay: 0.8s; }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: clamp(13px, 1.1vw, 17px);
-  padding-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 3px;
   position: relative;
   transition: color 0.3s;
   white-space: nowrap;
@@ -174,40 +175,37 @@ img {
   width: 100%;
 }
 
-/* Navigation Actions */
+/* Boutons navbar - TAILLES RÉDUITES */
 .nav-actions {
   display: flex;
-  gap: clamp(10px, 1.5vw, 15px);
+  gap: 12px;
   align-items: center;
-  animation: fadeInRight 0.8s ease-out 0.7s both;
 }
 
-/* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
   background: #0099ff;
   color: white;
   border: none;
-  padding: clamp(10px, 1.2vw, 14px) clamp(18px, 2.5vw, 28px);
-  font-size: clamp(13px, 1.1vw, 15px);
+  padding: 10px 18px;
+  font-size: 14px;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
-  display: inline-block;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(0, 114, 188, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 114, 188, 0.3);
 }
 
 .phone-button:hover,
 .eligibilite-button:hover {
-  background: linear-gradient(135deg, #005f9e 0%, #0099cc 100%);
+  background: #0072BC;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 114, 188, 0.4);
 }
 
-/* Hamburger Menu */
+/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -240,7 +238,6 @@ img {
 .nav-container.open .hamburger span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -7px);
 }
-
 /* ========================================
    4. SECTIONS COMMUNES
    ======================================== */
@@ -2178,7 +2175,7 @@ footer a:hover {
   }
 
   .logo img {
-    width: 180px;
+    width: 220px;
   }
 
   .nav-links {
