@@ -950,6 +950,11 @@ footer a:hover {
   .hero-content h1 {
     font-size: 26px;
   }
+  .phone-button,
+  .eligibilite-button {
+    padding: 6px 6px;
+    font-size: 8px;
+  }
 
   .hero-subtitle {
     font-size: 15px;
