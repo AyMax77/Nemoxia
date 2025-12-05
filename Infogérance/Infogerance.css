@@ -1,14 +1,11 @@
 /* ========================================
-   INFOGÉRANCE PAGE - VERSION ULTRA-OPTIMISÉE
-   CSS Réorganisé et Corrigé
-   Structure: Base → Layout → Composants → Responsive
-   Maximum Performance & Cohérence
+   INFOGÉRANCE PAGE - VERSION COMPLÈTEMENT REFONDUE
+   Proportions correctes et responsive fluide
    ======================================== */
 
 /* ========================================
    1. BASE & RESET
    ======================================== */
-
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -28,7 +26,6 @@ body {
     url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80') center/cover no-repeat fixed;
   overflow-x: hidden;
   min-height: 100vh;
-  font-size: clamp(14px, 1.2vw, 16px);
 }
 
 img {
@@ -38,75 +35,31 @@ img {
 }
 
 /* ========================================
-   2. ANIMATIONS GLOBALES
+   2. ANIMATIONS
    ======================================== */
-
 @keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes pulse {
-  0%, 100% { 
-    opacity: 0.5; 
-  }
-  50% { 
-    opacity: 1; 
-  }
-}
-
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0px); 
-  }
-  50% { 
-    transform: translateY(-10px); 
-  }
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
 }
 
 /* ========================================
-   2. NAVBAR
+   3. NAVBAR - TAILLES FIXES ET RAISONNABLES
    ======================================== */
-
 .nav-container {
   position: fixed;
   top: 0;
@@ -115,83 +68,41 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 5%;
+  padding: 12px 40px;
   z-index: 1000;
-  transition: background 0.4s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   animation: slideDown 0.6s ease-out;
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 .nav-container.scrolled {
-  background-color: rgba(0, 0, 0, 0.3); /* blanc avec 80% d'opacité */
+  background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
 }
 
+/* Logo - taille raisonnable */
 .logo img {
-  width: clamp(200px, 17vw, 400px);
-  height: auto;
-  transition: width 0.3s ease;
-  animation: fadeInScale 0.8s ease-out 0.2s both;
+  height: 45px;
+  width: auto;
+  transition: height 0.3s ease;
 }
 
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
+
+/* Navigation links */
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(15px, 2vw, 35px);
+  gap: 25px;
   list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  animation: fadeInUp 0.6s ease-out both;
-}
-
-.nav-links li:nth-child(1) { animation-delay: 0.3s; }
-.nav-links li:nth-child(2) { animation-delay: 0.4s; }
-.nav-links li:nth-child(3) { animation-delay: 0.5s; }
-.nav-links li:nth-child(4) { animation-delay: 0.6s; }
-.nav-links li:nth-child(5) { animation-delay: 0.7s; }
-.nav-links li:nth-child(6) { animation-delay: 0.8s; }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  align-items: center;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: clamp(13px, 1.1vw, 17px);
-  padding-bottom: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 3px;
   position: relative;
   transition: color 0.3s;
   white-space: nowrap;
@@ -216,51 +127,37 @@ img {
   width: 100%;
 }
 
-/* Conteneur des boutons CTA */
+/* Boutons navbar - TAILLES RÉDUITES */
 .nav-actions {
   display: flex;
-  gap: clamp(8px, 1vw, 12px);
+  gap: 12px;
   align-items: center;
-  animation: fadeInRight 0.8s ease-out 0.7s both;
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
   background: #0099ff;
   color: white;
   border: none;
-  padding: clamp(10px, 1.2vw, 14px) clamp(18px, 2.5vw, 28px);
-  font-size: clamp(13px, 1.1vw, 15px);
+  padding: 10px 18px;
+  font-size: 14px;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
-  display: inline-block;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(0, 114, 188, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 114, 188, 0.3);
 }
 
 .phone-button:hover,
 .eligibilite-button:hover {
-  background: linear-gradient(135deg, #005f9e 0%, #0099cc 100%);
+  background: #0072BC;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 114, 188, 0.4);
 }
 
-/* Hamburger Menu */
+/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -293,264 +190,70 @@ img {
 .nav-container.open .hamburger span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -7px);
 }
-/* ========================================
-   4. SECTIONS COMMUNES
-   ======================================== */
-
-.infogerance-hero,
-.infogerance-intro,
-.solutions-section,
-.avantages-section,
-.stats-section,
-.formules-section,
-.process-section,
-.faq-section,
-.cta-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: clamp(60px, 8vh, 100px) clamp(20px, 5%, 40px);
-}
-
-/* Effets radiaux pour chaque section */
-.infogerance-hero .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(0, 114, 188, 0.2) 0%, transparent 70%);
-  animation: pulse 4s ease-in-out infinite;
-  pointer-events: none;
-}
-
-.infogerance-intro::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 70% 30%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.solutions-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(0, 114, 188, 0.2) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.avantages-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.stats-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.formules-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 70%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.process-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 60% 40%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.faq-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 40% 60%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-/* Container standard */
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: clamp(40px, 6vw, 80px) clamp(20px, 5%, 40px);
-  position: relative;
-  z-index: 1;
-}
-
-.container h2 {
-  font-size: clamp(28px, 4vw, 48px);
-  color: lightskyblue;
-  text-align: center;
-  margin-bottom: clamp(25px, 4vh, 45px);
-  font-weight: 700;
-  text-shadow: 0 2px 10px rgba(135, 206, 250, 0.3);
-}
-
-.container p {
-  font-size: clamp(15px, 1.6vw, 19px);
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.8;
-  margin-bottom: 20px;
-  text-align: center;
-}
 
 /* ========================================
-   5. HERO SECTION AVEC ANIMATIONS
+   4. HERO SECTION - TAILLES RÉDUITES
    ======================================== */
-
 .infogerance-hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: clamp(60px, 8vh, 100px) clamp(20px, 5%, 40px);
+  padding: 120px 40px 80px;
 }
 
-/* Animation du fond radial */
-.infogerance-hero .hero-overlay {
+.hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(0, 114, 188, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle at 30% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
   pointer-events: none;
-  opacity: 0;
-  animation: infoHeroFadeIn 1s ease-out forwards, pulse 4s ease-in-out 1s infinite;
 }
 
-@keyframes infoHeroFadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes pulse {
-  0%, 100% { 
-    opacity: 0.5; 
-  }
-  50% { 
-    opacity: 1; 
-  }
-}
-
-/* Liseré bleu en bas de section */
 .infogerance-hero::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(to right, transparent, #0072BC, transparent);
-  box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
-  transform: scaleX(0);
-  animation: infoHeroLineExpand 1.2s ease-out 0.5s forwards;
+  box-shadow: 0 0 15px rgba(0, 114, 188, 0.6);
 }
 
-@keyframes infoHeroLineExpand {
-  to {
-    transform: scaleX(1);
-  }
-}
-
+/* Hero content - TAILLES RÉDUITES */
 .hero-content {
   position: relative;
   z-index: 1;
   text-align: center;
-  max-width: 900px;
+  max-width: 800px;
   color: white;
-  background: rgba(0, 0, 0, 0.2);
-  padding: clamp(35px, 5vw, 55px);
+  background: rgba(0, 0, 0, 0.25);
+  padding: 50px 40px;
   border-radius: 20px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  transform: translateY(30px);
-  animation: infoHeroSlideUpFadeIn 0.8s ease-out 0.3s forwards;
-}
-
-@keyframes infoHeroSlideUpFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  animation: fadeInScale 0.8s ease-out;
 }
 
 .hero-content h1 {
-  font-size: clamp(28px, 5vw, 56px);
+  font-size: 48px;
   font-weight: 800;
-  margin-bottom: clamp(20px, 3vh, 30px);
+  margin-bottom: 20px;
   line-height: 1.2;
-  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: infoHeroSlideInLeft 0.8s ease-out 0.6s forwards;
-}
-
-@keyframes infoHeroSlideInLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-  font-size: clamp(15px, 2vw, 22px);
-  margin-bottom: clamp(35px, 5vh, 55px);
+  font-size: 20px;
+  margin-bottom: 35px;
   color: rgba(255, 255, 255, 0.95);
-  line-height: 1.6;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: infoHeroSlideInLeft 0.8s ease-out 0.8s forwards;
+  line-height: 1.5;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
@@ -560,10 +263,11 @@ img {
   flex-wrap: wrap;
 }
 
+/* Boutons hero - TAILLES NORMALES */
 .btn-primary,
 .btn-secondary {
-  padding: clamp(12px, 1.5vw, 18px) clamp(25px, 3vw, 45px);
-  font-size: clamp(14px, 1.4vw, 18px);
+  padding: 14px 32px;
+  font-size: 16px;
   font-weight: 600;
   border-radius: 50px;
   text-decoration: none;
@@ -575,22 +279,12 @@ img {
   background: white;
   color: #0072BC;
   border: 2px solid white;
-  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: infoHeroFadeInUp 0.8s ease-out 1s forwards;
-}
-
-@keyframes infoHeroFadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
   background: #0072BC;
   color: white;
 }
@@ -599,9 +293,6 @@ img {
   background: transparent;
   color: white;
   border: 2px solid white;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: infoHeroFadeInUp 0.8s ease-out 1.1s forwards;
 }
 
 .btn-secondary:hover {
@@ -611,256 +302,261 @@ img {
 }
 
 /* ========================================
-   LISERÉS BLEUS POUR TOUTES LES SECTIONS
+   5. SECTIONS COMMUNES
    ======================================== */
+.infogerance-intro,
+.solutions-section,
+.avantages-section,
+.stats-section,
+.formules-section,
+.process-section,
+.faq-section,
+.cta-section {
+  min-height: auto;
+  position: relative;
+  padding: 80px 40px;
+}
 
+/* Effets de fond subtils */
+.infogerance-intro::before,
+.solutions-section::before,
+.avantages-section::before,
+.stats-section::before,
+.formules-section::before,
+.process-section::before,
+.faq-section::before,
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 114, 188, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Liserés de séparation */
 .infogerance-intro::after,
 .solutions-section::after,
 .avantages-section::after,
 .stats-section::after,
 .formules-section::after,
 .process-section::after,
-.faq-section::after,
-.cta-section::after {
+.faq-section::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(to right, transparent, #0072BC, transparent);
-  box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
+  opacity: 0.5;
 }
 
-/* Responsive - désactiver les animations sur mobile si nécessaire */
-@media (prefers-reduced-motion: reduce) {
-  .infogerance-hero .hero-overlay,
-  .infogerance-hero::after,
-  .hero-content,
-  .hero-content h1,
-  .hero-subtitle,
-  .btn-primary,
-  .btn-secondary {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* ========================================
-   6. SOLUTIONS SECTION
-   ======================================== */
-
-.solutions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: clamp(25px, 3.5vw, 40px);
-  margin-top: clamp(35px, 5vh, 50px);
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-.solution-card {
-  background: linear-gradient(135deg, rgba(0, 114, 188, 0.15) 0%, rgba(13, 59, 102, 0.15) 100%);
-  border: 1px solid rgba(0, 114, 188, 0.3);
-  border-radius: 15px;
-  padding: clamp(25px, 3.5vw, 40px);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.solution-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 50px rgba(0, 114, 188, 0.4);
-  border-color: rgba(0, 114, 188, 0.6);
-  background: linear-gradient(135deg, rgba(0, 114, 188, 0.25) 0%, rgba(13, 59, 102, 0.2) 100%);
-  animation: float 3s ease-in-out infinite;
-}
-
-.solution-card h3 {
-  font-size: clamp(20px, 2.2vw, 26px);
+.container h2 {
+  font-size: 36px;
   color: lightskyblue;
-  margin-bottom: clamp(15px, 2vh, 20px);
-  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
   text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
+}
+
+.container p {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.solution-card p {
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: clamp(18px, 2.5vh, 25px);
-  font-size: clamp(14px, 1.4vw, 17px);
+/* ========================================
+   6. GRIDS - TAILLES COHÉRENTES
+   ======================================== */
+.solutions-grid,
+.avantages-grid,
+.stats-grid,
+.formules-grid,
+.process-grid {
+  display: grid;
+  gap: 30px;
+  margin-top: 40px;
 }
 
-.solution-card ul {
+.solutions-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.avantages-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.stats-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.formules-grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.process-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ========================================
+   7. CARDS - STYLES COMMUNS
+   ======================================== */
+.solution-card,
+.avantage-card,
+.stat-card,
+.formule-card,
+.process-card,
+.faq-item {
+  background: rgba(20, 30, 40, 0.7);
+  border: 1px solid rgba(0, 114, 188, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.solution-card:hover,
+.avantage-card:hover,
+.stat-card:hover,
+.formule-card:hover,
+.process-card:hover,
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 114, 188, 0.3);
+  border-color: rgba(0, 114, 188, 0.5);
+  background: rgba(0, 114, 188, 0.15);
+}
+
+/* Titres des cards */
+.solution-card h3,
+.avantage-card h3,
+.process-card h3,
+.formule-header h3 {
+  font-size: 22px;
+  color: lightskyblue;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(135, 206, 250, 0.3);
+}
+
+.faq-item h4 {
+  font-size: 20px;
+  color: lightskyblue;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Paragraphes des cards */
+.solution-card p,
+.avantage-card p,
+.process-card p,
+.faq-item p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Listes avec checkmarks */
+.solution-card ul,
+.formule-content ul {
   list-style: none;
   padding: 0;
 }
 
-.solution-card ul li {
-  padding: clamp(8px, 1.2vh, 12px) 0 clamp(8px, 1.2vh, 12px) clamp(22px, 2.8vw, 28px);
+.solution-card ul li,
+.formule-content ul li {
+  padding: 8px 0 8px 28px;
   position: relative;
   color: rgba(255, 255, 255, 0.85);
-  font-size: clamp(13px, 1.3vw, 16px);
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-.solution-card ul li::before {
+.solution-card ul li::before,
+.formule-content ul li::before {
   content: '✓';
   position: absolute;
   left: 0;
   color: #00D0FF;
   font-weight: bold;
   text-shadow: 0 0 8px rgba(0, 208, 255, 0.8);
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: 18px;
 }
 
 /* ========================================
-   7. AVANTAGES SECTION
+   8. AVANTAGES
    ======================================== */
-
-.avantages-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(25px, 3.5vw, 35px);
-  margin-top: clamp(35px, 5vh, 50px);
-  position: relative;
-  z-index: 1;
-}
-
 .avantage-card {
-  background: rgba(20, 30, 40, 0.6);
-  border: 1px solid rgba(0, 114, 188, 0.3);
-  border-radius: 15px;
-  padding: clamp(25px, 3.5vw, 40px);
   text-align: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.avantage-card:hover {
-  transform: translateY(-10px);
-  background: rgba(0, 114, 188, 0.15);
-  box-shadow: 0 10px 40px rgba(0, 114, 188, 0.3);
-  border-color: rgba(0, 114, 188, 0.6);
-  animation: float 3s ease-in-out infinite;
 }
 
 .avantage-card .icon {
-  font-size: clamp(40px, 5.5vw, 56px);
-  margin-bottom: clamp(15px, 2vh, 22px);
+  font-size: 48px;
+  margin-bottom: 15px;
   filter: drop-shadow(0 2px 8px rgba(0, 114, 188, 0.5));
 }
 
-.avantage-card h3 {
-  font-size: clamp(18px, 2.2vw, 24px);
-  color: white;
-  margin-bottom: clamp(12px, 1.8vh, 18px);
-  font-weight: 600;
-}
-
-.avantage-card p {
-  font-size: clamp(14px, 1.4vw, 17px);
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
-}
-
 /* ========================================
-   8. STATS SECTION
+   9. STATS
    ======================================== */
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(30px, 4vw, 50px);
-  margin-top: clamp(35px, 5vh, 50px);
-  position: relative;
-  z-index: 1;
-}
-
 .stat-card {
-  background: rgba(12, 12, 12, 0.336);
-  border: 2px solid rgba(255, 255, 255, 0.014);
-  border-radius: 15px;
-  padding: clamp(35px, 5vw, 50px);
   text-align: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(12, 12, 12, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.05);
 }
 
 .stat-card:hover {
   transform: scale(1.05);
-  border-color: rgba(255, 255, 255, 0.048);
   box-shadow: 
     0 0 20px rgba(0, 114, 188, 0.4),
-    0 0 40px rgba(0, 114, 188, 0.2),
-    0 12px 50px rgba(255, 255, 255, 0.2);
-  background: rgba(12, 12, 12, 0.555);
+    0 12px 40px rgba(255, 255, 255, 0.2);
 }
 
 .stat-number {
-  font-size: clamp(40px, 6vw, 72px);
+  font-size: 56px;
   font-weight: 900;
   color: white;
-  margin-bottom: clamp(12px, 2vh, 18px);
+  margin-bottom: 15px;
   line-height: 1;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .stat-card p {
-  font-size: clamp(14px, 1.5vw, 18px);
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.95);
-  line-height: 1.5;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* ========================================
-   9. FORMULES SECTION
+   10. FORMULES
    ======================================== */
-
-.formules-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: clamp(30px, 4vw, 50px);
-  margin-top: clamp(35px, 5vh, 50px);
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  z-index: 1;
-}
-
 .formule-card {
-  background: rgba(20, 30, 40, 0.7);
-  border: 2px solid rgba(0, 114, 188, 0.3);
-  border-radius: 20px;
   overflow: hidden;
-  transition: all 0.3s ease;
-  position: relative;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-}
-
-.formule-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 60px rgba(0, 114, 188, 0.4);
-  border-color: rgba(0, 114, 188, 0.6);
+  border: 2px solid rgba(0, 114, 188, 0.3);
+  padding: 0;
 }
 
 .formule-card.featured {
   border-color: #0072BC;
   border-width: 3px;
-  transform: scale(1.05);
-  box-shadow: 
-    0 0 20px rgba(0, 114, 188, 0.4),
-    0 0 40px rgba(0, 114, 188, 0.2),
-    0 12px 50px rgba(0, 114, 188, 0.5);
-}
-
-.formule-card.featured:hover {
-  transform: scale(1.08) translateY(-10px);
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 114, 188, 0.4);
 }
 
 .badge {
@@ -869,204 +565,96 @@ img {
   right: -35px;
   background: linear-gradient(135deg, #0072BC 0%, #005f9e 100%);
   color: white;
-  padding: 8px 50px;
-  font-size: clamp(12px, 1.2vw, 14px);
+  padding: 6px 45px;
+  font-size: 12px;
   font-weight: bold;
   transform: rotate(45deg);
-  box-shadow: 0 3px 15px rgba(0, 114, 188, 0.6);
+  box-shadow: 0 3px 12px rgba(0, 114, 188, 0.6);
   z-index: 2;
 }
 
 .formule-header {
   background: linear-gradient(135deg, rgba(0, 114, 188, 0.3) 0%, rgba(13, 59, 102, 0.3) 100%);
-  padding: clamp(30px, 4vw, 45px);
+  padding: 35px;
   text-align: center;
   border-bottom: 2px solid rgba(0, 114, 188, 0.4);
 }
 
-.formule-header h3 {
-  font-size: clamp(24px, 3vw, 32px);
-  color: lightskyblue;
-  margin-bottom: clamp(12px, 2vh, 18px);
-  font-weight: 700;
-  text-shadow: 0 2px 10px rgba(135, 206, 250, 0.5);
-}
-
 .formule-price {
-  font-size: clamp(32px, 4vw, 40px);
+  font-size: 38px;
   font-weight: 900;
   color: white;
-  margin: clamp(12px, 2vh, 18px) 0;
-  text-shadow: 0 2px 15px rgba(0, 114, 188, 0.8);
+  margin: 15px 0;
+  text-shadow: 0 2px 12px rgba(0, 114, 188, 0.8);
 }
 
 .formule-header p {
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(14px, 1.4vw, 17px);
+  font-size: 15px;
   margin: 0;
 }
 
 .formule-content {
-  padding: clamp(25px, 3.5vw, 40px);
-}
-
-.formule-content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.formule-content ul li {
-  padding: clamp(10px, 1.5vh, 14px) 0 clamp(10px, 1.5vh, 14px) clamp(25px, 3vw, 32px);
-  position: relative;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(13px, 1.4vw, 16px);
-  line-height: 1.6;
-}
-
-.formule-content ul li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: #00D0FF;
-  font-weight: bold;
-  font-size: clamp(18px, 2vw, 22px);
-  text-shadow: 0 0 10px rgba(0, 208, 255, 0.8);
-}
-
-.formule-content ul li strong {
-  color: lightskyblue;
+  padding: 30px;
 }
 
 /* ========================================
-   10. PROCESS SECTION
+   11. PROCESS
    ======================================== */
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(25px, 3.5vw, 40px);
-  margin-top: clamp(35px, 5vh, 50px);
-  position: relative;
-  z-index: 1;
-}
-
 .process-card {
-  background: rgba(20, 30, 40, 0.7);
-  border: 1px solid rgba(0, 114, 188, 0.3);
-  border-radius: 15px;
-  padding: clamp(25px, 3.5vw, 40px);
   position: relative;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.process-card:hover {
-  transform: translateY(-5px);
-  background: rgba(0, 114, 188, 0.2);
-  box-shadow: 0 15px 50px rgba(0, 114, 188, 0.3);
-  border-color: rgba(0, 114, 188, 0.6);
+  padding-top: 40px;
 }
 
 .process-number {
   position: absolute;
-  top: -20px;
+  top: -15px;
   left: 20px;
-  width: clamp(45px, 6vw, 60px);
-  height: clamp(45px, 6vw, 60px);
+  width: 50px;
+  height: 50px;
   background: linear-gradient(135deg, #0072BC 0%, #005f9e 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(22px, 2.5vw, 28px);
+  font-size: 24px;
   font-weight: bold;
   color: white;
-  box-shadow: 0 5px 20px rgba(0, 114, 188, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 114, 188, 0.6);
   border: 3px solid rgba(0, 208, 255, 0.5);
 }
 
-.process-card h3 {
-  font-size: clamp(18px, 2.2vw, 24px);
-  color: lightskyblue;
-  margin: clamp(18px, 2.5vh, 25px) 0 clamp(12px, 1.8vh, 18px) 0;
-  font-weight: 600;
-  text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
-}
-
-.process-card p {
-  font-size: clamp(14px, 1.4vw, 17px);
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
-}
-
 /* ========================================
-   11. FAQ SECTION
+   12. FAQ
    ======================================== */
-
 .faq-list {
   max-width: 900px;
-  margin: clamp(35px, 5vh, 50px) auto 0;
-  position: relative;
-  z-index: 1;
+  margin: 40px auto 0;
 }
 
 .faq-item {
-  background: rgba(20, 30, 40, 0.7);
-  border: 1px solid rgba(0, 114, 188, 0.3);
-  border-radius: 15px;
-  padding: clamp(22px, 3vw, 35px);
-  margin-bottom: clamp(18px, 2.5vh, 25px);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.faq-item:hover {
-  background: rgba(0, 114, 188, 0.15);
-  border-color: rgba(0, 114, 188, 0.5);
-  box-shadow: 0 8px 30px rgba(0, 114, 188, 0.3);
-}
-
-.faq-item h4 {
-  font-size: clamp(18px, 2vw, 22px);
-  color: lightskyblue;
-  margin-bottom: clamp(12px, 1.8vh, 16px);
-  font-weight: 600;
-  text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
-}
-
-.faq-item p {
-  font-size: clamp(14px, 1.5vw, 17px);
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.7;
-  margin: 0;
+  margin-bottom: 20px;
 }
 
 /* ========================================
-   12. CTA SECTION
+   13. CTA SECTION
    ======================================== */
-
 .cta-section {
   text-align: center;
+  padding: 100px 40px;
 }
 
 .cta-section h2 {
   color: white;
-  font-size: clamp(28px, 4.5vw, 48px);
-  margin-bottom: clamp(15px, 2.5vh, 22px);
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  position: relative;
-  z-index: 1;
+  font-size: 42px;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .cta-section p {
   color: rgba(255, 255, 255, 0.95);
-  font-size: clamp(15px, 2vw, 22px);
-  margin-bottom: clamp(30px, 5vh, 45px);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 1;
+  font-size: 20px;
+  margin-bottom: 40px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -1077,14 +665,12 @@ img {
   gap: 15px;
   justify-content: center;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
 }
 
 .btn-cta,
 .btn-cta-secondary {
-  padding: clamp(14px, 1.8vw, 20px) clamp(30px, 4vw, 50px);
-  font-size: clamp(14px, 1.5vw, 18px);
+  padding: 16px 40px;
+  font-size: 17px;
   font-weight: 600;
   border-radius: 50px;
   text-decoration: none;
@@ -1096,12 +682,12 @@ img {
   background: white;
   color: #0072BC;
   border: 2px solid white;
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
 .btn-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.5);
   background: #0072BC;
   color: white;
 }
@@ -1119,21 +705,20 @@ img {
 }
 
 /* ========================================
-   13. FOOTER
+   14. FOOTER
    ======================================== */
-
 footer {
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   color: white;
-  padding: clamp(40px, 6vh, 70px) 5%;
+  padding: 60px 40px 30px;
   box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
 }
 
 footer h3 {
   color: lightskyblue;
   margin-bottom: 18px;
-  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
-  text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
+  font-size: 20px;
+  text-shadow: 0 2px 6px rgba(135, 206, 250, 0.3);
 }
 
 footer ul {
@@ -1143,7 +728,7 @@ footer ul {
 
 footer ul li {
   margin-bottom: 10px;
-  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  font-size: 15px;
 }
 
 footer a {
@@ -1160,14 +745,13 @@ footer a:hover {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: clamp(25px, 4vw, 40px);
-  max-width: 1400px;
+  gap: 35px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .footer-grid a {
   color: #0099ff;
-  transition: color 0.3s;
 }
 
 .footer-grid div {
@@ -1177,9 +761,9 @@ footer a:hover {
 .footer-bottom {
   text-align: center;
   border-top: 1px solid #0099ff;
-  margin-top: clamp(25px, 4vh, 40px);
-  padding-top: clamp(18px, 3vh, 28px);
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  margin-top: 40px;
+  padding-top: 25px;
+  font-size: 14px;
   opacity: 0.8;
 }
 
@@ -1192,25 +776,59 @@ footer a:hover {
 }
 
 /* ========================================
-   14. RESPONSIVE - VERSION ULTRA-COMPLÈTE
+   15. RESPONSIVE
    ======================================== */
 
-/* ---------- XS: Très petits téléphones (0 - 480px) ---------- */
-@media (max-width: 480px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
+/* Tablettes et petits écrans */
+@media (max-width: 992px) {
   .nav-container {
-    padding: 10px 4%;
-    height: auto;
+    padding: 12px 30px;
   }
 
   .logo img {
-    width: 100px;
+    height: 40px;
   }
-  
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .container h2 {
+    font-size: 32px;
+  }
+
+  .solutions-grid,
+  .avantages-grid,
+  .stats-grid,
+  .formules-grid,
+  .process-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 10px 20px;
+  }
+
+  .logo img {
+    height: 35px;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -1218,15 +836,15 @@ footer a:hover {
   .nav-links {
     display: none;
     position: fixed;
-    top: 58px;
+    top: 55px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 58px);
+    height: calc(100vh - 55px);
     background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
     flex-direction: column;
     align-items: center;
-    padding: 25px 20px;
-    gap: 18px;
+    padding: 30px 20px;
+    gap: 20px;
     overflow-y: auto;
     backdrop-filter: blur(10px);
   }
@@ -1235,120 +853,47 @@ footer a:hover {
     display: flex;
   }
 
-  .nav-actions {
-    gap: 8px;
+  .nav-links a {
+    font-size: 16px;
   }
 
   .phone-button,
   .eligibilite-button {
-    padding: 4px 6px;
-    font-size: 8px;
+    padding: 9px 15px;
+    font-size: 13px;
   }
 
-  /* Sections */
-  .infogerance-hero,
-  .infogerance-intro,
-  .solutions-section,
-  .avantages-section,
-  .stats-section,
-  .formules-section,
-  .process-section,
-  .faq-section,
-  .cta-section {
-    padding: 70px 45px;
-    min-height: auto;
+  .infogerance-hero {
+    padding: 100px 20px 60px;
   }
 
-  /* Boutons full-width */
-  .btn-primary,
-  .btn-secondary,
-  .btn-cta,
-  .btn-cta-secondary {
-    width: 100%;
-    max-width: 320px;
+  .hero-content {
+    padding: 40px 25px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    margin-bottom: 30px;
   }
 
   .hero-buttons,
   .cta-buttons {
     flex-direction: column;
     width: 100%;
-    align-items: center;
   }
 
-  /* Grids */
-  .solutions-grid,
-  .avantages-grid,
-  .stats-grid,
-  .formules-grid,
-  .process-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  /* Formules featured */
-  .formule-card.featured {
-    transform: scale(1);
-  }
-
-  .formule-card.featured:hover {
-    transform: translateY(-10px);
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-/* ---------- SM: Petits téléphones (481 - 576px) ---------- */
-@media (min-width: 481px) and (max-width: 576px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    height: 60px;
-    padding: 10px 5%;
-  }
-
-  .logo img {
-    width: 130px;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
+  .btn-primary,
+  .btn-secondary,
+  .btn-cta,
+  .btn-cta-secondary {
     width: 100%;
-    height: calc(100vh - 60px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
-    flex-direction: column;
-    align-items: center;
-    padding: 25px;
-    gap: 18px;
-    overflow-y: auto;
-    backdrop-filter: blur(10px);
+    max-width: 300px;
   }
 
-  .nav-container.open .nav-links {
-    display: flex;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    padding: 9px 14px;
-    font-size: 12px;
-  }
-
-  /* Sections */
-  .infogerance-hero,
   .infogerance-intro,
   .solutions-section,
   .avantages-section,
@@ -1357,10 +902,18 @@ footer a:hover {
   .process-section,
   .faq-section,
   .cta-section {
-    padding: 75px 5% 40px;
+    padding: 60px 20px;
   }
 
-  /* Grids */
+  .container h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .container p {
+    font-size: 15px;
+  }
+
   .solutions-grid,
   .avantages-grid,
   .stats-grid,
@@ -1370,56 +923,67 @@ footer a:hover {
     gap: 20px;
   }
 
-  /* Formules featured */
   .formule-card.featured {
     transform: scale(1);
   }
 
-  /* Footer */
+  .cta-section h2 {
+    font-size: 32px;
+  }
+
+  .cta-section p {
+    font-size: 17px;
+  }
+
+  footer {
+    padding: 50px 20px 25px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 30px;
   }
 }
 
-/* ---------- MD: Mobiles larges / petites tablettes (577 - 768px) ---------- */
-@media (min-width: 577px) and (max-width: 768px) {
-  body {
-    background-attachment: fixed;
+/* Très petits mobiles */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 26px;
   }
 
-  /* Navigation */
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .container h2 {
+    font-size: 24px;
+  }
+
+  .stat-number {
+    font-size: 42px;
+  }
+
+  .formule-price {
+    font-size: 32px;
+  }
+}
+
+/* Small Desktop - 993px à 1200px */
+@media (min-width: 993px) and (max-width: 1200px) {
   .nav-container {
-    height: 64px;
-    padding: 10px 4%;
+    padding: 12px 35px;
   }
 
   .logo img {
-    width: 150px;
-  }
-
-  .hamburger {
-    display: flex;
+    height: 42px;
   }
 
   .nav-links {
-    display: none;
-    position: fixed;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 64px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    gap: 20px;
-    overflow-y: auto;
-    backdrop-filter: blur(10px);
+    gap: 22px;
   }
 
-  .nav-container.open .nav-links {
-    display: flex;
+  .nav-links a {
+    font-size: 14px;
   }
 
   .phone-button,
@@ -1428,165 +992,95 @@ footer a:hover {
     font-size: 13px;
   }
 
-  /* Sections */
-  .infogerance-hero,
-  .infogerance-intro,
-  .solutions-section,
-  .avantages-section,
-  .stats-section,
-  .formules-section,
-  .process-section,
-  .faq-section,
-  .cta-section {
-    padding: 85px 4% 45px;
+  .hero-content h1 {
+    font-size: 42px;
   }
 
-  /* Grids */
-  .solutions-grid,
-  .avantages-grid,
-  .stats-grid,
-  .formules-grid,
-  .process-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
+  .hero-subtitle {
+    font-size: 19px;
   }
 
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-}
-
-/* ---------- LG: Tablettes (769 - 992px) ---------- */
-@media (min-width: 769px) and (max-width: 992px) {
-  body {
-    background-attachment: fixed;
+  .container {
+    max-width: 1100px;
   }
 
-  /* Navigation */
-  .nav-container {
-    height: 70px;
-    padding: 12px 5%;
+  .container h2 {
+    font-size: 34px;
   }
 
-  .logo img {
-    width: 170px;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
-    flex-direction: column;
-    align-items: center;
-    padding: 35px;
-    gap: 22px;
-    overflow-y: auto;
-    backdrop-filter: blur(10px);
-  }
-
-  .nav-container.open .nav-links {
-    display: flex;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    padding: 11px 18px;
-    font-size: 13px;
-  }
-
-  /* Sections */
-  .infogerance-hero,
-  .infogerance-intro,
-  .solutions-section,
-  .avantages-section,
-  .stats-section,
-  .formules-section,
-  .process-section,
-  .faq-section,
-  .cta-section {
-    padding: 95px 5% 50px;
-  }
-
-  /* Grids 2 colonnes */
-  .solutions-grid,
-  .avantages-grid,
-  .stats-grid,
-  .formules-grid,
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-
-  /* Formules featured */
-  .formule-card.featured {
-    transform: scale(1);
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-  }
-}
-
-/* ---------- XL: Petits laptops (993 - 1200px) ---------- */
-@media (min-width: 993px) and (max-width: 1200px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    padding: 14px ;
-    padding-right: 80px;
-  }
-
-  .logo img {
-    width: 190px;
-  }
-
-  .hamburger {
-    display: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: clamp(15px, 2vw, 25px);
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    padding: 10px 10px;
-    font-size: 12px;
-  }
-
-  /* Sections */
-  .infogerance-hero,
-  .infogerance-intro,
-  .solutions-section,
-  .avantages-section,
-  .stats-section,
-  .formules-section,
-  .process-section,
-  .faq-section,
-  .cta-section {
-    padding: clamp(80px, 10vh, 100px) 6% clamp(50px, 6vh, 70px);
-  }
-
-  /* Grids optimisés */
   .solutions-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
+  }
+
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .formules-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+/* Medium Desktop - 1201px à 1400px */
+@media (min-width: 1201px) and (max-width: 1400px) {
+  .nav-container {
+    padding: 13px 45px;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  .nav-links {
+    gap: 26px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  .phone-button {
+    padding: 8px 8px;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  .eligibilite-button {
+    padding: 8px 8px;
+    font-size: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 50px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .container {
+    max-width: 1250px;
+  }
+
+  .container h2 {
+    font-size: 38px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 
   .avantages-grid {
@@ -1595,8 +1089,8 @@ footer a:hover {
   }
 
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
   }
 
   .formules-grid {
@@ -1605,70 +1099,130 @@ footer a:hover {
   }
 
   .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
   }
 }
 
-/* ---------- XXL: Desktop standard (1201 - 1440px) ---------- */
-@media (min-width: 1201px) and (max-width: 1440px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
+/* Large Desktop - 1401px à 1600px */
+@media (min-width: 1401px) and (max-width: 1600px) {
   .nav-container {
-    padding: 14px 7%;
+    padding: 14px 55px;
   }
 
   .logo img {
-    width: clamp(210px, 12vw, 280px);
+    height: 48px;
   }
 
   .nav-links {
-    display: flex;
-    gap: clamp(18px, 2.5vw, 32px);
+    gap: 28px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    padding: 11px 19px;
+    font-size: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 54px;
+  }
+
+  .hero-subtitle {
+    font-size: 21px;
+  }
+
+  .container {
+    max-width: 1350px;
+  }
+
+  .container h2 {
+    font-size: 40px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 34px;
+  }
+
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 34px;
+  }
+
+  .formules-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 34px;
+  }
+}
+
+/* XL Desktop - 1601px à 1919px */
+@media (min-width: 1601px) and (max-width: 1919px) {
+  .nav-container {
+    padding: 15px 65px;
+  }
+
+  .logo img {
+    height: 52px;
+  }
+
+  .nav-links {
+    gap: 32px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
   }
 
   .phone-button,
   .eligibilite-button {
     padding: 12px 22px;
-    font-size: 14px;
+    font-size: 15px;
   }
 
-  /* Sections */
-  .infogerance-hero,
-  .infogerance-intro,
-  .solutions-section,
-  .avantages-section,
-  .stats-section,
-  .formules-section,
-  .process-section,
-  .faq-section,
-  .cta-section {
-    padding: clamp(90px, 12vh, 120px) 7% clamp(60px, 8vh, 80px);
+  .hero-content h1 {
+    font-size: 58px;
   }
 
-  /* Grids */
+  .hero-subtitle {
+    font-size: 22px;
+  }
+
+  .container {
+    max-width: 1500px;
+  }
+
+  .container h2 {
+    font-size: 44px;
+  }
+
   .solutions-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 38px;
   }
 
   .avantages-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 35px;
   }
 
   .stats-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 35px;
+    gap: 38px;
   }
 
   .formules-grid {
@@ -1677,80 +1231,57 @@ footer a:hover {
   }
 
   .process-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 38px;
   }
 }
 
-/* ---------- Large Desktop (1441 - 1920px) ---------- */
-@media (min-width: 1441px) and (max-width: 1920px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
+/* Ultra-wide - optimisation pour très grands écrans */
+@media (min-width: 1920px) {
   .nav-container {
-    padding: 16px 8%;
-    max-width: 2000px;
-    margin: 0 auto;
+    padding: 16px 80px;
   }
 
   .logo img {
-    width: clamp(240px, 13vw, 320px);
+    height: 105px;
   }
 
   .nav-links {
-    display: flex;
-    gap: clamp(22px, 2.8vw, 38px);
+    gap: 38px;
+  }
+
+  .nav-links a {
+    font-size: 17px;
   }
 
   .phone-button,
   .eligibilite-button {
-    padding: 12px 18px;
-    font-size: 15px;
+    padding: 13px 24px;
+    font-size: 16px;
   }
 
-  /* Sections */
-  .infogerance-hero,
-  .infogerance-intro,
-  .solutions-section,
-  .avantages-section,
-  .stats-section,
-  .formules-section,
-  .process-section,
-  .faq-section,
-  .cta-section {
-    padding: clamp(100px, 13vh, 130px) 8% clamp(70px, 9vh, 90px);
+  .hero-content h1 {
+    font-size: 64px;
   }
 
-  /* Containers max-width */
-  .container,
-  .solutions-grid,
-  .avantages-grid,
-  .stats-grid,
-  .formules-grid,
-  .process-grid,
-  .faq-list {
+  .hero-subtitle {
+    font-size: 24px;
+  }
+
+  .container {
     max-width: 1600px;
   }
 
-  /* Grids */
+  .container h2 {
+    font-size: 48px;
+  }
+
   .solutions-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 38px;
-  }
-
-  .avantages-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 35px;
+    gap: 40px;
   }
 
+  .avantages-grid,
   .stats-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
@@ -1758,146 +1289,18 @@ footer a:hover {
 
   .formules-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 42px;
+    gap: 40px;
   }
 
   .process-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 38px;
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 38px;
-    max-width: 1600px;
-  }
-}
-
-/* ---------- Ultra-wide (1921px+) ---------- */
-@media (min-width: 1921px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    margin: 0 auto;
-    padding: 18px 10%;
-  }
-
-  .logo img {
-    width: clamp(280px, 14vw, 420px);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: clamp(28px, 3vw, 45px);
-  }
-  .nav-links a {
-    font-size: 24px;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    padding: 15px 30px;
-    font-size: 24px;
-  }
-
-  /* Sections */
-  .infogerance-hero,
-  .infogerance-intro,
-  .solutions-section,
-  .avantages-section,
-  .stats-section,
-  .formules-section,
-  .process-section,
-  .faq-section,
-  .cta-section {
-    padding: clamp(120px, 15vh, 150px) 10% clamp(80px, 10vh, 100px);
-  }
-
-  /* Containers max-width */
-  .container,
-  .solutions-grid,
-  .avantages-grid,
-  .stats-grid,
-  .formules-grid,
-  .process-grid,
-  .faq-list {
-    max-width: 1900px;
-  }
-
-  /* Grids */
-  .solutions-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 45px;
-  }
-
-  .avantages-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 45px;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
-  }
-
-  .formules-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-  }
-
-  .process-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 45px;
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 45px;
-    max-width: 1900px;
-  }
-}
-
-/* ---------- Écrans en hauteur réduite ---------- */
-@media (max-height: 700px) {
-  .infogerance-hero,
-  .infogerance-intro,
-  .solutions-section,
-  .avantages-section,
-  .stats-section,
-  .formules-section,
-  .process-section,
-  .faq-section,
-  .cta-section {
-    min-height: auto;
-    padding: 80px 5% 40px;
-  }
-}
-
-@media (max-height: 600px) {
-  .infogerance-hero,
-  .infogerance-intro,
-  .solutions-section,
-  .avantages-section,
-  .stats-section,
-  .formules-section,
-  .process-section,
-  .faq-section,
-  .cta-section {
-    min-height: auto;
-    padding: 70px 5% 35px;
+    gap: 40px;
   }
 }
 
 /* ========================================
-   15. OPTIMISATIONS PERFORMANCES
+   16. OPTIMISATIONS PERFORMANCES
    ======================================== */
-
-/* Réduction des animations sur préférence utilisateur */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1908,23 +1311,6 @@ footer a:hover {
   }
 }
 
-/* Amélioration des performances scroll */
-@supports (scroll-behavior: smooth) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-/* GPU acceleration pour les éléments animés */
-.solution-card,
-.avantage-card,
-.stat-card,
-.formule-card,
-.process-card,
-.faq-item {
-  will-change: transform;
-}
-
 /* ========================================
-   FIN DU CSS ULTRA-OPTIMISÉ
+   FIN DU CSS
    ======================================== */
