@@ -1245,15 +1245,18 @@ footer a:hover {
   .logo img {
     width: 180px;
   }
+  .nav-links{
+    gap: 10px;
+  }
 
   .nav-links a {
-    font-size: 14px;
+    font-size: 16px;
     padding: 7px 10px;
   }
 
   .phone-button,
   .eligibilite-button {
-    font-size: 10px;
+    font-size: 12px;
     padding: 7px 12px;
   }
 
@@ -1397,15 +1400,18 @@ footer a:hover {
   .logo img {
     width: 200px;
   }
+  .nav-links{
+    gap: 18px;
+  }
 
   .nav-links a {
-    font-size: 11px;
+    font-size: 18px;
     padding: 8px 12px;
   }
 
   .phone-button,
   .eligibilite-button {
-    font-size: 11px;
+    font-size: 16px;
     padding: 8px 14px;
   }
 
@@ -1531,17 +1537,20 @@ footer a:hover {
   }
 
   .logo img {
-    width: 220px;
+    width: 280px;
+  }
+  .nav-links{
+    gap: 20px;
   }
 
   .nav-links a {
-    font-size: 12px;
-    padding: 9px 14px;
+    font-size: 20px;
+    padding: 6px 6px;
   }
 
   .phone-button,
   .eligibilite-button {
-    font-size: 12px;
+    font-size: 18px;
     padding: 9px 16px;
   }
 

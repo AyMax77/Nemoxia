@@ -1660,6 +1660,7 @@ footer {
   .intro-content-wrapper {
     padding: 35px 50px;
     gap: 45px;
+    margin-top: 70px;
   }
 
   .intro-text h2 {
@@ -1900,13 +1901,13 @@ footer {
   }
 
   .nav-links a {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .phone-button,
   .eligibilite-button {
     padding: 11px 22px;
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .nav-actions {
