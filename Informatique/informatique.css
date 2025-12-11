@@ -2976,7 +2976,7 @@ footer a:hover {
 .hero-subtitle {
     margin-top: 35px;
 }
-
+}
 /* ========================================
    AJUSTEMENTS POUR ÉCRANS EN HAUTEUR RÉDUITE
    ======================================== */
@@ -3122,7 +3122,7 @@ footer a:hover {
     max-width: 1900px;
   }
 }
-}
+
 /* ---------- Écrans en hauteur réduite ---------- */
 @media (max-height: 700px) {
   .hero-section,

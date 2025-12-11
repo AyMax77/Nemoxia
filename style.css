@@ -635,8 +635,6 @@ img {
   transform: scale(1.1);
 }
 
-
-
 /* ========================================
    4. CONTENT SECTIONS
    ======================================== */
@@ -1927,7 +1925,6 @@ footer a:hover {
   }
 
   .slide-content {
-    max-width: 1300px;
     padding: 0 60px;
   }
 
