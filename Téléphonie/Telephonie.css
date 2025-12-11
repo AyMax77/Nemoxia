@@ -1823,7 +1823,7 @@ footer a:hover {
   .hero-container {
     grid-template-columns: 1fr 1fr;
     gap: 45px;
-    padding: 40px;
+    padding: 80px
   }
 
   .hero-content h1 {
