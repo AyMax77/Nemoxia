@@ -1081,8 +1081,11 @@ i {
 /* Écrans moyens - optimisation layout (769px à 1200px) */
 @media (min-width: 769px) and (max-width: 1200px) {
   .expertise-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+  }
+  .partners-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
   }
 
   .expertise-card {
@@ -1749,7 +1752,7 @@ footer a:hover {
 
   .slide-content {
     max-width: 1100px;
-    padding: 0 40px;
+    padding: 20px 40px;
   }
 
   .hero-slide h1 {
@@ -1926,7 +1929,7 @@ footer a:hover {
   
 
   .slide-content {
-    padding: 0 60px;
+    padding: 30px 60px;
   }
 
   .hero-slide h1 {
