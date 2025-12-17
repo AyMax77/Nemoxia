@@ -1084,7 +1084,7 @@ footer a:hover {
 }
 
 /* XL Desktop: 1601px - 1919px */
-@media (min-width: 1601px) and (max-width: 1919px) {
+@media (min-width: 1601px) and (max-width: 1920px) {
   .nav-container {
     padding: 15px 65px;
   }
@@ -1096,13 +1096,13 @@ footer a:hover {
   }
 
   .nav-links a {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .phone-button,
   .eligibilite-button {
     padding: 12px 22px;
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .hero-content h1 {
@@ -1127,7 +1127,7 @@ footer a:hover {
 }
 
 /* Ultra-wide: 1920px+ */
-@media (min-width: 1920px) {
+@media (min-width: 1921px) {
   .nav-container {
     padding: 16px 80px;
   }

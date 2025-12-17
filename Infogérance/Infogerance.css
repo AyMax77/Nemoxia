@@ -1247,25 +1247,23 @@ footer a:hover {
 }
 
 /* XL Desktop - 1601px à 1919px */
-@media (min-width: 1601px) and (max-width: 1919px) {
+@media (min-width: 1601px) and (max-width: 1920px) {
   .nav-container {
     padding: 15px 65px;
   }
-
-  
 
   .nav-links {
     gap: 32px;
   }
 
   .nav-links a {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .phone-button,
   .eligibilite-button {
     padding: 12px 22px;
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .hero-content h1 {
@@ -1311,7 +1309,7 @@ footer a:hover {
 }
 
 /* Ultra-wide - optimisation pour très grands écrans */
-@media (min-width: 1920px) {
+@media (min-width: 1921px) {
   .nav-container {
     padding: 16px 80px;
   }
