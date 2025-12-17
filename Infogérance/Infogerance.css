@@ -1316,20 +1316,19 @@ footer a:hover {
     padding: 16px 80px;
   }
 
-  
 
   .nav-links {
-    gap: 38px;
+    display: flex;
+    gap: clamp(28px, 3vw, 45px);
   }
-
-  .nav-links a {
-    font-size: 17px;
+  .nav-links a{
+    font-size:24px;
   }
 
   .phone-button,
   .eligibilite-button {
     padding: 13px 24px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .hero-content h1 {
