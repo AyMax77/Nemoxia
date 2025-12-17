@@ -1991,6 +1991,11 @@ footer a:hover {
   .nav-links a {
     font-size: 24px
   }
+  .phone-button,
+  .eligibilite-button {
+    padding: 15px 30px;
+    font-size: 20px;
+  }
   .hero-container {
     max-width: 1800px;
     gap: 80px;
