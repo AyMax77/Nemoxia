@@ -1049,6 +1049,12 @@ footer a:hover {
     max-width: 1600px;
     gap: 15rem;
   }
+  .nav-links a{
+    font-size: 20px;
+  }
+  .eligibilite-button,.phone-button{
+    font-size: 20px;
+  }
   
   .text-section h1 {
     font-size: 3.5rem;
