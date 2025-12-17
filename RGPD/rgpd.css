@@ -179,9 +179,9 @@ img {
 
 .phone-button:hover,
 .eligibilite-button:hover {
-  background: linear-gradient(135deg, #005f9e 0%, #0099cc 100%);
+  background: #0072BC;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
+  box-shadow: 0 6px 20px #0072BC;
 }
 
 /* Hamburger Menu */

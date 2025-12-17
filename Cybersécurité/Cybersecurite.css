@@ -59,8 +59,9 @@ img {
 }
 
 /* ========================================
-   3. NAVBAR - TAILLES FIXES ET RAISONNABLES
+   2. NAVBAR
    ======================================== */
+
 .nav-container {
   position: fixed;
   top: 0;
@@ -69,34 +70,56 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 40px;
+  padding: 10px 5%;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: background 0.4s ease, box-shadow 0.3s ease;
   animation: slideDown 0.6s ease-out;
 }
 
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .nav-container.scrolled {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3); /* blanc avec 80% d'opacité */
   box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(5px);
 }
 
-/* Logo - taille raisonnable */
 .logo img {
-  height: 45px;
-  width: auto;
-  transition: height 0.3s ease;
+  width: clamp(200px, 17vw, 400px);
+  height: auto;
+  transition: width 0.3s ease;
+  animation: fadeInScale 0.8s ease-out 0.2s both;
 }
 
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-
-/* Navigation links */
 .nav-links {
   display: flex;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: clamp(15px, 2vw, 35px);
   list-style: none;
-  align-items: center;
+  margin: 0;
+  padding: 0;
 }
+
 .nav-links li {
   animation: fadeInUp 0.6s ease-out both;
 }
@@ -122,9 +145,8 @@ img {
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-  padding-bottom: 3px;
+  font-size: clamp(13px, 1.1vw, 17px);
+  padding-bottom: 5px;
   position: relative;
   transition: color 0.3s;
   white-space: nowrap;
@@ -149,37 +171,51 @@ img {
   width: 100%;
 }
 
-/* Boutons navbar - TAILLES RÉDUITES */
+/* Conteneur des boutons CTA */
 .nav-actions {
   display: flex;
-  gap: 12px;
+  gap: clamp(8px, 1vw, 12px);
   align-items: center;
+  animation: fadeInRight 0.8s ease-out 0.7s both;
 }
 
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
   background: #0099ff;
   color: white;
   border: none;
-  padding: 10px 18px;
-  font-size: 14px;
+  padding: clamp(10px, 1.2vw, 14px) clamp(18px, 2.5vw, 28px);
+  font-size: clamp(13px, 1.1vw, 15px);
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  display: inline-block;
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0, 114, 188, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 114, 188, 0.3);
 }
 
 .phone-button:hover,
 .eligibilite-button:hover {
   background: #0072BC;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 114, 188, 0.4);
+  box-shadow: 0 6px 20px #0072BC;
 }
 
-/* Hamburger menu */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -212,9 +248,6 @@ img {
 .nav-container.open .hamburger span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -7px);
 }
-
-
-
 
 /* ========================================
    HERO SECTION
