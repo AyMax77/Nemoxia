@@ -784,10 +784,6 @@ footer a:hover {
     padding: 10px 20px;
   }
 
-  .logo img {
-    height: 65px;
-  }
-
   .hamburger {
     display: flex;
   }
@@ -894,12 +890,28 @@ footer a:hover {
     padding: 12px 30px;
   }
 
-  .logo img {
-    height: 40px;
+  .hamburger {
+    display: flex;
   }
 
   .nav-links {
+    display: none;
+    position: fixed;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 55px);
+    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
     gap: 20px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-container.open .nav-links {
+    display: flex;
   }
 
   .nav-links a {
@@ -942,10 +954,7 @@ footer a:hover {
     padding: 12px 35px;
   }
 
-  .logo img {
-    height: 60px;
-  }
-
+  
   .nav-links {
     gap: 22px;
   }
@@ -1037,9 +1046,7 @@ footer a:hover {
     padding: 14px 55px;
   }
 
-  .logo img {
-    height: 48px;
-  }
+  
 
   .nav-links {
     gap: 28px;
@@ -1082,9 +1089,7 @@ footer a:hover {
     padding: 15px 65px;
   }
 
-  .logo img {
-    height: 80px;
-  }
+ 
 
   .nav-links {
     gap: 32px;
@@ -1172,7 +1177,7 @@ footer a:hover {
     font-size: 26px;
   }
   .logo img {
-    height: 30px;
+    width: 100px;
   }
   .phone-button,
   .eligibilite-button {
@@ -1212,7 +1217,6 @@ footer a:hover {
   .solutions-section,
   .methodologie-section,
   .expertise-section {
-    min-height: auto;
     padding: 40px 20px;
   }
 }

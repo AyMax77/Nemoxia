@@ -844,12 +844,28 @@ footer a:hover {
     padding: 12px 30px;
   }
 
-  .logo img {
-    height: 40px;
+  .hamburger {
+    display: flex;
   }
 
   .nav-links {
+    display: none;
+    position: fixed;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 55px);
+    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
     gap: 20px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-container.open .nav-links {
+    display: flex;
   }
 
   .nav-links a {
@@ -884,9 +900,6 @@ footer a:hover {
     padding: 10px 20px;
   }
 
-  .logo img {
-    height: 65px;
-  }
 
   .hamburger {
     display: flex;
@@ -1016,7 +1029,7 @@ footer a:hover {
     font-size: 8px;
   }
   .logo img {
-    height: 35px;
+   width: 90px;
   }
   .hero-subtitle {
     font-size: 15px;
@@ -1045,7 +1058,7 @@ footer a:hover {
   }
 
   .logo img {
-    height: 42px;
+    width: 125px;
   }
 
   .nav-links {
@@ -1110,10 +1123,7 @@ footer a:hover {
     padding: 13px 45px;
   }
 
-  .logo img {
-    height: 80px;
-  }
-
+  
   .nav-links {
     gap: 26px;
   }
@@ -1180,10 +1190,6 @@ footer a:hover {
     padding: 14px 55px;
   }
 
-  .logo img {
-    height: 48px;
-  }
-
   .nav-links {
     gap: 28px;
   }
@@ -1246,9 +1252,7 @@ footer a:hover {
     padding: 15px 65px;
   }
 
-  .logo img {
-    height: 52px;
-  }
+  
 
   .nav-links {
     gap: 32px;
@@ -1312,9 +1316,7 @@ footer a:hover {
     padding: 16px 80px;
   }
 
-  .logo img {
-    height: 105px;
-  }
+  
 
   .nav-links {
     gap: 38px;

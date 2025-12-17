@@ -1719,6 +1719,9 @@ footer a:hover {
   .carousel-track.transitioning {
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
+  .eligibilite-button,.phone-button{
+    padding: 8px;
+  }
 }
 
 /* ========================================
