@@ -5,16 +5,10 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(to top, #0d3b66 0%, #1a1f3a 50%, #030712 100%);
-    min-height: 100vh;
     color: #ffffff;
-    overflow-x: hidden;
 }
 
 /* ========================================
@@ -45,8 +39,6 @@ body {
   width: auto;
   transition: height 0.3s ease;
 }
-
-
 
 /* Navigation links */
 .nav-links {
@@ -335,7 +327,7 @@ body {
     color: #b8c5d6;
 }
 
-
+/* ==================== RESPONSIVE ==================== */
 @media (max-width:3000px){
     .logo img{
     width:300px
@@ -345,8 +337,9 @@ body {
     .logo img{
     width:200px
   }
+  
 }
-/* ==================== RESPONSIVE ==================== */
+
 @media (max-width:1200px){
     .phone-button,
     .eligibilite-button {
