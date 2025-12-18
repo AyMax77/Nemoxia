@@ -374,7 +374,12 @@ body {
   .nav-links a{
     font-size: 24px;
   }
+  
+  .eligibilite-button,.phone-button{
+    font-size: 18px;
+  }
 }
+
 @media (max-width:1920px){
     .logo img{
     width:200px
