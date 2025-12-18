@@ -2179,6 +2179,15 @@ footer {
     padding: 15px 20px;
     font-size: 20px;
   }
+  .avantages-grid{
+    grid-template-columns: repeat(4,1fr);
+  }
+  .solutions-grid{
+    grid-template-columns: repeat(3,1fr);
+  }
+  .fiber-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
 }
 
 /* ---------- Hauteurs faibles (mobile paysage, petits laptops) ---------- */

@@ -1129,7 +1129,7 @@ footer a:hover {
 /* Ultra-wide: 1920px+ */
 @media (min-width: 1921px) {
   .nav-container {
-    padding: 16px 80px;
+    padding: 16px 15%;
   }
   
   .nav-links {
