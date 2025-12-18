@@ -1129,7 +1129,47 @@ footer a:hover {
 /* Ultra-wide: 1920px+ */
 @media (min-width: 1921px) {
   .nav-container {
-    padding: 16px 15%;
+    padding: 16px 5%;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: clamp(28px, 3vw, 45px);
+  }
+  .nav-links a{
+    font-size:24px;
+  }
+
+  .phone-button,
+  .eligibilite-button {
+    padding: 13px 24px;
+    font-size: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 64px;
+  }
+
+  .hero-subtitle {
+    font-size: 24px;
+  }
+
+  .container {
+    max-width: 1600px;
+  }
+
+  .danger-section h2,
+  .threats-section h2,
+  .solutions-section h2,
+  .methodologie-section h2,
+  .expertise-section h2 {
+    font-size: 48px;
+  }
+}
+/* Ultra-wide: 2100px+ */
+@media (min-width: 2300px) {
+  .nav-container {
+    padding: 16px 10%;
   }
   
   .nav-links {
