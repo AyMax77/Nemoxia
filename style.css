@@ -37,8 +37,6 @@
 
 /* ============================================================
    1. RESET & STYLES GLOBAUX
-   Neutralise les marges/paddings navigateur, active le scroll fluide
-   et définit le fond de page avec dégradé + image fixe
    ============================================================ */
 
 * {
@@ -48,27 +46,21 @@
 }
 
 html {
-  scroll-behavior: smooth; /* défilement animé sur les ancres # */
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-
-  /* Fond : photo Unsplash fixe, visible sous le voile noir global */
   background:
     url('https://images.unsplash.com/photo-1688637737138-e157dd914f61?q=80&w=433&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
   background-attachment: fixed;
-
   color: #333;
   line-height: 1.6;
   font-size: clamp(14px, 1.2vw, 16px);
   overflow-x: hidden;
 }
 
-/* Voile noir uniforme sur toute la page — même opacité que l'ancienne hero.
-   position:fixed pour couvrir même pendant le scroll, z-index:-1 pour rester
-   derrière tout le contenu. Remplace le dégradé inline + .hero-background. */
 body::before {
   content: '';
   position: fixed;
@@ -86,12 +78,10 @@ img {
 
 /* ============================================================
    2. NAVBAR
-   Barre fixe en haut, transparente par défaut.
-   Devient foncée + floutée quand .scrolled est ajoutée par le JS.
    ============================================================ */
 
 .nav-container {
-  position: fixed;   /* reste en haut même en scrollant */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -99,38 +89,33 @@ img {
   align-items: center;
   justify-content: space-between;
   padding: 10px 5%;
-  z-index: 1000;     /* au-dessus de tout le contenu */
+  z-index: 1000;
   transition: background 0.4s ease, box-shadow 0.3s ease;
-  animation: slideDown 0.6s ease-out; /* apparition depuis le haut au chargement */
+  animation: slideDown 0.6s ease-out;
 }
 
 /* ── 2a. Animations navbar ── */
 
-/* Glissement depuis le haut au chargement de la page */
 @keyframes slideDown {
   from { transform: translateY(-100%); opacity: 0; }
   to   { transform: translateY(0);     opacity: 1; }
 }
 
-/* Fondu + zoom du logo au chargement */
 @keyframes fadeInScale {
   from { opacity: 0; transform: scale(0.8); }
   to   { opacity: 1; transform: scale(1);   }
 }
 
-/* Glissement depuis le bas (liens nav et éléments en entrée) */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0);    }
 }
 
-/* Glissement depuis la droite (boutons CTA navbar) */
 @keyframes fadeInRight {
   from { opacity: 0; transform: translateX(30px); }
   to   { opacity: 1; transform: translateX(0);    }
 }
 
-/* État au scroll : fond foncé semi-transparent + flou */
 .nav-container.scrolled {
   background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
@@ -140,7 +125,7 @@ img {
 /* ── 2b. Logo ── */
 
 .logo img {
-  width: clamp(200px, 17vw, 400px); /* taille fluide selon la largeur d'écran */
+  width: clamp(200px, 17vw, 400px);
   height: auto;
   transition: width 0.3s ease;
   animation: fadeInScale 0.8s ease-out 0.2s both;
@@ -157,7 +142,6 @@ img {
   padding: 0;
 }
 
-/* Chaque lien apparaît avec un délai croissant (effet cascade) */
 .nav-links li { animation: fadeInUp 0.6s ease-out both; }
 .nav-links li:nth-child(1) { animation-delay: 0.3s; }
 .nav-links li:nth-child(2) { animation-delay: 0.4s; }
@@ -178,7 +162,6 @@ img {
 
 .nav-links a:hover { color: #0072BC; }
 
-/* Soulignement animé qui s'étend de gauche à droite au survol */
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -190,7 +173,7 @@ img {
 }
 .nav-links a:hover::after { width: 100%; }
 
-/* ── 2d. Boutons CTA (téléphone + contact) ── */
+/* ── 2d. Boutons CTA ── */
 
 .nav-actions {
   display: flex;
@@ -199,7 +182,6 @@ img {
   animation: fadeInRight 0.8s ease-out 0.7s both;
 }
 
-/* Style partagé entre les deux boutons */
 .phone-button,
 .eligibilite-button {
   background: #0099ff;
@@ -224,10 +206,10 @@ img {
   box-shadow: 0 6px 20px #0072BC;
 }
 
-/* ── 2e. Menu hamburger (visible seulement sur mobile via media queries) ── */
+/* ── 2e. Menu hamburger ── */
 
 .hamburger {
-  display: none; /* masqué par défaut, affiché en responsive */
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 28px;
@@ -247,7 +229,6 @@ img {
   transition: all 0.3s ease;
 }
 
-/* Animation hamburger → croix quand le menu est ouvert */
 .nav-container.open .hamburger span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .nav-container.open .hamburger span:nth-child(2) { opacity: 0; }
 .nav-container.open .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
@@ -255,7 +236,6 @@ img {
 
 /* ============================================================
    3. HERO SECTION
-   Première section pleine page avec fond, titre H1, CTA et badges
    ============================================================ */
 
 .hero-section {
@@ -265,16 +245,14 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 100px 5% 60px; /* 100px en haut pour compenser la navbar fixe */
+  padding: 100px 5% 60px;
   color: white;
 }
 
-/* Fond géré par body::before (voile noir uniforme) */
 .hero-background {
   display: none;
 }
 
-/* Tout le contenu au-dessus du fond */
 .hero-content {
   position: relative;
   z-index: 1;
@@ -289,7 +267,6 @@ img {
   margin-bottom: 25px;
 }
 
-/* Sous-titre italique sous le H1 */
 .hero-subtitle {
   font-size: clamp(1rem, 2vw, 1.3rem);
   color: rgba(255, 255, 255, 0.9);
@@ -297,7 +274,6 @@ img {
   line-height: 1.7;
 }
 
-/* Conteneur des deux boutons CTA */
 .hero-buttons {
   display: flex;
   gap: 15px;
@@ -306,7 +282,6 @@ img {
   margin-bottom: 50px;
 }
 
-/* Bouton principal (fond blanc, texte bleu) */
 .btn-hero-primary {
   display: inline-block;
   padding: 16px 40px;
@@ -323,7 +298,6 @@ img {
   box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Bouton secondaire (transparent, bordure blanche) */
 .btn-hero-secondary {
   display: inline-block;
   padding: 16px 40px;
@@ -342,7 +316,6 @@ img {
   transform: translateY(-2px);
 }
 
-/* Badges de réassurance alignés en ligne */
 .hero-trust-badges {
   display: flex;
   gap: 30px;
@@ -368,8 +341,6 @@ img {
 
 /* ============================================================
    4. EXPERTISE SECTION
-   Cartes enrichies : layout avec icône, tag, bullet-points, CTA
-   Séparateur bleu lumineux en bas via ::after
    ============================================================ */
 
 .expertise-section {
@@ -378,7 +349,6 @@ img {
   position: relative;
 }
 
-/* Halo bleu radial décoratif en fond */
 .expertise-section::before {
   content: '';
   position: absolute;
@@ -387,14 +357,12 @@ img {
   pointer-events: none;
 }
 
-/* Trait de séparation supprimé */
-
 .expertise-container {
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* ── 4a. En-tête expertise ── */
+/* ── 4a. En-tête ── */
 
 .expertise-header {
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
@@ -416,15 +384,15 @@ img {
   margin: 0 auto;
 }
 
-/* ── 4b. Grille de cartes enrichies ── */
+/* ── 4b. Grille de cartes ── */
 
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(1.5rem, 3vw, 2rem);
+  align-items: start;
 }
 
-/* Carte avec bandeau coloré en haut, glass morphism */
 .expertise-card {
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(12px);
@@ -442,7 +410,6 @@ img {
   border-color: rgba(0, 153, 255, 0.4);
 }
 
-/* Bandeau coloré en haut de chaque carte (gradient bleu) */
 .expertise-card-accent {
   height: 4px;
   background: linear-gradient(90deg, #0072BC, #00d0ff);
@@ -450,7 +417,6 @@ img {
 }
 .expertise-card:hover .expertise-card-accent { height: 6px; }
 
-/* Zone de contenu de la carte */
 .expertise-card-inner {
   padding: clamp(1.5rem, 3vw, 2rem);
   display: flex;
@@ -459,14 +425,12 @@ img {
   flex: 1;
 }
 
-/* Ligne du haut : icône ronde + titre + tag */
 .expertise-card-header {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
 }
 
-/* Cercle bleu autour de l'icône */
 .expertise-icon-wrap {
   flex-shrink: 0;
   width: 54px;
@@ -484,10 +448,9 @@ img {
   border-color: rgba(0, 153, 255, 0.6);
 }
 
-/* Icônes dans le cercle (surcharge du style global i) */
 .expertise-icon-wrap i {
   font-size: 22px;
-  padding: 0;
+  padding: 0 !important;
   color: #00d0ff;
   border-radius: 0;
 }
@@ -499,7 +462,6 @@ img {
   margin-bottom: 4px;
 }
 
-/* Tag coloré (ex: "Support 24/7") */
 .expertise-tag {
   display: inline-block;
   background: rgba(0, 114, 188, 0.25);
@@ -513,7 +475,6 @@ img {
   text-transform: uppercase;
 }
 
-/* Description courte sous le header */
 .expertise-desc {
   font-size: clamp(0.875rem, 1.4vw, 0.95rem);
   line-height: 1.65;
@@ -521,7 +482,6 @@ img {
   margin: 0;
 }
 
-/* Liste des 5 spécificités clés */
 .expertise-features {
   list-style: none;
   padding: 0;
@@ -540,7 +500,6 @@ img {
   color: rgba(210, 230, 255, 0.9);
 }
 
-/* Icône check bleue devant chaque item */
 .expertise-features li i {
   font-size: 11px;
   color: #0099ff;
@@ -549,7 +508,6 @@ img {
   flex-shrink: 0;
 }
 
-/* Lien CTA en bas de carte */
 .expertise-cta {
   display: inline-flex;
   align-items: center;
@@ -565,10 +523,12 @@ img {
 }
 .expertise-cta:hover {
   color: #00d0ff;
-  gap: 12px; /* légère translation de la flèche au survol */
+  gap: 12px;
 }
 .expertise-cta i { font-size: 12px; padding: 0; transition: transform 0.3s ease; }
 .expertise-cta:hover i { transform: translateX(4px); }
+
+/* ── Carte new-badge (rouge) ── */
 
 .expertise-card.new-badge {
   position: relative;
@@ -576,7 +536,7 @@ img {
 }
 
 .expertise-card.new-badge::before {
-  content: 'NOUVEAU';
+  content: 'POPULAIRE';
   position: absolute;
   top: 18px;
   right: -28px;
@@ -590,7 +550,7 @@ img {
   z-index: 10;
   box-shadow: 0 2px 8px rgba(220, 38, 38, 0.5);
 }
-/* Icône wrap : fond rouge */
+
 .expertise-card.new-badge .expertise-icon-wrap {
   background: linear-gradient(135deg, rgba(220, 38, 38, 0.4), rgba(255, 80, 80, 0.2));
   border-color: rgba(220, 38, 38, 0.4);
@@ -600,50 +560,31 @@ img {
   border-color: rgba(220, 38, 38, 0.6);
 }
 
-/* Icône FA dans le cercle : rouge */
-.expertise-card.new-badge .expertise-icon-wrap i {
-  color: #ff4444;
-}
+.expertise-card.new-badge .expertise-icon-wrap i { color: #ff4444; }
 
-/* Tag RGPD : rouge */
 .expertise-card.new-badge .expertise-tag {
   background: rgba(220, 38, 38, 0.25);
   border-color: rgba(220, 38, 38, 0.4);
   color: #fca5a5;
 }
 
-/* Checks de la liste : rouge */
-.expertise-card.new-badge .expertise-features li i {
-  color: #ef4444;
-}
+.expertise-card.new-badge .expertise-features li i { color: #ef4444; }
 
-/* Lien CTA : rouge */
-.expertise-card.new-badge .expertise-cta {
-  color: #ef4444;
-}
-.expertise-card.new-badge .expertise-cta:hover {
-  color: #ff6666;
-}
+.expertise-card.new-badge .expertise-cta { color: #ef4444; }
+.expertise-card.new-badge .expertise-cta:hover { color: #ff6666; }
 
-/* Bandeau accent haut de carte : rouge */
 .expertise-card.new-badge .expertise-card-accent {
   background: linear-gradient(90deg, #dc2626, #ff6b6b);
 }
 
-/* Hover de la carte : halo rouge au lieu de bleu */
 .expertise-card.new-badge:hover {
   box-shadow: 0 24px 48px rgba(220, 38, 38, 0.25);
   border-color: rgba(220, 38, 38, 0.4);
 }
 
-/* ── 4c. Icône globale (surcharge du i général — uniquement dans expertise-icon-wrap) ──
-   Note : le style global i est conservé pour les autres usages FA sur la page */
-
 
 /* ============================================================
-   5. PARTNERS SECTION — Bandeau défilant (marquee CSS)
-   Deux copies du contenu dans .marquee-track pour une boucle seamless.
-   Masques de fondu gauche/droite via ::before et ::after sur le wrapper.
+   5. PARTNERS SECTION
    ============================================================ */
 
 .partners-section {
@@ -653,8 +594,6 @@ img {
   position: relative;
   overflow: hidden;
 }
-
-/* Trait de séparation supprimé */
 
 .partners-header {
   margin-bottom: clamp(30px, 4vw, 50px);
@@ -676,16 +615,12 @@ img {
   color: rgba(220, 235, 255, 0.8);
 }
 
-/* Conteneur avec masques de fondu gauche/droite */
 .marquee-wrapper {
   position: relative;
   overflow: hidden;
   padding: 20px 0;
 }
 
-/* Masques de fondu supprimés — le bandeau s'affiche bord à bord */
-
-/* Track : flex horizontal qui défile vers la gauche en 30s */
 .marquee-track {
   display: flex;
   gap: 0;
@@ -693,42 +628,42 @@ img {
   animation: marqueeScroll 30s linear infinite;
 }
 
-/* Pause du défilement au survol */
 .marquee-wrapper:hover .marquee-track { animation-play-state: paused; }
 
 @keyframes marqueeScroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); } /* -50% car le contenu est dupliqué */
+  to   { transform: translateX(-50%); }
 }
 
-/* Chaque item du bandeau : logo texte + emoji */
 .marquee-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   padding: 16px 40px;
-  white-space: nowrap;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
   transition: background 0.3s ease;
 }
 
 .marquee-item:hover { background: rgba(0, 114, 188, 0.12); }
 
-.partner-badge { font-size: 1.6rem; line-height: 1; }
-
-.partner-label {
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
-  font-weight: 700;
-  color: rgba(220, 235, 255, 0.85);
-  letter-spacing: 0.02em;
-  transition: color 0.3s;
+.partner-logo {
+  height: 150px;
+  width: auto;
+  max-width: 440px;
+  object-fit: contain;
+  opacity: 0.75;
+  filter: none;
+  transition: opacity 0.3s ease;
 }
-.marquee-item:hover .partner-label { color: #ffffff; }
+
+.marquee-item:hover .partner-logo {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(0, 153, 255, 0.4));
+}
 
 
 /* ============================================================
    6. NEWSLETTER SECTION
-   Fond glass avec dégradé bleu discret, formulaire centré
    ============================================================ */
 
 .newsletter-section {
@@ -738,7 +673,6 @@ img {
   position: relative;
 }
 
-/* Fond glass avec halo bleu */
 .newsletter-section::before {
   content: '';
   position: absolute;
@@ -747,8 +681,6 @@ img {
   pointer-events: none;
 }
 
-/* Trait de séparation supprimé */
-
 .newsletter-container {
   max-width: 640px;
   margin: 0 auto;
@@ -756,10 +688,7 @@ img {
   z-index: 1;
 }
 
-/* Icône envelope décorative */
-.newsletter-icon {
-  margin-bottom: 20px;
-}
+.newsletter-icon { margin-bottom: 20px; }
 .newsletter-icon i {
   font-size: 2.5rem;
   color: #0099ff;
@@ -781,7 +710,6 @@ img {
   line-height: 1.6;
 }
 
-/* Wrapper du formulaire : flex sur une ligne */
 .newsletter-form-wrap {
   display: flex;
   gap: 0;
@@ -798,7 +726,6 @@ img {
   border-color: rgba(0, 153, 255, 0.7);
 }
 
-/* Champ email */
 .newsletter-input {
   flex: 1;
   padding: 15px 24px;
@@ -813,7 +740,6 @@ img {
 .newsletter-input::placeholder { color: rgba(200, 220, 255, 0.45); }
 .newsletter-input:focus        { background: rgba(255, 255, 255, 0.12); }
 
-/* Bouton d'inscription */
 .newsletter-btn {
   display: flex;
   align-items: center;
@@ -835,7 +761,6 @@ img {
 }
 .newsletter-btn i { font-size: 13px; padding: 0; border-radius: 0; }
 
-/* Message de confirmation après soumission */
 .newsletter-confirm {
   font-size: 1.05rem;
   color: #7dd3fc;
@@ -844,7 +769,6 @@ img {
   animation: fadeInUp 0.5s ease;
 }
 
-/* Texte légal RGPD */
 .newsletter-legal {
   font-size: 0.78rem !important;
   color: rgba(180, 200, 230, 0.5) !important;
@@ -860,10 +784,7 @@ img {
 
 
 /* ============================================================
-   7. STATS SECTION — Compteurs animés
-   Mise en page : 4 stats en ligne séparées par des dividers verticaux.
-   Pas de cartes — les chiffres sont au premier plan, typographie XXL.
-   Un fond léger différencie la section sans border/card.
+   7. STATS SECTION
    ============================================================ */
 
 .stats-section {
@@ -873,7 +794,6 @@ img {
   overflow: hidden;
 }
 
-/* Teinte bleue très subtile pour distinguer la section du reste */
 .stats-section::before {
   content: '';
   position: absolute;
@@ -882,7 +802,6 @@ img {
   pointer-events: none;
 }
 
-/* Halo lumineux centré en fond (décoratif) */
 .stats-section::after {
   content: '';
   position: absolute;
@@ -921,7 +840,6 @@ img {
   margin: 0;
 }
 
-/* Conteneur principal : flex horizontal centré */
 .stats-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -932,7 +850,6 @@ img {
   z-index: 1;
 }
 
-/* ── Chaque bloc stat ── */
 .stat-card {
   flex: 1;
   display: flex;
@@ -947,7 +864,6 @@ img {
 
 .stat-card:hover { transform: translateY(-4px); }
 
-/* Séparateur vertical entre chaque stat (sauf le dernier) */
 .stat-card:not(:last-child)::after {
   content: '';
   position: absolute;
@@ -973,21 +889,18 @@ img {
 
 .stat-card:hover .stat-icon { opacity: 1; }
 
-/* Ligne chiffre + unité groupés */
 .stat-number {
   display: flex;
-  align-items: flex-start; /* unité alignée en haut du chiffre */
+  align-items: flex-start;
   justify-content: center;
   line-height: 1;
   margin-bottom: 14px;
 }
 
-/* Grand chiffre typographique — taille XXL intentionnelle */
 .stat-count {
   font-size: clamp(4rem, 9vw, 7rem);
   font-weight: 900;
   line-height: 0.9;
-  /* Dégradé blanc → bleu ciel sur le chiffre */
   background: linear-gradient(160deg, #ffffff 30%, #7dd3fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1000,16 +913,14 @@ img {
   filter: drop-shadow(0 0 20px rgba(0, 180, 255, 0.4));
 }
 
-/* Unité (ans, +, %) en exposant visuel */
 .stat-unit {
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 700;
   color: #0099ff;
-  margin-top: 8px;       /* descend légèrement pour s'aligner en haut du chiffre */
+  margin-top: 8px;
   margin-left: 3px;
 }
 
-/* Label : texte descriptif sous le chiffre */
 .stat-label {
   font-size: clamp(0.78rem, 1.2vw, 0.92rem);
   color: rgba(180, 210, 255, 0.65);
@@ -1019,7 +930,6 @@ img {
   margin: 0;
 }
 
-/* Trait horizontal court sous le label — remplace la .stat-line des cartes */
 .stat-line {
   width: 24px;
   height: 2px;
@@ -1036,26 +946,26 @@ img {
 
 /* ============================================================
    8. FOOTER
-   Fond dégradé sombre, grille 3 colonnes, liens colorés
    ============================================================ */
 
 footer {
-  background: linear-gradient(180deg, #1a3a5c 0%, #0d2440 100%);  color: white;
+  background: linear-gradient(180deg, #1a3a5c 0%, #0d2440 100%);
+  color: white;
   padding: clamp(30px, 5vw, 50px) 5%;
   box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
   position: relative;
-  isolation: isolate; /* crée un nouveau contexte d'empilement */
+  isolation: isolate;
 }
+
 footer::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(1, 15, 46, 0.521); /* voile clair par-dessus le voile sombre global */
+  background: rgba(1, 15, 46, 0.521);
   pointer-events: none;
   z-index: 0;
 }
 
-/* S'assurer que le contenu du footer reste au-dessus */
 footer > * {
   position: relative;
   z-index: 1;
@@ -1081,7 +991,6 @@ footer a:hover {
   text-shadow: 0 0 8px rgba(0, 114, 188, 0.6);
 }
 
-/* Grille à 3 colonnes auto-adaptatives */
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1094,7 +1003,6 @@ footer a:hover {
 .footer-grid a { color: #0099ff; transition: color 0.3s; }
 .footer-grid div { margin: auto; }
 
-/* Ligne de bas de footer : copyright + liens légaux */
 .footer-bottom {
   text-align: center;
   border-top: 1px solid #0099ff;
@@ -1108,7 +1016,7 @@ footer a:hover {
 
 
 /* ============================================================
-   7. RESPONSIVE
+   RESPONSIVE
    ============================================================ */
 
 /* ── 7a. Tablette large (max 968px) ── */
@@ -1130,12 +1038,8 @@ footer a:hover {
   .expertise-header h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); margin-bottom: 1rem; }
   .expertise-header p  { font-size: clamp(0.9rem, 1.6vw, 1rem); line-height: 1.6; padding: 0 0.5rem; }
 
-  /* Marquee : items plus compacts sur mobile */
   .marquee-item { padding: 12px 24px; }
-  .partner-badge { font-size: 1.3rem; }
-  .partner-label { font-size: 0.95rem; }
 
-  /* Newsletter : form en colonne sur mobile */
   .newsletter-form-wrap {
     flex-direction: column;
     border-radius: 14px;
@@ -1144,13 +1048,11 @@ footer a:hover {
   .newsletter-input  { border-radius: 0; padding: 14px 20px; }
   .newsletter-btn    { border-radius: 0; justify-content: center; padding: 14px 20px; }
 
-  /* Stats : 2 par ligne sur mobile, séparateurs verticaux désactivés */
   .stats-container      { flex-wrap: wrap; }
   .stat-card            { flex: 0 0 50%; min-width: 50%; }
   .stat-card:not(:last-child)::after { display: none; }
   .stat-count           { font-size: clamp(3rem, 10vw, 4.5rem); }
 
-  /* Menu hamburger actif sur mobile */
   .hamburger { display: flex; }
   .logo img  { width: 170px; }
 
@@ -1193,7 +1095,6 @@ footer a:hover {
   .nav-actions { display: flex; gap: 10px; margin: auto; }
   .phone-button, .eligibilite-button { padding: 4px 6px; font-size: 8px; }
 
-  /* Expertise : 1 colonne */
   .expertise-section    { padding: 1.75rem 0.875rem; }
   .expertise-header     { margin-bottom: 1.75rem; }
   .expertise-header h2  { font-size: 1.25rem; margin-bottom: 0.875rem; }
@@ -1203,27 +1104,50 @@ footer a:hover {
   .expertise-card h3    { font-size: 1rem; }
   .expertise-features li { font-size: 0.8rem; }
 
-  /* Stats : toujours 2 par ligne sur petit mobile */
   .stats-container { flex-wrap: wrap; }
   .stat-card       { flex: 0 0 50%; min-width: 50%; padding: 1.5rem 1rem; }
   .stat-count      { font-size: 3rem; }
 
-  /* Hero : boutons en colonne */
   .hero-buttons { flex-direction: column; align-items: center; }
 }
 
-/* ── 7d. Grands écrans (min 1400px) : expertise en 4 colonnes ── */
+/* ── 7d. Grands écrans (min 1400px) ── */
 @media (min-width: 1400px) {
-  .expertise-grid  { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-  /* stats-container reste flex, les 4 items s'étirent naturellement */
+  .expertise-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+
+  .hero-section {
+    padding: 160px 8% 100px;
+  }
+  .hero-content {
+    max-width: 1000px;
+  }
+  .hero-content h1 {
+    font-size: 3.8rem;
+    margin-bottom: 35px;
+  }
+  .hero-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 55px;
+  }
+  .hero-buttons {
+    gap: 20px;
+    margin-bottom: 70px;
+  }
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 20px 52px;
+    font-size: 1.1rem;
+  }
+  .hero-trust-badges { gap: 45px; }
+  .trust-badge { font-size: 1.05rem; }
 }
 
-/* ── 7e. Écrans moyens (769px – 1200px) : expertise en 2 colonnes ── */
+/* ── 7e. Écrans moyens (769px – 1200px) ── */
 @media (min-width: 769px) and (max-width: 1200px) {
   .expertise-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 }
 
-/* ── 7f. Paysage mobile (hauteur < 600px) : compresse les sections ── */
+/* ── 7f. Paysage mobile (hauteur < 600px) ── */
 @media (max-height: 600px) and (orientation: landscape) {
   .expertise-section    { padding: 2rem 1.5rem; }
   .expertise-header     { margin-bottom: 1.5rem; }
@@ -1257,6 +1181,15 @@ footer a:hover {
   .nav-links a { font-size: 17px; }
   .phone-button, .eligibilite-button { font-size: 15px; padding: 12px 24px; }
 
+  .hero-section { padding: 180px 10% 120px; }
+  .hero-content { max-width: 1100px; }
+  .hero-content h1 { font-size: 4.2rem; }
+  .hero-subtitle { font-size: 1.5rem; }
+  .btn-hero-primary,
+  .btn-hero-secondary { padding: 22px 56px; font-size: 1.15rem; }
+  .hero-trust-badges { gap: 55px; }
+  .trust-badge { font-size: 1.1rem; }
+
   .expertise-container { max-width: 1300px; padding: 80px 60px; }
   .expertise-header h2 { font-size: 2.6rem; margin-bottom: 22px; }
   .expertise-header p  { font-size: 1.15rem; line-height: 1.8; }
@@ -1272,11 +1205,29 @@ footer a:hover {
   .nav-container { margin: 0 auto; padding: 10px 8%; }
   .phone-button, .eligibilite-button { padding: 15px 20px; font-size: 20px; }
   .nav-links a { font-size: 24px; }
+
+  .hero-section { padding: 220px 12% 150px; }
+  .hero-content { max-width: 1300px; }
+  .hero-content h1 { font-size: 5rem; }
+  .hero-subtitle { font-size: 1.7rem; margin-bottom: 70px; }
+  .btn-hero-primary,
+  .btn-hero-secondary { padding: 24px 64px; font-size: 1.25rem; }
+  .hero-trust-badges { gap: 60px; }
+  .trust-badge { font-size: 1.2rem; }
 }
 
 /* ── 7j. 4K+ (min 3440px) ── */
 @media (min-width: 3440px) {
   .nav-container { max-width: 3440px; padding: 10px 12%; }
+
+  .hero-section { padding: 280px 15% 200px; }
+  .hero-content { max-width: 1600px; }
+  .hero-content h1 { font-size: 6.5rem; }
+  .hero-subtitle { font-size: 2rem; margin-bottom: 90px; }
+  .btn-hero-primary,
+  .btn-hero-secondary { padding: 30px 80px; font-size: 1.5rem; }
+  .hero-trust-badges { gap: 80px; }
+  .trust-badge { font-size: 1.5rem; }
 }
 
 /* ── Hamburger caché sur desktop (min 1024px) ── */
@@ -1285,7 +1236,7 @@ footer a:hover {
   .eligibilite-button, .phone-button { padding: 8px; }
 }
 
-/* ── Tablette (769px – 1023px) : hamburger actif ── */
+/* ── Tablette (769px – 1023px) ── */
 @media (min-width: 769px) and (max-width: 1023px) {
   .hamburger { display: flex; }
   .nav-links {
@@ -1303,7 +1254,7 @@ footer a:hover {
   .nav-container.open .nav-links { display: flex; }
 }
 
-/* ── Desktop 1024px – 1140px : navbar compressée ── */
+/* ── Desktop 1024px – 1140px ── */
 @media (min-width: 1024px) and (max-width: 1140px) {
   .nav-container { padding-right: 10px; padding-left: 10px; }
 }
