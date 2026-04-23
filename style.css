@@ -73,7 +73,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.80);
+  background: rgba(5, 15, 40, 0.85);
   z-index: 0;
   pointer-events: none;
 }
@@ -570,6 +570,72 @@ img {
 .expertise-cta i { font-size: 12px; padding: 0; transition: transform 0.3s ease; }
 .expertise-cta:hover i { transform: translateX(4px); }
 
+.expertise-card.new-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.expertise-card.new-badge::before {
+  content: 'NOUVEAU';
+  position: absolute;
+  top: 18px;
+  right: -28px;
+  background: #dc2626;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 5px 36px;
+  transform: rotate(45deg);
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.5);
+}
+/* Icône wrap : fond rouge */
+.expertise-card.new-badge .expertise-icon-wrap {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.4), rgba(255, 80, 80, 0.2));
+  border-color: rgba(220, 38, 38, 0.4);
+}
+.expertise-card.new-badge:hover .expertise-icon-wrap {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.6), rgba(255, 80, 80, 0.3));
+  border-color: rgba(220, 38, 38, 0.6);
+}
+
+/* Icône FA dans le cercle : rouge */
+.expertise-card.new-badge .expertise-icon-wrap i {
+  color: #ff4444;
+}
+
+/* Tag RGPD : rouge */
+.expertise-card.new-badge .expertise-tag {
+  background: rgba(220, 38, 38, 0.25);
+  border-color: rgba(220, 38, 38, 0.4);
+  color: #fca5a5;
+}
+
+/* Checks de la liste : rouge */
+.expertise-card.new-badge .expertise-features li i {
+  color: #ef4444;
+}
+
+/* Lien CTA : rouge */
+.expertise-card.new-badge .expertise-cta {
+  color: #ef4444;
+}
+.expertise-card.new-badge .expertise-cta:hover {
+  color: #ff6666;
+}
+
+/* Bandeau accent haut de carte : rouge */
+.expertise-card.new-badge .expertise-card-accent {
+  background: linear-gradient(90deg, #dc2626, #ff6b6b);
+}
+
+/* Hover de la carte : halo rouge au lieu de bleu */
+.expertise-card.new-badge:hover {
+  box-shadow: 0 24px 48px rgba(220, 38, 38, 0.25);
+  border-color: rgba(220, 38, 38, 0.4);
+}
+
 /* ── 4c. Icône globale (surcharge du i général — uniquement dans expertise-icon-wrap) ──
    Note : le style global i est conservé pour les autres usages FA sur la page */
 
@@ -829,6 +895,32 @@ img {
   pointer-events: none;
 }
 
+.stats-header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 5%;
+}
+
+.stats-header h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.stats-header p {
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  color: rgba(220, 235, 255, 0.8);
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Conteneur principal : flex horizontal centré */
 .stats-container {
   max-width: 1200px;
@@ -866,22 +958,20 @@ img {
   background: linear-gradient(to bottom, transparent, rgba(0, 153, 255, 0.35), transparent);
 }
 
-/* Icône positionnée au-dessus du chiffre, petite et discrète */
 .stat-icon {
-  margin-bottom: 12px;
-  opacity: 0.7;
+  margin-bottom: 18px;
+  opacity: 0.9;
   transition: opacity 0.3s ease;
 }
-.stat-card:hover .stat-icon { opacity: 1; }
 
 .stat-icon i {
-  font-size: 1.1rem;
+  font-size: 2.2rem;
   color: #0099ff;
   padding: 0;
   border-radius: 0;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
+
+.stat-card:hover .stat-icon { opacity: 1; }
 
 /* Ligne chiffre + unité groupés */
 .stat-number {
@@ -950,10 +1040,25 @@ img {
    ============================================================ */
 
 footer {
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-  color: white;
+  background: linear-gradient(180deg, #1a3a5c 0%, #0d2440 100%);  color: white;
   padding: clamp(30px, 5vw, 50px) 5%;
   box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  isolation: isolate; /* crée un nouveau contexte d'empilement */
+}
+footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 15, 46, 0.521); /* voile clair par-dessus le voile sombre global */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* S'assurer que le contenu du footer reste au-dessus */
+footer > * {
+  position: relative;
+  z-index: 1;
 }
 
 footer h3 {
@@ -967,7 +1072,7 @@ footer ul { list-style: none; padding: 0; }
 footer ul li { margin-bottom: 8px; font-size: clamp(0.85rem, 1.2vw, 0.95rem); }
 
 footer a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   transition: all 0.3s;
 }

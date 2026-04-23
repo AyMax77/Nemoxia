@@ -298,7 +298,7 @@
 
     <!-- Contenu centré par-dessus le fond -->
     <div class="hero-content">
-      <h1>Informatique, Télécoms <br> & Cybersécurité pour PME</h1>
+      <h1>Informatique, Télécoms &<br>  Cybersécurité pour PME</h1>
 
       <p class="hero-subtitle">
         Nous vous accompagnons dans la gestion, la sécurisation <br>
@@ -387,6 +387,7 @@
         </div>
 
         <!-- ── Carte 2 : Cybersécurité ── -->
+      <div class="expertise-card new-badge">
         <div class="expertise-card">
           <div class="expertise-card-accent"></div>
           <div class="expertise-card-inner">
@@ -415,6 +416,7 @@
             </a>
           </div>
         </div>
+      </div>  
 
         <!-- ── Carte 3 : Téléphonie IP & Internet ── -->
         <div class="expertise-card">
@@ -610,54 +612,58 @@
        dans le viewport. Les valeurs finales sont dans data-target.
        ============================================================ -->
   <section class="stats-section" id="stats-section">
-    <div class="stats-container">
 
-      <!-- Compteur 1 : ancienneté -->
-<div class="stat-card">
-  <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
-  <div class="stat-number">
-    <span class="stat-unit">+</span>
-    <span class="stat-count">20</span>
+  <div class="stats-header">
+    <h2>Nos chiffres sont là pour une seule raison : vous.</h2>
+    <p>Chaque indicateur reflète notre engagement envers vos besoins.</p>
   </div>
-  <div class="stat-label">ans d'expertise</div>
-  <div class="stat-line"></div>
-</div>
 
-      <!-- Compteur 2 : projets réalisés -->
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div>
-        <div class="stat-number">
-          <span class="stat-count" data-target="850" id="stat-projects">0</span>
-          <span class="stat-unit">+</span>
-        </div>
-        <div class="stat-label">projets réalisés</div>
-        <div class="stat-line"></div>
+  <div class="stats-container">
+
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-rocket"></i></div>
+      <div class="stat-number">
+        <span class="stat-unit">-</span>
+        <span class="stat-count">48</span>
+        <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">h</span>
       </div>
-
-      <!-- Compteur 3 : clients actifs -->
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
-        <div class="stat-number">
-          <span class="stat-count" data-target="200" id="stat-clients">0</span>
-          <span class="stat-unit">+</span>
-        </div>
-        <div class="stat-label">clients accompagnés</div>
-        <div class="stat-line"></div>
-      </div>
-
-      <!-- Compteur 4 : disponibilité SLA -->
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-gauge-high"></i></div>
-        <div class="stat-number">
-          <span class="stat-count" data-target="99" id="stat-sla">0</span>
-          <span class="stat-unit">%</span>
-        </div>
-        <div class="stat-label">de disponibilité SLA</div>
-        <div class="stat-line"></div>
-      </div>
-
+      <div class="stat-label">délai moyen de déploiement</div>
+      <div class="stat-line"></div>
     </div>
-  </section>
+
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-headset"></i></div>
+      <div class="stat-number">
+        <span class="stat-count" data-target="98" id="stat-tickets">0</span>
+        <span class="stat-unit">%</span>
+      </div>
+      <div class="stat-label">tickets résolus au 1er contact</div>
+      <div class="stat-line"></div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="stat-number">
+        <span class="stat-count">24</span>
+        <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">/7</span>
+      </div>
+      <div class="stat-label">monitoring actif</div>
+      <div class="stat-line"></div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+      <div class="stat-number">
+        <span class="stat-unit">-</span>
+        <span class="stat-count">2</span>
+        <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">h</span>
+      </div>
+      <div class="stat-label">temps de résolution critique</div>
+      <div class="stat-line"></div>
+    </div>
+
+  </div>
+</section>
   <!-- ── Fin STATS SECTION ── -->
 
 
@@ -769,24 +775,27 @@ function handleNewsletter() {
 
   input.style.borderColor = '';
 
-  emailjs.send('service_news', 'template_0qvy5og', { to_email: email })
-    .then(function() {
-      document.querySelector('.newsletter-form-wrap').style.display = 'none';
-      confirmMsg.style.display = 'block'; // ← renommé
-    })
-    .catch(function(err) {
-      console.error('Erreur envoi bienvenue:', err);
-      document.querySelector('.newsletter-form-wrap').style.display = 'none';
-      confirmMsg.style.display = 'block'; // ← renommé
-    });
-}
-
-/* Soumission au clavier (touche Entrée dans le champ email) */
-document.getElementById('newsletter-email').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') handleNewsletter();
+  fetch('https://api.brevo.com/v3/contacts', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'api-key': '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'
+  },
+  body: JSON.stringify({
+    email: email,
+    listIds: [7],  // l'ID de ta liste dans Brevo
+    updateEnabled: true
+  })
+})
+.then(function() {
+  document.querySelector('.newsletter-form-wrap').style.display = 'none';
+  confirmMsg.style.display = 'block';
+})
+.catch(function(err) {
+  console.error('Erreur Brevo:', err);
 });
 
-
+}
     /* ============================================================
        STATS — Compteurs animés avec count-up
        Déclenchés par IntersectionObserver quand la section #stats-section
