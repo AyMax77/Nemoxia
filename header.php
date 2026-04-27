@@ -10,16 +10,15 @@
 
   <ul class="nav-links">
     <li><a href="/index.php">Accueil</a></li>
-    <li><a href="/Informatique/informatique.php">Infrastructures</a></li>
-    <li><a href="/Telephonie/Telephonie.php">Téléphonie</a></li>
-    <li><a href="/Infogerance/Infogerance.php">Infogérance</a></li>
-    <li><a href="/Telecoms/Telecom.php">Télécoms</a></li>
-    <li><a href="/Cybersecurite/Cybersecurite.php">Cybersécurité</a></li>
+    <li><a href="/Infogerance/Infogerance.php">Infogérance & Maintenance</a></li>
+    <li><a href="/Cybersecurite/Cybersecurite.php">Cybersécurité & Protection</a></li>
+    <li><a href="/Informatique/informatique.php">Infrastructure & Cloud</a></li>
+    <li><a href="/Telephonie/Telephonie.php">Téléphonie IP & Internet</a></li>
+    
   </ul>
 
   <div class="nav-actions">
-    <a href="tel:0175439100" class="phone-button">01 75 43 91 00</a>
-    <a href="/Contact/contact.php" class="eligibilite-button">Contactez-nous !</a>
+    <a href="/Contact/contact.php" class="eligibilite-button">Contactez-nous </a>
   </div>
 
   <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">

@@ -220,8 +220,8 @@
         et l'évolution de votre environnement numérique
       </p>
       <div class="hero-buttons">
-        <a href="/Contact/contact.php" class="btn-hero-primary">Demander un Audit</a>
-        <a href="tel:0175439100" class="btn-hero-secondary">Discuter avec un expert</a>
+        <a href="Contact/contact.html" class="btn-hero-primary">Demander un Audit</a>
+        <a href="tel:0175439100" class="btn-hero-secondary" data-hover="01 75 43 91 00">Discuter avec un expert</a>
       </div>
       <div class="hero-trust-badges">
         <div class="trust-badge">
@@ -234,7 +234,7 @@
         </div>
         <div class="trust-badge">
           <span class="trust-icon">✓</span>
-          <span class="trust-text">Proximité</span>
+          <span class="trust-text">Interlocuteur unique</span>
         </div>
       </div>
     </div>
@@ -246,106 +246,111 @@
        ============================================================ -->
   <section class="expertise-section">
     <div class="expertise-container">
-
+ 
+      <div class="expertise-header">
+        <h2>Un partenaire IT de confiance pour votre entreprise</h2>
+        <p>Forts d'une expérience construite auprès de nos clients issus de tous secteurs d'activité, nous supervisons, administrons et sécurisons votre système informatique, garantissant une performance optimale et une protection renforcée.</p>
+      </div>
+ 
       <div class="expertise-grid">
-
+ 
         <!-- Carte 1 : Infogérance & Maintenance -->
-<div class="expertise-card">
-  <div class="expertise-card-accent"></div>
-  <div class="expertise-card-inner">
-    <div class="expertise-card-header">
-      <div class="expertise-icon-wrap">
-        <i class="fa-solid fa-server"></i>
-      </div>
-      <div>
-        <h3>Infogérance & Maintenance</h3>
-        <span class="expertise-tag">Continuité d'activité</span>
-      </div>
-    </div>
-    <p class="expertise-desc">
-      Nous supervisons votre informatique au quotidien pour prévenir les interruptions
-      de service, accompagner vos équipes et garantir la continuité de votre activité.
-      De la gestion des incidents à l'optimisation de vos équipements, nous intervenons
-      rapidement pour que votre système d'information reste performant et disponible.
-    </p>
-    <ul class="expertise-features">
-      <li><i class="fa-solid fa-check"></i> Supervision continue des équipements</li>
-      <li><i class="fa-solid fa-check"></i> Maintenance préventive et corrective</li>
-      <li><i class="fa-solid fa-check"></i> Mises à jour et gestion des correctifs</li>
-      <li><i class="fa-solid fa-check"></i> Sauvegarde et restauration</li>
-    </ul>
-    <a href="/Infogerance/Infogerance.php" class="expertise-cta">
-      En savoir plus <i class="fa-solid fa-arrow-right"></i>
-    </a>
-  </div>
-</div>
-
-        <!-- Carte 2 : Cybersécurité (new-badge) -->
-<div class="expertise-card new-badge">
-  <div class="expertise-card-accent"></div>
-  <div class="expertise-card-inner">
-    <div class="expertise-card-header">
-      <div class="expertise-icon-wrap">
-        <i class="fa-solid fa-shield-halved"></i>
-      </div>
-      <div>
-        <h3>Cybersécurité & Protection</h3>
-        <span class="expertise-tag">Sécurité 24/7</span>
-      </div>
-    </div>
-    <p class="expertise-desc">
-      Nous protégeons votre entreprise avec des services de cybersécurité pour assurer
-      une surveillance continue, détecter les menaces et engager la remédiation.
-      Nos experts analysent en temps réel les comportements suspects pour neutraliser
-      les attaques avant qu'elles n'impactent votre activité.
-    </p>
-    <ul class="expertise-features">
-      <li><i class="fa-solid fa-check"></i> Surveillance SOC 24/7</li>
-      <li><i class="fa-solid fa-check"></i> Protection EDR</li>
-      <li><i class="fa-solid fa-check"></i> Détection comportementale</li>
-      <li><i class="fa-solid fa-check"></i> Analyse humaine des menaces</li>
-      <li><i class="fa-solid fa-check"></i> Remédiation des incidents</li>
-      <li><i class="fa-solid fa-check"></i> Rapports et tableaux de bord sécurité</li>
-    </ul>
-    <a href="/Cybersecurite/Cybersecurite.php" class="expertise-cta">
-      En savoir plus <i class="fa-solid fa-arrow-right"></i>
-    </a>
-  </div>
-</div>
-
+        <div class="expertise-card">
+          <div class="expertise-card-accent"></div>
+          <div class="expertise-card-inner">
+            <div class="expertise-card-header">
+              <div class="expertise-icon-wrap">
+                <i class="fa-solid fa-server"></i>
+              </div>
+              <div>
+                <h3>Infogérance & Maintenance</h3>
+                <span class="expertise-tag">Continuité d'activité</span>
+              </div>
+            </div>
+            <p class="expertise-desc">
+              Nous supervisons votre informatique au quotidien pour prévenir les interruptions
+              de service, accompagner vos équipes et garantir la continuité de votre activité.
+              De la gestion des incidents à l'optimisation de vos équipements, nous intervenons
+              rapidement pour que votre système d'information reste performant et disponible.
+            </p>
+            <ul class="expertise-features">
+              <li><i class="fa-solid fa-check"></i> Supervision continue des équipements</li>
+              <li><i class="fa-solid fa-check"></i> Maintenance préventive et corrective</li>
+              <li><i class="fa-solid fa-check"></i> Mises à jour et gestion des correctifs</li>
+              <li><i class="fa-solid fa-check"></i> Sauvegarde et restauration</li>
+            </ul>
+            <a href="Infogerance/Infogerance.html" class="expertise-cta">
+              En savoir plus <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+ 
+        <!-- Carte 2 : Cybersécurité -->
+        <div class="expertise-card new-badge">
+          <div class="expertise-card-accent"></div>
+          <div class="expertise-card-inner">
+            <div class="expertise-card-header">
+              <div class="expertise-icon-wrap">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div>
+                <h3>Cybersécurité & Protection</h3>
+                <span class="expertise-tag">Sécurité 24/7</span>
+              </div>
+            </div>
+            <p class="expertise-desc">
+              Nous protégeons votre entreprise avec des services de cybersécurité pour assurer
+              une surveillance continue, détecter les menaces et engager la remédiation.
+              Nos experts analysent en temps réel les comportements suspects pour neutraliser
+              les attaques avant qu'elles n'impactent votre activité.
+            </p>
+            <ul class="expertise-features">
+              <li><i class="fa-solid fa-check"></i> Surveillance SOC 24/7</li>
+              <li><i class="fa-solid fa-check"></i> Protection EDR</li>
+              <li><i class="fa-solid fa-check"></i> Détection comportementale</li>
+              <li><i class="fa-solid fa-check"></i> Analyse humaine des menaces</li>
+              <li><i class="fa-solid fa-check"></i> Remédiation des incidents</li>
+              <li><i class="fa-solid fa-check"></i> Rapports et tableaux de bord sécurité</li>
+            </ul>
+            <a href="Cybersecurite/Cybersecurite.html" class="expertise-cta">
+              En savoir plus <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+ 
         <!-- Carte 3 : Téléphonie IP & Internet -->
-<div class="expertise-card">
-  <div class="expertise-card-accent"></div>
-  <div class="expertise-card-inner">
-    <div class="expertise-card-header">
-      <div class="expertise-icon-wrap">
-        <i class="fa-solid fa-phone-volume"></i>
-      </div>
-      <div>
-        <h3>Téléphonie IP & Internet</h3>
-        <span class="expertise-tag">Solution 3CX</span>
-      </div>
-    </div>
-    <p class="expertise-desc">
-      Modernisez vos communications avec une solution VoIP complète et des accès
-      Internet fiables, dimensionnés pour votre métier. Profitez d'une téléphonie
-      unifiée, accessible depuis n'importe quel appareil, avec une gestion centralisée
-      et une qualité audio optimale.
-    </p>
-    <ul class="expertise-features">
-      <li><i class="fa-solid fa-check"></i> Standard intelligent</li>
-      <li><i class="fa-solid fa-check"></i> Intégration CRM</li>
-      <li><i class="fa-solid fa-check"></i> Assistant virtuel</li>
-      <li><i class="fa-solid fa-check"></i> Mobilité des équipes</li>
-      <li><i class="fa-solid fa-check"></i> Accès haut débit jusqu'à 1 Gb</li>
-      <li><i class="fa-solid fa-check"></i> Supervision et rapports d'usage</li>
-    </ul>
-    <a href="/Telephonie/Telephonie.php" class="expertise-cta">
-      En savoir plus <i class="fa-solid fa-arrow-right"></i>
-    </a>
-  </div>
-</div>
-
+        <div class="expertise-card">
+          <div class="expertise-card-accent"></div>
+          <div class="expertise-card-inner">
+            <div class="expertise-card-header">
+              <div class="expertise-icon-wrap">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <h3>Téléphonie IP & Internet</h3>
+                <span class="expertise-tag">Solution 3CX</span>
+              </div>
+            </div>
+            <p class="expertise-desc">
+              Modernisez vos communications avec une solution VoIP complète et des accès
+              Internet fiables, dimensionnés pour votre métier. Profitez d'une téléphonie
+              unifiée, accessible depuis n'importe quel appareil, avec une gestion centralisée
+              et une qualité audio optimale.
+            </p>
+            <ul class="expertise-features">
+              <li><i class="fa-solid fa-check"></i> Standard intelligent</li>
+              <li><i class="fa-solid fa-check"></i> Intégration CRM</li>
+              <li><i class="fa-solid fa-check"></i> Assistant virtuel</li>
+              <li><i class="fa-solid fa-check"></i> Mobilité des équipes</li>
+              <li><i class="fa-solid fa-check"></i> Accès haut débit jusqu'à 1 Gb</li>
+              <li><i class="fa-solid fa-check"></i> Supervision et rapports d'usage</li>
+            </ul>
+            <a href="Telephonie/Telephonie.html" class="expertise-cta">
+              En savoir plus <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+ 
         <!-- Carte 4 : Infrastructure & Cloud -->
         <div class="expertise-card">
           <div class="expertise-card-accent"></div>
@@ -368,15 +373,15 @@
               <li><i class="fa-solid fa-check"></i> Déploiement et virtualisation des ressources</li>
               <li><i class="fa-solid fa-check"></i> Protection et sauvegardes des données</li>
               <li><i class="fa-solid fa-check"></i> Plan de reprise d'activité (PRA)</li>
-              <li><i class="fa-solid fa-check"></i> Mobilité et accès sécurisé aux application</li>
+              <li><i class="fa-solid fa-check"></i> Mobilité et accès sécurisé aux applications</li>
               <li><i class="fa-solid fa-check"></i> Gestion et évolution des environnements hybrides/cloud</li>
             </ul>
-            <a href="/Informatique/informatique.php" class="expertise-cta">
+            <a href="Informatique/informatique.html" class="expertise-cta">
               En savoir plus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
-
+ 
       </div>
     </div>
   </section>
