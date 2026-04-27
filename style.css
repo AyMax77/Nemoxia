@@ -390,7 +390,7 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(1.5rem, 3vw, 2rem);
-  align-items: start;
+  align-items: stretch;
 }
 
 .expertise-card {
@@ -647,7 +647,7 @@ img {
 .marquee-item:hover { background: rgba(0, 114, 188, 0.12); }
 
 .partner-logo {
-  height: 150px;
+  height: 80px;
   width: auto;
   max-width: 440px;
   object-fit: contain;
@@ -1040,11 +1040,7 @@ footer a:hover {
 
   .marquee-item { padding: 12px 24px; }
 
-  .newsletter-form-wrap {
-    flex-direction: column;
-    border-radius: 14px;
-    overflow: hidden;
-  }
+  .newsletter-form-wrap { flex-direction: column; border-radius: 14px; overflow: hidden; }
   .newsletter-input  { border-radius: 0; padding: 14px 20px; }
   .newsletter-btn    { border-radius: 0; justify-content: center; padding: 14px 20px; }
 
@@ -1060,8 +1056,7 @@ footer a:hover {
     display: none;
     position: fixed;
     top: 65px; left: 0;
-    width: 100%;
-    height: calc(100vh - 65px);
+    width: 100%; height: calc(100vh - 65px);
     background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
     flex-direction: column;
     align-items: center;
@@ -1083,8 +1078,7 @@ footer a:hover {
     display: none;
     position: fixed;
     top: 60px; left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
+    width: 100%; height: calc(100vh - 60px);
     background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
     flex-direction: column;
     align-items: center;
@@ -1109,37 +1103,6 @@ footer a:hover {
   .stat-count      { font-size: 3rem; }
 
   .hero-buttons { flex-direction: column; align-items: center; }
-}
-
-/* ── 7d. Grands écrans (min 1400px) ── */
-@media (min-width: 1400px) {
-  .expertise-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-
-  .hero-section {
-    padding: 160px 8% 100px;
-  }
-  .hero-content {
-    max-width: 1000px;
-  }
-  .hero-content h1 {
-    font-size: 3.8rem;
-    margin-bottom: 35px;
-  }
-  .hero-subtitle {
-    font-size: 1.4rem;
-    margin-bottom: 55px;
-  }
-  .hero-buttons {
-    gap: 20px;
-    margin-bottom: 70px;
-  }
-  .btn-hero-primary,
-  .btn-hero-secondary {
-    padding: 20px 52px;
-    font-size: 1.1rem;
-  }
-  .hero-trust-badges { gap: 45px; }
-  .trust-badge { font-size: 1.05rem; }
 }
 
 /* ── 7e. Écrans moyens (769px – 1200px) ── */
@@ -1168,10 +1131,32 @@ footer a:hover {
   .nav-links a { font-size: 15px; }
   .phone-button, .eligibilite-button { font-size: 14px; padding: 10px 18px; }
 
-  .expertise-container { max-width: 1100px; padding: 60px 40px; }
-  .expertise-header h2 { font-size: 2.2rem; margin-bottom: 18px; }
-  .expertise-header p  { font-size: 1.05rem; line-height: 1.7; }
-  .expertise-grid      { gap: 1.5rem; grid-template-columns: repeat(2, 1fr); }
+  /* Hero compact */
+  .hero-section { min-height: unset; padding: 80px 8% 8px; }
+  .hero-content { max-width: 1000px; }
+  .hero-content h1 { font-size: 2.2rem; margin-bottom: 10px; }
+  .hero-subtitle { font-size: 0.95rem; margin-bottom: 16px; }
+  .hero-buttons { margin-bottom: 12px; gap: 14px; }
+  .btn-hero-primary,
+  .btn-hero-secondary { padding: 10px 28px; font-size: 0.9rem; }
+  .hero-trust-badges { gap: 24px; }
+  .trust-badge { font-size: 0.88rem; }
+
+  /* Expertise */
+  .expertise-section { padding: 12px 40px 30px; }
+  .expertise-container { max-width: 1100px; padding: 0 0 20px; }
+  .expertise-header { margin-bottom: 12px; }
+  .expertise-header h2 { font-size: 1.6rem; margin-bottom: 8px; }
+  .expertise-header p  { font-size: 0.9rem; line-height: 1.6; }
+  .expertise-grid { gap: 1.25rem; grid-template-columns: repeat(4, 1fr); }
+  .expertise-card-inner { padding: 14px; gap: 0.6rem; }
+  .expertise-desc { font-size: 0.78rem; }
+  .expertise-features li { font-size: 0.78rem; }
+  .expertise-features { gap: 0.35rem; }
+  .expertise-cta { font-size: 0.8rem; padding-top: 0.5rem; margin-top: 0; }
+  .expertise-icon-wrap { width: 44px; height: 44px; }
+  .expertise-card-header h3 { font-size: 0.95rem; }
+  .expertise-tag { font-size: 0.65rem; }
 }
 
 /* ── 7h. Desktop large (1440px – 1920px) ── */
@@ -1181,21 +1166,33 @@ footer a:hover {
   .nav-links a { font-size: 17px; }
   .phone-button, .eligibilite-button { font-size: 15px; padding: 12px 24px; }
 
-  .hero-section { padding: 180px 10% 120px; }
+  /* Hero compact */
+  .hero-section { min-height: unset; padding: 80px 10% 8px; }
   .hero-content { max-width: 1100px; }
-  .hero-content h1 { font-size: 4.2rem; }
-  .hero-subtitle { font-size: 1.5rem; }
+  .hero-content h1 { font-size: 2.6rem; margin-bottom: 12px; }
+  .hero-subtitle { font-size: 1rem; margin-bottom: 16px; }
+  .hero-buttons { margin-bottom: 14px; gap: 16px; }
   .btn-hero-primary,
-  .btn-hero-secondary { padding: 22px 56px; font-size: 1.15rem; }
-  .hero-trust-badges { gap: 55px; }
-  .trust-badge { font-size: 1.1rem; }
+  .btn-hero-secondary { padding: 11px 34px; font-size: 0.95rem; }
+  .hero-trust-badges { gap: 30px; }
+  .trust-badge { font-size: 0.92rem; }
 
-  .expertise-container { max-width: 1300px; padding: 80px 60px; }
-  .expertise-header h2 { font-size: 2.6rem; margin-bottom: 22px; }
-  .expertise-header p  { font-size: 1.15rem; line-height: 1.8; }
-  .expertise-grid      { gap: 2rem; }
+  /* Expertise */
+  .expertise-section { padding: 12px 60px 40px; }
+  .expertise-container { max-width: 1300px; padding: 0 0 20px; }
+  .expertise-header { margin-bottom: 14px; }
+  .expertise-header h2 { font-size: 1.8rem; margin-bottom: 8px; }
+  .expertise-header p  { font-size: 0.95rem; line-height: 1.6; }
+  .expertise-grid { gap: 1.5rem; }
+  .expertise-card-inner { padding: 16px; gap: 0.7rem; }
+  .expertise-desc { font-size: 0.8rem; }
+  .expertise-features li { font-size: 0.8rem; }
+  .expertise-features { gap: 0.4rem; }
+  .expertise-cta { font-size: 0.82rem; padding-top: 0.6rem; margin-top: 0; }
+  .expertise-icon-wrap { width: 46px; height: 46px; }
+  .expertise-card-header h3 { font-size: 1rem; }
+  .expertise-tag { font-size: 0.66rem; }
 
-  footer   { font-size: 1rem; }
   footer h3 { font-size: 1.25rem; }
   .footer-grid { gap: 45px; padding: 50px 0; }
 }
@@ -1206,28 +1203,38 @@ footer a:hover {
   .phone-button, .eligibilite-button { padding: 15px 20px; font-size: 20px; }
   .nav-links a { font-size: 24px; }
 
-  .hero-section { padding: 220px 12% 150px; }
+  .hero-section { min-height: unset; padding: 90px 12% 10px; }
   .hero-content { max-width: 1300px; }
-  .hero-content h1 { font-size: 5rem; }
-  .hero-subtitle { font-size: 1.7rem; margin-bottom: 70px; }
+  .hero-content h1 { font-size: 3rem; margin-bottom: 14px; }
+  .hero-subtitle { font-size: 1.1rem; margin-bottom: 20px; }
   .btn-hero-primary,
-  .btn-hero-secondary { padding: 24px 64px; font-size: 1.25rem; }
-  .hero-trust-badges { gap: 60px; }
-  .trust-badge { font-size: 1.2rem; }
+  .btn-hero-secondary { padding: 13px 44px; font-size: 1.05rem; }
+  .hero-buttons { margin-bottom: 20px; }
+  .hero-trust-badges { gap: 45px; }
+  .trust-badge { font-size: 0.98rem; }
+
+  .expertise-section { padding: 14px 80px 50px; }
+  .expertise-container { padding: 0 0 20px; }
+  .expertise-header { margin-bottom: 16px; }
+  .expertise-header h2 { font-size: 2rem; margin-bottom: 10px; }
+  .expertise-header p  { font-size: 1rem; }
+  .expertise-card-inner { padding: 18px; gap: 0.75rem; }
+  .expertise-desc { font-size: 0.83rem; }
+  .expertise-features li { font-size: 0.83rem; }
 }
 
 /* ── 7j. 4K+ (min 3440px) ── */
 @media (min-width: 3440px) {
   .nav-container { max-width: 3440px; padding: 10px 12%; }
 
-  .hero-section { padding: 280px 15% 200px; }
+  .hero-section { min-height: unset; padding: 120px 15% 20px; }
   .hero-content { max-width: 1600px; }
-  .hero-content h1 { font-size: 6.5rem; }
-  .hero-subtitle { font-size: 2rem; margin-bottom: 90px; }
+  .hero-content h1 { font-size: 4rem; margin-bottom: 20px; }
+  .hero-subtitle { font-size: 1.4rem; margin-bottom: 30px; }
   .btn-hero-primary,
-  .btn-hero-secondary { padding: 30px 80px; font-size: 1.5rem; }
+  .btn-hero-secondary { padding: 18px 56px; font-size: 1.2rem; }
   .hero-trust-badges { gap: 80px; }
-  .trust-badge { font-size: 1.5rem; }
+  .trust-badge { font-size: 1.1rem; }
 }
 
 /* ── Hamburger caché sur desktop (min 1024px) ── */
@@ -1243,8 +1250,7 @@ footer a:hover {
     display: none;
     position: fixed;
     top: 70px; left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
+    width: 100%; height: calc(100vh - 70px);
     background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
     flex-direction: column;
     align-items: center;
