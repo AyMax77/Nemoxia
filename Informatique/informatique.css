@@ -1,12 +1,30 @@
-/* ========================================
-   INFORMATIQUE PAGE - VERSION OPTIMISÉE
-   CSS Réorganisé et Corrigé
-   Structure: Base → Layout → Composants → Responsive
-   ======================================== */
+/* ============================================================
+   INFORMATIQUE.CSS — Nemoxia
+   ============================================================
+   1.  RESET & BASE
+   2.  ANIMATIONS
+   3.  SECTIONS COMMUNES
+   4.  HERO SECTION
+   5.  INTRO IMAGE SECTION
+   6.  STATS COUNTER SECTION
+   7.  IMPORTANCE SECTION
+   8.  VISION IMAGE SECTION
+   9.  AVANTAGES SECTION
+   10. SOLUTIONS SECTION
+   11. MÉTHODOLOGIE SECTION
+   12. FOOTER
+   13. RESPONSIVE
+       13a. Mobile       (max 480px)
+       13b. Tablette     (max 768px)
+       13c. Desktop      (max 1200px)
+       13d. Large        (max 1920px)
+       13e. Ultra-wide   (min 1921px)
+   ============================================================ */
 
-/* ========================================
-   1. BASE & RESET
-   ======================================== */
+
+/* ============================================================
+   1. RESET & BASE
+   ============================================================ */
 
 * {
   margin: 0;
@@ -22,7 +40,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
-  background: 
+  background:
     linear-gradient(135deg, rgba(3, 7, 18, 0.88) 0%, rgba(13, 59, 102, 0.45) 100%),
     url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80') center/cover no-repeat fixed;
   overflow-x: hidden;
@@ -35,256 +53,50 @@ img {
   display: block;
 }
 
-/* ========================================
-   2. ANIMATIONS GLOBALES
-   ======================================== */
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+/* ============================================================
+   2. ANIMATIONS
+   ============================================================ */
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes heroSlideUpFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes heroPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0.8; }
+}
+
+@keyframes heroFadeInDown {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroSlideInLeft {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes heroFadeInUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
-  0%, 100% { 
-    opacity: 0.5; 
-  }
-  50% { 
-    opacity: 0.8; 
-  }
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0.8; }
 }
 
-/* ========================================
-   2. NAVBAR
-   ======================================== */
 
-.nav-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 5%;
-  z-index: 1000;
-  transition: background 0.4s ease, box-shadow 0.3s ease;
-  animation: slideDown 0.6s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.nav-container.scrolled {
-  background-color: rgba(0, 0, 0, 0.3); /* blanc avec 80% d'opacité */
-  box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
-  backdrop-filter: blur(5px);
-}
-
-.logo img {
-  width: clamp(200px, 17vw, 400px);
-  height: auto;
-  transition: width 0.3s ease;
-  animation: fadeInScale 0.8s ease-out 0.2s both;
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(15px, 2vw, 35px);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  animation: fadeInUp 0.6s ease-out both;
-}
-
-.nav-links li:nth-child(1) { animation-delay: 0.3s; }
-.nav-links li:nth-child(2) { animation-delay: 0.4s; }
-.nav-links li:nth-child(3) { animation-delay: 0.5s; }
-.nav-links li:nth-child(4) { animation-delay: 0.6s; }
-.nav-links li:nth-child(5) { animation-delay: 0.7s; }
-.nav-links li:nth-child(6) { animation-delay: 0.8s; }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: clamp(13px, 1.1vw, 17px);
-  padding-bottom: 5px;
-  position: relative;
-  transition: color 0.3s;
-  white-space: nowrap;
-}
-
-.nav-links a:hover {
-  color: #0072BC;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #0072BC;
-  transition: width 0.3s;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* Conteneur des boutons CTA */
-.nav-actions {
-  display: flex;
-  gap: clamp(8px, 1vw, 12px);
-  align-items: center;
-  animation: fadeInRight 0.8s ease-out 0.7s both;
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Style commun pour les boutons navbar */
-.phone-button,
-.eligibilite-button {
-  background: #0099ff;
-  color: white;
-  border: none;
-  padding: clamp(10px, 1.2vw, 14px) clamp(18px, 2.5vw, 28px);
-  font-size: clamp(13px, 1.1vw, 15px);
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(0, 114, 188, 0.3);
-}
-
-.phone-button:hover,
-.eligibilite-button:hover {
-  background: #0072BC;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px #0072BC;
-}
-
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 28px;
-  height: 22px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1001;
-}
-
-.hamburger span {
-  width: 100%;
-  height: 3px;
-  background: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.nav-container.open .hamburger span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.nav-container.open .hamburger span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-container.open .hamburger span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-}
-/* ========================================
-   4. SECTIONS COMMUNES
-   ======================================== */
+/* ============================================================
+   3. SECTIONS COMMUNES
+   ============================================================ */
 
 .hero-section,
 .intro-image-section,
@@ -293,10 +105,7 @@ img {
 .vision-image-section,
 .avantages-section,
 .solutions-section,
-.usecases-section,
-.technologies-section,
-.methodologie-section,
-.cta-section {
+.methodologie-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -305,39 +114,22 @@ img {
   padding: clamp(60px, 8vh, 100px) clamp(20px, 5%, 40px);
 }
 
-/* Effets radiaux pour chaque section */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 70%);
-  animation: pulse 4s ease-in-out infinite;
-  pointer-events: none;
-}
-
+/* Halos radiaux décoratifs */
+.hero-section::before,
 .intro-image-section::before,
 .avantages-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 70% 30%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 70%);
   pointer-events: none;
+  animation: pulse 4s ease-in-out infinite;
 }
 
-.stats-counter-section::before,
-.usecases-section::before {
+.stats-counter-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: radial-gradient(circle at 50% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
 }
@@ -347,27 +139,20 @@ img {
 .methodologie-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: radial-gradient(circle at 30% 70%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
 }
 
-.vision-image-section::before,
-.technologies-section::before {
+.vision-image-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: radial-gradient(circle at 80% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
 }
 
-/* Ligne lumineuse en bas de section */
+/* Trait lumineux en bas de section */
 .hero-section::after,
 .intro-image-section::after,
 .stats-counter-section::after,
@@ -375,8 +160,6 @@ img {
 .vision-image-section::after,
 .avantages-section::after,
 .solutions-section::after,
-.usecases-section::after,
-.technologies-section::after,
 .methodologie-section::after {
   content: '';
   position: absolute;
@@ -388,7 +171,6 @@ img {
   box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
 }
 
-/* Conteneur standard */
 .container {
   max-width: 1400px;
   width: 100%;
@@ -429,34 +211,17 @@ img {
   line-height: 1.7;
 }
 
-/* ========================================
-   5. HERO SECTION
-   ======================================== */
+
+/* ============================================================
+   4. HERO SECTION
+   ============================================================ */
 
 .hero-background {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: radial-gradient(circle at 30% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 70%);
   opacity: 0;
   animation: heroFadeIn 1s ease-out forwards, heroPulse 4s ease-in-out 1s infinite;
-}
-
-@keyframes heroFadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes heroPulse {
-  0%, 100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.8;
-  }
 }
 
 .hero-content {
@@ -468,13 +233,6 @@ img {
   opacity: 0;
   transform: translateY(30px);
   animation: heroSlideUpFadeIn 0.8s ease-out 0.3s forwards;
-}
-
-@keyframes heroSlideUpFadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .hero-badge {
@@ -494,13 +252,6 @@ img {
   animation: heroFadeInDown 0.8s ease-out 0.5s forwards;
 }
 
-@keyframes heroFadeInDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .hero-content h1 {
   font-size: clamp(28px, 4.5vw, 52px);
   font-weight: 800;
@@ -510,13 +261,6 @@ img {
   opacity: 0;
   transform: translateX(-30px);
   animation: heroSlideInLeft 0.8s ease-out 0.6s forwards;
-}
-
-@keyframes heroSlideInLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .hero-subtitle {
@@ -555,13 +299,6 @@ img {
   opacity: 0;
   transform: translateY(20px);
   animation: heroFadeInUp 0.8s ease-out 1s forwards;
-}
-
-@keyframes heroFadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .btn-hero-primary:hover {
@@ -623,25 +360,20 @@ img {
   font-weight: 600;
 }
 
-/* Responsive - désactiver les animations sur mobile si nécessaire */
 @media (prefers-reduced-motion: reduce) {
-  .hero-background,
-  .hero-content,
-  .hero-badge,
-  .hero-content h1,
-  .hero-subtitle,
-  .btn-hero-primary,
-  .btn-hero-secondary,
-  .hero-trust-badges {
+  .hero-background, .hero-content, .hero-badge,
+  .hero-content h1, .hero-subtitle,
+  .btn-hero-primary, .btn-hero-secondary, .hero-trust-badges {
     animation: none;
     opacity: 1;
     transform: none;
   }
 }
 
-/* ========================================
-   6. INTRO IMAGE SECTION
-   ======================================== */
+
+/* ============================================================
+   5. INTRO IMAGE SECTION
+   ============================================================ */
 
 .intro-content-wrapper {
   display: grid;
@@ -652,9 +384,7 @@ img {
   width: 100%;
 }
 
-.intro-text {
-  color: white;
-}
+.intro-text { color: white; }
 
 .intro-text h2 {
   font-size: clamp(26px, 4vw, 48px);
@@ -670,39 +400,6 @@ img {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
   margin-bottom: clamp(15px, 2.5vh, 22px);
-}
-
-.intro-features {
-  display: flex;
-  gap: clamp(15px, 2.5vw, 25px);
-  flex-wrap: wrap;
-  margin: clamp(25px, 4vw, 35px) 0;
-}
-
-.intro-feature {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: clamp(10px, 1.5vw, 14px) clamp(15px, 2vw, 22px);
-  background: rgba(0, 114, 188, 0.1);
-  border: 1px solid rgba(0, 114, 188, 0.25);
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.intro-feature:hover {
-  background: rgba(0, 114, 188, 0.18);
-  transform: translateY(-4px);
-}
-
-.feature-icon {
-  font-size: clamp(20px, 2.5vw, 28px);
-}
-
-.feature-text {
-  font-size: clamp(13px, 1.5vw, 16px);
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 600;
 }
 
 .btn-intro {
@@ -727,10 +424,8 @@ img {
 
 .intro-image {
   width: 100%;
-  height: 100%;
   min-height: 350px;
   max-height: 550px;
-  position: relative;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -746,13 +441,12 @@ img {
   transition: transform 0.3s ease;
 }
 
-.intro-image:hover img {
-  transform: scale(1.05);
-}
+.intro-image:hover img { transform: scale(1.05); }
 
-/* ========================================
-   7. STATS COUNTER SECTION
-   ======================================== */
+
+/* ============================================================
+   6. STATS COUNTER SECTION
+   ============================================================ */
 
 .stats-grid {
   display: grid;
@@ -768,9 +462,8 @@ img {
   background: rgba(0, 114, 188, 0.08);
   border: 2px solid rgba(0, 114, 188, 0.25);
   border-radius: 15px;
-  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-
+  transition: all 0.3s ease;
 }
 
 .stat-counter:hover {
@@ -800,16 +493,16 @@ img {
   font-weight: 600;
 }
 
-/* ========================================
-   8. IMPORTANCE SECTION
-   ======================================== */
+
+/* ============================================================
+   7. IMPORTANCE SECTION
+   ============================================================ */
 
 .importance-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(25px, 3.5vw, 35px);
   margin-top: clamp(30px, 5vh, 45px);
-  backdrop-filter: blur(10px);
 }
 
 .importance-card {
@@ -817,9 +510,9 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 15px;
   padding: clamp(25px, 3vw, 35px);
-  transition: all 0.3s ease;
   text-align: center;
-
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
 .importance-card:hover {
@@ -848,9 +541,10 @@ img {
   margin: 0;
 }
 
-/* ========================================
-   9. VISION IMAGE SECTION
-   ======================================== */
+
+/* ============================================================
+   8. VISION IMAGE SECTION
+   ============================================================ */
 
 .vision-content-wrapper {
   display: grid;
@@ -861,9 +555,7 @@ img {
   width: 100%;
 }
 
-.vision-text {
-  color: white;
-}
+.vision-text { color: white; }
 
 .vision-text h2 {
   font-size: clamp(26px, 4vw, 48px);
@@ -881,35 +573,10 @@ img {
   margin-bottom: clamp(15px, 2.5vh, 22px);
 }
 
-.certifications {
-  display: flex;
-  gap: clamp(12px, 2vw, 18px);
-  flex-wrap: wrap;
-  margin: clamp(25px, 4vw, 35px) 0;
-}
-
-.cert-badge {
-  padding: clamp(10px, 1.5vw, 14px) clamp(18px, 2.5vw, 28px);
-  background: rgba(34, 197, 94, 0.15);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  border-radius: 50px;
-  font-size: clamp(12px, 1.4vw, 15px);
-  font-weight: 700;
-  color: #22c55e;
-  transition: all 0.3s ease;
-}
-
-.cert-badge:hover {
-  background: rgba(34, 197, 94, 0.25);
-  transform: translateY(-3px);
-}
-
 .vision-image {
   width: 100%;
-  height: 100%;
   min-height: 350px;
   max-height: 550px;
-  position: relative;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -925,9 +592,7 @@ img {
   transition: transform 0.3s ease;
 }
 
-.vision-image:hover img {
-  transform: scale(1.05);
-}
+.vision-image:hover img { transform: scale(1.05); }
 
 .vision-stats {
   display: grid;
@@ -964,9 +629,10 @@ img {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* ========================================
-   10. AVANTAGES SECTION
-   ======================================== */
+
+/* ============================================================
+   9. AVANTAGES SECTION
+   ============================================================ */
 
 .avantages-grid {
   display: grid;
@@ -976,20 +642,20 @@ img {
 }
 
 .avantage-card {
-  background: rgba(0, 0, 0, 0.568);
+  background: rgba(0, 0, 0, 0.4);
   border: 2px solid transparent;
   border-radius: 15px;
   padding: clamp(25px, 3vw, 35px);
   text-align: center;
-  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
 .avantage-card:hover {
   transform: translateY(-10px);
   border-color: #0072BC;
   box-shadow: 0 10px 30px rgba(0, 114, 188, 0.3);
-  background: rgba(0, 0, 0, 0.13);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .avantage-card .icon {
@@ -1010,9 +676,10 @@ img {
   line-height: 1.6;
 }
 
-/* ========================================
-   11. SOLUTIONS SECTION
-   ======================================== */
+
+/* ============================================================
+   10. SOLUTIONS SECTION
+   ============================================================ */
 
 .solutions-grid {
   display: grid;
@@ -1026,9 +693,8 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 15px;
   padding: clamp(25px, 3.5vw, 35px);
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
 .solution-card:hover {
@@ -1059,18 +725,17 @@ img {
   padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centre la liste */
+  align-items: center;
   gap: clamp(6px, 1vh, 10px);
 }
 
 .solution-card ul li {
-  padding: 0;
   position: relative;
-  padding-left: clamp(25px, 3vw, 30px); /* Espace pour le checkmark */
+  padding-left: clamp(25px, 3vw, 30px);
   color: rgba(255, 255, 255, 0.85);
   font-size: clamp(13px, 1.4vw, 16px);
   text-align: left;
-  max-width: fit-content; /* Le li prend la largeur de son contenu */
+  max-width: fit-content;
 }
 
 .solution-card ul li::before {
@@ -1081,112 +746,13 @@ img {
   color: #4db8ff;
   font-weight: bold;
   font-size: clamp(16px, 1.8vw, 20px);
-  line-height: 1.4; /* Aligne avec la première ligne du texte */
+  line-height: 1.4;
 }
 
-/* ========================================
-   12. USECASES SECTION
-   ======================================== */
 
-.usecases-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(22px, 3vw, 30px);
-  margin-top: clamp(30px, 5vh, 45px);
-}
-
-.usecase-card {
-  background: rgba(255, 255, 255, 0.95);
-  padding: clamp(22px, 3vw, 30px);
-  border-radius: 15px;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.usecase-card:hover {
-  background: white;
-  transform: translateY(-5px);
-  border-color: #0072BC;
-  box-shadow: 0 10px 30px rgba(0, 114, 188, 0.2);
-}
-
-.usecase-card h3 {
-  font-size: clamp(18px, 2vw, 24px);
-  color: #0d3b66;
-  margin-bottom: clamp(12px, 1.5vh, 16px);
-  font-weight: 600;
-}
-
-.usecase-card p {
-  font-size: clamp(13px, 1.4vw, 16px);
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: clamp(10px, 1.2vh, 12px);
-}
-
-.usecase-card p strong {
-  color: #0d3b66;
-  font-weight: 600;
-}
-
-/* ========================================
-   13. TECHNOLOGIES SECTION
-   ======================================== */
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(25px, 3.5vw, 35px);
-  margin-top: clamp(30px, 5vh, 45px);
-}
-
-.tech-category {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 15px;
-  padding: clamp(25px, 3.5vw, 35px);
-  transition: all 0.3s ease;
-}
-
-.tech-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 114, 188, 0.25);
-  border-color: rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.tech-category h3 {
-  font-size: clamp(20px, 2.2vw, 26px);
-  color: #4db8ff;
-  margin-bottom: clamp(15px, 2vh, 20px);
-  font-weight: 600;
-}
-
-.tech-category ul {
-  list-style: none;
-  padding: 0;
-}
-
-.tech-category li {
-  padding: clamp(8px, 1.2vh, 12px) 0 clamp(8px, 1.2vh, 12px) clamp(22px, 2.8vw, 28px);
-  position: relative;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: clamp(13px, 1.4vw, 16px);
-}
-
-.tech-category li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #4db8ff;
-  font-weight: bold;
-  font-size: clamp(18px, 2vw, 22px);
-}
-
-/* ========================================
-   14. MÉTHODOLOGIE SECTION
-   ======================================== */
+/* ============================================================
+   11. MÉTHODOLOGIE SECTION
+   ============================================================ */
 
 .steps-container {
   display: grid;
@@ -1240,101 +806,43 @@ img {
   margin: 0;
 }
 
-/* ========================================
-   15. CTA SECTION
-   ======================================== */
 
-.cta-section {
-  background: linear-gradient(135deg, #0072BC 0%, #0d3b66 100%);
-  text-align: center;
-}
-
-.cta-section h2 {
-  color: white;
-  font-size: clamp(28px, 4vw, 48px);
-  margin-bottom: clamp(15px, 2.5vh, 20px);
-  font-weight: 700;
-}
-
-.cta-section p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(15px, 1.8vw, 22px);
-  margin-bottom: clamp(30px, 5vh, 40px);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-cta,
-.btn-cta-secondary {
-  padding: clamp(12px, 1.5vw, 18px) clamp(25px, 3.5vw, 45px);
-  font-size: clamp(14px, 1.5vw, 18px);
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
-
-.btn-cta {
-  background: white;
-  color: #0072BC;
-  border: 2px solid white;
-}
-
-.btn-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
-  background: #0072BC;
-  color: white;
-}
-
-.btn-cta-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-cta-secondary:hover {
-  background: white;
-  color: #0072BC;
-  transform: translateY(-3px);
-}
-
-/* ========================================
-   16. FOOTER
-   ======================================== */
+/* ============================================================
+   12. FOOTER
+   ============================================================ */
 
 footer {
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  background: linear-gradient(180deg, #1a3a5c 0%, #0d2440 100%);
   color: white;
-  padding: clamp(40px, 6vh, 70px) 5%;
+  padding: clamp(30px, 5vw, 50px) 5%;
   box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  isolation: isolate;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 15, 46, 0.5);
+  pointer-events: none;
+  z-index: 0;
+}
+
+footer > * {
+  position: relative;
+  z-index: 1;
 }
 
 footer h3 {
   color: lightskyblue;
-  margin-bottom: 18px;
-  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  margin-bottom: 15px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
 }
 
-footer ul {
-  list-style: none;
-  padding: 0;
-}
-
-footer ul li {
-  margin-bottom: 10px;
-  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
-}
+footer ul { list-style: none; padding: 0; }
+footer ul li { margin-bottom: 8px; font-size: clamp(0.85rem, 1.2vw, 0.95rem); }
 
 footer a {
   color: rgba(255, 255, 255, 0.8);
@@ -1349,93 +857,34 @@ footer a:hover {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: clamp(25px, 4vw, 40px);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(20px, 4vw, 30px);
   max-width: 1400px;
   margin: 0 auto;
+  align-items: start;
 }
 
-.footer-grid a {
-  color: #0099ff;
-  transition: color 0.3s;
-}
-
-.footer-grid div {
-  margin: auto;
-}
+.footer-grid a { color: #0099ff; transition: color 0.3s; }
 
 .footer-bottom {
   text-align: center;
   border-top: 1px solid #0099ff;
-  margin-top: clamp(25px, 4vh, 40px);
-  padding-top: clamp(18px, 3vh, 28px);
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  margin-top: clamp(20px, 4vw, 30px);
+  padding-top: clamp(15px, 3vw, 20px);
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   opacity: 0.8;
 }
 
-.footer-bottom p {
-  text-align: center;
-}
+.footer-bottom p { text-align: center; }
+.footer-bottom a { color: #0099ff; }
 
-.footer-bottom a {
-  color: #0099ff;
-}
 
-/* ========================================
-   17. RESPONSIVE - VERSION COMPLÈTE
-   ======================================== */
+/* ============================================================
+   13. RESPONSIVE
+   ============================================================ */
 
-/* ---------- XS: Très petits téléphones (0 - 480px) ---------- */
+/* ── 13a. Mobile (max 480px) ── */
 @media (max-width: 480px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    padding: 10px 4%;
-    height: auto;
-  }
-
-  .logo img {
-    width: 100px;
-  }
-  
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 58px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 58px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
-    flex-direction: column;
-    align-items: center;
-    padding: 25px 20px;
-    gap: 18px;
-    overflow-y: auto;
-    backdrop-filter: blur(10px);
-  }
-
-  .nav-container.open .nav-links {
-    display: flex;
-  }
-
-  .nav-actions {
-    gap: 8px;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    padding: 4px 6px;
-    font-size: 8px;
-  }
-
-  /* Sections */
   .hero-section,
   .intro-image-section,
   .stats-counter-section,
@@ -1443,132 +892,44 @@ footer a:hover {
   .vision-image-section,
   .avantages-section,
   .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
+  .methodologie-section {
     padding: 70px 4% 35px;
     min-height: auto;
   }
 
-  /* Images grandes sur mobile */
   .intro-content-wrapper,
   .vision-content-wrapper {
     grid-template-columns: 1fr;
     gap: 25px;
   }
 
-  .intro-text,
-  .vision-text {
-    order: 2;
-  }
-  .intro-text p{
-    text-align: center;
-  }
-  .btn-intro{
-    align-items: center;
+  .intro-text, .vision-text { order: 2; text-align: center; }
+  .intro-image, .vision-image { order: 1; min-height: 260px; max-height: 380px; }
+
+  .btn-intro {
+    display: flex;
     justify-content: center;
-    display: flex;
+    margin: 15px auto 0;
   }
 
-  .intro-image,
-  .vision-image {
-    order: 1;
-    min-height: 300px;
-    max-height: 450px;
-  }
-
-  /* Grids */
   .vision-stats,
   .importance-grid,
   .avantages-grid,
   .solutions-grid,
-  .usecases-grid,
-  .tech-grid,
   .steps-container,
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
-  .vision-text p{
-    text-align: center;
-  }
 
-  /* Buttons */
-  .hero-buttons,
-  .cta-buttons {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
-  .hero-content{
-    margin-top:10px;
-  }
-  .btn-hero-primary,
-  .btn-hero-secondary,
-  .btn-cta,
-  .btn-cta-secondary {
-    width: 100%;
-    max-width: 320px;
-  }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn-hero-primary, .btn-hero-secondary { width: 100%; max-width: 320px; }
 
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .footer-grid{
-    text-align: center;
-  }
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
 }
 
-/* ---------- SM: Petits téléphones (481 - 576px) ---------- */
-@media (min-width: 481px) and (max-width: 576px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    height: 60px;
-    padding: 10px 5%;
-  }
-
-  .logo img {
-    width: 130px;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
-    flex-direction: column;
-    align-items: center;
-    padding: 25px;
-    gap: 18px;
-    overflow-y: auto;
-    backdrop-filter: blur(10px);
-  }
-
-  .nav-container.open .nav-links {
-    display: flex;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    padding: 9px 14px;
-    font-size: 12px;
-  }
-
-  /* Sections */
+/* ── 13b. Tablette (max 768px) ── */
+@media (min-width: 481px) and (max-width: 768px) {
   .hero-section,
   .intro-image-section,
   .stats-counter-section,
@@ -1576,301 +937,60 @@ footer a:hover {
   .vision-image-section,
   .avantages-section,
   .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
-    padding: 75px 5% 40px;
+  .methodologie-section {
+    padding: 85px 5% 45px;
+    min-height: auto;
   }
 
-  /* Images grandes */
   .intro-content-wrapper,
   .vision-content-wrapper {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 30px;
   }
 
-  .intro-text,
-  .vision-text {
-    order: 2;
-  }
+  .intro-text, .vision-text { order: 2; }
+  .intro-image, .vision-image { order: 1; min-height: 300px; max-height: 460px; }
 
-  .intro-image,
-  .vision-image {
-    order: 1;
-    min-height: 320px;
-    max-height: 480px;
-  }
-
-  /* Grids */
-  .vision-stats,
-  .importance-grid,
-  .avantages-grid,
-  .solutions-grid,
-  .usecases-grid,
-  .tech-grid,
-  .steps-container,
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-}
-
-/* ---------- MD: Mobiles larges / petites tablettes (577 - 768px) ---------- */
-@media (min-width: 577px) and (max-width: 768px) {
-  body {
-    background-attachment:fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    height: 64px;
-    padding: 10px 4%;
-  }
-
-  .logo img {
-    width: 150px;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 64px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    gap: 20px;
-    overflow-y: auto;
-    backdrop-filter: blur(10px);
-  }
-
-  .nav-container.open .nav-links {
-    display: flex;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    padding: 10px 16px;
-    font-size: 13px;
-  }
-
-  /* Sections */
-  .hero-section,
-  .intro-image-section,
-  .stats-counter-section,
-  .importance-section,
-  .vision-image-section,
-  .avantages-section,
-  .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
-    padding: 85px 4% 45px;
-  }
-
-  /* Images grandes */
-  .intro-content-wrapper,
-  .vision-content-wrapper {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .intro-text,
-  .vision-text {
-    order: 2;
-  }
-
-  .intro-image,
-  .vision-image {
-    order: 1;
-    min-height: 350px;
-    max-height: 520px;
-  }
-
-  /* Grids */
   .vision-stats {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .importance-grid,
   .avantages-grid,
   .solutions-grid,
-  .usecases-grid,
-  .tech-grid,
   .steps-container,
   .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-  }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ---------- LG: Tablettes (769 - 992px) ---------- */
-@media (min-width: 769px) and (max-width: 992px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    height: 70px;
-    padding: 12px 5%;
-  }
-
-  .logo img {
-    width: 170px;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: linear-gradient(to bottom, rgba(3, 7, 18, 0.98), rgba(13, 59, 102, 0.98));
-    flex-direction: column;
-    align-items: center;
-    padding: 35px;
-    gap: 22px;
-    overflow-y: auto;
-    backdrop-filter: blur(10px);
-  }
-
-  .nav-container.open .nav-links {
-    display: flex;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    padding: 11px 18px;
-    font-size: 13px;
-  }
-
-  /* Sections */
-  .hero-section,
-  .intro-image-section,
-  .stats-counter-section,
-  .importance-section,
-  .vision-image-section,
-  .avantages-section,
-  .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
-    padding: 95px 5% 50px;
-  }
-
-  /* Images grandes */
+/* ── 13b bis. Tablette large (769px – 1023px) ── */
+@media (min-width: 769px) and (max-width: 1023px) {
   .intro-content-wrapper,
   .vision-content-wrapper {
     grid-template-columns: 1fr;
     gap: 38px;
   }
 
-  .intro-text,
-  .vision-text {
-    order: 2;
-  }
-
-  .intro-image,
-  .vision-image {
-    order: 1;
-    min-height: 380px;
-    max-height: 560px;
-  }
-
-  /* Grids */
-  .vision-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-  }
+  .intro-text, .vision-text { order: 2; }
+  .intro-image, .vision-image { order: 1; min-height: 340px; max-height: 520px; }
 
   .importance-grid,
   .avantages-grid,
   .solutions-grid,
-  .usecases-grid,
-  .tech-grid,
   .steps-container,
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
   }
 
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
+  .footer-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ========================================
-   CSS OPTIMISÉ POUR DESKTOP - 993px à 1920px
-   Tailles réduites pour meilleur affichage
-   ======================================== */
-
-/* ---------- XL: Petits laptops (993 - 1200px) ---------- */
-@media (min-width: 993px) and (max-width: 1200px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    padding: 12px 5%;
-    height: 70px;
-  }
-
-  .logo img {
-    width: 160px;
-  }
-
-  .hamburger {
-    display: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 18px;
-  }
-
-  .nav-links a {
-    font-size: 13px;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    font-size: 12px;
-    padding: 10px 16px;
-  }
-
-  /* Sections */
+/* ── 13c. Desktop (1024px – 1200px) ── */
+@media (min-width: 1024px) and (max-width: 1200px) {
   .hero-section,
   .intro-image-section,
   .stats-counter-section,
@@ -1878,1297 +998,28 @@ footer a:hover {
   .vision-image-section,
   .avantages-section,
   .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
+  .methodologie-section {
     padding: 80px 5% 50px;
     min-height: auto;
   }
 
-  /* Titres H2 */
-  .container h2,
-  .hero-content h1,
-  .intro-text h2,
-  .vision-text h2,
-  .cta-section h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-
-  /* Badges */
-  .section-badge,
-  .hero-badge {
-    font-size: 11px;
-    padding: 6px 14px;
-    margin-bottom: 15px;
-  }
-
-  /* Textes d'introduction */
-  .section-intro,
-  .hero-subtitle,
-  .intro-text p,
-  .vision-text p,
-  .cta-section p {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
-  /* Boutons */
-  .btn-hero-primary,
-  .btn-hero-secondary,
-  .btn-intro,
-  .btn-cta,
-  .btn-cta-secondary {
-    padding: 11px 22px;
-    font-size: 14px;
-  }
-
-  /* Hero Trust Badges */
-  .hero-trust-badges {
-    gap: 15px;
-  }
-
-  .trust-badge {
-    padding: 8px 14px;
-  }
-
-  .trust-icon {
-    font-size: 18px;
-  }
-
-  .trust-text {
-    font-size: 12px;
-  }
-
-  /* Intro & Vision Content */
   .intro-content-wrapper,
-  .vision-content-wrapper {
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-  }
-
-  .intro-image,
-  .vision-image {
-    min-height: 300px;
-    max-height: 420px;
-  }
-
-  .intro-features {
-    gap: 12px;
-    margin: 20px 0;
-  }
-
-  .intro-feature {
-    padding: 8px 14px;
-  }
-
-  .feature-icon {
-    font-size: 20px;
-  }
-
-  .feature-text {
-    font-size: 12px;
-  }
-
-  /* Certifications */
-  .certifications {
-    gap: 10px;
-    margin: 20px 0;
-  }
-
-  .cert-badge {
-    padding: 8px 16px;
-    font-size: 11px;
-  }
-
-  /* Vision Stats */
-  .vision-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 20px;
-  }
-
-  .stat-item {
-    padding: 12px;
-  }
-
-  .stat-item .stat-number {
-    font-size: 24px;
-    margin-bottom: 5px;
-  }
-
-  .stat-item .stat-label {
-    font-size: 11px;
-  }
-
-  /* Stats Counter Grid */
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-
-  .stat-counter {
-    padding: 25px 20px;
-  }
-
-  .stat-icon {
-    font-size: 42px;
-    margin-bottom: 12px;
-  }
-
-  .stat-number {
-    font-size: 48px;
-    margin-bottom: 8px;
-  }
-
-  .stat-label {
-    font-size: 13px;
-  }
-
-  /* Importance Grid */
-  .importance-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 25px;
-  }
-
-  .importance-card {
-    padding: 20px;
-  }
-
-  .importance-card .icon {
-    font-size: 36px;
-    margin-bottom: 12px;
-  }
-
-  .importance-card h3 {
-    font-size: 17px;
-    margin-bottom: 10px;
-  }
-
-  .importance-card p {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  /* Avantages Grid */
-  .avantages-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 25px;
-  }
-
-  .avantage-card {
-    padding: 20px;
-  }
-
-  .avantage-card .icon {
-    font-size: 36px;
-    margin-bottom: 12px;
-  }
-
-  .avantage-card h3 {
-    font-size: 17px;
-    margin-bottom: 10px;
-  }
-
-  .avantage-card p {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  /* Solutions Grid */
-  .solutions-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 25px;
-  }
-
-  .solution-card {
-    padding: 20px;
-  }
-
-  .solution-card h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-
-  .solution-card p {
-    font-size: 13px;
-    margin-bottom: 15px;
-    line-height: 1.5;
-  }
-
-  .solution-card ul {
-    gap: 6px;
-  }
-
-  .solution-card ul li {
-    font-size: 12px;
-    padding-left: 20px;
-  }
-
-  .solution-card ul li::before {
-    font-size: 14px;
-  }
-
-  /* Use Cases Grid */
-  .usecases-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-top: 25px;
-  }
-
-  .usecase-card {
-    padding: 18px;
-  }
-
-  .usecase-card h3 {
-    font-size: 17px;
-    margin-bottom: 10px;
-  }
-
-  .usecase-card p {
-    font-size: 12px;
-    line-height: 1.5;
-    margin-bottom: 8px;
-  }
-
-  /* Technologies Grid */
-  .tech-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 25px;
-  }
-
-  .tech-category {
-    padding: 20px;
-  }
-
-  .tech-category h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-
-  .tech-category li {
-    font-size: 12px;
-    padding: 6px 0 6px 20px;
-  }
-
-  .tech-category li::before {
-    font-size: 16px;
-  }
-
-  /* Méthodologie Steps */
-  .steps-container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 25px;
-  }
-
-  .step-card {
-    padding: 20px;
-  }
-
-  .step-number {
-    width: 50px;
-    height: 50px;
-    font-size: 26px;
-    margin-bottom: 15px;
-  }
-
-  .step-card h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  .step-card p {
-    font-size: 12px;
-    line-height: 1.5;
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-
-  footer h3 {
-    font-size: 1rem;
-    margin-bottom: 12px;
-  }
-
-  footer ul li {
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-  }
-}
-
-/* ---------- XXL: Desktop standard (1201 - 1440px) ---------- */
-@media (min-width: 1201px) and (max-width: 1440px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    padding: 12px 6%;
-    height: 72px;
-  }
-
-  .logo img {
-    width: 220px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 22px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    font-size: 13px;
-    padding: 11px 18px;
-  }
-
-  /* Sections */
-  .hero-section,
-  .intro-image-section,
-  .stats-counter-section,
-  .importance-section,
-  .vision-image-section,
-  .avantages-section,
-  .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
-    padding: 45px 6% 55px;
-    min-height: auto;
-  }
-  .hero-content{
-    margin-top:50px
-  }
-
-  /* Titres H2 */
-  .container h2,
-  .hero-content h1,
-  .intro-text h2,
-  .vision-text h2,
-  .cta-section h2 {
-    font-size: 36px;
-    margin-top: 12px;
-  }
-
-  /* Badges */
-  .section-badge,
-  .hero-badge {
-    font-size: 12px;
-    padding: 7px 16px;
-    margin-bottom: 0px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-  }
-
-  /* Textes d'introduction */
-  .section-intro,
-  .hero-subtitle,
-  .intro-text p,
-  .vision-text p,
-  .cta-section p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-top: 22px;
-  }
-
-  /* Boutons */
-  .btn-hero-primary,
-  .btn-hero-secondary,
-  .btn-intro,
-  .btn-cta,
-  .btn-cta-secondary {
-    padding: 12px 25px;
-    font-size: 15px;
-  }
-
-  /* Hero Trust Badges */
-  .hero-trust-badges {
-    gap: 18px;
-    margin-bottom: 20px;
-  }
-
-  .trust-badge {
-    padding: 9px 16px;
-  }
-
-  .trust-icon {
-    font-size: 20px;
-  }
-
-  .trust-text {
-    font-size: 13px;
-  }
-
-  /* Intro & Vision Content */
-  .intro-content-wrapper,
-  .vision-content-wrapper {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-
-  .intro-image,
-  .vision-image {
-    min-height: 320px;
-    max-height: 450px;
-  }
-
-  .intro-features {
-    gap: 14px;
-    margin: 22px 0;
-  }
-
-  .intro-feature {
-    padding: 9px 16px;
-  }
-
-  .feature-icon {
-    font-size: 22px;
-  }
-
-  .feature-text {
-    font-size: 13px;
-  }
-
-  /* Certifications */
-  .certifications {
-    gap: 12px;
-    margin: 22px 0;
-  }
-
-  .cert-badge {
-    padding: 9px 18px;
-    font-size: 12px;
-  }
-
-  /* Vision Stats */
-  .vision-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-top: 22px;
-  }
-
-  .stat-item {
-    padding: 14px;
-  }
-
-  .stat-item .stat-number {
-    font-size: 28px;
-    margin-bottom: 6px;
-  }
-
-  .stat-item .stat-label {
-    font-size: 12px;
-  }
-
-  /* Stats Counter Grid */
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-  }
-
-  .stat-counter {
-    padding: 28px 22px;
-  }
-
-  .stat-icon {
-    font-size: 46px;
-    margin-bottom: 14px;
-  }
-
-  .stat-number {
-    font-size: 52px;
-    margin-bottom: 10px;
-  }
-
-  .stat-label {
-    font-size: 14px;
-  }
-
-  /* Importance Grid */
-  .importance-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-    margin-top: 28px;
-  }
-
-  .importance-card {
-    padding: 22px;
-  }
-
-  .importance-card .icon {
-    font-size: 38px;
-    margin-bottom: 14px;
-  }
-
-  .importance-card h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-
-  .importance-card p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* Avantages Grid */
-  .avantages-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-    margin-top: 28px;
-  }
-
-  .avantage-card {
-    padding: 22px;
-  }
-
-  .avantage-card .icon {
-    font-size: 38px;
-    margin-bottom: 14px;
-  }
-
-  .avantage-card h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-
-  .avantage-card p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* Solutions Grid */
-  .solutions-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 28px;
-  }
-
-  .solution-card {
-    padding: 22px;
-  }
-
-  .solution-card h3 {
-    font-size: 20px;
-    margin-bottom: 14px;
-  }
-
-  .solution-card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-    line-height: 1.5;
-  }
-
-  .solution-card ul {
-    gap: 7px;
-  }
-
-  .solution-card ul li {
-    font-size: 13px;
-    padding-left: 22px;
-  }
-
-  .solution-card ul li::before {
-    font-size: 15px;
-  }
-
-  /* Use Cases Grid */
-  .usecases-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 28px;
-  }
-
-  .usecase-card {
-    padding: 20px;
-  }
-
-  .usecase-card h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
-  }
-
-  .usecase-card p {
-    font-size: 13px;
-    line-height: 1.5;
-    margin-bottom: 9px;
-  }
-
-  /* Technologies Grid */
-  .tech-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 28px;
-  }
-
-  .tech-category {
-    padding: 22px;
-  }
-
-  .tech-category h3 {
-    font-size: 20px;
-    margin-bottom: 14px;
-  }
-
-  .tech-category li {
-    font-size: 13px;
-    padding: 7px 0 7px 22px;
-  }
-
-  .tech-category li::before {
-    font-size: 17px;
-  }
-
-  /* Méthodologie Steps */
-  .steps-container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-    margin-top: 28px;
-  }
-
-  .step-card {
-    padding: 22px;
-  }
-
-  .step-number {
-    width: 55px;
-    height: 55px;
-    font-size: 28px;
-    margin-bottom: 16px;
-  }
-
-  .step-card h3 {
-    font-size: 17px;
-    margin-bottom: 12px;
-  }
-
-  .step-card p {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
-
-  footer h3 {
-    font-size: 1.05rem;
-    margin-bottom: 14px;
-  }
-
-  footer ul li {
-    font-size: 0.9rem;
-    margin-bottom: 9px;
-  }
-}
-
-/* ---------- Large Desktop (1441 - 1920px) ---------- */
-@media (min-width: 1441px) and (max-width: 1600px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    padding: 14px 7%;
-    height: 75px;
-  }
-
-  .logo img {
-    width: 200px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 25px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    font-size: 13px;
-    padding: 12px 20px;
-  }
-
-  /* Sections */
-  .hero-section,
-  .intro-image-section,
-  .stats-counter-section,
-  .importance-section,
-  .vision-image-section,
-  .avantages-section,
-  .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
-    padding: 90px 7% 60px;
-    min-height: auto;
-  }
-
-  /* Titres H2 */
-  .container h2,
-  .hero-content h1,
-  .intro-text h2,
-  .vision-text h2,
-  .cta-section h2 {
-    font-size: 38px;
-    margin-bottom: 24px;
-  }
-
-  /* Badges */
-  .section-badge,
-  .hero-badge {
-    font-size: 12px;
-    padding: 8px 18px;
-    margin-bottom: 18px;
-  }
-
-  /* Textes d'introduction */
-  .section-intro,
-  .hero-subtitle,
-  .intro-text p,
-  .vision-text p,
-  .cta-section p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 24px;
-  }
-
-  /* Boutons */
-  .btn-hero-primary,
-  .btn-hero-secondary,
-  .btn-intro,
-  .btn-cta,
-  .btn-cta-secondary {
-    padding: 13px 28px;
-    font-size: 15px;
-  }
-
-  /* Hero Trust Badges */
-  .hero-trust-badges {
-    gap: 20px;
-  }
-
-  .trust-badge {
-    padding: 10px 18px;
-  }
-
-  .trust-icon {
-    font-size: 21px;
-  }
-
-  .trust-text {
-    font-size: 13px;
-  }
-
-  /* Intro & Vision Content */
-  .intro-content-wrapper,
-  .vision-content-wrapper {
-    max-width: 1400px;
-    grid-template-columns: 1fr 1fr;
-    gap: 45px;
-  }
-
-  .intro-image,
-  .vision-image {
-    min-height: 340px;
-    max-height: 480px;
-  }
-
-  .intro-features {
-    gap: 15px;
-    margin: 24px 0;
-  }
-
-  .intro-feature {
-    padding: 10px 18px;
-  }
-
-  .feature-icon {
-    font-size: 23px;
-  }
-
-  .feature-text {
-    font-size: 13px;
-  }
-
-  /* Certifications */
-  .certifications {
-    gap: 13px;
-    margin: 24px 0;
-  }
-
-  .cert-badge {
-    padding: 10px 20px;
-    font-size: 12px;
-  }
-
-  /* Vision Stats */
-  .vision-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 24px;
-  }
-
-  .stat-item {
-    padding: 15px;
-  }
-
-  .stat-item .stat-number {
-    font-size: 30px;
-    margin-bottom: 7px;
-  }
-
-  .stat-item .stat-label {
-    font-size: 12px;
-  }
-
-  /* Stats Counter Grid */
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-
-  .stat-counter {
-    padding: 30px 24px;
-  }
-
-  .stat-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
-  }
-
-  .stat-number {
-    font-size: 56px;
-    margin-bottom: 12px;
-  }
-
-  .stat-label {
-    font-size: 15px;
-  }
-
-  /* Importance Grid */
-  .importance-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 30px;
-  }
-
-  .importance-card {
-    padding: 24px;
-  }
-
-  .importance-card .icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-  }
-
-  .importance-card h3 {
-    font-size: 19px;
-    margin-bottom: 13px;
-  }
-
-  .importance-card p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* Avantages Grid */
-  .avantages-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 30px;
-  }
-
-  .avantage-card {
-    padding: 24px;
-  }
-
-  .avantage-card .icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-  }
-
-  .avantage-card h3 {
-    font-size: 19px;
-    margin-bottom: 13px;
-  }
-
-  .avantage-card p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* Solutions Grid */
-  .solutions-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 30px;
-  }
-
-  .solution-card {
-    padding: 24px;
-  }
-
-  .solution-card h3 {
-    font-size: 21px;
-    margin-bottom: 15px;
-  }
-
-  .solution-card p {
-    font-size: 14px;
-    margin-bottom: 18px;
-    line-height: 1.5;
-  }
-
-  .solution-card ul {
-    gap: 8px;
-  }
-
-  .solution-card ul li {
-    font-size: 13px;
-    padding-left: 24px;
-  }
-
-  .solution-card ul li::before {
-    font-size: 16px;
-  }
-
-  /* Use Cases Grid */
-  .usecases-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 30px;
-  }
-
-  .usecase-card {
-    padding: 22px;
-  }
-
-  .usecase-card h3 {
-    font-size: 19px;
-    margin-bottom: 13px;
-  }
-
-  .usecase-card p {
-    font-size: 13px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-  }
-
-  /* Technologies Grid */
-  .tech-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 30px;
-  }
-
-  .tech-category {
-    padding: 24px;
-  }
-
-  .tech-category h3 {
-    font-size: 21px;
-    margin-bottom: 15px;
-  }
-
-  .tech-category li {
-    font-size: 13px;
-    padding: 8px 0 8px 24px;
-  }
-
-  .tech-category li::before {
-    font-size: 18px;
-  }
-
-  /* Méthodologie Steps */
-  .steps-container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 30px;
-  }
-
-  .step-card {
-    padding: 24px;
-  }
-
-  .step-number {
-    width: 58px;
-    height: 58px;
-    font-size: 30px;
-    margin-bottom: 18px;
-  }
-
-  .step-card h3 {
-    font-size: 18px;
-    margin-bottom: 13px;
-  }
-
-  .step-card p {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    max-width: 1400px;
-  }
-
-  footer h3 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-  }
-
-  footer ul li {
-    font-size: 0.92rem;
-    margin-bottom: 9px;
-  }
-
-  .container {
-    max-width: 1400px;
-  }
-}
-@media (min-width: 1601px) and (max-width: 1920px) {
-  body {
-    background-attachment: fixed;
-  }
-  .nav-container {
-    padding: 10px 5%;
-  }
-
-  .logo img {
-    width: 260px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 26px;
-  }
-
-  .nav-links a {
-    font-size: 18px;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    padding: 11px 22px;
-    font-size: 16px;
-  }
-
-  .nav-actions {
-    gap: 10px;
-  }
-
-
-  .phone-button,
-  .eligibilite-button {
-    font-size: 14px;
-    padding: 13px 22px;
-  }
-
-  /* Sections */
-  .hero-section,
-  .intro-image-section,
-  .stats-counter-section,
-  .importance-section,
-  .vision-image-section,
-  .avantages-section,
-  .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
-    padding: 95px 8% 65px;
-    min-height: auto;
-  }
-  .hero-content{
-    margin-top:100px
-  }
-  .hero-trust-badges {
-    margin-bottom: 100px;
-  }
-  .hero-buttons {
-    margin-top: 40px;
-    margin-bottom: 80px;
-  }
-  .hero-content h1 {
-    margin-top: 40px;
-}
-.hero-subtitle {
-    margin-top: 35px;
-}
-}
-/* ========================================
-   AJUSTEMENTS POUR ÉCRANS EN HAUTEUR RÉDUITE
-   ======================================== */
-
-@media (min-width: 993px) and (max-height: 700px) {
-  .hero-section,
-  .intro-image-section,
-  .stats-counter-section,
-  .importance-section,
-  .vision-image-section,
-  .avantages-section,
-  .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
-    min-height: auto;
-    padding: 70px 5% 40px;
-  }
-
-  .intro-image,
-  .vision-image {
-    min-height: 280px;
-    max-height: 380px;
-  }
-}
-
-@media (min-width: 993px) and (max-height: 600px) {
-  .hero-section,
-  .intro-image-section,
-  .stats-counter-section,
-  .importance-section,
-  .vision-image-section,
-  .avantages-section,
-  .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
-    min-height: auto;
-    padding: 65px 5% 35px;
-  }
-
-  .intro-image,
-  .vision-image {
-    min-height: 250px;
-    max-height: 350px;
-  }
-}
-
-/* ---------- Ultra-wide (1921px+) ---------- */
-@media (min-width: 1921px) {
-  body {
-    background-attachment: fixed;
-  }
-
-  /* Navigation */
-  .nav-container {
-    margin: 0 auto;
-    padding: 18px 10%;
-  }
-
-  .logo img {
-    width: 420px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: clamp(28px, 3vw, 45px);
-  }
-  .nav-links a{
-    font-size:24px;
-  }
-
-  .phone-button,
-  .eligibilite-button {
-    padding: 15px 30px;
-    font-size: 20px;
-  }
-
-  /* Sections */
-  .hero-section,
-  .intro-image-section,
-  .stats-counter-section,
-  .importance-section,
-  .vision-image-section,
-  .avantages-section,
-  .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
-    padding: clamp(120px, 15vh, 150px) 10% clamp(80px, 10vh, 100px);
-  }
-
-  /* Images */
-  .intro-content-wrapper,
-  .vision-content-wrapper {
-    max-width: 1900px;
-    grid-template-columns: 1fr 1fr;
-    gap: 90px;
-  }
-
-  .intro-image,
-  .vision-image {
-    min-height: 480px;
-    max-height: 680px;
-  }
-
-  /* Grids */
-  .vision-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 45px;
-  }
+  .vision-content-wrapper { gap: 35px; }
+  .intro-image, .vision-image { min-height: 300px; max-height: 420px; }
 
   .importance-grid,
-  .avantages-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 45px;
-  }
+  .avantages-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
   .solutions-grid,
-  .usecases-grid,
-  .tech-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 45px;
-  }
+  .steps-container { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
-  .steps-container,
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 45px;
-  }
+  .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
-  .container {
-    max-width: 1900px;
-  }
-
-  /* Footer */
-  .footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 45px;
-    max-width: 1900px;
-  }
+  .footer-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* ---------- Écrans en hauteur réduite ---------- */
-@media (max-height: 700px) {
+/* ── 13d. Large (1201px – 1920px) ── */
+@media (min-width: 1201px) and (max-width: 1920px) {
   .hero-section,
   .intro-image-section,
   .stats-counter-section,
@@ -3176,21 +1027,56 @@ footer a:hover {
   .vision-image-section,
   .avantages-section,
   .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
+  .methodologie-section {
+    padding: 90px 6% 60px;
     min-height: auto;
-    padding: 80px 5% 40px;
   }
 
-  .intro-image,
-  .vision-image {
-    min-height: 280px;
-    max-height: 380px;
-  }
+  .intro-content-wrapper,
+  .vision-content-wrapper { max-width: 1400px; gap: 60px; }
+  .intro-image, .vision-image { min-height: 340px; max-height: 500px; }
+
+  .importance-grid,
+  .avantages-grid { grid-template-columns: repeat(4, 1fr); gap: 25px; }
+
+  .solutions-grid,
+  .steps-container { grid-template-columns: repeat(3, 1fr); gap: 25px; }
+
+  .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 25px; }
+
+  .footer-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
+/* ── 13e. Ultra-wide (min 1921px) ── */
+@media (min-width: 1921px) {
+  .hero-section,
+  .intro-image-section,
+  .stats-counter-section,
+  .importance-section,
+  .vision-image-section,
+  .avantages-section,
+  .solutions-section,
+  .methodologie-section {
+    padding: 130px 10% 90px;
+  }
+
+  .intro-content-wrapper,
+  .vision-content-wrapper { max-width: 1900px; gap: 90px; }
+  .intro-image, .vision-image { min-height: 460px; max-height: 660px; }
+
+  .importance-grid,
+  .avantages-grid { grid-template-columns: repeat(4, 1fr); gap: 40px; }
+
+  .solutions-grid,
+  .steps-container { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+
+  .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 40px; }
+
+  .container { max-width: 1900px; }
+  .footer-grid { max-width: 1900px; grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── Hauteur réduite (paysage mobile) ── */
 @media (max-height: 600px) {
   .hero-section,
   .intro-image-section,
@@ -3199,55 +1085,19 @@ footer a:hover {
   .vision-image-section,
   .avantages-section,
   .solutions-section,
-  .usecases-section,
-  .technologies-section,
-  .methodologie-section,
-  .cta-section {
+  .methodologie-section {
     min-height: auto;
     padding: 70px 5% 35px;
   }
 
-  .intro-image,
-  .vision-image {
-    min-height: 240px;
-    max-height: 340px;
-  }
+  .intro-image, .vision-image { min-height: 220px; max-height: 320px; }
 }
 
-/* ========================================
-   18. OPTIMISATIONS PERFORMANCES
-   ======================================== */
-
-/* Réduction des animations sur préférence utilisateur */
+/* ── Accessibilité : préférence réduction animations ── */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
-
-/* Amélioration des performances scroll */
-@supports (scroll-behavior: smooth) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-/* GPU acceleration pour les éléments animés */
-.importance-card,
-.avantage-card,
-.solution-card,
-.usecase-card,
-.tech-category,
-.step-card,
-.intro-image,
-.vision-image {
-  will-change: transform;
-}
-
-/* ========================================
-   FIN DU CSS OPTIMISÉ
-   ======================================== */

@@ -1,58 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Politique de confidentialité - Nemoxia, prestataire informatique à Nemours (77), expert en infogérance, télécom et cybersécurité.">
   <title>Politique de Confidentialité | Nemoxia</title>
-  <link rel="stylesheet" href="politique_confidentialite.css">
-  <link rel="icon" type="image/png" href="images/favicon.png">
-</head>
 
+  <link rel="stylesheet" href="/politique_confidentialite/politique_confidentialite.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+</head>
 <body>
 
-  <!-- ====================== NAVBAR ====================== -->
-  <nav class="nav-container">
-  <div class="logo">
-    <img src="../images/Logo_Nemoxia_blanc.png" alt="Logo">
-  </div>
-  
-  <ul class="nav-links">
-    <li><a href="../index.html">Accueil</a></li>
-    <li><a href="../Téléphonie/Telephonie.html">Téléphonie</a></li>
-    <li><a href="../Télécoms/Telecom.html">Télécoms</a></li>
-    <li><a href="../Informatique/informatique.html">Informatique</a></li>
-    <li><a href="../Cybersécurité/Cybersecurite.html">Cybersécurité</a></li>
-    <li><a href="../Infogérance/Infogerance.html">Infogérance</a></li>
-  </ul>
-  
-  <div class="nav-actions">
-    <a href="tel:01 75 43 91 00" class="phone-button">01 75 43 91 00</a>
-    <a href="../Contact/contact.html" class="eligibilite-button">Contactez-nous !</a>
-  </div>
-  
-  <button class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</nav>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
 
-  <!-- ====================== CONTENU RGPD ====================== -->
+
   <section class="legal-content">
     <h1>Politique de Confidentialité</h1>
 
     <p>La société <strong>Nemoxia</strong>, basée à <strong>Nemours (77)</strong>, accorde la plus grande importance à la protection des données personnelles de ses clients, partenaires et utilisateurs de son site web. La présente politique décrit nos pratiques en matière de collecte, de traitement et de conservation des données conformément au <strong>Règlement Général sur la Protection des Données (RGPD – UE 2016/679)</strong>.</p>
 
     <div class="info-box">
-      <p><strong>Responsable du traitement :</strong> Nemoxia SARL — 98 rue de Paris, 77140 Nemours <br> <strong>Contact : 01 75 43 91 00 — contact@nemoxia.fr</strong></p>
+      <p><strong>Responsable du traitement :</strong> Nemoxia SARL — 98 rue de Paris, 77140 Nemours<br><strong>Contact : 01 75 43 91 00 — contact@nemoxia.fr</strong></p>
     </div>
 
     <h2>1. Données collectées</h2>
     <p>Nous collectons uniquement les données nécessaires à nos activités :</p>
     <ul>
-      <li>Informations d’identité et de contact (nom, prénom, entreprise, email, téléphone) ;</li>
-      <li>Données techniques liées à l’utilisation de nos services (logs, IP, cookies) ;</li>
+      <li>Informations d'identité et de contact (nom, prénom, entreprise, email, téléphone) ;</li>
+      <li>Données techniques liées à l'utilisation de nos services (logs, IP, cookies) ;</li>
       <li>Données contractuelles et de support (demandes, devis, interventions).</li>
     </ul>
 
@@ -75,7 +52,7 @@
     </ul>
 
     <h2>4. Partage des données</h2>
-    <p>Les données collectées sont accessibles uniquement à nos équipes internes et à nos prestataires techniques (hébergeurs, partenaires IT) agissant en conformité avec le RGPD. Aucun transfert n’est effectué en dehors de l’Union Européenne sans garanties adéquates.</p>
+    <p>Les données collectées sont accessibles uniquement à nos équipes internes et à nos prestataires techniques (hébergeurs, partenaires IT) agissant en conformité avec le RGPD. Aucun transfert n'est effectué en dehors de l'Union Européenne sans garanties adéquates.</p>
 
     <h2>5. Sécurité</h2>
     <p>Nemoxia met en place des mesures de sécurité techniques et organisationnelles strictes :</p>
@@ -89,16 +66,16 @@
     <h2>6. Vos droits</h2>
     <p>Conformément au RGPD, vous disposez des droits suivants :</p>
     <ul>
-      <li>Droit d’accès, de rectification et d’effacement ;</li>
-      <li>Droit à la limitation et à l’opposition ;</li>
+      <li>Droit d'accès, de rectification et d'effacement ;</li>
+      <li>Droit à la limitation et à l'opposition ;</li>
       <li>Droit à la portabilité des données ;</li>
       <li>Droit de retirer votre consentement à tout moment.</li>
     </ul>
-    <p>Pour exercer vos droits, contactez : <a href="mailto:contact@nemoxia.fr">contact@nemoxia.fr</a>  
+    <p>Pour exercer vos droits, contactez : <a href="mailto:contact@nemoxia.fr">contact@nemoxia.fr</a>
       ou par courrier à : Nemoxia, 98 rue de Paris, 77140 Nemours.</p>
 
     <h2>7. Cookies</h2>
-    <p>Notre site utilise des cookies à des fins de mesure d’audience et de performance. Vous pouvez gérer vos préférences à tout moment via le bandeau de consentement affiché lors de votre première visite.</p>
+    <p>Notre site utilise des cookies à des fins de mesure d'audience et de performance. Vous pouvez gérer vos préférences à tout moment via le bandeau de consentement affiché lors de votre première visite.</p>
 
     <h2>8. Mise à jour</h2>
     <p>Cette politique peut être modifiée à tout moment afin de refléter les évolutions légales ou techniques. Nous vous invitons à la consulter régulièrement.</p>
@@ -106,7 +83,8 @@
     <p class="last-update">Dernière mise à jour : Novembre 2025</p>
   </section>
 
-  <!-- ====================== FOOTER ====================== -->
+
+  <!-- Footer -->
   <footer>
     <div class="container mx-auto px-4 py-12">
       <div class="footer-grid">
@@ -142,31 +120,19 @@
           <p>📞 <a href="tel:+33175439100">01 75 43 91 00</a></p>
           <p>📍 98 rue de Paris, 77140 Nemours</p>
           <p>Du lundi au vendredi, 9h-18h</p>
-          <p><a href="/contact">Contactez-nous</a></p>
+          <p><a href="/Contact/contact.php">Contactez-nous</a></p>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>Nemoxia — Spécialiste en informatique & télécom depuis 2007</p>
-        <p><a href="/rgpd.html">Mentions légales & RGPD</a> | <a href="/confidentialite.html">Politique de confidentialité</a> © 2025 Nemoxia. Tous droits réservés.</p>
+        <p>
+          <a href="/RGPD/rgpd.php">Mentions légales & RGPD</a> |
+          <a href="/politique_confidentialite/politique_confidentialite.php">Politique de confidentialité</a>
+          © 2025 Nemoxia. Tous droits réservés.
+        </p>
       </div>
     </div>
   </footer>
-
-  <script>
-    // Navbar scroll effect
-    const navbar = document.getElementById("navbar");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) navbar.classList.add("scrolled");
-      else navbar.classList.remove("scrolled");
-    });
-
-    // Menu mobile toggle
-    const hamburger = document.getElementById("hamburger");
-    hamburger.addEventListener("click", () => {
-      navbar.classList.toggle("open");
-    });
-  </script>
 
 </body>
 </html>

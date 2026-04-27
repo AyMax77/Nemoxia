@@ -41,6 +41,10 @@ img {
    2. NAVBAR
    ======================================== */
 
+/* ============================================================
+   2. NAVBAR
+   ============================================================ */
+
 .nav-container {
   position: fixed;
   top: 0;
@@ -55,22 +59,35 @@ img {
   animation: slideDown 0.6s ease-out;
 }
 
+/* ── 2a. Animations navbar ── */
+
 @keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0);    }
 }
 
 .nav-container.scrolled {
-  background-color: rgba(0, 0, 0, 0.3); /* blanc avec 80% d'opacité */
+  background-color: rgba(0, 0, 0, 0.3);
   box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
   backdrop-filter: blur(5px);
 }
+
+/* ── 2b. Logo ── */
 
 .logo img {
   width: clamp(200px, 17vw, 400px);
@@ -79,16 +96,7 @@ img {
   animation: fadeInScale 0.8s ease-out 0.2s both;
 }
 
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+/* ── 2c. Liens de navigation ── */
 
 .nav-links {
   display: flex;
@@ -99,27 +107,13 @@ img {
   padding: 0;
 }
 
-.nav-links li {
-  animation: fadeInUp 0.6s ease-out both;
-}
-
+.nav-links li { animation: fadeInUp 0.6s ease-out both; }
 .nav-links li:nth-child(1) { animation-delay: 0.3s; }
 .nav-links li:nth-child(2) { animation-delay: 0.4s; }
 .nav-links li:nth-child(3) { animation-delay: 0.5s; }
 .nav-links li:nth-child(4) { animation-delay: 0.6s; }
 .nav-links li:nth-child(5) { animation-delay: 0.7s; }
 .nav-links li:nth-child(6) { animation-delay: 0.8s; }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .nav-links a {
   color: white;
@@ -131,26 +125,21 @@ img {
   white-space: nowrap;
 }
 
-.nav-links a:hover {
-  color: #0072BC;
-}
+.nav-links a:hover { color: #0072BC; }
 
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 0; left: 0;
   width: 0;
   height: 2px;
   background-color: #0072BC;
   transition: width 0.3s;
 }
+.nav-links a:hover::after { width: 100%; }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
+/* ── 2d. Boutons CTA ── */
 
-/* Conteneur des boutons CTA */
 .nav-actions {
   display: flex;
   gap: clamp(8px, 1vw, 12px);
@@ -158,18 +147,6 @@ img {
   animation: fadeInRight 0.8s ease-out 0.7s both;
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Style commun pour les boutons navbar */
 .phone-button,
 .eligibilite-button {
   background: #0099ff;
@@ -194,7 +171,8 @@ img {
   box-shadow: 0 6px 20px #0072BC;
 }
 
-/* Hamburger Menu */
+/* ── 2e. Menu hamburger ── */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -216,17 +194,9 @@ img {
   transition: all 0.3s ease;
 }
 
-.nav-container.open .hamburger span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.nav-container.open .hamburger span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-container.open .hamburger span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-}
+.nav-container.open .hamburger span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-container.open .hamburger span:nth-child(2) { opacity: 0; }
+.nav-container.open .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
 
 /* ========================================
    HERO SECTION - Style Nemoxia
