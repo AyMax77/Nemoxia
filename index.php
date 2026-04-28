@@ -248,7 +248,7 @@
     <div class="expertise-container">
  
       <div class="expertise-header">
-        <h2>Un partenaire IT de confiance pour votre entreprise</h2>
+        <h2>Proximité et accompagnement sur-mesure depuis 20 ans</h2>
         <p>Forts d'une expérience construite auprès de nos clients issus de tous secteurs d'activité, nous supervisons, administrons et sécurisons votre système informatique, garantissant une performance optimale et une protection renforcée.</p>
       </div>
  
