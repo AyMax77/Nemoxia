@@ -215,7 +215,7 @@
     </div>
 
       <ul class="nav-links">
-    <li><a href="/index.php">Accueil</a></li>
+    <li><a href="/index.html">Accueil</a></li>
     <li><a href="/Infogerance/Infogerance.php">Infogérance & Maintenance</a></li>
     <li><a href="/Cybersecurite/Cybersecurite.php">Cybersécurité & Protection</a></li>
     <li><a href="/Informatique/informatique.php">Infrastructure & Cloud</a></li>
@@ -424,97 +424,144 @@
 
 
   <!-- ============================================================
-       NEWSLETTER SECTION
-       ============================================================ -->
-  <section class="newsletter-section">
-    <div class="newsletter-container">
-      <div class="newsletter-icon">
-        <i class="fa-solid fa-envelope-open-text"></i>
-      </div>
-      <h2>Restez informé des dernières actualités IT</h2>
-      <p>
-        Conseils cybersécurité, nouveautés 3CX, offres exclusives PME —
-        une newsletter mensuelle, sans spam.
-      </p>
-      <div class="newsletter-form-wrap">
-        <input
-          type="email"
-          id="newsletter-email"
-          class="newsletter-input"
-          placeholder="votre@email.fr"
-          autocomplete="email"
-        >
-        <button class="newsletter-btn" onclick="handleNewsletter()">
-          <span>Je m'inscris</span>
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
-      </div>
-      <p id="newsletter-confirm" class="newsletter-confirm" style="display:none;">
-        ✓ Inscription confirmée — à très bientôt !
-      </p>
-      <p class="newsletter-legal">
-        En vous inscrivant, vous acceptez notre
-        <a href="/politique_confidentialite/politique_confidentialite.php">politique de confidentialité</a>.
-        Désinscription en un clic.
-      </p>
+     NEWSLETTER SECTION — enrichie
+     ============================================================ -->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+
+    <div class="newsletter-icon">
+      <i class="fa-solid fa-envelope-open-text"></i>
     </div>
-  </section>
 
+    <h2>Restez informé des dernières actualités IT</h2>
 
-  <!-- ============================================================
-       STATS SECTION
-       ============================================================ -->
-  <section class="stats-section" id="stats-section">
-    <div class="stats-header">
-      <h2>Nos chiffres sont là pour une seule raison : vous.</h2>
-      <p>Chaque indicateur reflète notre engagement envers vos besoins.</p>
+    <p>
+      Conseils cybersécurité, nouveautés 3CX, offres exclusives PME —
+      une newsletter mensuelle, sans spam.
+    </p>
+
+    <!-- Thèmes couverts -->
+    <ul class="newsletter-topics">
+      <li><i class="fa-solid fa-shield-halved"></i> Alertes &amp; conseils cybersécurité</li>
+      <li><i class="fa-solid fa-headset"></i> Nouveautés 3CX et téléphonie IP</li>
+      <li><i class="fa-solid fa-tag"></i> Offres et promotions réservées PME</li>
+      <li><i class="fa-solid fa-newspaper"></i> Veille technologique du secteur</li>
+    </ul>
+
+    <div class="newsletter-form-wrap">
+      <input
+        type="email"
+        id="newsletter-email"
+        class="newsletter-input"
+        placeholder="votre@email.fr"
+        autocomplete="email"
+      >
+      <button class="newsletter-btn" onclick="handleNewsletter()">
+        <span>Je m'inscris</span>
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
     </div>
-    <div class="stats-container">
 
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-rocket"></i></div>
-        <div class="stat-number">
-          <span class="stat-unit">-</span>
-          <span class="stat-count">48</span>
-          <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">h</span>
-        </div>
-        <div class="stat-label">délai moyen de déploiement</div>
-        <div class="stat-line"></div>
-      </div>
+    <p id="newsletter-confirm" class="newsletter-confirm" style="display:none;">
+      ✓ Inscription confirmée — à très bientôt !
+    </p>
 
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-headset"></i></div>
-        <div class="stat-number">
-          <span class="stat-count" data-target="98" id="stat-tickets">0</span>
-          <span class="stat-unit">%</span>
-        </div>
-        <div class="stat-label">tickets résolus au 1er contact</div>
-        <div class="stat-line"></div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <div class="stat-number">
-          <span class="stat-count">24</span>
-          <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">/7</span>
-        </div>
-        <div class="stat-label">monitoring actif</div>
-        <div class="stat-line"></div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-gauge-high"></i></div>
-        <div class="stat-number">
-          <span class="stat-unit">-</span>
-          <span class="stat-count">2</span>
-          <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">h</span>
-        </div>
-        <div class="stat-label">temps de résolution critique</div>
-        <div class="stat-line"></div>
-      </div>
-
+    <!-- Badges de réassurance -->
+    <div class="newsletter-badges">
+      <span class="newsletter-badge">
+        <i class="fa-solid fa-lock"></i> Données sécurisées
+      </span>
+      <span class="newsletter-badge">
+        <i class="fa-solid fa-calendar-days"></i> 1 email / mois
+      </span>
+      <span class="newsletter-badge">
+        <i class="fa-solid fa-circle-xmark"></i> Désinscription en 1 clic
+      </span>
     </div>
-  </section>
+
+    <p class="newsletter-legal">
+      En vous inscrivant, vous acceptez notre
+      <a href="/politique_confidentialite/politique_confidentialite.php">politique de confidentialité</a>.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     STATS SECTION — enrichie
+     ============================================================ -->
+<section class="stats-section" id="stats-section">
+
+  <div class="stats-header">
+    <h2>Nos chiffres sont là pour une seule raison : vous.</h2>
+    <p>Chaque indicateur reflète notre engagement envers vos besoins.</p>
+  </div>
+
+  <div class="stats-container">
+
+    <!-- Déploiement -->
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-rocket"></i></div>
+      <div class="stat-number">
+        <span class="stat-unit">-</span>
+        <span class="stat-count">48</span>
+        <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">h</span>
+      </div>
+      <div class="stat-label">délai moyen de déploiement</div>
+      <p class="stat-desc">De la commande à la mise en production, sans délai inutile.</p>
+      <div class="stat-line"></div>
+    </div>
+
+    <!-- Tickets -->
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-headset"></i></div>
+      <div class="stat-number">
+        <span class="stat-count" data-target="98" id="stat-tickets">0</span>
+        <span class="stat-unit">%</span>
+      </div>
+      <div class="stat-label">tickets résolus au 1er contact</div>
+      <p class="stat-desc">Nos techniciens diagnostiquent et résolvent sans renvoi de dossier.</p>
+      <div class="stat-line"></div>
+    </div>
+
+    <!-- Monitoring -->
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="stat-number">
+        <span class="stat-count">24</span>
+        <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">/7</span>
+      </div>
+      <div class="stat-label">monitoring actif</div>
+      <p class="stat-desc">Votre infrastructure surveillée en continu, week-ends et jours fériés inclus.</p>
+      <div class="stat-line"></div>
+    </div>
+
+    <!-- Résolution critique -->
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+      <div class="stat-number">
+        <span class="stat-unit">-</span>
+        <span class="stat-count">2</span>
+        <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">h</span>
+      </div>
+      <div class="stat-label">temps de résolution critique</div>
+      <p class="stat-desc">Les incidents bloquants traités en priorité absolue, sans attente.</p>
+      <div class="stat-line"></div>
+    </div>
+
+  </div>
+
+  <!-- CTA bas de section -->
+  <div class="stats-cta-wrap">
+    <p class="stats-cta-text">Vous voulez ces performances pour votre entreprise ?</p>
+    <a href="/Contact/contact.php" class="stats-cta-btn">
+      <span>Parler à un expert</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+
+</section>
 
 
   <!-- ============================================================
