@@ -1145,52 +1145,85 @@ footer a:hover {
 
 
 /* ============================================================
-   9. RESPONSIVE
+   RESPONSIVE COMPLET — LARGEUR + HAUTEUR
+   ============================================================
+   Organisation chronologique par largeur croissante :
+
+   LARGEUR (max → min)
+   · 9a.  max-width: 968px        Tablette large
+   · 9b.  max-width: 768px        Mobile portrait
+   · 9c.  max-width: 480px        Petit mobile
+   · 9e.  769px – 1200px          Écrans moyens
+   · 9f.  landscape + max-h 600px Paysage mobile
+   · —    769px – 1023px          Tablette nav
+   · —    1024px – 1140px         Desktop étroit
+   · —    min-width: 1024px       Desktop nav
+   · 9g.  1190px – 1439px         Desktop moyen
+   · 9h.  1440px – 1919px         Desktop large
+   · 9i.  min-width: 1920px       Ultra wide
+   · 9j.  min-width: 3440px       4K+
+
+   HAUTEUR (sections dédiées, par breakpoint)
+   · H-mob   max-height: 700px   Mobile court (portrait serré)
+   · H-tab   min-height: 1000px  Grands appareils (tablettes hautes,
+                                  fenêtres larges sur 34 pouces)
+   · H-desk  min-height: 1200px  Desktop haut (ex : 34 pouces plein)
+   · H-uhd   min-height: 1440px  Ultra-haut (27 pouces 4K, 34 pouces)
    ============================================================ */
 
-/* ── 9a. Tablette large (max 968px) ── */
+
+/* ============================================================
+   9a. TABLETTE LARGE — max-width: 968px
+   Cible : iPad paysage, petits laptops, tablettes Android
+   ============================================================ */
 @media (max-width: 968px) {
-  .expertise-section { padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2.5rem); }
-  .expertise-grid { grid-template-columns: repeat(2, 1fr); gap: clamp(1.25rem, 2.5vw, 2rem); }
-  .expertise-header h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); margin-bottom: 1.25rem; }
-  .expertise-header p  { font-size: clamp(0.95rem, 1.8vw, 1.05rem); }
-  .expertise-card      { padding: clamp(1.25rem, 2.5vw, 2rem); }
-  i                    { font-size: clamp(36px, 7vw, 48px); padding: clamp(7px, 1.2vw, 9px); }
+
+  /* — Expertise : passage à 2 colonnes — */
+  .expertise-section {
+    padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2.5rem);
+  }
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+  }
+  .expertise-header h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 1.25rem;
+  }
+  .expertise-header p {
+    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  }
+  .expertise-card {
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+  }
+
+  /* — Icônes globales — */
+  i {
+    font-size: clamp(36px, 7vw, 48px);
+    padding: clamp(7px, 1.2vw, 9px);
+  }
 }
 
-/* ── 9b. Mobile (max 768px) ── */
+
+/* ============================================================
+   9b. MOBILE — max-width: 768px
+   Cible : smartphones en portrait, tablettes étroites
+   ============================================================ */
 @media (max-width: 768px) {
-  .expertise-section  { padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 1.5rem); }
-  .expertise-grid     { grid-template-columns: 1fr; gap: 1.25rem; }
-  .expertise-header   { margin-bottom: clamp(2rem, 4vw, 2.5rem); }
-  .expertise-header h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); margin-bottom: 1rem; }
-  .expertise-header p  { font-size: clamp(0.9rem, 1.6vw, 1rem); line-height: 1.6; padding: 0 0.5rem; }
 
-  .marquee-item { padding: 12px 24px; }
-
-  .newsletter-form-wrap { flex-direction: column; border-radius: 14px; overflow: hidden; }
-  .newsletter-input  { border-radius: 0; padding: 14px 20px; }
-  .newsletter-btn    { border-radius: 0; justify-content: center; padding: 14px 20px; }
-
-  .stats-container      { flex-wrap: wrap; }
-  .stat-card            { flex: 0 0 50%; min-width: 50%; }
-  .stat-card:not(:last-child)::after { display: none; }
-  .stat-count           { font-size: clamp(3rem, 10vw, 4.5rem); }
-
+  /* ── Navbar ── */
   .hamburger { display: flex; }
   .logo img  { width: 170px; }
-
-  .hero-content h1 { font-size: 1.8rem; margin-bottom: 24px; }
-  .hero-subtitle { font-size: 0.95rem; margin-bottom: 32px; }
-  .hero-buttons { margin-bottom: 40px; gap: 16px; }
-  .hero-trust-badges { gap: 20px; }
-  .trust-badge { padding: 10px 16px; font-size: 0.85rem; }
+  .nav-actions { flex-direction: row; gap: 12px; }
+  .phone-button,
+  .eligibilite-button { font-size: 12px; padding: 10px; }
 
   .nav-links {
     display: none;
     position: fixed;
     top: 65px; left: 0;
-    width: 100%; height: calc(100vh - 65px);
+    width: 100%;
+    height: calc(100vh - 65px);
     background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
     flex-direction: column;
     align-items: center;
@@ -1198,21 +1231,87 @@ footer a:hover {
     gap: 20px;
   }
   .nav-container.open .nav-links { display: flex; }
-  .nav-actions { flex-direction: row; gap: 12px; }
-  .phone-button, .eligibilite-button { font-size: 12px; padding: 10px; }
+
+  /* ── Hero : hiérarchie titre → sous-titre → boutons → badges ── */
+  .hero-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 28px;
+    line-height: 1.4;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin-bottom: 40px;
+  }
+  .hero-buttons {
+    gap: 16px;
+    margin-bottom: 52px;
+  }
+  .hero-trust-badges { gap: 20px; }
+  .trust-badge       { padding: 10px 16px; font-size: 0.85rem; }
+
+  /* ── Expertise : 1 colonne pleine largeur ── */
+  .expertise-section {
+    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 1.5rem);
+  }
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .expertise-header   { margin-bottom: clamp(2rem, 4vw, 2.5rem); }
+  .expertise-header h2 {
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    margin-bottom: 1rem;
+  }
+  .expertise-header p {
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  /* ── Partners ── */
+  .marquee-item { padding: 12px 24px; }
+
+  /* ── Newsletter ── */
+  .newsletter-form-wrap {
+    flex-direction: column;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .newsletter-input { border-radius: 0; padding: 14px 20px; }
+  .newsletter-btn   { border-radius: 0; justify-content: center; padding: 14px 20px; }
+
+  /* ── Stats ── */
+  .stats-container { flex-wrap: wrap; }
+  .stat-card {
+    flex: 0 0 50%;
+    min-width: 50%;
+  }
+  .stat-card:not(:last-child)::after { display: none; }
+  .stat-count { font-size: clamp(3rem, 10vw, 4.5rem); }
 }
 
-/* ── 9c. Petit mobile (max 480px) ── */
+
+/* ============================================================
+   9c. PETIT MOBILE — max-width: 480px
+   Cible : iPhone SE, petits Android (< 5 pouces)
+   ============================================================ */
 @media (max-width: 480px) {
+
+  /* ── Navbar ── */
   .nav-container { padding: 10px 3%; }
-  .logo img { width: 110px; }
-  .hamburger { display: flex; }
+  .logo img      { width: 110px; }
+  .hamburger     { display: flex; }
+  .nav-actions   { display: flex; gap: 10px; margin: auto; }
+  .phone-button,
+  .eligibilite-button { padding: 4px 6px; font-size: 8px; }
 
   .nav-links {
     display: none;
     position: fixed;
     top: 60px; left: 0;
-    width: 100%; height: calc(100vh - 60px);
+    width: 100%;
+    height: calc(100vh - 60px);
     background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
     flex-direction: column;
     align-items: center;
@@ -1220,9 +1319,27 @@ footer a:hover {
     gap: 20px;
   }
   .nav-container.open .nav-links { display: flex; }
-  .nav-actions { display: flex; gap: 10px; margin: auto; }
-  .phone-button, .eligibilite-button { padding: 4px 6px; font-size: 8px; }
 
+  /* ── Hero : empilement vertical des boutons ── */
+  .hero-content h1 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+    line-height: 1.35;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 36px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .hero-trust-badges { gap: 14px; }
+  .trust-badge       { padding: 8px 14px; font-size: 0.8rem; }
+
+  /* ── Expertise : cartes compactes mais lisibles ── */
   .expertise-section    { padding: 1.75rem 0.875rem; }
   .expertise-header     { margin-bottom: 1.75rem; }
   .expertise-header h2  { font-size: 1.25rem; margin-bottom: 0.875rem; }
@@ -1232,151 +1349,98 @@ footer a:hover {
   .expertise-card h3    { font-size: 1rem; }
   .expertise-features li { font-size: 0.8rem; }
 
+  /* ── Stats ── */
   .stats-container { flex-wrap: wrap; }
   .stat-card       { flex: 0 0 50%; min-width: 50%; padding: 1.5rem 1rem; }
   .stat-count      { font-size: 3rem; }
-
-  .hero-buttons { flex-direction: column; align-items: center; }
-  .hero-content h1 { font-size: 1.6rem; margin-bottom: 20px; }
-  .hero-subtitle { font-size: 0.9rem; margin-bottom: 28px; }
-  .hero-buttons { margin-bottom: 36px; }
-  .hero-trust-badges { gap: 14px; }
-  .trust-badge { padding: 8px 14px; font-size: 0.8rem; }
 }
 
-/* ── 9e. Écrans moyens (769px – 1200px) ── */
+
+/* ============================================================
+   9e. ÉCRANS MOYENS — 769px à 1200px
+   Cible : tablettes paysage, petits desktops
+   ============================================================ */
 @media (min-width: 769px) and (max-width: 1200px) {
-  .expertise-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+  /* — Expertise : 2 colonnes équilibrées — */
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 }
 
-/* ── 9f. Paysage mobile (hauteur < 600px) ── */
+
+/* ============================================================
+   9f. PAYSAGE MOBILE — max-height: 600px + orientation landscape
+   Cible : smartphones en mode paysage (hauteur très réduite)
+   ============================================================ */
 @media (max-height: 600px) and (orientation: landscape) {
+
+  /* — Hero : compressé pour tenir en hauteur — */
+  .hero-section         { min-height: auto; padding: 70px 5% 40px; }
+  .hero-content h1      { font-size: 1.5rem; margin-bottom: 16px; }
+  .hero-subtitle        { font-size: 0.85rem; margin-bottom: 20px; line-height: 1.6; }
+  .hero-buttons         { margin-bottom: 24px; gap: 12px; }
+  .hero-trust-badges    { gap: 12px; }
+  .trust-badge          { padding: 6px 12px; font-size: 0.78rem; }
+
+  /* — Expertise : grille adaptative pour écrans courts — */
   .expertise-section    { padding: 2rem 1.5rem; }
   .expertise-header     { margin-bottom: 1.5rem; }
   .expertise-header h2  { font-size: 1.5rem; margin-bottom: 0.75rem; }
   .expertise-header p   { font-size: 0.9rem; }
-  .expertise-grid       { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
-  .expertise-card       { padding: 1rem; }
-  i                     { font-size: 32px; padding: 5px; }
+  .expertise-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .expertise-card { padding: 1rem; }
+  i               { font-size: 32px; padding: 5px; }
 }
 
-/* ── 9g. Desktop moyen (1190px – 1439px) ── */
-@media (min-width: 1190px) and (max-width: 1439px) {
-  .nav-container { padding: 0 30px; }
-  .nav-links { gap: 25px; }
-  .nav-links a { font-size: 15px; }
-  .phone-button, .eligibilite-button { font-size: 14px; padding: 10px 18px; }
 
-  .hero-section { padding: 80px 8% 80px; }
-  .hero-content { max-width: 1000px; }
-  .hero-content h1 { font-size: 2.2rem; margin-bottom: 36px; }
-  .hero-subtitle { font-size: 0.95rem; margin-bottom: 48px; }
-  .hero-buttons { margin-bottom: 60px; gap: 20px; }
-  .btn-hero-primary,
-  .btn-hero-secondary { padding: 18px 44px; font-size: 0.95rem; }
-  .hero-trust-badges { gap: 36px; }
-  .trust-badge { font-size: 0.88rem; }
+/* ============================================================
+   HAUTEUR — H-mob : max-height 700px (mobile portrait court)
+   Cible : iPhone 8 (667px), Galaxy S (740px) en portrait
+   Compense les marges trop grandes sur écrans peu hauts
+   ============================================================ */
+@media (max-width: 768px) and (max-height: 700px) {
 
-  .expertise-section { padding: 12px 40px 30px; }
-  .expertise-container { max-width: 1100px; padding: 0 0 20px; }
-  .expertise-header { margin-bottom: 12px; }
-  .expertise-header h2 { font-size: 1.6rem; margin-bottom: 8px; }
-  .expertise-header p  { font-size: 0.9rem; line-height: 1.6; }
-  .expertise-grid { gap: 1.25rem; grid-template-columns: repeat(4, 1fr); }
-  .expertise-card-inner { padding: 14px; gap: 0.6rem; }
-  .expertise-desc { font-size: 0.78rem; }
-  .expertise-features li { font-size: 0.78rem; }
-  .expertise-features { gap: 0.35rem; }
-  .expertise-cta { font-size: 0.8rem; padding-top: 0.5rem; margin-top: 0; }
-  .expertise-icon-wrap { width: 44px; height: 44px; }
-  .expertise-card-header h3 { font-size: 0.95rem; }
-  .expertise-tag { font-size: 0.65rem; }
+  /* — Hero : resserrement vertical sans casser la lecture — */
+  .hero-section         { padding: 80px 5% 50px; }
+  .hero-content h1      { margin-bottom: 18px; }
+  .hero-subtitle        { margin-bottom: 26px; }
+  .hero-buttons         { margin-bottom: 36px; }
 }
 
-/* ── 9h. Desktop large (1440px – 1920px) ── */
-@media (min-width: 1440px) and (max-width: 1920px) {
-  .nav-container { padding: 0 50px; }
-  .nav-links { gap: 35px; }
-  .nav-links a { font-size: 17px; }
-  .phone-button, .eligibilite-button { font-size: 15px; padding: 12px 24px; }
 
-  .hero-section { padding: 80px 10% 80px; }
-  .hero-content { max-width: 1100px; }
-  .hero-content h1 { font-size: 2.6rem; margin-bottom: 42px; }
-  .hero-subtitle { font-size: 1rem; margin-bottom: 54px; }
-  .hero-buttons { margin-bottom: 66px; gap: 24px; }
-  .btn-hero-primary,
-  .btn-hero-secondary { padding: 20px 52px; font-size: 1rem; }
-  .hero-trust-badges { gap: 44px; }
-  .trust-badge { font-size: 0.92rem; }
+/* ============================================================
+   HAUTEUR — H-tab : min-height 1000px (grands appareils)
+   Cible : iPad Pro portrait (1366px), fenêtre découpée sur 34"
+   Ex : 1600px largeur / 1440px hauteur → formatage desktop
+        mais hauteur généreuse → on peut aérer davantage
+   ============================================================ */
+@media (min-height: 1000px) and (max-width: 1200px) {
 
-  .expertise-section { padding: 12px 60px 40px; }
-  .expertise-container { max-width: 1300px; padding: 0 0 20px; }
-  .expertise-header { margin-bottom: 14px; }
-  .expertise-header h2 { font-size: 1.8rem; margin-bottom: 8px; }
-  .expertise-header p  { font-size: 0.95rem; line-height: 1.6; }
-  .expertise-grid { gap: 1.5rem; }
-  .expertise-card-inner { padding: 16px; gap: 0.7rem; }
-  .expertise-desc { font-size: 0.8rem; }
-  .expertise-features li { font-size: 0.8rem; }
-  .expertise-features { gap: 0.4rem; }
-  .expertise-cta { font-size: 0.82rem; padding-top: 0.6rem; margin-top: 0; }
-  .expertise-icon-wrap { width: 46px; height: 46px; }
-  .expertise-card-header h3 { font-size: 1rem; }
-  .expertise-tag { font-size: 0.66rem; }
+  /* — Hero : on profite de la hauteur pour respirer — */
+  .hero-section         { min-height: 96vh; padding: 130px 5% 100px; }
+  .hero-content h1      { margin-bottom: clamp(40px, 6vh, 72px); }
+  .hero-subtitle        { margin-bottom: clamp(56px, 8vh, 96px); line-height: 2.1; }
+  .hero-buttons         { margin-bottom: clamp(80px, 12vh, 140px); }
+  .hero-trust-badges    { gap: 32px; }
+  .trust-badge          { padding: 14px 24px; }
 
-  footer h3 { font-size: 1.25rem; }
-  .footer-grid { gap: 45px; padding: 50px 0; }
+  /* — Expertise : cartes plus hautes, texte plus aéré — */
+  .expertise-section    { padding: clamp(4rem, 8vh, 6rem) clamp(1.5rem, 4vw, 3rem); }
+  .expertise-header     { margin-bottom: clamp(2.5rem, 5vh, 4rem); }
+  .expertise-card-inner { padding: clamp(1.75rem, 3vh, 2.5rem); gap: clamp(1rem, 2vh, 1.6rem); }
+  .expertise-desc       { line-height: 2; }
+  .expertise-features   { gap: clamp(0.75rem, 1.5vh, 1.1rem); }
 }
 
-/* ── 9i. Ultra wide (min 1921px) ── */
-@media (min-width: 1921px) {
-  .nav-container { margin: 0 auto; padding: 10px 8%; }
-  .phone-button, .eligibilite-button { padding: 15px 20px; font-size: 20px; }
-  .nav-links a { font-size: 24px; }
 
-  .hero-section { padding: 90px 12% 80px; }
-  .hero-content { max-width: 1300px; }
-  .hero-content h1 { font-size: 3rem; margin-bottom: 48px; }
-  .hero-subtitle { font-size: 1.1rem; margin-bottom: 60px; }
-  .btn-hero-primary,
-  .btn-hero-secondary { padding: 22px 56px; font-size: 1.05rem; }
-  .hero-buttons { margin-bottom: 72px; }
-  .hero-trust-badges { gap: 52px; }
-  .trust-badge { font-size: 0.98rem; }
-
-  .expertise-section { padding: 14px 80px 50px; }
-  .expertise-container { padding: 0 0 20px; }
-  .expertise-header { margin-bottom: 16px; }
-  .expertise-header h2 { font-size: 2rem; margin-bottom: 10px; }
-  .expertise-header p  { font-size: 1rem; }
-  .expertise-card-inner { padding: 18px; gap: 0.75rem; }
-  .expertise-desc { font-size: 0.83rem; }
-  .expertise-features li { font-size: 0.83rem; }
-}
-
-/* ── 9j. 4K+ (min 3440px) ── */
-@media (min-width: 3440px) {
-  .nav-container { max-width: 3440px; padding: 10px 12%; }
-
-  .hero-section { padding: 120px 15% 80px; }
-  .hero-content { max-width: 1600px; }
-  .hero-content h1 { font-size: 4rem; margin-bottom: 54px; }
-  .hero-subtitle { font-size: 1.4rem; margin-bottom: 66px; }
-  .btn-hero-primary,
-  .btn-hero-secondary { padding: 24px 64px; font-size: 1.2rem; }
-  .hero-buttons { margin-bottom: 78px; }
-  .hero-trust-badges { gap: 64px; }
-  .trust-badge { font-size: 1.1rem; }
-}
-
-/* ── Hamburger caché sur desktop (min 1024px) ── */
-@media (min-width: 1024px) {
-  .nav-links  { display: flex; }
-  .eligibilite-button, .phone-button { padding: 8px; }
-}
-
-/* ── Tablette (769px – 1023px) ── */
+/* ============================================================
+   LARGEUR + NAV — Tablette (769px – 1023px)
+   ============================================================ */
 @media (min-width: 769px) and (max-width: 1023px) {
   .hamburger { display: flex; }
   .nav-links {
@@ -1393,7 +1457,243 @@ footer a:hover {
   .nav-container.open .nav-links { display: flex; }
 }
 
-/* ── Desktop 1024px – 1140px ── */
+
+/* ============================================================
+   LARGEUR — Desktop nav (min 1024px) + étroit (1024–1140px)
+   ============================================================ */
+@media (min-width: 1024px) {
+  .nav-links  { display: flex; }
+  .eligibilite-button, .phone-button { padding: 8px; }
+}
+
 @media (min-width: 1024px) and (max-width: 1140px) {
   .nav-container { padding-right: 10px; padding-left: 10px; }
+}
+
+
+/* ============================================================
+   9g. DESKTOP MOYEN — 1190px à 1439px
+   ============================================================ */
+@media (min-width: 1190px) and (max-width: 1439px) {
+
+  /* ── Navbar ── */
+  .nav-container { padding: 0 30px; }
+  .nav-links { gap: 25px; }
+  .nav-links a { font-size: 15px; }
+  .phone-button, .eligibilite-button { font-size: 14px; padding: 10px 18px; }
+
+  /* ── Hero ── */
+  .hero-section   { padding: 80px 8% 80px; }
+  .hero-content   { max-width: 1000px; }
+  .hero-content h1 { font-size: 2.2rem; margin-bottom: 44px; }
+  .hero-subtitle  { font-size: 0.95rem; margin-bottom: 56px; line-height: 2.1; }
+  .hero-buttons   { margin-bottom: 72px; gap: 20px; }
+  .btn-hero-primary,
+  .btn-hero-secondary { padding: 18px 44px; font-size: 0.95rem; }
+  .hero-trust-badges  { gap: 36px; }
+  .trust-badge        { font-size: 0.88rem; }
+
+  /* ── Expertise ── */
+  .expertise-section   { padding: 12px 40px 30px; }
+  .expertise-container { max-width: 1100px; padding: 0 0 20px; }
+  .expertise-header    { margin-bottom: 12px; }
+  .expertise-header h2 { font-size: 1.6rem; margin-bottom: 8px; }
+  .expertise-header p  { font-size: 0.9rem; line-height: 1.6; }
+  .expertise-grid {
+    gap: 1.25rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .expertise-card-inner   { padding: 14px; gap: 0.6rem; }
+  .expertise-icon-wrap    { width: 44px; height: 44px; }
+  .expertise-card-header h3 { font-size: 0.95rem; }
+  .expertise-tag          { font-size: 0.65rem; }
+  .expertise-desc         { font-size: 0.78rem; }
+  .expertise-features     { gap: 0.35rem; }
+  .expertise-features li  { font-size: 0.78rem; }
+  .expertise-cta          { font-size: 0.8rem; padding-top: 0.5rem; margin-top: 0; }
+}
+
+
+/* ============================================================
+   HAUTEUR — H-desk : min-height 1200px (desktop haut)
+   Cible : fenêtre 1190–1439px de large, hauteur ≥ 1200px
+   Ex : 34 pouces fenêtré, iMac 27, 4K portrait
+   ============================================================ */
+@media (min-width: 1190px) and (max-width: 1439px) and (min-height: 1200px) {
+
+  /* — Hero : on exploite la hauteur disponible — */
+  .hero-section         { min-height: 95vh; padding: 120px 8% 100px; }
+  .hero-content h1      { margin-bottom: 56px; }
+  .hero-subtitle        { margin-bottom: 72px; }
+  .hero-buttons         { margin-bottom: 90px; }
+
+  /* — Expertise : cartes plus espacées — */
+  .expertise-section    { padding: 60px 40px 80px; }
+  .expertise-header     { margin-bottom: 2.5rem; }
+  .expertise-card-inner { padding: 20px 18px; gap: 1rem; }
+  .expertise-desc       { font-size: 0.82rem; line-height: 1.75; }
+  .expertise-features   { gap: 0.6rem; }
+  .expertise-features li { font-size: 0.82rem; }
+}
+
+
+/* ============================================================
+   9h. DESKTOP LARGE — 1440px à 1919px
+   ============================================================ */
+@media (min-width: 1440px) and (max-width: 1919px) {
+
+  /* ── Navbar ── */
+  .nav-container { padding: 0 50px; }
+  .nav-links { gap: 35px; }
+  .nav-links a { font-size: 17px; }
+  .phone-button, .eligibilite-button { font-size: 15px; padding: 12px 24px; }
+
+  /* ── Hero ── */
+  .hero-section   { padding: 80px 10% 80px; }
+  .hero-content   { max-width: 1100px; }
+  .hero-content h1 { font-size: 2.6rem; margin-bottom: 52px; }
+  .hero-subtitle  { font-size: 1rem; margin-bottom: 64px; line-height: 2.1; }
+  .hero-buttons   { margin-bottom: 80px; gap: 24px; }
+  .btn-hero-primary,
+  .btn-hero-secondary { padding: 20px 52px; font-size: 1rem; }
+  .hero-trust-badges  { gap: 44px; }
+  .trust-badge        { font-size: 0.92rem; }
+
+  /* ── Expertise ── */
+  .expertise-section   { padding: 12px 60px 40px; }
+  .expertise-container { max-width: 1300px; padding: 0 0 20px; }
+  .expertise-header    { margin-bottom: 14px; }
+  .expertise-header h2 { font-size: 1.8rem; margin-bottom: 8px; }
+  .expertise-header p  { font-size: 0.95rem; line-height: 1.6; }
+  .expertise-grid      { gap: 1.5rem; }
+  .expertise-card-inner   { padding: 16px; gap: 0.7rem; }
+  .expertise-icon-wrap    { width: 46px; height: 46px; }
+  .expertise-card-header h3 { font-size: 1rem; }
+  .expertise-tag          { font-size: 0.66rem; }
+  .expertise-desc         { font-size: 0.8rem; }
+  .expertise-features     { gap: 0.4rem; }
+  .expertise-features li  { font-size: 0.8rem; }
+  .expertise-cta          { font-size: 0.82rem; padding-top: 0.6rem; margin-top: 0; }
+
+  /* ── Footer ── */
+  footer h3 { font-size: 1.25rem; }
+  .footer-grid { gap: 45px; padding: 50px 0; }
+}
+
+
+/* ============================================================
+   HAUTEUR — H-uhd : min-height 1440px (34 pouces plein écran)
+   Cible : 34 pouces (3440×1440) plein écran, iMac 27 natif,
+           fenêtre 1440–1919px avec hauteur ≥ 1440px
+   Problème ciblé : 1600px large / 1440px haut → responsive
+   desktop moyen mais hauteur ultra généreuse → tout s'écrase
+   ============================================================ */
+@media (min-width: 1440px) and (max-width: 1919px) and (min-height: 1440px) {
+
+  /* — Hero : exploiter la hauteur sans laisser du vide — */
+  .hero-section         { min-height: 94vh; padding: 130px 10% 110px; }
+  .hero-content h1      { margin-bottom: 64px; }
+  .hero-subtitle        { margin-bottom: 80px; line-height: 2.2; }
+  .hero-buttons         { margin-bottom: 100px; }
+  .hero-trust-badges    { gap: 52px; }
+  .trust-badge          { padding: 16px 28px; }
+
+  /* — Expertise : cartes vraiment aérées — */
+  .expertise-section    { padding: 80px 60px 100px; }
+  .expertise-header     { margin-bottom: 3rem; }
+  .expertise-header h2  { font-size: 2rem; margin-bottom: 1rem; }
+  .expertise-header p   { font-size: 1rem; line-height: 1.9; }
+  .expertise-container  { max-width: 1500px; }
+  .expertise-grid       { gap: 2rem; }
+  .expertise-card-inner { padding: 2rem 1.75rem; gap: 1.25rem; }
+  .expertise-icon-wrap  { width: 56px; height: 56px; }
+  .expertise-card-header h3 { font-size: 1.1rem; }
+  .expertise-desc       { font-size: 0.9rem; line-height: 1.9; }
+  .expertise-features   { gap: 0.85rem; }
+  .expertise-features li { font-size: 0.87rem; }
+  .expertise-cta        { font-size: 0.88rem; padding-top: 0.9rem; }
+}
+
+
+/* ============================================================
+   9i. ULTRA WIDE — min-width: 1920px
+   Cible : moniteurs 1920px+, 34 pouces full, dual screen
+   ============================================================ */
+@media (min-width: 1920px) {
+
+  /* ── Navbar ── */
+  .nav-container { margin: 0 auto; padding: 10px 8%; }
+  .phone-button, .eligibilite-button { padding: 15px 20px; font-size: 20px; }
+  .nav-links a { font-size: 24px; }
+
+  /* ── Hero ── */
+  .hero-section { padding: 90px 12% 80px; }
+  .hero-content { max-width: 1300px; }
+  .hero-content h1 { font-size: 3rem; margin-bottom: 48px; }
+  .hero-subtitle { font-size: 1.1rem; margin-bottom: 60px; }
+  .btn-hero-primary,
+  .btn-hero-secondary { padding: 22px 56px; font-size: 1.05rem; }
+  .hero-buttons { margin-bottom: 72px; }
+  .hero-trust-badges { gap: 52px; }
+  .trust-badge { font-size: 0.98rem; }
+
+  /* ── Expertise : pleine respiration ── */
+  .expertise-section    { padding: 80px 80px 100px; }
+  .expertise-container  { max-width: 1900px; width: 100%; padding: 0; }
+  .expertise-header     { margin-bottom: 4rem; }
+  .expertise-header h2  { font-size: 2.6rem; margin-bottom: 1.5rem; }
+  .expertise-header p   { font-size: 1.2rem; line-height: 2; }
+  .expertise-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.75rem;
+  }
+  .expertise-card-inner    { padding: 2.75rem 2.5rem; gap: 1.75rem; }
+  .expertise-icon-wrap     { width: 70px; height: 70px; border-radius: 18px; }
+  .expertise-icon-wrap i   { font-size: 30px !important; }
+  .expertise-card-header h3 { font-size: 1.35rem; }
+  .expertise-tag           { font-size: 0.76rem; padding: 3px 14px; }
+  .expertise-desc          { font-size: 1rem; line-height: 2; }
+  .expertise-features      { gap: 1.1rem; }
+  .expertise-features li   { font-size: 0.97rem; }
+  .expertise-cta           { font-size: 0.95rem; padding-top: 1.1rem; }
+}
+
+
+/* ============================================================
+   9j. 4K+ — min-width: 3440px
+   Cible : écrans ultra-wide 34 pouces natif, 4K grand format
+   ============================================================ */
+@media (min-width: 3440px) {
+
+  /* ── Navbar ── */
+  .nav-container { max-width: 3440px; padding: 10px 12%; }
+
+  /* ── Hero ── */
+  .hero-section { padding: 120px 15% 80px; }
+  .hero-content { max-width: 1600px; }
+  .hero-content h1 { font-size: 4rem; margin-bottom: 54px; }
+  .hero-subtitle { font-size: 1.4rem; margin-bottom: 66px; }
+  .btn-hero-primary,
+  .btn-hero-secondary { padding: 24px 64px; font-size: 1.2rem; }
+  .hero-buttons { margin-bottom: 78px; }
+  .hero-trust-badges { gap: 64px; }
+  .trust-badge { font-size: 1.1rem; }
+
+  /* ── Expertise ── */
+  .expertise-section    { padding: 100px 120px 140px; }
+  .expertise-container  { max-width: 3200px; width: 100%; }
+  .expertise-header     { margin-bottom: 5rem; }
+  .expertise-header h2  { font-size: 3.2rem; }
+  .expertise-header p   { font-size: 1.4rem; }
+  .expertise-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.5rem;
+  }
+  .expertise-card-inner    { padding: 3.5rem 3rem; gap: 2rem; }
+  .expertise-icon-wrap     { width: 84px; height: 84px; }
+  .expertise-icon-wrap i   { font-size: 36px !important; }
+  .expertise-card-header h3 { font-size: 1.6rem; }
+  .expertise-desc          { font-size: 1.15rem; }
+  .expertise-features li   { font-size: 1.1rem; }
+  .expertise-cta           { font-size: 1.1rem; }
 }

@@ -240,8 +240,7 @@
     </div>
   </section>
 
-
-  <!-- ============================================================
+ <!-- ============================================================
        EXPERTISE SECTION
        ============================================================ -->
   <section class="expertise-section">
@@ -268,10 +267,7 @@
               </div>
             </div>
             <p class="expertise-desc">
-              Nous supervisons votre informatique au quotidien pour prévenir les interruptions
-              de service, accompagner vos équipes et garantir la continuité de votre activité.
-              De la gestion des incidents à l'optimisation de vos équipements, nous intervenons
-              rapidement pour que votre système d'information reste performant et disponible.
+              Nous supervisons votre informatique au quotidien pour prévenir les interruptions de service, accompagner vos équipes et garantir la continuité de votre activité
             </p>
             <ul class="expertise-features">
               <li><i class="fa-solid fa-check"></i> Supervision continue des équipements</li>
@@ -299,10 +295,7 @@
               </div>
             </div>
             <p class="expertise-desc">
-              Nous protégeons votre entreprise avec des services de cybersécurité pour assurer
-              une surveillance continue, détecter les menaces et engager la remédiation.
-              Nos experts analysent en temps réel les comportements suspects pour neutraliser
-              les attaques avant qu'elles n'impactent votre activité.
+              Nous protégeons votre entreprise avec des services de cybersécurité pour assurer une surveillance continue, détecter les menaces et engager la remédiation 
             </p>
             <ul class="expertise-features">
               <li><i class="fa-solid fa-check"></i> Surveillance SOC 24/7</li>
@@ -332,10 +325,7 @@
               </div>
             </div>
             <p class="expertise-desc">
-              Modernisez vos communications avec une solution VoIP complète et des accès
-              Internet fiables, dimensionnés pour votre métier. Profitez d'une téléphonie
-              unifiée, accessible depuis n'importe quel appareil, avec une gestion centralisée
-              et une qualité audio optimale.
+              Nous déployons des solutions de téléphonie sur IP et d’accès Internet intégrant l’intelligence artificielle pour fluidifier les échanges, améliorer la joignabilité et accompagner les nouveaux usages de vos équipes 
             </p>
             <ul class="expertise-features">
               <li><i class="fa-solid fa-check"></i> Standard intelligent</li>
@@ -365,9 +355,7 @@
               </div>
             </div>
             <p class="expertise-desc">
-              Nous déployons des solutions de téléphonie sur IP et d'accès Internet intégrant
-              l'intelligence artificielle pour fluidifier les échanges, améliorer la joignabilité
-              et accompagner les nouveaux usages de vos équipes
+              Nous concevons des infrastructure robustes, adaptées, hybrides et cloud, pour garantir la fiabilité et la sécurité de votre système d'information
             </p>
             <ul class="expertise-features">
               <li><i class="fa-solid fa-check"></i> Déploiement et virtualisation des ressources</li>
@@ -398,21 +386,9 @@
     <div class="marquee-wrapper">
       <div class="marquee-track">
         <div class="marquee-item"><img src="images/3CX Partner.jpg" alt="3CX" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/partenaires/lenovo.png" alt="Lenovo" class="partner-logo"></div>
         <div class="marquee-item"><img src="images/dell-vertical-logo.png" alt="Dell" class="partner-logo"></div>
         <div class="marquee-item"><img src="images/Logo-Ricoh-Partner-vert.jpg" alt="Ricoh" class="partner-logo"></div>
         <div class="marquee-item"><img src="images/VCSP_registered_color_rgb.png" alt="Vcsp" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/partenaires/ninjaone.png" alt="NinjaOne" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/partenaires/hornetsecurity.png" alt="HornetSecurity" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/partenaires/microsoft.png" alt="Microsoft" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/3CX Partner.jpg" alt="3CX" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/partenaires/lenovo.png" alt="Lenovo" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/dell-vertical-logo.png" alt="Dell" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/Logo-Ricoh-Partner-vert.jpg" alt="Ricoh" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/VCSP_registered_color_rgb.png" alt="Vcsp" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/partenaires/ninjaone.png" alt="NinjaOne" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/partenaires/hornetsecurity.png" alt="HornetSecurity" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/partenaires/microsoft.png" alt="Microsoft" class="partner-logo"></div>
       </div>
     </div>
   </section>
