@@ -43,13 +43,27 @@
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-container">
-      <div class="hero-content">
-        <h1>La Téléphonie IP : L'avenir de la Communication d'Entreprise</h1>
-        <p>La téléphonie IP (VoIP) révolutionne la façon dont les entreprises communiquent. En utilisant votre connexion Internet pour passer et recevoir des appels, vous bénéficiez d'une flexibilité incomparable, de coûts réduits et de fonctionnalités avancées qui transforment votre productivité.</p>
-        <p><strong>Nemoxia vous accompagne dans la migration vers la téléphonie IP</strong> avec des solutions adaptées à votre secteur d'activité et à la taille de votre entreprise.</p>
+      <br> <br>
+      <h1>La Téléphonie IP : L'avenir de la Communication d'Entreprise</h1>
+      <p class="hero-subtitle">La téléphonie IP (VoIP) révolutionne la façon dont les entreprises communiquent. En utilisant votre connexion Internet pour passer et recevoir des appels, vous bénéficiez d'une flexibilité incomparable, de coûts réduits et de fonctionnalités avancées qui transforment votre productivité.</p>
+      <p class="hero-subtitle"><strong>Nemoxia vous accompagne dans la migration vers la téléphonie IP</strong> avec des solutions adaptées à votre secteur d'activité et à la taille de votre entreprise.</p>
+      <div class="hero-buttons">
+        <a href="/Contact/contact.php" class="btn-hero-primary">Contactez-nous !</a>
+        <a href="tel:0175439100" class="btn-hero-secondary">01 75 43 91 00</a>
       </div>
-      <div class="hero-image">
-        <div><img src="/images/StartUP.png" alt="Téléphonie IP entreprise"></div>
+      <div class="hero-trust-badges">
+        <div class="trust-badge">
+          <span class="trust-icon">✓</span>
+          <span class="trust-text">Économies jusqu'à 80%</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-icon">✓</span>
+          <span class="trust-text">Installation rapide</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-icon">✓</span>
+          <span class="trust-text">Support dédié</span>
+        </div>
       </div>
     </div>
   </section>
@@ -63,7 +77,7 @@
         <div class="advantage-card">
           <div class="advantage-icon">💰</div>
           <h3>Réduction des Coûts</h3>
-          <p>Économisez jusqu'à 80% sur vos factures téléphoniques. Les appels entre sites sont gratuits, et les communications internationales coûtent jusqu'à 90% moins cher. Nos tarifs se basent sur le nombre d'appels simultanés.</p>
+          <p>Économisez jusqu'à 80% sur vos factures téléphoniques. Les appels entre sites sont gratuits, et les communications internationales coûtent jusqu'à 90% moins cher.</p>
         </div>
         <div class="advantage-card">
           <div class="advantage-icon">🌐</div>
@@ -83,7 +97,7 @@
         <div class="advantage-card">
           <div class="advantage-icon">🔧</div>
           <h3>Installation Simplifiée</h3>
-          <p>Facile et rapide à déployer, compatible avec votre infrastructure informatique et simple à administrer. Une connexion Internet suffit pour déployer votre système téléphonique complet en quelques heures.</p>
+          <p>Facile et rapide à déployer, compatible avec votre infrastructure informatique. Une connexion Internet suffit pour déployer votre système téléphonique complet en quelques heures.</p>
         </div>
         <div class="advantage-card">
           <div class="advantage-icon">📞</div>
@@ -93,7 +107,7 @@
         <div class="advantage-card">
           <div class="advantage-icon">🔗</div>
           <h3>Intégration CRM</h3>
-          <p>Connectez votre téléphonie à vos outils métier (CRM, ERP) pour une productivité accrue et un suivi client optimal. Sachez exactement qui vous appelle et ouvrez la fiche du client avant même de répondre.</p>
+          <p>Connectez votre téléphonie à vos outils métier (CRM, ERP) pour une productivité accrue. Sachez exactement qui vous appelle et ouvrez la fiche du client avant même de répondre.</p>
         </div>
         <div class="advantage-card">
           <div class="advantage-icon">🛡️</div>
@@ -105,24 +119,39 @@
   </section>
 
 
-  <!-- Section bleue -->
-  <section class="blue-section">
-    <div class="blue-container">
-      <div>
-        <h2>Pourquoi Choisir la Téléphonie IP ?</h2>
-        <p>La téléphonie IP transforme radicalement votre communication d'entreprise en offrant une solution moderne, économique et évolutive. Choisissez une installation en local ou dans le cloud et gardez le contrôle de votre système et de vos données.</p>
-        <ul>
-          <li>Installation simplifiée sans câblage coûteux</li>
-          <li>Qualité audio HD pour des conversations cristallines</li>
-          <li>Intégration avec vos outils métier (CRM, ERP)</li>
-          <li>Continuité d'activité garantie en toutes circonstances</li>
-          <li>Installation faite par nos experts avec support de proximité</li>
-        </ul>
-        <a href="/Contact/contact.php" class="btn-primary">Demander un devis</a>
+  <!-- Pourquoi choisir -->
+  <section class="why-section">
+    <div class="why-container">
+      <span class="section-badge">Notre Vision</span>
+      <h2>Pourquoi Choisir la Téléphonie IP ?</h2>
+      <p class="section-intro">La téléphonie IP transforme radicalement votre communication d'entreprise en offrant une solution moderne, économique et évolutive. Choisissez une installation en local ou dans le cloud et gardez le contrôle de votre système et de vos données.</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">⚡</div>
+          <p>Installation simplifiée sans câblage coûteux</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎧</div>
+          <p>Qualité audio HD pour des conversations cristallines</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔗</div>
+          <p>Intégration avec vos outils métier (CRM, ERP)</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🛡️</div>
+          <p>Continuité d'activité garantie en toutes circonstances</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">👨‍💼</div>
+          <p>Installation par nos experts avec support de proximité</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">💶</div>
+          <p>Tarifs compétitifs basés sur le nombre d'appels simultanés</p>
+        </div>
       </div>
-      <div class="blue-image">
-        <div><img src="/images/iPhone _ Android.png" alt="Application mobile téléphonie"></div>
-      </div>
+      <a href="/Contact/contact.php" class="btn-primary">Demander un devis</a>
     </div>
   </section>
 
@@ -131,11 +160,11 @@
   <section class="solutions-section">
     <div class="solutions-container">
       <h2>Nos Solutions de Téléphonie</h2>
-      <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; color: #ddd;">Comme plus de 600 000 entreprises dans le monde, bénéficiez d'un standard téléphonique professionnel de dernière génération. La meilleure solution sur le marché et au meilleur rapport qualité-prix.</p>
+      <p class="section-intro">Comme plus de 600 000 entreprises dans le monde, bénéficiez d'un standard téléphonique professionnel de dernière génération. La meilleure solution sur le marché et au meilleur rapport qualité-prix.</p>
       <div class="solutions-grid">
         <div class="solution-card">
           <h3><span>📱</span> Standard Téléphonique IP (IPBX)</h3>
-          <p>Standard virtuel dans le cloud ou sur site avec toutes les fonctionnalités professionnelles : SVI, groupes d'appels, supervision, enregistrement des conversations. Enregistrez vos messages d'accueil personnalisés pour une expérience client unique.</p>
+          <p>Standard virtuel dans le cloud ou sur site avec toutes les fonctionnalités professionnelles : SVI, groupes d'appels, supervision, enregistrement. Messages d'accueil personnalisés pour une expérience client unique.</p>
           <ul>
             <li>Installation rapide sans câblage</li>
             <li>Gestion intuitive via interface web</li>
@@ -194,14 +223,14 @@
           <div class="feature-check">✓</div>
           <div class="feature-content">
             <h3>Messagerie Vocale par Email</h3>
-            <p>Recevez vos messages vocaux directement dans votre boîte mail avec retranscription textuelle des messages vocaux.</p>
+            <p>Recevez vos messages vocaux directement dans votre boîte mail avec retranscription textuelle.</p>
           </div>
         </div>
         <div class="feature-card">
           <div class="feature-check">✓</div>
           <div class="feature-content">
             <h3>Renvoi d'Appel Intelligent</h3>
-            <p>Programmez des règles de transfert selon l'horaire, le jour ou le numéro. Gestion des renvois d'appel et présentation personnalisée du numéro.</p>
+            <p>Programmez des règles de transfert selon l'horaire, le jour ou le numéro. Présentation personnalisée du numéro.</p>
           </div>
         </div>
         <div class="feature-card">
@@ -243,7 +272,7 @@
           <div class="feature-check">✓</div>
           <div class="feature-content">
             <h3>Click to Call</h3>
-            <p>Communiquez plus efficacement et lancez des appels en un clic depuis votre CRM ou votre navigateur.</p>
+            <p>Lancez des appels en un clic depuis votre CRM ou votre navigateur pour communiquer plus efficacement.</p>
           </div>
         </div>
       </div>
@@ -255,11 +284,11 @@
   <section class="solutions-section">
     <div class="solutions-container">
       <h2>Centre de Contact Multicanal</h2>
-      <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; color: #ddd;">Un centre de contact multicanal est une plateforme de communication qui intègre différents canaux et permet d'accéder aux informations des clients depuis un emplacement unique. Le but est d'améliorer l'efficacité des processus de travail et d'optimiser l'expérience client.</p>
+      <p class="section-intro">Un centre de contact multicanal est une plateforme de communication qui intègre différents canaux et permet d'accéder aux informations des clients depuis un emplacement unique. Le but est d'améliorer l'efficacité des processus de travail et d'optimiser l'expérience client.</p>
       <div class="solutions-grid">
         <div class="solution-card">
           <h3><span>📞</span> Centre d'Appel Avancé</h3>
-          <p>Solution riche en fonctionnalités avec groupes d'appels, files d'attente dynamiques rapides à configurer, rapports détaillés et Wallboards pour une vraie solution de centre d'appel professionnel.</p>
+          <p>Solution riche en fonctionnalités avec groupes d'appels, files d'attente dynamiques, rapports détaillés et Wallboards pour une vraie solution de centre d'appel professionnel.</p>
           <ul>
             <li>Files d'attente intelligentes</li>
             <li>Rapports et statistiques en temps réel</li>
@@ -269,7 +298,7 @@
         </div>
         <div class="solution-card">
           <h3><span>💬</span> Live Chat & Messagerie</h3>
-          <p>Offrez à vos visiteurs une façon rapide d'interagir avec vous. Notre Live Chat permet de transformer instantanément le chat en appel audio ou vidéo avec le même interlocuteur, sans que le client ait à réexpliquer son problème.</p>
+          <p>Offrez à vos visiteurs une façon rapide d'interagir avec vous. Notre Live Chat permet de transformer instantanément le chat en appel audio ou vidéo avec le même interlocuteur.</p>
           <ul>
             <li>Transformation du chat en appel téléphonique</li>
             <li>Historique des conversations clients</li>
@@ -279,7 +308,7 @@
         </div>
         <div class="solution-card">
           <h3><span>📱</span> Communication Multicanal</h3>
-          <p>Intégrez le Live Chat, WhatsApp, Facebook et les SMS pour transformer votre centre d'appel en solution de centre de contact complète. Laissez vos collègues participer grâce à un numéro WhatsApp partagé.</p>
+          <p>Intégrez le Live Chat, WhatsApp, Facebook et les SMS pour transformer votre centre d'appel en solution de centre de contact complète.</p>
           <ul>
             <li>WhatsApp Business partagé</li>
             <li>Intégration Facebook Messenger</li>
@@ -289,7 +318,7 @@
         </div>
         <div class="solution-card">
           <h3><span>🔗</span> Intégration CRM Complète</h3>
-          <p>38% des appelants s'attendent à ce que vos agents connaissent le contexte de leur demande. Avec nos intégrations CRM (Salesforce, Dynamics, Zoho, Hubspot, Freshdesk, Vtiger...), vos clients n'ont plus besoin d'épeler leur nom.</p>
+          <p>38% des appelants s'attendent à ce que vos agents connaissent le contexte de leur demande. Avec nos intégrations (Salesforce, Dynamics, Zoho, Hubspot...), vos clients n'ont plus besoin d'épeler leur nom.</p>
           <ul>
             <li>Notifications d'appels automatiques</li>
             <li>Mises à jour des journaux d'appels</li>
@@ -306,7 +335,7 @@
   <section class="features-section">
     <div class="features-container">
       <h2>Visioconférence Professionnelle Intégrée</h2>
-      <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem;">Avec l'émergence du télétravail, la visioconférence a connu une croissance exponentielle. Organisez des réunions en ligne sécurisées, faciles à utiliser et totalement gratuites, planifiées ou instantanées via votre calendrier.</p>
+      <p class="section-intro">Avec l'émergence du télétravail, la visioconférence a connu une croissance exponentielle. Organisez des réunions en ligne sécurisées, faciles à utiliser et totalement gratuites, planifiées ou instantanées via votre calendrier.</p>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-check">✓</div>
@@ -319,7 +348,7 @@
           <div class="feature-check">✓</div>
           <div class="feature-content">
             <h3>Sans Application</h3>
-            <p>Organisez des réunions sans télécharger ou installer de plugin ou logiciel. Fonctionne directement via navigateur quel que soit le système d'exploitation.</p>
+            <p>Organisez des réunions sans télécharger ou installer de plugin ou logiciel. Fonctionne directement via navigateur.</p>
           </div>
         </div>
         <div class="feature-card">
@@ -340,14 +369,14 @@
           <div class="feature-check">✓</div>
           <div class="feature-content">
             <h3>Entièrement Intégré</h3>
-            <p>La visioconférence est facile à utiliser et entièrement intégrée au client web, donc il n'est pas nécessaire de télécharger de logiciel additionnel.</p>
+            <p>La visioconférence est intégrée au client web, il n'est pas nécessaire de télécharger de logiciel additionnel.</p>
           </div>
         </div>
         <div class="feature-card">
           <div class="feature-check">✓</div>
           <div class="feature-content">
             <h3>Communication Interne Optimisée</h3>
-            <p>La communication interne est vitale pour le succès de votre organisation. Des conversations téléphoniques quotidiennes aux messages chat, gardez un lien régulier avec vos équipes distantes.</p>
+            <p>Des conversations téléphoniques quotidiennes aux messages chat, gardez un lien régulier avec vos équipes distantes.</p>
           </div>
         </div>
       </div>

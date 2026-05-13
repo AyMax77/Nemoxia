@@ -44,10 +44,27 @@
   <section class="infogerance-hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
+      <br> <br>
+      <span class="hero-badge">Infogérance & Support IT</span>
       <h1>Infogérance Informatique pour PME</h1>
       <p class="hero-subtitle">Externalisez la gestion de votre infrastructure IT et concentrez-vous sur votre cœur de métier</p>
       <div class="hero-buttons">
         <a href="/Contact/contact.php" class="btn-primary">Contactez-nous !</a>
+        <a href="tel:0175439100" class="btn-secondary">01 75 43 91 00</a>
+      </div>
+      <div class="hero-trust-badges">
+        <div class="trust-badge">
+          <span class="trust-icon">✓</span>
+          <span class="trust-text">Économies jusqu'à 40%</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-icon">✓</span>
+          <span class="trust-text">Support 24/7</span>
+        </div>
+        <div class="trust-badge">
+          <span class="trust-icon">✓</span>
+          <span class="trust-text">200+ PME accompagnées</span>
+        </div>
       </div>
     </div>
   </section>
@@ -70,7 +87,7 @@
       <div class="solutions-grid">
         <div class="solution-card">
           <h3>🖥️ Infogérance Infrastructure</h3>
-          <p>Gestion complète de votre infrastructure IT : serveurs, réseaux, stockage, virtualisation. Surveillance 24/7, maintenance préventive et corrective, optimisation des performances.</p>
+          <p>Gestion complète de votre infrastructure IT : serveurs, réseaux, stockage, virtualisation. Surveillance 24/7, maintenance préventive et corrective.</p>
           <ul>
             <li>Supervision proactive 24/7/365</li>
             <li>Maintenance préventive planifiée</li>
@@ -81,7 +98,7 @@
         </div>
         <div class="solution-card">
           <h3>👥 Support Utilisateurs</h3>
-          <p>Helpdesk multicanal disponible pour vos collaborateurs. Résolution rapide des incidents, assistance sur tous vos logiciels métier, accompagnement au quotidien.</p>
+          <p>Helpdesk multicanal disponible pour vos collaborateurs. Résolution rapide des incidents, assistance sur tous vos logiciels métier.</p>
           <ul>
             <li>Hotline téléphonique dédiée</li>
             <li>Support par email et chat</li>
@@ -92,7 +109,7 @@
         </div>
         <div class="solution-card">
           <h3>💻 Gestion de Parc Informatique</h3>
-          <p>Administration complète de vos postes de travail : déploiement, configuration, inventaire, renouvellement. Maîtrisez votre parc IT de A à Z.</p>
+          <p>Administration complète de vos postes de travail : déploiement, configuration, inventaire, renouvellement.</p>
           <ul>
             <li>Inventaire automatisé en temps réel</li>
             <li>Déploiement de postes standardisés</li>
@@ -103,7 +120,7 @@
         </div>
         <div class="solution-card">
           <h3>☁️ Cloud et Virtualisation</h3>
-          <p>Migration et gestion de vos services cloud. Serveurs virtuels, stockage cloud, applications SaaS : optimisez votre infrastructure avec le cloud hybride.</p>
+          <p>Migration et gestion de vos services cloud. Serveurs virtuels, stockage cloud, applications SaaS : optimisez avec le cloud hybride.</p>
           <ul>
             <li>Migration vers le cloud sécurisée</li>
             <li>Gestion multi-cloud (Azure, AWS, OVH)</li>
@@ -114,7 +131,7 @@
         </div>
         <div class="solution-card">
           <h3>🔐 Sécurité et Conformité</h3>
-          <p>Protection complète de votre système d'information. Pare-feu, antivirus, sauvegardes, plan de reprise : sécurisez vos données et respectez les réglementations.</p>
+          <p>Protection complète de votre système d'information. Pare-feu, antivirus, sauvegardes, plan de reprise : sécurisez vos données.</p>
           <ul>
             <li>Pare-feu et antivirus managés</li>
             <li>Sauvegarde quotidienne externalisée</li>
@@ -125,7 +142,7 @@
         </div>
         <div class="solution-card">
           <h3>📊 Pilotage et Reporting</h3>
-          <p>Tableaux de bord en temps réel sur l'état de votre infrastructure. KPI, incidents, performances, coûts : prenez des décisions éclairées sur votre IT.</p>
+          <p>Tableaux de bord en temps réel sur l'état de votre infrastructure. KPI, incidents, performances, coûts : prenez des décisions éclairées.</p>
           <ul>
             <li>Tableaux de bord personnalisés</li>
             <li>Rapports mensuels d'activité</li>
@@ -136,7 +153,7 @@
         </div>
         <div class="solution-card">
           <h3>🌐 Infogérance Réseau et Télécom</h3>
-          <p>Gestion de votre infrastructure réseau et télécoms. Routeurs, switchs, WiFi, VPN, téléphonie IP : garantissez la connectivité de vos équipes.</p>
+          <p>Gestion de votre infrastructure réseau et télécoms. Routeurs, switchs, WiFi, VPN, téléphonie IP : garantissez la connectivité.</p>
           <ul>
             <li>Supervision réseau en continu</li>
             <li>Gestion des équipements actifs</li>
@@ -169,12 +186,12 @@
         <div class="avantage-card">
           <div class="icon">💰</div>
           <h3>Réduction des Coûts</h3>
-          <p>Économisez jusqu'à 40% sur vos dépenses IT. Coûts prévisibles, pas de charges sociales, mutualisation des ressources : optimisez votre budget informatique.</p>
+          <p>Économisez jusqu'à 40% sur vos dépenses IT. Coûts prévisibles, pas de charges sociales, mutualisation des ressources.</p>
         </div>
         <div class="avantage-card">
           <div class="icon">⚡</div>
           <h3>Disponibilité 24/7</h3>
-          <p>Notre équipe intervient 24h/24, 7j/7, week-ends et jours fériés inclus. Incident à 3h du matin ? Nous sommes là pour le résoudre immédiatement.</p>
+          <p>Notre équipe intervient 24h/24, 7j/7, week-ends et jours fériés inclus. Incident à 3h du matin ? Nous sommes là.</p>
         </div>
         <div class="avantage-card">
           <div class="icon">🎓</div>
@@ -189,7 +206,7 @@
         <div class="avantage-card">
           <div class="icon">📈</div>
           <h3>Évolutivité Garantie</h3>
-          <p>Votre entreprise grandit ? Vos besoins évoluent ? Nos solutions s'adaptent instantanément à votre croissance sans investissement lourd.</p>
+          <p>Votre entreprise grandit ? Vos besoins évoluent ? Nos solutions s'adaptent instantanément sans investissement lourd.</p>
         </div>
         <div class="avantage-card">
           <div class="icon">🎯</div>
@@ -204,7 +221,7 @@
         <div class="avantage-card">
           <div class="icon">🛡️</div>
           <h3>Sécurité Renforcée</h3>
-          <p>Protection multicouche, sauvegardes externalisées, plan de continuité : vos données sont en sécurité et votre activité toujours protégée.</p>
+          <p>Protection multicouche, sauvegardes externalisées, plan de continuité : vos données sont sécurisées et votre activité protégée.</p>
         </div>
       </div>
     </div>
@@ -217,19 +234,19 @@
       <h2>L'Infogérance en Chiffres</h2>
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-number">40%</div>
+          <span class="stat-number">40%</span>
           <p>Réduction moyenne des coûts IT avec l'infogérance</p>
         </div>
         <div class="stat-card">
-          <div class="stat-number">99,9%</div>
+          <span class="stat-number">99,9%</span>
           <p>Taux de disponibilité garanti de votre infrastructure</p>
         </div>
         <div class="stat-card">
-          <div class="stat-number">&lt; 2h</div>
+          <span class="stat-number">&lt; 2h</span>
           <p>Temps de réponse moyen sur incident critique</p>
         </div>
         <div class="stat-card">
-          <div class="stat-number">200+</div>
+          <span class="stat-number">200+</span>
           <p>PME nous font confiance depuis 2007</p>
         </div>
       </div>
@@ -312,22 +329,22 @@
         <div class="process-card">
           <div class="process-number">1</div>
           <h3>Audit Initial</h3>
-          <p>Analyse complète de votre infrastructure existante, identification des points faibles, évaluation des besoins. Nous établissons un état des lieux précis et des recommandations.</p>
+          <p>Analyse complète de votre infrastructure existante, identification des points faibles, évaluation des besoins. État des lieux précis et recommandations.</p>
         </div>
         <div class="process-card">
           <div class="process-number">2</div>
           <h3>Transition et Migration</h3>
-          <p>Reprise en douceur de votre infrastructure. Installation des outils de supervision, configuration des sauvegardes, documentation complète. Zéro interruption de service.</p>
+          <p>Reprise en douceur de votre infrastructure. Installation des outils de supervision, configuration des sauvegardes, documentation complète. Zéro interruption.</p>
         </div>
         <div class="process-card">
           <div class="process-number">3</div>
           <h3>Exploitation et Support</h3>
-          <p>Gestion quotidienne de votre IT : surveillance 24/7, maintenance préventive, support utilisateurs, résolution d'incidents. Votre infrastructure fonctionne de manière optimale.</p>
+          <p>Gestion quotidienne de votre IT : surveillance 24/7, maintenance préventive, support utilisateurs, résolution d'incidents. Infrastructure optimale.</p>
         </div>
         <div class="process-card">
           <div class="process-number">4</div>
           <h3>Amélioration Continue</h3>
-          <p>Optimisation permanente de votre infrastructure. Analyse des performances, mise à jour des technologies, anticipation des évolutions. Votre IT évolue avec votre business.</p>
+          <p>Optimisation permanente de votre infrastructure. Analyse des performances, mise à jour des technologies, anticipation des évolutions.</p>
         </div>
       </div>
     </div>

@@ -36,7 +36,7 @@
   <section class="hero-section">
     <div class="hero-background"></div>
     <div class="hero-content">
-      <span class="hero-badge">Transformation Digitale</span>
+     <br> <br>
       <h1>Votre Infrastructure IT, Pilier de Votre Compétitivité</h1>
       <p class="hero-subtitle">Des solutions informatiques sur mesure pour optimiser votre performance</p>
       <div class="hero-buttons">
@@ -55,24 +55,6 @@
         <div class="trust-badge">
           <span class="trust-icon">✓</span>
           <span class="trust-text">99,9% disponibilité</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Intro -->
-  <section class="intro-image-section">
-    <div class="container">
-      <div class="intro-content-wrapper">
-        <div class="intro-text">
-          <span class="section-badge">Notre Vision</span>
-          <h2>L'Informatique au Service de Votre Performance</h2>
-          <p>Votre infrastructure informatique n'est plus un simple outil de support. Elle est le pilier central de votre compétitivité. Chez Nemoxia, nous concevons des systèmes d'information sur mesure qui transforment vos contraintes techniques en opportunités de croissance.</p>
-          <a href="/Contact/contact.php" class="btn-intro">Découvrir nos solutions</a>
-        </div>
-        <div class="intro-image">
-          <img src="/images/datacenter.png" alt="Infrastructure IT moderne">
         </div>
       </div>
     </div>
@@ -139,31 +121,28 @@
   </section>
 
 
-  <!-- Vision -->
-  <section class="vision-image-section">
+  <!-- Expertise -->
+  <section class="expertise-section">
     <div class="container">
-      <div class="vision-content-wrapper">
-        <div class="vision-image">
-          <img src="/images/equipe_expert.png" alt="Équipe IT d'experts">
+      <span class="section-badge">Notre Expertise</span>
+      <h2>Une Expertise IT au Service de Votre Réussite</h2>
+      <p class="section-intro">Depuis plus de 15 ans, Nemoxia accompagne les entreprises dans leur évolution technologique. Nous concevons des solutions qui répondent à vos besoins réels et s'intègrent parfaitement dans votre écosystème existant.</p>
+      <div class="expertise-stats">
+        <div class="expertise-stat">
+          <span class="expertise-stat-number">15+</span>
+          <span class="expertise-stat-label">Années d'expertise</span>
         </div>
-        <div class="vision-text">
-          <span class="section-badge">Notre Expertise</span>
-          <h2>Une Expertise IT au Service de Votre Réussite</h2>
-          <p>Depuis plus de 15 ans, Nemoxia accompagne les entreprises dans leur évolution technologique. Nous concevons des solutions qui répondent à vos besoins réels et s'intègrent parfaitement dans votre écosystème existant.</p>
-          <div class="vision-stats">
-            <div class="stat-item">
-              <span class="stat-number">15+</span>
-              <span class="stat-label">Années d'expertise</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">300+</span>
-              <span class="stat-label">Infrastructures déployées</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">99,9%</span>
-              <span class="stat-label">Taux de satisfaction</span>
-            </div>
-          </div>
+        <div class="expertise-stat">
+          <span class="expertise-stat-number">300+</span>
+          <span class="expertise-stat-label">Infrastructures déployées</span>
+        </div>
+        <div class="expertise-stat">
+          <span class="expertise-stat-number">99,9%</span>
+          <span class="expertise-stat-label">Taux de satisfaction</span>
+        </div>
+        <div class="expertise-stat">
+          <span class="expertise-stat-number">2000+</span>
+          <span class="expertise-stat-label">Projets réalisés</span>
         </div>
       </div>
     </div>

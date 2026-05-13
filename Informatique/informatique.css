@@ -5,20 +5,22 @@
    2.  ANIMATIONS
    3.  SECTIONS COMMUNES
    4.  HERO SECTION
-   5.  INTRO IMAGE SECTION
-   6.  STATS COUNTER SECTION
-   7.  IMPORTANCE SECTION
-   8.  VISION IMAGE SECTION
-   9.  AVANTAGES SECTION
-   10. SOLUTIONS SECTION
-   11. MÉTHODOLOGIE SECTION
-   12. FOOTER
-   13. RESPONSIVE
-       13a. Mobile       (max 480px)
-       13b. Tablette     (max 768px)
-       13c. Desktop      (max 1200px)
-       13d. Large        (max 1920px)
-       13e. Ultra-wide   (min 1921px)
+   5.  STATS COUNTER SECTION
+   6.  IMPORTANCE SECTION
+   7.  EXPERTISE SECTION
+   8.  AVANTAGES SECTION
+   9.  SOLUTIONS SECTION
+   10. MÉTHODOLOGIE SECTION
+   11. FOOTER
+   12. RESPONSIVE
+       12a. Mobile       (max 480px)
+       12b. Tablette     (481px – 768px)
+       12c. Tablette large (769px – 1023px)
+       12d. Desktop      (1024px – 1200px)
+       12e. Large        (1201px – 1920px)
+       12f. Ultra-wide   (min 1921px)
+       12g. Paysage mobile (max-height 600px)
+       12h. Accessibilité animations
    ============================================================ */
 
 
@@ -45,12 +47,6 @@ body {
     url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80') center/cover no-repeat fixed;
   overflow-x: hidden;
   min-height: 100vh;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 
@@ -99,24 +95,21 @@ img {
    ============================================================ */
 
 .hero-section,
-.intro-image-section,
 .stats-counter-section,
 .importance-section,
-.vision-image-section,
+.expertise-section,
 .avantages-section,
 .solutions-section,
 .methodologie-section {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: clamp(60px, 8vh, 100px) clamp(20px, 5%, 40px);
+  padding: clamp(60px, 8vh, 100px) clamp(20px, 5%, 60px);
 }
 
 /* Halos radiaux décoratifs */
 .hero-section::before,
-.intro-image-section::before,
 .avantages-section::before {
   content: '';
   position: absolute;
@@ -144,20 +137,19 @@ img {
   pointer-events: none;
 }
 
-.vision-image-section::before {
+.expertise-section::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 80% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
+  background: radial-gradient(circle at 70% 50%, rgba(0, 114, 188, 0.15) 0%, transparent 60%);
   pointer-events: none;
 }
 
 /* Trait lumineux en bas de section */
 .hero-section::after,
-.intro-image-section::after,
 .stats-counter-section::after,
 .importance-section::after,
-.vision-image-section::after,
+.expertise-section::after,
 .avantages-section::after,
 .solutions-section::after,
 .methodologie-section::after {
@@ -229,10 +221,12 @@ img {
   z-index: 1;
   text-align: center;
   max-width: 900px;
+  width: 100%;
   color: white;
   opacity: 0;
   transform: translateY(30px);
   animation: heroSlideUpFadeIn 0.8s ease-out 0.3s forwards;
+  padding: 0 clamp(16px, 4%, 40px);
 }
 
 .hero-badge {
@@ -253,7 +247,7 @@ img {
 }
 
 .hero-content h1 {
-  font-size: clamp(28px, 4.5vw, 52px);
+  font-size: clamp(26px, 4.5vw, 52px);
   font-weight: 800;
   margin-bottom: clamp(20px, 3vh, 30px);
   line-height: 1.2;
@@ -325,7 +319,7 @@ img {
 
 .hero-trust-badges {
   display: flex;
-  gap: clamp(20px, 3vw, 40px);
+  gap: clamp(12px, 2vw, 40px);
   justify-content: center;
   flex-wrap: wrap;
   opacity: 0;
@@ -350,7 +344,7 @@ img {
 }
 
 .trust-icon {
-  font-size: clamp(18px, 2.2vw, 24px);
+  font-size: clamp(16px, 2.2vw, 24px);
   color: #22c55e;
 }
 
@@ -372,93 +366,20 @@ img {
 
 
 /* ============================================================
-   5. INTRO IMAGE SECTION
-   ============================================================ */
-
-.intro-content-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 80px);
-  align-items: center;
-  max-width: 1400px;
-  width: 100%;
-}
-
-.intro-text { color: white; }
-
-.intro-text h2 {
-  font-size: clamp(26px, 4vw, 48px);
-  color: white;
-  margin-bottom: clamp(20px, 3vh, 30px);
-  font-weight: 700;
-  line-height: 1.2;
-  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
-}
-
-.intro-text p {
-  font-size: clamp(15px, 1.8vw, 20px);
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.8;
-  margin-bottom: clamp(15px, 2.5vh, 22px);
-}
-
-.btn-intro {
-  display: inline-block;
-  background: white;
-  color: #0072BC;
-  padding: clamp(12px, 1.5vw, 18px) clamp(25px, 3vw, 45px);
-  font-size: clamp(14px, 1.5vw, 18px);
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin-top: clamp(15px, 2vw, 25px);
-}
-
-.btn-intro:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.4);
-  background: #0072BC;
-  color: white;
-}
-
-.intro-image {
-  width: 100%;
-  min-height: 350px;
-  max-height: 550px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.intro-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.intro-image:hover img { transform: scale(1.05); }
-
-
-/* ============================================================
-   6. STATS COUNTER SECTION
+   5. STATS COUNTER SECTION
    ============================================================ */
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(30px, 4vw, 50px);
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 3vw, 50px);
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .stat-counter {
   text-align: center;
-  padding: clamp(35px, 5vw, 50px);
+  padding: clamp(25px, 4vw, 50px) clamp(15px, 2vw, 30px);
   background: rgba(0, 114, 188, 0.08);
   border: 2px solid rgba(0, 114, 188, 0.25);
   border-radius: 15px;
@@ -474,42 +395,42 @@ img {
 }
 
 .stat-icon {
-  font-size: clamp(40px, 6vw, 64px);
-  margin-bottom: clamp(15px, 2.5vw, 20px);
+  font-size: clamp(32px, 5vw, 64px);
+  margin-bottom: clamp(12px, 2vw, 20px);
 }
 
 .stat-number {
   display: block;
-  font-size: clamp(40px, 6vw, 72px);
+  font-size: clamp(32px, 5vw, 72px);
   font-weight: 900;
   color: #0072BC;
-  margin-bottom: clamp(10px, 1.5vw, 15px);
+  margin-bottom: clamp(8px, 1.2vw, 15px);
 }
 
 .stat-label {
   display: block;
-  font-size: clamp(14px, 1.6vw, 18px);
+  font-size: clamp(13px, 1.4vw, 18px);
   color: rgba(255, 255, 255, 0.8);
   font-weight: 600;
 }
 
 
 /* ============================================================
-   7. IMPORTANCE SECTION
+   6. IMPORTANCE SECTION
    ============================================================ */
 
 .importance-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(25px, 3.5vw, 35px);
-  margin-top: clamp(30px, 5vh, 45px);
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 3vw, 35px);
+  margin-top: clamp(25px, 4vh, 45px);
 }
 
 .importance-card {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 15px;
-  padding: clamp(25px, 3vw, 35px);
+  padding: clamp(20px, 2.5vw, 35px);
   text-align: center;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -523,19 +444,19 @@ img {
 }
 
 .importance-card .icon {
-  font-size: clamp(36px, 4.5vw, 48px);
-  margin-bottom: clamp(15px, 2vh, 20px);
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: clamp(12px, 2vh, 20px);
 }
 
 .importance-card h3 {
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(16px, 1.8vw, 24px);
   color: white;
-  margin-bottom: clamp(12px, 1.8vh, 18px);
+  margin-bottom: clamp(10px, 1.5vh, 18px);
   font-weight: 600;
 }
 
 .importance-card p {
-  font-size: clamp(14px, 1.5vw, 17px);
+  font-size: clamp(13px, 1.4vw, 17px);
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   margin: 0;
@@ -543,109 +464,84 @@ img {
 
 
 /* ============================================================
-   8. VISION IMAGE SECTION
+   7. EXPERTISE SECTION
    ============================================================ */
 
-.vision-content-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 80px);
-  align-items: center;
-  max-width: 1400px;
-  width: 100%;
-}
-
-.vision-text { color: white; }
-
-.vision-text h2 {
-  font-size: clamp(26px, 4vw, 48px);
-  color: white;
-  margin-bottom: clamp(20px, 3vh, 30px);
-  font-weight: 700;
-  line-height: 1.2;
-  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
-}
-
-.vision-text p {
-  font-size: clamp(15px, 1.8vw, 20px);
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.8;
-  margin-bottom: clamp(15px, 2.5vh, 22px);
-}
-
-.vision-image {
-  width: 100%;
-  min-height: 350px;
-  max-height: 550px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vision-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.vision-image:hover img { transform: scale(1.05); }
-
-.vision-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 3vw, 30px);
-  margin-top: clamp(25px, 4vw, 40px);
-}
-
-.stat-item {
+.expertise-section {
   text-align: center;
-  padding: clamp(15px, 2vw, 20px);
+}
+
+.expertise-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.expertise-section h2 {
+  margin-bottom: clamp(15px, 2.5vh, 25px);
+}
+
+.expertise-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+  margin-top: clamp(30px, 5vh, 50px);
+  width: 100%;
+  max-width: 1100px;
+}
+
+.expertise-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(25px, 3.5vw, 45px) clamp(15px, 2vw, 30px);
   background: rgba(0, 114, 188, 0.08);
-  border-radius: 10px;
-  border: 1px solid rgba(0, 114, 188, 0.15);
+  border: 2px solid rgba(0, 114, 188, 0.25);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 
-.stat-item:hover {
-  background: rgba(0, 114, 188, 0.12);
-  transform: translateY(-5px);
+.expertise-stat:hover {
+  transform: translateY(-8px);
+  background: rgba(0, 114, 188, 0.15);
+  border-color: rgba(0, 114, 188, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 114, 188, 0.3);
 }
 
-.stat-item .stat-number {
+.expertise-stat-number {
   display: block;
-  font-size: clamp(24px, 3vw, 36px);
-  font-weight: 800;
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 900;
   color: #4db8ff;
-  margin-bottom: clamp(5px, 1vw, 8px);
+  margin-bottom: clamp(8px, 1.2vw, 12px);
 }
 
-.stat-item .stat-label {
+.expertise-stat-label {
   display: block;
-  font-size: clamp(12px, 1.3vw, 14px);
-  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(13px, 1.4vw, 16px);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  text-align: center;
 }
 
 
 /* ============================================================
-   9. AVANTAGES SECTION
+   8. AVANTAGES SECTION
    ============================================================ */
 
 .avantages-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(25px, 3.5vw, 35px);
-  margin-top: clamp(30px, 5vh, 45px);
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 3vw, 35px);
+  margin-top: clamp(25px, 4vh, 45px);
 }
 
 .avantage-card {
   background: rgba(0, 0, 0, 0.4);
   border: 2px solid transparent;
   border-radius: 15px;
-  padding: clamp(25px, 3vw, 35px);
+  padding: clamp(20px, 2.5vw, 35px);
   text-align: center;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -659,40 +555,40 @@ img {
 }
 
 .avantage-card .icon {
-  font-size: clamp(36px, 4.5vw, 48px);
-  margin-bottom: clamp(15px, 2vh, 20px);
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: clamp(12px, 2vh, 20px);
 }
 
 .avantage-card h3 {
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(16px, 1.8vw, 24px);
   color: #0072BC;
-  margin-bottom: clamp(12px, 1.8vh, 18px);
+  margin-bottom: clamp(10px, 1.5vh, 18px);
   font-weight: 600;
 }
 
 .avantage-card p {
-  font-size: clamp(14px, 1.5vw, 17px);
+  font-size: clamp(13px, 1.4vw, 17px);
   color: #f3f3f3;
   line-height: 1.6;
 }
 
 
 /* ============================================================
-   10. SOLUTIONS SECTION
+   9. SOLUTIONS SECTION
    ============================================================ */
 
 .solutions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(25px, 3.5vw, 35px);
-  margin-top: clamp(30px, 5vh, 45px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 35px);
+  margin-top: clamp(25px, 4vh, 45px);
 }
 
 .solution-card {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 15px;
-  padding: clamp(25px, 3.5vw, 35px);
+  padding: clamp(20px, 2.5vw, 35px);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
@@ -705,17 +601,17 @@ img {
 }
 
 .solution-card h3 {
-  font-size: clamp(20px, 2.2vw, 26px);
+  font-size: clamp(18px, 2vw, 26px);
   color: #4db8ff;
-  margin-bottom: clamp(15px, 2vh, 20px);
+  margin-bottom: clamp(12px, 2vh, 20px);
   font-weight: 600;
   text-align: center;
 }
 
 .solution-card p {
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: clamp(18px, 2.5vh, 25px);
-  font-size: clamp(14px, 1.5vw, 17px);
+  margin-bottom: clamp(15px, 2vh, 25px);
+  font-size: clamp(13px, 1.4vw, 17px);
   line-height: 1.6;
   text-align: center;
 }
@@ -731,9 +627,9 @@ img {
 
 .solution-card ul li {
   position: relative;
-  padding-left: clamp(25px, 3vw, 30px);
+  padding-left: clamp(22px, 2.5vw, 30px);
   color: rgba(255, 255, 255, 0.85);
-  font-size: clamp(13px, 1.4vw, 16px);
+  font-size: clamp(13px, 1.3vw, 16px);
   text-align: left;
   max-width: fit-content;
 }
@@ -745,27 +641,27 @@ img {
   top: 0;
   color: #4db8ff;
   font-weight: bold;
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: clamp(14px, 1.6vw, 20px);
   line-height: 1.4;
 }
 
 
 /* ============================================================
-   11. MÉTHODOLOGIE SECTION
+   10. MÉTHODOLOGIE SECTION
    ============================================================ */
 
 .steps-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: clamp(25px, 3.5vw, 35px);
-  margin-top: clamp(30px, 5vh, 45px);
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 3vw, 35px);
+  margin-top: clamp(25px, 4vh, 45px);
 }
 
 .step-card {
   background: rgba(255, 255, 255, 0.08);
   border: 2px solid rgba(255, 255, 255, 0.15);
   border-radius: 15px;
-  padding: clamp(25px, 3.5vw, 35px);
+  padding: clamp(20px, 2.5vw, 35px);
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -781,26 +677,26 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(55px, 7vw, 70px);
-  height: clamp(55px, 7vw, 70px);
+  width: clamp(50px, 6vw, 70px);
+  height: clamp(50px, 6vw, 70px);
   background: linear-gradient(135deg, #0072BC 0%, #0d3b66 100%);
   color: white;
-  font-size: clamp(26px, 3.5vw, 36px);
+  font-size: clamp(22px, 3vw, 36px);
   font-weight: 800;
   border-radius: 50%;
-  margin-bottom: clamp(18px, 2.5vh, 25px);
+  margin-bottom: clamp(15px, 2vh, 25px);
   box-shadow: 0 5px 15px rgba(0, 114, 188, 0.4);
 }
 
 .step-card h3 {
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(16px, 1.8vw, 24px);
   color: white;
-  margin-bottom: clamp(12px, 1.8vh, 18px);
+  margin-bottom: clamp(10px, 1.5vh, 18px);
   font-weight: 600;
 }
 
 .step-card p {
-  font-size: clamp(13px, 1.4vw, 16px);
+  font-size: clamp(13px, 1.3vw, 16px);
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   margin: 0;
@@ -808,7 +704,7 @@ img {
 
 
 /* ============================================================
-   12. FOOTER
+   11. FOOTER
    ============================================================ */
 
 footer {
@@ -857,8 +753,8 @@ footer a:hover {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: clamp(20px, 4vw, 30px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 4vw, 40px);
   max-width: 1400px;
   margin: 0 auto;
   align-items: start;
@@ -880,220 +776,280 @@ footer a:hover {
 
 
 /* ============================================================
-   13. RESPONSIVE
+   12. RESPONSIVE
    ============================================================ */
 
-/* ── 13a. Mobile (max 480px) ── */
+/* ── 12a. Mobile (max 480px) ── */
 @media (max-width: 480px) {
   .hero-section,
-  .intro-image-section,
   .stats-counter-section,
   .importance-section,
-  .vision-image-section,
+  .expertise-section,
   .avantages-section,
   .solutions-section,
   .methodologie-section {
-    padding: 70px 4% 35px;
-    min-height: auto;
+    padding: 60px 5% 40px;
   }
 
-  .intro-content-wrapper,
-  .vision-content-wrapper {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .intro-text, .vision-text { order: 2; text-align: center; }
-  .intro-image, .vision-image { order: 1; min-height: 260px; max-height: 380px; }
-
-  .btn-intro {
-    display: flex;
-    justify-content: center;
-    margin: 15px auto 0;
-  }
-
-  .vision-stats,
+  .stats-grid,
   .importance-grid,
   .avantages-grid,
-  .solutions-grid,
-  .steps-container,
-  .stats-grid {
+  .expertise-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .solutions-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .steps-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .hero-trust-badges {
+    gap: 10px;
+  }
+
+  .trust-badge {
+    padding: 8px 14px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .container h2 {
+    font-size: clamp(22px, 6vw, 32px);
+  }
+}
+
+/* ── 12b. Tablette (481px – 768px) ── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero-section,
+  .stats-counter-section,
+  .importance-section,
+  .expertise-section,
+  .avantages-section,
+  .solutions-section,
+  .methodologie-section {
+    padding: 70px 5% 45px;
+  }
+
+  .stats-grid,
+  .importance-grid,
+  .avantages-grid,
+  .expertise-stats {
+    grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
 
-  .hero-buttons { flex-direction: column; align-items: center; }
-  .btn-hero-primary, .btn-hero-secondary { width: 100%; max-width: 320px; }
-
-  .footer-grid { grid-template-columns: 1fr; text-align: center; }
-}
-
-/* ── 13b. Tablette (max 768px) ── */
-@media (min-width: 481px) and (max-width: 768px) {
-  .hero-section,
-  .intro-image-section,
-  .stats-counter-section,
-  .importance-section,
-  .vision-image-section,
-  .avantages-section,
-  .solutions-section,
-  .methodologie-section {
-    padding: 85px 5% 45px;
-    min-height: auto;
-  }
-
-  .intro-content-wrapper,
-  .vision-content-wrapper {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .intro-text, .vision-text { order: 2; }
-  .intro-image, .vision-image { order: 1; min-height: 300px; max-height: 460px; }
-
-  .vision-stats {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .importance-grid,
-  .avantages-grid,
-  .solutions-grid,
-  .steps-container,
-  .stats-grid {
+  .solutions-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 18px;
   }
 
-  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 }
 
-/* ── 13b bis. Tablette large (769px – 1023px) ── */
+/* ── 12c. Tablette large (769px – 1023px) ── */
 @media (min-width: 769px) and (max-width: 1023px) {
-  .intro-content-wrapper,
-  .vision-content-wrapper {
-    grid-template-columns: 1fr;
-    gap: 38px;
-  }
-
-  .intro-text, .vision-text { order: 2; }
-  .intro-image, .vision-image { order: 1; min-height: 340px; max-height: 520px; }
-
-  .importance-grid,
-  .avantages-grid,
-  .solutions-grid,
-  .steps-container,
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-/* ── 13c. Desktop (1024px – 1200px) ── */
-@media (min-width: 1024px) and (max-width: 1200px) {
   .hero-section,
-  .intro-image-section,
   .stats-counter-section,
   .importance-section,
-  .vision-image-section,
+  .expertise-section,
   .avantages-section,
   .solutions-section,
   .methodologie-section {
     padding: 80px 5% 50px;
-    min-height: auto;
   }
 
-  .intro-content-wrapper,
-  .vision-content-wrapper { gap: 35px; }
-  .intro-image, .vision-image { min-height: 300px; max-height: 420px; }
-
+  .stats-grid,
   .importance-grid,
-  .avantages-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .avantages-grid,
+  .expertise-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
 
-  .solutions-grid,
-  .steps-container { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
 
-  .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .steps-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
 
-  .footer-grid { grid-template-columns: repeat(4, 1fr); }
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
 }
 
-/* ── 13d. Large (1201px – 1920px) ── */
-@media (min-width: 1201px) and (max-width: 1920px) {
+/* ── 12d. Desktop (1024px – 1200px) ── */
+@media (min-width: 1024px) and (max-width: 1200px) {
   .hero-section,
-  .intro-image-section,
   .stats-counter-section,
   .importance-section,
-  .vision-image-section,
+  .expertise-section,
   .avantages-section,
   .solutions-section,
   .methodologie-section {
-    padding: 90px 6% 60px;
-    min-height: auto;
+    padding: 80px 5% 55px;
   }
 
-  .intro-content-wrapper,
-  .vision-content-wrapper { max-width: 1400px; gap: 60px; }
-  .intro-image, .vision-image { min-height: 340px; max-height: 500px; }
-
+  .stats-grid,
   .importance-grid,
-  .avantages-grid { grid-template-columns: repeat(4, 1fr); gap: 25px; }
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 
-  .solutions-grid,
-  .steps-container { grid-template-columns: repeat(3, 1fr); gap: 25px; }
+  .expertise-stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
 
-  .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 25px; }
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 
-  .footer-grid { grid-template-columns: repeat(4, 1fr); }
+  .steps-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* ── 13e. Ultra-wide (min 1921px) ── */
-@media (min-width: 1921px) {
+/* ── 12e. Large (1201px – 1920px) ── */
+@media (min-width: 1201px) and (max-width: 1920px) {
   .hero-section,
-  .intro-image-section,
   .stats-counter-section,
   .importance-section,
-  .vision-image-section,
+  .expertise-section,
+  .avantages-section,
+  .solutions-section,
+  .methodologie-section {
+    padding: 90px 6% 65px;
+  }
+
+  .stats-grid,
+  .importance-grid,
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+
+  .expertise-stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+
+  .steps-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── 12f. Ultra-wide (min 1921px) ── */
+@media (min-width: 1921px) {
+  .hero-section,
+  .stats-counter-section,
+  .importance-section,
+  .expertise-section,
   .avantages-section,
   .solutions-section,
   .methodologie-section {
     padding: 130px 10% 90px;
   }
 
-  .intro-content-wrapper,
-  .vision-content-wrapper { max-width: 1900px; gap: 90px; }
-  .intro-image, .vision-image { min-height: 460px; max-height: 660px; }
+  .container,
+  .footer-grid {
+    max-width: 1900px;
+  }
 
+  .stats-grid,
   .importance-grid,
-  .avantages-grid { grid-template-columns: repeat(4, 1fr); gap: 40px; }
+  .avantages-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
 
-  .solutions-grid,
-  .steps-container { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .expertise-stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1600px;
+  }
 
-  .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 40px; }
+  .solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
 
-  .container { max-width: 1900px; }
-  .footer-grid { max-width: 1900px; grid-template-columns: repeat(4, 1fr); }
+  .steps-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+  }
 }
 
-/* ── Hauteur réduite (paysage mobile) ── */
+/* ── 12g. Paysage mobile (max-height 600px) ── */
 @media (max-height: 600px) {
   .hero-section,
-  .intro-image-section,
   .stats-counter-section,
   .importance-section,
-  .vision-image-section,
+  .expertise-section,
   .avantages-section,
   .solutions-section,
   .methodologie-section {
-    min-height: auto;
-    padding: 70px 5% 35px;
+    padding: 55px 5% 30px;
   }
-
-  .intro-image, .vision-image { min-height: 220px; max-height: 320px; }
 }
 
-/* ── Accessibilité : préférence réduction animations ── */
+/* ── 12h. Accessibilité : préférence réduction animations ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
