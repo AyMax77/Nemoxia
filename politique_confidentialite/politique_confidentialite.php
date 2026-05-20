@@ -84,55 +84,6 @@
   </section>
 
 
-  <!-- Footer -->
-  <footer>
-    <div class="container mx-auto px-4 py-12">
-      <div class="footer-grid">
-        <div>
-          <h3>Nos Zones d'Intervention</h3>
-          <ul class="space-y-2">
-            <li><strong>Siège :</strong> Nemours (77)</li>
-            <li><strong>Seine-et-Marne (77)</strong> : Melun, Fontainebleau, Montereau, Provins</li>
-            <li><strong>Essonne (91)</strong> : Évry, Corbeil-Essonnes, Étampes</li>
-            <li><strong>Loiret (45)</strong> : Montargis, Pithiviers, Orléans</li>
-            <li>Paris & Île-de-France entière</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Nos Activités</h3>
-          <ul class="space-y-2">
-            <li>Infogérance & Maintenance IT</li>
-            <li>Téléphonie IP fixe & mobile</li>
-            <li>Accès Internet professionnel</li>
-            <li>Audit & cybersécurité</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Nos Offres PME</h3>
-          <ul class="space-y-2">
-            <li>Infogérance PME 77</li>
-            <li>Standard téléphonique IP</li>
-            <li>Solutions mobiles & fibre</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Contact</h3>
-          <p>📞 <a href="tel:+33175439100">01 75 43 91 00</a></p>
-          <p>📍 98 rue de Paris, 77140 Nemours</p>
-          <p>Du lundi au vendredi, 9h-18h</p>
-          <p><a href="/Contact/contact.php">Contactez-nous</a></p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>Nemoxia — Spécialiste en informatique & télécom depuis 2007</p>
-        <p>
-          <a href="/RGPD/rgpd.php">Mentions légales & RGPD</a> |
-          <a href="/politique_confidentialite/politique_confidentialite.php">Politique de confidentialité</a>
-          © 2025 Nemoxia. Tous droits réservés.
-        </p>
-      </div>
-    </div>
-  </footer>
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
 </body>
 </html>

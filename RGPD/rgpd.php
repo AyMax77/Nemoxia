@@ -145,46 +145,6 @@
   </div>
 
 
-  <!-- Footer -->
-  <footer>
-    <div class="container mx-auto px-4 py-12">
-      <div class="footer-grid grid md:grid-cols-4 gap-8">
-        <div>
-          <h3 class="font-bold mb-4">Nos Zones d'Intervention</h3>
-          <ul class="space-y-2">
-            <li><strong>Siège : Nemours (77)</strong></li>
-            <li>Seine-et-Marne, Essonne, Loiret</li>
-            <li>Paris et Île-de-France entière</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-bold mb-4">Nos Activités</h3>
-          <ul class="space-y-2">
-            <li>Infogérance et maintenance IT</li>
-            <li>Téléphonie fixe/mobile IP</li>
-            <li>Audit cybersécurité</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-bold mb-4">Informations légales</h3>
-          <ul class="space-y-2">
-            <li><a href="/RGPD/rgpd.php">Mentions légales</a></li>
-            <li><a href="/politique_confidentialite/politique_confidentialite.php">Politique de confidentialité</a></li>
-            <li><a href="/RGPD/politique-cookies.php">Gestion des cookies</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-bold mb-4">Contact</h3>
-          <p>📞 <a href="tel:+33175439100">01 75 43 91 00</a></p>
-          <p>📍 98 rue de Paris, 77140 Nemours</p>
-          <p>Du lundi au vendredi, 9h-18h</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2025 Nemoxia. Tous droits réservés.</p>
-      </div>
-    </div>
-  </footer>
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
 </body>
 </html>

@@ -703,76 +703,7 @@ body {
 }
 
 
-/* ============================================================
-   11. FOOTER
-   ============================================================ */
 
-footer {
-  background: linear-gradient(180deg, #1a3a5c 0%, #0d2440 100%);
-  color: white;
-  padding: clamp(30px, 5vw, 50px) 5%;
-  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
-  position: relative;
-  isolation: isolate;
-}
-
-footer::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(1, 15, 46, 0.5);
-  pointer-events: none;
-  z-index: 0;
-}
-
-footer > * {
-  position: relative;
-  z-index: 1;
-}
-
-footer h3 {
-  color: lightskyblue;
-  margin-bottom: 15px;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
-}
-
-footer ul { list-style: none; padding: 0; }
-footer ul li { margin-bottom: 8px; font-size: clamp(0.85rem, 1.2vw, 0.95rem); }
-
-footer a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-footer a:hover {
-  color: #0072BC;
-  text-shadow: 0 0 8px rgba(0, 114, 188, 0.6);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(20px, 4vw, 40px);
-  max-width: 1400px;
-  margin: 0 auto;
-  align-items: start;
-}
-
-.footer-grid a { color: #0099ff; transition: color 0.3s; }
-
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid #0099ff;
-  margin-top: clamp(20px, 4vw, 30px);
-  padding-top: clamp(15px, 3vw, 20px);
-  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-  opacity: 0.8;
-}
-
-.footer-bottom p { text-align: center; }
-.footer-bottom a { color: #0099ff; }
 
 
 /* ============================================================

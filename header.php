@@ -10,10 +10,10 @@
 
   <ul class="nav-links">
     <li><a href="/index.php">Accueil</a></li>
-    <li><a href="/Infogerance/Infogerance.php">Infogérance & Maintenance</a></li>
-    <li><a href="/Cybersecurite/Cybersecurite.php">Cybersécurité & Protection</a></li>
-    <li><a href="/Informatique/informatique.php">Infrastructure & Cloud</a></li>
-    <li><a href="/Telephonie/Telephonie.php">Téléphonie IP & Internet</a></li>
+    <li><a href="/index.php">Infogérance & Maintenance</a></li>
+    <li><a href="/index.php">Cybersécurité & Protection</a></li>
+    <li><a href="/index.php">Infrastructure & Cloud</a></li>
+    <li><a href="/index.php">Téléphonie IP & Internet</a></li>
     
   </ul>
 

@@ -673,76 +673,7 @@ img {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* ========================================
-   FOOTER
-   ======================================== */
-footer {
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-  color: white;
-  padding: 60px 40px 30px;
-  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
-}
 
-footer h3 {
-  color: lightskyblue;
-  margin-bottom: 18px;
-  font-size: 20px;
-  text-shadow: 0 2px 6px rgba(135, 206, 250, 0.3);
-}
-
-footer ul {
-  list-style: none;
-  padding: 0;
-}
-
-footer ul li {
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-footer a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-footer a:hover {
-  color: #0072BC;
-  text-shadow: 0 0 8px rgba(0, 114, 188, 0.6);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 35px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-grid a {
-  color: #0099ff;
-}
-
-.footer-grid div {
-  margin: auto;
-}
-
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid #0099ff;
-  margin-top: 40px;
-  padding-top: 25px;
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-.footer-bottom p {
-  text-align: center;
-}
-
-.footer-bottom a {
-  color: #0099ff;
-}
 
 /* ========================================
    RESPONSIVE

@@ -1,0 +1,180 @@
+/* ════════════════════════════
+   FOOTER
+════════════════════════════ */
+
+footer {
+  position: relative;
+  background-image: url('circuit.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: clamp(50px, 7vw, 80px) 5% clamp(20px, 3vw, 40px);
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 10, 30, 0.85);
+  pointer-events: none;
+  z-index: 0;
+}
+
+footer * {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+/* ── Layout ── */
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1px 1fr 1fr;
+  gap: clamp(24px, 4vw, 50px);
+  align-items: center;
+  padding-bottom: clamp(30px, 4vw, 50px);
+}
+
+/* ── Séparateur vertical ── */
+
+.footer-sep {
+  align-self: stretch;
+  min-height: 120px;
+  background: rgba(0, 153, 255, 0.2);
+}
+
+/* ── Brand ── */
+
+.footer-brand-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  background: linear-gradient(135deg, #fff 0%, #4ab3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 14px 0;
+}
+
+.footer-brand p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: rgba(180, 210, 255, 0.6);
+  max-width: 300px;
+  margin: 0 0 16px 0;
+}
+
+.footer-tagline {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue-light, #4ab3ff);
+  border: 1px solid rgba(0, 153, 255, 0.3);
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+/* ── Colonnes ── */
+
+.footer-col h3 {
+  margin: 0 0 18px 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: lightskyblue;
+}
+
+.footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-col ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: rgba(200, 220, 255, 0.75);
+}
+
+.footer-dot {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue, #0072bc);
+  box-shadow: 0 0 6px rgba(0, 114, 188, 0.8);
+}
+
+/* ── Contact ── */
+
+.footer-contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 13px;
+  font-size: 13px;
+  color: rgba(200, 220, 255, 0.75);
+}
+
+.footer-contact i {
+  flex-shrink: 0;
+  width: 14px;
+  margin-top: 2px;
+  color: var(--blue-light, #4ab3ff);
+}
+
+/* ── Liens ── */
+
+footer a {
+  color: rgba(200, 220, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--blue-light, #4ab3ff);
+}
+
+/* ── Barre du bas ── */
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 16px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 153, 255, 0.15);
+  font-size: 12px;
+  color: rgba(180, 210, 255, 0.4);
+  text-align: center;
+}
+
+.footer-bottom a {
+  color: rgba(180, 210, 255, 0.5);
+}
+
+.footer-bottom a:hover {
+  color: var(--blue-light, #4ab3ff);
+}
+
+.footer-sep-bar {
+  opacity: 0.3;
+}

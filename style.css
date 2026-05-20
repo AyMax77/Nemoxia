@@ -3,35 +3,25 @@
    TABLE DES MATIÈRES
    ============================================================
    1.  RESET & STYLES GLOBAUX
-   2.  NAVBAR
-       2a. Animations navbar
-       2b. Logo
-       2c. Liens de navigation
-       2d. Boutons CTA (téléphone + contact)
-       2e. Menu hamburger (mobile)
-   3.  HERO SECTION
-   4.  EXPERTISE SECTION
-       4a. En-tête
-       4b. Grille de cartes
-       4c. Icônes Font Awesome
-   5.  PARTNERS SECTION
-       5a. En-tête
-       5b. Grille de cartes partenaires
-       5c. Carte mise en avant (.featured)
-   6.  NEWSLETTER SECTION
-   7.  STATS SECTION (compteurs animés)
-   8.  FOOTER
-   9.  RESPONSIVE
-       9a. Tablette large  (max 968px)
-       9b. Mobile          (max 768px)
-       9c. Petit mobile    (max 480px)
-       9d. Grands écrans   (min 1400px)
-       9e. Écrans moyens   (769px – 1200px)
-       9f. Paysage mobile  (max-height 600px)
-       9g. Desktop moyen   (1190px – 1439px)
-       9h. Desktop large   (1440px – 1920px)
-       9i. Ultra wide      (min 1921px)
-       9j. 4K+             (min 3440px)
+   2.  ANIMATIONS GLOBALES
+   3.  NAVBAR
+   4.  HERO SECTION
+   5.  EXPERTISE SECTION
+   6.  PARTNERS SECTION
+   7.  NEWSLETTER SECTION
+   8.  STATS SECTION
+   9.  FOOTER
+   10. RESPONSIVE
+       10a. Mobile       (max 480px)
+       10b. Tablette     (481px – 768px)
+       10c. Tablette large (769px – 1023px)
+       10d. Desktop étroit (1024px – 1189px)
+       10e. Desktop moyen (1190px – 1439px)
+       10f. Desktop large (1440px – 1919px)
+       10g. Ultra-wide   (min 1920px)
+       10h. 4K+          (min 3440px)
+       10i. Paysage mobile (max-height 600px)
+       10j. Accessibilité animations
    ============================================================ */
 
 
@@ -52,28 +42,24 @@ html {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  /* Fond datacenter d'informatique.css */
   background:
-    linear-gradient(135deg, rgba(3, 7, 18, 0.88) 0%, rgba(13, 59, 102, 0.45) 100%),
+     linear-gradient(430deg, rgba(3, 7, 18, 0.88) 0%, rgba(13, 59, 102, 0.45) 100%),
     url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&q=80') center/cover no-repeat fixed;
   color: #333;
   line-height: 1.6;
-  font-size: clamp(14px, 1.2vw, 16px);
   overflow-x: hidden;
 }
 
-/* On supprime le pseudo-element ::before de body qui posait un overlay supplémentaire */
-body::before {
-  display: none;
-}
+body::before { display: none; }
 
 img {
   max-width: 100%;
   height: auto;
 }
 
+
 /* ============================================================
-   ANIMATIONS GLOBALES
+   2. ANIMATIONS GLOBALES
    ============================================================ */
 
 @keyframes pulse {
@@ -86,15 +72,6 @@ img {
   to   { opacity: 1; transform: translateY(0);    }
 }
 
-
-/* ============================================================
-   2. NAVBAR
-   ============================================================ */
-
-/* ============================================================
-   NAVBAR.CSS — Nemoxia
-   ============================================================ */
-
 @keyframes slideDown {
   from { transform: translateY(-100%); opacity: 0; }
   to   { transform: translateY(0);     opacity: 1; }
@@ -105,279 +82,24 @@ img {
   to   { opacity: 1; transform: scale(1);   }
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-
 @keyframes fadeInRight {
   from { opacity: 0; transform: translateX(30px); }
   to   { opacity: 1; transform: translateX(0);    }
 }
 
-
-/* ============================================================
-   CONTENEUR PRINCIPAL
-   ============================================================ */
-
-.nav-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 3% 12px 3%;
-  z-index: 1000;
-  transition: background 0.4s ease, box-shadow 0.3s ease;
-  animation: slideDown 0.6s ease-out;
+@keyframes heroDropIn {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0);     }
 }
 
-.nav-container.scrolled {
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 2px 20px rgba(0, 114, 188, 0.3);
-  backdrop-filter: blur(5px);
+@keyframes lineExpand {
+  to { transform: scaleX(1); }
 }
+
 
 
 /* ============================================================
-   LOGO
-   ============================================================ */
-
-.logo img {
-  width: clamp(180px, 15vw, 340px);
-  height: auto;
-  transition: width 0.3s ease;
-  animation: fadeInScale 0.8s ease-out 0.2s both;
-}
-
-
-/* ============================================================
-   LIENS DE NAVIGATION
-   ============================================================ */
-
-.nav-links {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: clamp(10px, 1.4vw, 24px);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li { animation: fadeInUp 0.6s ease-out both; }
-.nav-links li:nth-child(1) { animation-delay: 0.3s; }
-.nav-links li:nth-child(2) { animation-delay: 0.4s; }
-.nav-links li:nth-child(3) { animation-delay: 0.5s; }
-.nav-links li:nth-child(4) { animation-delay: 0.6s; }
-.nav-links li:nth-child(5) { animation-delay: 0.7s; }
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  padding-bottom: 5px;
-  position: relative;
-  transition: color 0.3s;
-  white-space: nowrap;
-}
-
-.nav-links a:hover,
-.nav-links a.active { color: #0072BC; }
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #0072BC;
-  transition: width 0.3s;
-}
-.nav-links a:hover::after,
-.nav-links a.active::after { width: 100%; }
-
-
-/* ============================================================
-   BOUTON CTA — "Contactez-nous"
-   ============================================================ */
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  margin-left: clamp(16px, 2vw, 32px);
-  animation: fadeInRight 0.8s ease-out 0.7s both;
-}
-
-.eligibilite-button {
-  background: #0099ff;
-  color: white;
-  border: none;
-  padding: 12px 28px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(0, 114, 188, 0.3);
-}
-
-.eligibilite-button:hover {
-  background: #0072BC;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px #0072BC;
-}
-
-
-/* ============================================================
-   HAMBURGER (mobile)
-   ============================================================ */
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 28px;
-  height: 22px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1001;
-}
-
-.hamburger span {
-  width: 100%;
-  height: 3px;
-  background: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.nav-container.open .hamburger span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.nav-container.open .hamburger span:nth-child(2) { opacity: 0; }
-.nav-container.open .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-
-/* ── Desktop (min 1024px) : hamburger masqué ── */
-@media (min-width: 1024px) {
-  .nav-links  { display: flex; }
-  .hamburger  { display: none; }
-}
-
-/* ── Desktop étroit (1024px – 1189px) ── */
-@media (min-width: 1024px) and (max-width: 1189px) {
-  .nav-container      { padding: 12px 2%; }
-  .nav-links          { gap: 10px; }
-  .nav-links a        { font-size: 11px; }
-  .eligibilite-button { font-size: 12px; padding: 10px 18px; }
-}
-
-/* ── Desktop moyen (1190px – 1439px) ── */
-@media (min-width: 1190px) and (max-width: 1439px) {
-  .nav-container      { padding: 12px 3% 12px 3%; }
-  .nav-links          { gap: 16px; }
-  .nav-links a        { font-size: 12px; }
-  .eligibilite-button { font-size: 13px; padding: 11px 24px; }
-}
-
-/* ── Desktop large (1440px – 1920px) ── */
-@media (min-width: 1440px) and (max-width: 1920px) {
-  .nav-container      { padding: 14px 3%; }
-  .nav-links          { gap: 20px; }
-  .nav-links a        { font-size: 22px; }
-  .eligibilite-button { font-size: 18px; padding: 12px 18px; }
-  .logo img           { width: clamp(220px, 16vw, 360px); }
-}
-
-/* ── Ultra wide (min 1921px) ── */
-@media (min-width: 1921px) {
-  .nav-container      { padding: 14px 4%; }
-  .nav-links          { gap: 28px; }
-  .nav-links a        { font-size: 15px; }
-  .eligibilite-button { font-size: 15px; padding: 13px 30px; }
-  .logo img           { width: clamp(260px, 18vw, 420px); }
-}
-
-/* ── 4K+ (min 3440px) ── */
-@media (min-width: 3440px) {
-  .nav-container      { max-width: 3440px; padding: 14px 5%; }
-  .nav-links a        { font-size: 24px; }
-  .eligibilite-button { font-size: 20px; padding: 15px 34px; }
-  .logo img           { width: 500px; }
-}
-
-/* ── Tablette (769px – 1023px) ── */
-@media (min-width: 769px) and (max-width: 1023px) {
-  .hamburger { display: flex; }
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 70px; left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0;
-    gap: 25px;
-  }
-  .nav-container.open .nav-links { display: flex; }
-  .eligibilite-button { font-size: 12px; padding: 10px 18px; }
-}
-
-/* ── Mobile (max 768px) ── */
-@media (max-width: 768px) {
-  .hamburger { display: flex; }
-  .logo img  { width: 170px; }
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 65px; left: 0;
-    width: 100%;
-    height: calc(100vh - 65px);
-    background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0;
-    gap: 20px;
-  }
-  .nav-container.open .nav-links { display: flex; }
-  .nav-actions        { flex-direction: row; }
-  .eligibilite-button { font-size: 12px; padding: 10px 16px; }
-}
-
-/* ── Petit mobile (max 480px) ── */
-@media (max-width: 480px) {
-  .nav-container { padding: 10px 3%; }
-  .logo img      { width: 110px; }
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 60px; left: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-    background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0;
-    gap: 20px;
-  }
-  .nav-container.open .nav-links { display: flex; }
-  .nav-actions        { margin: auto; }
-  .eligibilite-button { font-size: 11px; padding: 8px 14px; }
-}
-
-/* ============================================================
-   3. HERO SECTION
+   4. HERO SECTION
    ============================================================ */
 
 .hero-section {
@@ -387,11 +109,10 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 100px 5% 80px;
+  padding: clamp(80px, 10vh, 130px) 5% clamp(60px, 8vh, 100px);
   color: white;
 }
 
-/* Halo radial hero */
 .hero-section::before {
   content: '';
   position: absolute;
@@ -401,7 +122,6 @@ img {
   animation: pulse 4s ease-in-out infinite;
 }
 
-/* Liseret lumineux en bas */
 .hero-section::after {
   content: '';
   position: absolute;
@@ -413,9 +133,7 @@ img {
   box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
 }
 
-.hero-background {
-  display: none;
-}
+.hero-background { display: none; }
 
 .hero-content {
   position: relative;
@@ -428,32 +146,37 @@ img {
 }
 
 .hero-content h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.8rem, 4.5vw, 3.5rem);
   font-weight: 800;
-  line-height: 1.5;
-  margin-bottom: clamp(60px, 9vh, 100px);
+  line-height: 1.4;
+  margin-bottom: clamp(28px, 5vh, 60px);
   letter-spacing: 0.01em;
+  animation: heroDropIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: clamp(80px, 12vh, 130px);
-  line-height: 2.1;
+  font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+  color: rgb(255, 255, 255);
+  margin-bottom: clamp(32px, 6vh, 80px);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  font-weight: 800;
+  animation: heroDropIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1s both;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: clamp(100px, 16vh, 160px);
+  margin-bottom: clamp(40px, 7vh, 100px);
+  animation: heroDropIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
 }
 
 .btn-hero-primary {
   display: inline-block;
-  padding: 20px 52px;
-  font-size: 1.05rem;
+  padding: clamp(14px, 1.5vw, 20px) clamp(28px, 3.5vw, 52px);
+  font-size: clamp(0.88rem, 1.2vw, 1.05rem);
   font-weight: 600;
   text-decoration: none;
   border-radius: 50px;
@@ -464,12 +187,14 @@ img {
 .btn-hero-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+  background: #0072BC;
+  color: white;
 }
 
 .btn-hero-secondary {
   display: inline-block;
-  padding: 20px 52px;
-  font-size: 1.05rem;
+  padding: clamp(14px, 1.5vw, 20px) clamp(28px, 3.5vw, 52px);
+  font-size: clamp(0.88rem, 1.2vw, 1.05rem);
   font-weight: 600;
   text-decoration: none;
   border-radius: 50px;
@@ -481,7 +206,6 @@ img {
   overflow: hidden;
 }
 
-/* Texte par défaut : le numéro */
 .btn-hero-secondary::before {
   content: attr(data-hover);
   position: absolute;
@@ -496,92 +220,43 @@ img {
   transform: translateY(100%);
   transition: all 0.3s ease;
 }
-
-.btn-hero-secondary:hover {
-  transform: translateY(-2px);
-  color: transparent;
-}
-
-.btn-hero-secondary:hover::before {
-  opacity: 1;
-  transform: translateY(0);
-}
+.btn-hero-secondary:hover { transform: translateY(-2px); color: transparent; }
+.btn-hero-secondary:hover::before { opacity: 1; transform: translateY(0); }
 
 .hero-trust-badges {
   display: flex;
-  gap: 52px;
+  gap: clamp(16px, 3vw, 52px);
   justify-content: center;
   flex-wrap: wrap;
+  animation: heroDropIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.4s both;
 }
 
 .trust-badge {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
-  padding: 14px 26px;
+  gap: 12px;
+  font-size: clamp(0.8rem, 1.3vw, 1rem);
+  padding: clamp(10px, 1.2vw, 14px) clamp(16px, 2vw, 26px);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 50px;
 }
 
-.trust-icon {
-  color: #0099ff;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
+.trust-icon { color: #0099ff; font-size: 1.2rem; font-weight: bold; }
 .trust-text { color: rgba(255, 255, 255, 0.9); }
 
 
 /* ============================================================
-   HERO — ANIMATION CHUTE DOUCE (translateY depuis le haut)
-   À coller dans style.css après la section 3. HERO SECTION
-   Aucune modification HTML nécessaire
-   ============================================================ */
-
-@keyframes heroDropIn {
-  from {
-    opacity: 0;
-    transform: translateY(-24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-content h1 {
-  animation: heroDropIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both;
-}
-
-.hero-subtitle {
-  animation: heroDropIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1s both;
-}
-
-.hero-buttons {
-  animation: heroDropIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.2s both;
-}
-
-.hero-trust-badges {
-  animation: heroDropIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1.4s both;
-}
-
-
-/* ============================================================
-   4. EXPERTISE SECTION
+   5. EXPERTISE SECTION
    ============================================================ */
 
 .expertise-section {
-  min-height: 92vh;
-  padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(4rem, 9vw, 7rem);
+  /* PAS de min-height — le contenu dicte la hauteur */
+  padding: clamp(50px, 7vh, 90px) clamp(20px, 5%, 60px);
   color: white;
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
-/* Halo radial expertise */
 .expertise-section::before {
   content: '';
   position: absolute;
@@ -590,7 +265,6 @@ img {
   pointer-events: none;
 }
 
-/* Liseret lumineux en bas */
 .expertise-section::after {
   content: '';
   position: absolute;
@@ -605,37 +279,35 @@ img {
 .expertise-container {
   max-width: 1400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-/* ── 4a. En-tête ── */
-
 .expertise-header {
-  margin-bottom: clamp(3rem, 6vw, 5rem);
+  margin-bottom: clamp(2rem, 4vh, 4rem);
   text-align: center;
 }
 
 .expertise-header h2 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(0.75rem, 1.5vh, 1.5rem);
   line-height: 1.4;
   color: white;
 }
 
 .expertise-header p {
-  font-size: clamp(1rem, 2vw, 1.125rem);
-  line-height: 2;
+  font-size: clamp(0.88rem, 1.6vw, 1.1rem);
+  line-height: 1.85;
   color: rgba(220, 235, 255, 0.9);
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* ── 4b. Grille de cartes ── */
-
 .expertise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(1.5rem, 3vw, 2rem);
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 2rem);
   align-items: stretch;
 }
 
@@ -664,10 +336,10 @@ img {
 .expertise-card:hover .expertise-card-accent { height: 6px; }
 
 .expertise-card-inner {
-  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  padding: clamp(1.25rem, 2.5vw, 2.5rem);
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: clamp(0.75rem, 1.2vh, 1.4rem);
   flex: 1;
 }
 
@@ -679,8 +351,8 @@ img {
 
 .expertise-icon-wrap {
   flex-shrink: 0;
-  width: 54px;
-  height: 54px;
+  width: clamp(44px, 4vw, 54px);
+  height: clamp(44px, 4vw, 54px);
   background: linear-gradient(135deg, rgba(0, 114, 188, 0.4), rgba(0, 208, 255, 0.2));
   border: 1px solid rgba(0, 153, 255, 0.3);
   border-radius: 14px;
@@ -695,17 +367,18 @@ img {
 }
 
 .expertise-icon-wrap i {
-  font-size: 22px;
-  padding: 0 !important;
+  font-size: clamp(18px, 1.8vw, 22px);
   color: #00d0ff;
+  padding: 0 !important;
   border-radius: 0;
 }
 
 .expertise-card-header h3 {
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-size: clamp(0.88rem, 1.4vw, 1.2rem);
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 4px;
+  color: white;
 }
 
 .expertise-tag {
@@ -713,7 +386,7 @@ img {
   background: rgba(0, 114, 188, 0.25);
   border: 1px solid rgba(0, 153, 255, 0.3);
   color: #7dd3fc;
-  font-size: 0.72rem;
+  font-size: clamp(0.6rem, 0.7vw, 0.72rem);
   font-weight: 600;
   letter-spacing: 0.05em;
   padding: 2px 10px;
@@ -722,8 +395,8 @@ img {
 }
 
 .expertise-desc {
-  font-size: clamp(0.875rem, 1.4vw, 0.95rem);
-  line-height: 1.85;
+  font-size: clamp(0.78rem, 1.1vw, 0.95rem);
+  line-height: 1.75;
   color: rgba(220, 235, 255, 0.85);
   margin: 0;
 }
@@ -734,7 +407,7 @@ img {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: clamp(0.4rem, 0.8vh, 0.8rem);
   flex: 1;
 }
 
@@ -742,7 +415,7 @@ img {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: clamp(0.82rem, 1.3vw, 0.9rem);
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
   color: rgba(210, 230, 255, 0.9);
   line-height: 1.5;
 }
@@ -750,7 +423,7 @@ img {
 .expertise-features li i {
   font-size: 11px;
   color: #0099ff;
-  padding: 0;
+  padding: 0 !important;
   border-radius: 0;
   flex-shrink: 0;
 }
@@ -760,7 +433,7 @@ img {
   align-items: center;
   gap: 8px;
   margin-top: 0.5rem;
-  font-size: 0.875rem;
+  font-size: clamp(0.78rem, 0.9vw, 0.875rem);
   font-weight: 600;
   color: #0099ff;
   text-decoration: none;
@@ -768,15 +441,11 @@ img {
   padding-top: 0.75rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-.expertise-cta:hover {
-  color: #00d0ff;
-  gap: 12px;
-}
-.expertise-cta i { font-size: 12px; padding: 0; transition: transform 0.3s ease; }
+.expertise-cta:hover { color: #00d0ff; gap: 12px; }
+.expertise-cta i { font-size: 12px; padding: 0 !important; transition: transform 0.3s ease; }
 .expertise-cta:hover i { transform: translateX(4px); }
 
-/* ── Carte new-badge (rouge) ── */
-
+/* Badge "POPULAIRE" rouge */
 .expertise-card.new-badge {
   position: relative;
   overflow: hidden;
@@ -806,24 +475,18 @@ img {
   background: linear-gradient(135deg, rgba(220, 38, 38, 0.6), rgba(255, 80, 80, 0.3));
   border-color: rgba(220, 38, 38, 0.6);
 }
-
 .expertise-card.new-badge .expertise-icon-wrap i { color: #ff4444; }
-
 .expertise-card.new-badge .expertise-tag {
   background: rgba(220, 38, 38, 0.25);
   border-color: rgba(220, 38, 38, 0.4);
   color: #fca5a5;
 }
-
 .expertise-card.new-badge .expertise-features li i { color: #ef4444; }
-
 .expertise-card.new-badge .expertise-cta { color: #ef4444; }
 .expertise-card.new-badge .expertise-cta:hover { color: #ff6666; }
-
 .expertise-card.new-badge .expertise-card-accent {
   background: linear-gradient(90deg, #dc2626, #ff6b6b);
 }
-
 .expertise-card.new-badge:hover {
   box-shadow: 0 24px 48px rgba(220, 38, 38, 0.25);
   border-color: rgba(220, 38, 38, 0.4);
@@ -831,21 +494,25 @@ img {
 
 
 /* ============================================================
-   5. PARTNERS SECTION
+   6. PARTNERS SECTION
    ============================================================ */
 
+/* ============================================================
+   PARTNERS SECTION
+   ============================================================ */
+ 
 .partners-section {
-  min-height: 92vh;
-  padding: clamp(50px, 6vw, 80px) 0 clamp(60px, 8vw, 100px);
+  padding: clamp(40px, 6vh, 80px) 0 clamp(50px, 7vh, 90px);
   text-align: center;
   color: white;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+ 
+  /* Fond sombre de base — adapte cette couleur à ta page */
+  background-color: #050a14;
 }
-
+ 
+/* Lueur bleue centrale */
 .partners-section::before {
   content: '';
   position: absolute;
@@ -853,7 +520,8 @@ img {
   background: radial-gradient(circle at 50% 50%, rgba(0, 114, 188, 0.12) 0%, transparent 60%);
   pointer-events: none;
 }
-
+ 
+/* Ligne bleue lumineuse en bas */
 .partners-section::after {
   content: '';
   position: absolute;
@@ -864,47 +532,51 @@ img {
   background: linear-gradient(to right, transparent, #0072BC, transparent);
   box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
 }
-
+ 
+/* En-tête */
 .partners-header {
-  margin-bottom: clamp(30px, 4vw, 50px);
+  margin-bottom: clamp(20px, 3vh, 40px);
   padding: 0 5%;
   position: relative;
   z-index: 1;
 }
-
+ 
 .partners-header h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.5rem, 3vw, 1.5rem);
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   background: linear-gradient(135deg, #fff 0%, #4a9eff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
+ 
 .partners-header p {
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-size: clamp(0.88rem, 1.5vw, 1.05rem);
   color: rgba(220, 235, 255, 0.8);
 }
-
+ 
+/* Wrapper marquee */
 .marquee-wrapper {
   position: relative;
   z-index: 1;
-  padding: 20px 0;
+  padding: 10px 0;
 }
+ 
+/* Ligne de logos */
 .marquee-track {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  animation: none;
 }
-
+ 
+/* Cellule logo */
 .marquee-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 28px 0;
+  padding: clamp(18px, 3vh, 28px) 0;
   flex: 1;
   background: rgba(5, 10, 20, 0.75);
   border-top: 1px solid rgba(0, 114, 188, 0.25);
@@ -912,18 +584,20 @@ img {
   border-right: 1px solid rgba(0, 114, 188, 0.1);
   transition: background 0.3s ease, border-color 0.3s ease;
 }
-
+ 
 .marquee-item:last-child {
   border-right: none;
 }
-
+ 
 .marquee-item:hover {
   background: rgba(5, 10, 20, 0.9);
   border-top-color: rgba(0, 114, 188, 0.6);
   border-bottom-color: rgba(0, 114, 188, 0.6);
 }
+ 
+/* Logo image */
 .partner-logo {
-  height: 80px;
+  height: clamp(50px, 7vw, 80px);
   width: auto;
   max-width: 200px;
   object-fit: contain;
@@ -931,7 +605,7 @@ img {
   filter: brightness(1.1);
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
-
+ 
 .marquee-item:hover .partner-logo {
   opacity: 1;
   filter: brightness(1.2) drop-shadow(0 0 6px rgba(0, 153, 255, 0.4));
@@ -939,21 +613,17 @@ img {
 
 
 /* ============================================================
-   6. NEWSLETTER SECTION
+   7. NEWSLETTER SECTION
    ============================================================ */
 
 .newsletter-section {
-  min-height: 92vh;
-  padding: clamp(60px, 8vw, 100px) 5% clamp(70px, 9vw, 110px);
+  /* PAS de min-height */
+  padding: clamp(50px, 7vh, 100px) 5% clamp(60px, 8vh, 110px);
   text-align: center;
   color: white;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-/* Halo radial newsletter */
 .newsletter-section::before {
   content: '';
   position: absolute;
@@ -962,7 +632,6 @@ img {
   pointer-events: none;
 }
 
-/* Liseret lumineux en bas */
 .newsletter-section::after {
   content: '';
   position: absolute;
@@ -981,26 +650,58 @@ img {
   z-index: 1;
 }
 
-.newsletter-icon { margin-bottom: 28px; }
+.newsletter-icon { margin-bottom: clamp(16px, 2.5vh, 28px); }
 .newsletter-icon i {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
   color: #0099ff;
-  padding: 0;
+  padding: 0 !important;
   border-radius: 0;
 }
 
 .newsletter-container h2 {
-  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-size: clamp(1.3rem, 2.8vw, 2.2rem);
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: clamp(12px, 2vh, 20px);
   line-height: 1.4;
+  color: white;
 }
 
-.newsletter-container p {
-  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+.newsletter-container > p {
+  font-size: clamp(0.88rem, 1.4vw, 1.05rem);
   color: rgba(220, 235, 255, 0.8);
-  margin-bottom: 48px;
-  line-height: 1.85;
+  margin-bottom: clamp(24px, 4vh, 48px);
+  line-height: 1.8;
+}
+
+.newsletter-topics {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto clamp(20px, 3vh, 36px);
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.newsletter-topics li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+  color: rgba(210, 230, 255, 0.85);
+  line-height: 1.5;
+}
+
+.newsletter-topics li i {
+  font-size: 13px;
+  color: #0099ff;
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+  padding: 0 !important;
+  border-radius: 0;
 }
 
 .newsletter-form-wrap {
@@ -1048,11 +749,8 @@ img {
   white-space: nowrap;
   font-family: inherit;
 }
-.newsletter-btn:hover {
-  background: linear-gradient(90deg, #005fa0, #007acc);
-  gap: 12px;
-}
-.newsletter-btn i { font-size: 13px; padding: 0; border-radius: 0; }
+.newsletter-btn:hover { background: linear-gradient(90deg, #005fa0, #007acc); gap: 12px; }
+.newsletter-btn i { font-size: 13px; padding: 0 !important; border-radius: 0; }
 
 .newsletter-confirm {
   font-size: 1.05rem;
@@ -1061,6 +759,30 @@ img {
   padding: 14px 0;
   animation: fadeInUp 0.5s ease;
 }
+
+.newsletter-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto 14px;
+  max-width: 500px;
+}
+
+.newsletter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(0, 114, 188, 0.12);
+  border: 1px solid rgba(0, 153, 255, 0.2);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  color: rgba(180, 215, 255, 0.8);
+  white-space: nowrap;
+}
+
+.newsletter-badge i { font-size: 11px; color: #0099ff; padding: 0 !important; border-radius: 0; }
 
 .newsletter-legal {
   font-size: 0.78rem !important;
@@ -1075,90 +797,21 @@ img {
 }
 .newsletter-legal a:hover { color: #7dd3fc; }
 
-/* ── Newsletter : liste des thèmes ── */
- 
-.newsletter-topics {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto 36px;
-  max-width: 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: center;
-  align-items: center;
-}
- 
-.newsletter-topics li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: clamp(0.85rem, 1.4vw, 0.95rem);
-  color: rgba(210, 230, 255, 0.85);
-  line-height: 1.5;
-}
- 
-.newsletter-topics li i {
-  font-size: 13px;
-  color: #0099ff;
-  flex-shrink: 0;
-  width: 16px;
-  text-align: center;
-  /* reset global i */
-  padding: 0 !important;
-  border-radius: 0;
-}
- 
- 
-/* ── Newsletter : badges de réassurance ── */
- 
-.newsletter-badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px auto 14px;
-  max-width: 500px;
-}
- 
-.newsletter-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  background: rgba(0, 114, 188, 0.12);
-  border: 1px solid rgba(0, 153, 255, 0.2);
-  border-radius: 50px;
-  font-size: 0.78rem;
-  color: rgba(180, 215, 255, 0.8);
-  white-space: nowrap;
-}
- 
-.newsletter-badge i {
-  font-size: 11px;
-  color: #0099ff;
-  /* reset global i */
-  padding: 0 !important;
-  border-radius: 0;
-}
-
 
 /* ============================================================
-   7. STATS SECTION
+   8. STATS SECTION
    ============================================================ */
 
+/* Import police — remplace PT Serif par DM Serif Display */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
 .stats-section {
-  min-height: 92vh;
-  padding: clamp(70px, 10vw, 120px) 5% clamp(80px, 11vw, 130px);
+  padding: clamp(50px, 7vh, 100px) 5% clamp(60px, 8vh, 110px);
   color: white;
   position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-/* Halo radial stats */
 .stats-section::before {
   content: '';
   position: absolute;
@@ -1167,7 +820,6 @@ img {
   pointer-events: none;
 }
 
-/* Liseret lumineux en bas */
 .stats-section::after {
   content: '';
   position: absolute;
@@ -1181,7 +833,7 @@ img {
 
 .stats-header {
   text-align: center;
-  margin-bottom: clamp(3rem, 6vw, 5rem);
+  margin-bottom: clamp(2rem, 5vh, 4.5rem);
   position: relative;
   z-index: 1;
   max-width: 700px;
@@ -1191,23 +843,25 @@ img {
 }
 
 .stats-header h2 {
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.3rem, 3vw, 2.4rem);
   font-weight: 700;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: clamp(12px, 2vh, 20px);
   line-height: 1.4;
+  /* Nouvelle police pour le titre */
+  font-family: 'DM Serif Display', serif;
 }
 
 .stats-header p {
-  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-size: clamp(0.88rem, 1.5vw, 1.05rem);
   color: rgba(220, 235, 255, 0.8);
-  line-height: 1.85;
+  line-height: 1.8;
   margin: 0;
 }
 
 .stats-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 900px; /* réduit car 3 colonnes au lieu de 4 */
+  margin: 0 auto clamp(2rem, 5vh, 4rem);
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -1221,7 +875,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(1.5rem, 4vw, 4rem) clamp(1rem, 2.5vw, 3rem);
   position: relative;
   text-align: center;
   transition: transform 0.4s ease;
@@ -1240,15 +894,15 @@ img {
 }
 
 .stat-icon {
-  margin-bottom: 24px;
+  margin-bottom: clamp(12px, 2vh, 24px);
   opacity: 0.9;
   transition: opacity 0.3s ease;
 }
 
 .stat-icon i {
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   color: #0099ff;
-  padding: 0;
+  padding: 0 !important;
   border-radius: 0;
 }
 
@@ -1259,27 +913,26 @@ img {
   align-items: flex-start;
   justify-content: center;
   line-height: 1;
-  margin-bottom: 14px;
+  margin-bottom: clamp(8px, 1.5vh, 14px);
 }
 
 .stat-count {
-  font-size: clamp(4rem, 9vw, 7rem);
+  font-size: clamp(3rem, 7vw, 7rem);
   font-weight: 900;
   line-height: 0.9;
   background: linear-gradient(160deg, #ffffff 30%, #7dd3fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-family: 'PT Serif', serif;
+  /* Nouvelle police pour les chiffres */
+  font-family: 'DM Serif Display', serif;
   letter-spacing: -0.03em;
   transition: filter 0.3s ease;
 }
-.stat-card:hover .stat-count {
-  filter: drop-shadow(0 0 20px rgba(0, 180, 255, 0.4));
-}
+.stat-card:hover .stat-count { filter: drop-shadow(0 0 20px rgba(0, 180, 255, 0.4)); }
 
 .stat-unit {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   font-weight: 700;
   color: #0099ff;
   margin-top: 8px;
@@ -1287,7 +940,7 @@ img {
 }
 
 .stat-label {
-  font-size: clamp(0.78rem, 1.2vw, 0.92rem);
+  font-size: clamp(0.7rem, 1vw, 0.92rem);
   color: rgba(180, 210, 255, 0.65);
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -1304,417 +957,99 @@ img {
   opacity: 0.5;
   transition: width 0.4s ease, opacity 0.4s ease;
 }
-.stat-card:hover .stat-line {
-  width: 48px;
-  opacity: 1;
-}
+.stat-card:hover .stat-line { width: 48px; opacity: 1; }
 
-/* ── Stats : description sous le label ── */
- 
-.stat-desc {
-  font-size: clamp(0.78rem, 1.1vw, 0.88rem);
-  color: rgba(170, 200, 240, 0.6);
-  line-height: 1.6;
-  margin: 8px 0 0;
-  max-width: 200px;
-  text-align: center;
-}
- 
- 
-/* ── Stats : CTA bas de section ── */
- 
-.stats-cta-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-  z-index: 1;
-}
- 
-.stats-cta-text {
-  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
-  color: rgba(220, 235, 255, 0.75);
-  margin: 0;
-}
- 
-.stats-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 36px;
-  background: linear-gradient(90deg, #0072BC, #0099ff);
-  color: white;
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 114, 188, 0.35);
-}
- 
-.stats-cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(0, 114, 188, 0.5);
-  gap: 14px;
-}
- 
-.stats-cta-btn i {
-  font-size: 13px;
-  transition: transform 0.3s ease;
-  /* reset global i */
-  padding: 0 !important;
-  border-radius: 0;
-}
- 
-.stats-cta-btn:hover i {
-  transform: translateX(4px);
-}
 
 
 /* ============================================================
-   8. FOOTER
+   10. RESPONSIVE
    ============================================================ */
 
-footer {
-  background: linear-gradient(180deg, #1a3a5c 0%, #0d2440 100%);
-  color: white;
-  padding: clamp(30px, 5vw, 50px) 5%;
-  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.3);
-  position: relative;
-  isolation: isolate;
-}
-
-footer::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(1, 15, 46, 0.521);
-  pointer-events: none;
-  z-index: 0;
-}
-
-footer > * {
-  position: relative;
-  z-index: 1;
-}
-
-footer h3 {
-  color: lightskyblue;
-  margin-bottom: 15px;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  text-shadow: 0 2px 8px rgba(135, 206, 250, 0.3);
-}
-
-footer ul { list-style: none; padding: 0; }
-footer ul li { margin-bottom: 8px; font-size: clamp(0.85rem, 1.2vw, 0.95rem); }
-
-footer a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  transition: all 0.3s;
-}
-footer a:hover {
-  color: #0072BC;
-  text-shadow: 0 0 8px rgba(0, 114, 188, 0.6);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: clamp(20px, 4vw, 30px);
-  max-width: 1400px;
-  margin: 0 auto;
-  align-items: center;
-}
-
-.footer-grid a { color: #0099ff; transition: color 0.3s; }
-.footer-grid div { margin: auto; }
-
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid #0099ff;
-  margin-top: clamp(20px, 4vw, 30px);
-  padding-top: clamp(15px, 3vw, 20px);
-  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-  opacity: 0.8;
-}
-.footer-bottom p { text-align: center; }
-.footer-bottom a { color: #0099ff; }
-
-
-/* ============================================================
-   RESPONSIVE COMPLET — LARGEUR + HAUTEUR
-   ============================================================
-   Organisation chronologique par largeur croissante :
-
-   LARGEUR (max → min)
-   · 9a.  max-width: 968px        Tablette large
-   · 9b.  max-width: 768px        Mobile portrait
-   · 9c.  max-width: 480px        Petit mobile
-   · 9e.  769px – 1200px          Écrans moyens
-   · 9f.  landscape + max-h 600px Paysage mobile
-   · —    769px – 1023px          Tablette nav
-   · —    1024px – 1140px         Desktop étroit
-   · —    min-width: 1024px       Desktop nav
-   · 9g.  1190px – 1439px         Desktop moyen
-   · 9h.  1440px – 1919px         Desktop large
-   · 9i.  min-width: 1920px       Ultra wide
-   · 9j.  min-width: 3440px       4K+
-
-   HAUTEUR (sections dédiées, par breakpoint)
-   · H-mob   max-height: 700px   Mobile court (portrait serré)
-   · H-tab   min-height: 1000px  Grands appareils (tablettes hautes,
-                                  fenêtres larges sur 34 pouces)
-   · H-desk  min-height: 1200px  Desktop haut (ex : 34 pouces plein)
-   · H-uhd   min-height: 1440px  Ultra-haut (27 pouces 4K, 34 pouces)
-   ============================================================ */
-
-
-/* ============================================================
-   9a. TABLETTE LARGE — max-width: 968px
-   Cible : iPad paysage, petits laptops, tablettes Android
-   ============================================================ */
-@media (max-width: 968px) {
-
-  /* — Expertise : passage à 2 colonnes — */
-  .expertise-section {
-    padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2.5rem);
-  }
-  .expertise-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(1.25rem, 2.5vw, 2rem);
-  }
-  .expertise-header h2 {
-    font-size: clamp(1.5rem, 3.5vw, 2rem);
-    margin-bottom: 1.25rem;
-  }
-  .expertise-header p {
-    font-size: clamp(0.95rem, 1.8vw, 1.05rem);
-  }
-  .expertise-card {
-    padding: clamp(1.25rem, 2.5vw, 2rem);
-  }
-
-  /* — Icônes globales — */
-  i {
-    font-size: clamp(36px, 7vw, 48px);
-    padding: clamp(7px, 1.2vw, 9px);
-  }
-}
-
-
-/* ============================================================
-   9b. MOBILE — max-width: 768px
-   Cible : smartphones en portrait, tablettes étroites
-   ============================================================ */
-@media (max-width: 768px) {
-
- 
-
-  /* ── Hero : hiérarchie titre → sous-titre → boutons → badges ── */
-  .hero-content h1 {
-    font-size: 1.8rem;
-    margin-bottom: 28px;
-    line-height: 1.4;
-  }
-  .hero-subtitle {
-    font-size: 0.95rem;
-    line-height: 1.9;
-    margin-bottom: 40px;
-  }
-  .hero-buttons {
-    gap: 16px;
-    margin-bottom: 52px;
-  }
-  .hero-trust-badges { gap: 20px; }
-  .trust-badge       { padding: 10px 16px; font-size: 0.85rem; }
-
-  /* ── Expertise : 1 colonne pleine largeur ── */
-  .expertise-section {
-    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 1.5rem);
-  }
-  .expertise-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-  .expertise-header   { margin-bottom: clamp(2rem, 4vw, 2.5rem); }
-  .expertise-header h2 {
-    font-size: clamp(1.35rem, 3vw, 1.75rem);
-    margin-bottom: 1rem;
-  }
-  .expertise-header p {
-    font-size: clamp(0.9rem, 1.6vw, 1rem);
-    line-height: 1.6;
-    padding: 0 0.5rem;
-  }
-
-  /* ── Partners ── */
-  .marquee-item { padding: 12px 24px; }
-
-  /* ── Newsletter ── */
-  .newsletter-form-wrap {
-    flex-direction: column;
-    border-radius: 14px;
-    overflow: hidden;
-  }
-  .newsletter-input { border-radius: 0; padding: 14px 20px; }
-  .newsletter-btn   { border-radius: 0; justify-content: center; padding: 14px 20px; }
-
-  /* ── Stats ── */
-  .stats-container { flex-wrap: wrap; }
-  .stat-card {
-    flex: 0 0 50%;
-    min-width: 50%;
-  }
-  .stat-card:not(:last-child)::after { display: none; }
-  .stat-count { font-size: clamp(3rem, 10vw, 4.5rem); }
-
-
-  .newsletter-topics  { max-width: 100%; padding: 0 0.5rem; }
-  .newsletter-badges  { gap: 8px; }
-  .newsletter-badge   { font-size: 0.74rem; padding: 5px 11px; }
-  .stat-desc          { font-size: 0.78rem; max-width: 160px; }
-  .stats-cta-wrap     { margin-top: 2.5rem; }
-  .stats-cta-btn      { padding: 12px 28px; font-size: 0.9rem; }
-}
-
-
-/* ============================================================
-   9c. PETIT MOBILE — max-width: 480px
-   Cible : iPhone SE, petits Android (< 5 pouces)
-   ============================================================ */
+/* ── 10a. Mobile (max 480px) ── */
 @media (max-width: 480px) {
+  .hamburger { display: flex; }
+  .logo img  { width: 110px; }
 
-  
-
-  /* ── Hero : empilement vertical des boutons ── */
-  .hero-content h1 {
-    font-size: 1.6rem;
-    margin-bottom: 24px;
-    line-height: 1.35;
-  }
-  .hero-subtitle {
-    font-size: 0.9rem;
-    margin-bottom: 36px;
-  }
-  .hero-buttons {
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 60px; left: 0;
+    width: 100%; height: calc(100vh - 60px);
+    background: linear-gradient(to bottom, #030712, #0d3b66);
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 48px;
+    padding: 30px 0;
+    gap: 20px;
   }
-  .hero-trust-badges { gap: 14px; }
-  .trust-badge       { padding: 8px 14px; font-size: 0.8rem; }
+  .nav-container.open .nav-links { display: flex; }
+  .nav-actions { margin: auto; }
+  .eligibilite-button { font-size: 11px; padding: 8px 14px; }
 
-  /* ── Expertise : cartes compactes mais lisibles ── */
-  .expertise-section    { padding: 1.75rem 0.875rem; }
-  .expertise-header     { margin-bottom: 1.75rem; }
-  .expertise-header h2  { font-size: 1.25rem; margin-bottom: 0.875rem; }
-  .expertise-header p   { font-size: 0.875rem; padding: 0 0.25rem; }
-  .expertise-grid       { gap: 1rem; }
-  .expertise-card-inner { padding: 1.25rem 1rem; }
-  .expertise-card h3    { font-size: 1rem; }
-  .expertise-features li { font-size: 0.8rem; }
+  .hero-content h1 { font-size: 1.5rem; margin-bottom: 20px; }
+  .hero-subtitle   { font-size: 0.88rem; margin-bottom: 28px; }
+  .hero-buttons    { flex-direction: column; align-items: center; gap: 12px; margin-bottom: 36px; }
+  .btn-hero-primary,
+  .btn-hero-secondary { width: 100%; max-width: 280px; text-align: center; padding: 14px 24px; }
+  .hero-trust-badges { gap: 12px; }
+  .trust-badge       { padding: 8px 12px; font-size: 0.78rem; }
 
-  /* ── Stats ── */
+  .expertise-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .expertise-section { padding: 40px 4% 50px; }
+  .expertise-header h2 { font-size: 1.25rem; }
+  .expertise-card-inner { padding: 1.1rem; }
+
+  .marquee-track { flex-wrap: wrap; }
+  .marquee-item  { flex: 1 1 50%; min-width: 50%; padding: 14px 0; border-right: none; }
+
+  .newsletter-form-wrap { flex-direction: column; border-radius: 14px; }
+  .newsletter-input { border-radius: 0; padding: 14px 20px; }
+  .newsletter-btn   { border-radius: 0; justify-content: center; }
+  .newsletter-badges { flex-direction: column; align-items: center; }
+
   .stats-container { flex-wrap: wrap; }
-  .stat-card       { flex: 0 0 50%; min-width: 50%; padding: 1.5rem 1rem; }
-  .stat-count      { font-size: 3rem; }
+  .stat-card { flex: 0 0 50%; min-width: 50%; padding: 1.5rem 0.75rem; }
+  .stat-card:not(:last-child)::after { display: none; }
+  .stat-count { font-size: 2.8rem; }
+  .stat-desc  { font-size: 0.72rem; max-width: 130px; }
 
-  .newsletter-topics li { font-size: 0.82rem; }
-  .newsletter-badges    { flex-direction: column; align-items: center; }
-  .stat-desc            { font-size: 0.75rem; max-width: 140px; }
-  .stats-cta-text       { font-size: 0.9rem; text-align: center; padding: 0 1rem; }
-  .stats-cta-btn        { padding: 12px 24px; font-size: 0.85rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; text-align: center; }
 }
 
+/* ── 10b. Tablette (481px – 768px) ── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hamburger { display: flex; }
+  .logo img  { width: 160px; }
 
-/* ============================================================
-   9e. ÉCRANS MOYENS — 769px à 1200px
-   Cible : tablettes paysage, petits desktops
-   ============================================================ */
-@media (min-width: 769px) and (max-width: 1200px) {
-
-  /* — Expertise : 2 colonnes équilibrées — */
-  .expertise-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 65px; left: 0;
+    width: 100%; height: calc(100vh - 65px);
+    background: linear-gradient(to bottom, #030712, #0d3b66);
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    gap: 20px;
   }
+  .nav-container.open .nav-links { display: flex; }
+  .eligibilite-button { font-size: 12px; padding: 10px 16px; }
+
+  .hero-content h1 { font-size: 1.75rem; margin-bottom: 24px; }
+  .hero-subtitle   { font-size: 0.9rem; margin-bottom: 32px; }
+  .hero-buttons    { margin-bottom: 44px; gap: 14px; }
+  .hero-trust-badges { gap: 16px; }
+
+  .expertise-grid { grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+  .expertise-section { padding: 50px 4% 60px; }
+
+  .stats-container { flex-wrap: wrap; }
+  .stat-card { flex: 0 0 50%; min-width: 50%; }
+  .stat-card:not(:last-child)::after { display: none; }
+
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
 
-
-/* ============================================================
-   9f. PAYSAGE MOBILE — max-height: 600px + orientation landscape
-   Cible : smartphones en mode paysage (hauteur très réduite)
-   ============================================================ */
-@media (max-height: 600px) and (orientation: landscape) {
-
-  /* — Hero : compressé pour tenir en hauteur — */
-  .hero-section         { min-height: auto; padding: 70px 5% 40px; }
-  .hero-content h1      { font-size: 1.5rem; margin-bottom: 16px; }
-  .hero-subtitle        { font-size: 0.85rem; margin-bottom: 20px; line-height: 1.6; }
-  .hero-buttons         { margin-bottom: 24px; gap: 12px; }
-  .hero-trust-badges    { gap: 12px; }
-  .trust-badge          { padding: 6px 12px; font-size: 0.78rem; }
-
-  /* — Expertise : grille adaptative pour écrans courts — */
-  .expertise-section    { padding: 2rem 1.5rem; }
-  .expertise-header     { margin-bottom: 1.5rem; }
-  .expertise-header h2  { font-size: 1.5rem; margin-bottom: 0.75rem; }
-  .expertise-header p   { font-size: 0.9rem; }
-  .expertise-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-  .expertise-card { padding: 1rem; }
-  i               { font-size: 32px; padding: 5px; }
-}
-
-
-/* ============================================================
-   HAUTEUR — H-mob : max-height 700px (mobile portrait court)
-   Cible : iPhone 8 (667px), Galaxy S (740px) en portrait
-   Compense les marges trop grandes sur écrans peu hauts
-   ============================================================ */
-@media (max-width: 768px) and (max-height: 700px) {
-
-  /* — Hero : resserrement vertical sans casser la lecture — */
-  .hero-section         { padding: 80px 5% 50px; }
-  .hero-content h1      { margin-bottom: 18px; }
-  .hero-subtitle        { margin-bottom: 26px; }
-  .hero-buttons         { margin-bottom: 36px; }
-}
-
-
-/* ============================================================
-   HAUTEUR — H-tab : min-height 1000px (grands appareils)
-   Cible : iPad Pro portrait (1366px), fenêtre découpée sur 34"
-   Ex : 1600px largeur / 1440px hauteur → formatage desktop
-        mais hauteur généreuse → on peut aérer davantage
-   ============================================================ */
-@media (min-height: 1000px) and (max-width: 1200px) {
-
-  /* — Hero : on profite de la hauteur pour respirer — */
-  .hero-section         { min-height: 96vh; padding: 130px 5% 100px; }
-  .hero-content h1      { margin-bottom: clamp(40px, 6vh, 72px); }
-  .hero-subtitle        { margin-bottom: clamp(56px, 8vh, 96px); line-height: 2.1; }
-  .hero-buttons         { margin-bottom: clamp(80px, 12vh, 140px); }
-  .hero-trust-badges    { gap: 32px; }
-  .trust-badge          { padding: 14px 24px; }
-
-  /* — Expertise : cartes plus hautes, texte plus aéré — */
-  .expertise-section    { padding: clamp(4rem, 8vh, 6rem) clamp(1.5rem, 4vw, 3rem); }
-  .expertise-header     { margin-bottom: clamp(2.5rem, 5vh, 4rem); }
-  .expertise-card-inner { padding: clamp(1.75rem, 3vh, 2.5rem); gap: clamp(1rem, 2vh, 1.6rem); }
-  .expertise-desc       { line-height: 2; }
-  .expertise-features   { gap: clamp(0.75rem, 1.5vh, 1.1rem); }
-}
-
-
-/* ============================================================
-   LARGEUR + NAV — Tablette (769px – 1023px)
-   ============================================================ */
+/* ── 10c. Tablette large (769px – 1023px) ── */
 @media (min-width: 769px) and (max-width: 1023px) {
   .hamburger { display: flex; }
   .nav-links {
@@ -1722,238 +1057,192 @@ footer a:hover {
     position: fixed;
     top: 70px; left: 0;
     width: 100%; height: calc(100vh - 70px);
-    background: linear-gradient(to bottom, #030712 0%, #0d3b66 100%);
+    background: linear-gradient(to bottom, #030712, #0d3b66);
     flex-direction: column;
     align-items: center;
     padding: 30px 0;
     gap: 25px;
   }
   .nav-container.open .nav-links { display: flex; }
+  .eligibilite-button { font-size: 12px; padding: 10px 18px; }
+
+  .expertise-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .expertise-section { padding: 55px 4% 65px; }
+
+  .footer-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-
-/* ============================================================
-   LARGEUR — Desktop nav (min 1024px) + étroit (1024–1140px)
-   ============================================================ */
-@media (min-width: 1024px) {
-  .nav-links { display: flex; }
+/* ── 10d. Desktop étroit (1024px – 1189px) ── */
+@media (min-width: 1024px) and (max-width: 1189px) {
   .hamburger { display: none; }
+  .nav-links { display: flex; }
+
+  .nav-container      { padding: 12px 2%; }
+  .nav-links          { gap: 10px; }
+  .nav-links a        { font-size: 11px; }
+  .eligibilite-button { font-size: 12px; padding: 10px 18px; }
+
+  .expertise-grid { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .expertise-card-inner { padding: 1.1rem; gap: 0.6rem; }
+  .expertise-card-header h3 { font-size: 0.85rem; }
+  .expertise-desc    { font-size: 0.75rem; }
+  .expertise-features li { font-size: 0.72rem; }
+  .expertise-cta     { font-size: 0.75rem; }
 }
 
-@media (min-width: 1024px) and (max-width: 1140px) {
-  .nav-container { padding-right: 10px; padding-left: 10px; }
-}
-
-
-/* ============================================================
-   9g. DESKTOP MOYEN — 1190px à 1439px
-   ============================================================ */
+/* ── 10e. Desktop moyen (1190px – 1439px) ── */
 @media (min-width: 1190px) and (max-width: 1439px) {
+  .hamburger { display: none; }
+  .nav-links { display: flex; }
 
+  .nav-links a        { font-size: 12px; }
+  .eligibilite-button { font-size: 13px; padding: 11px 22px; }
 
-
-  /* ── Hero ── */
-  .hero-section   { padding: 80px 8% 80px; }
-  .hero-content   { max-width: 1000px; }
-  .hero-content h1 { font-size: 2.2rem; margin-bottom: 44px; }
-  .hero-subtitle  { font-size: 0.95rem; margin-bottom: 56px; line-height: 2.1; }
-  .hero-buttons   { margin-bottom: 72px; gap: 20px; }
-  .btn-hero-primary,
-  .btn-hero-secondary { padding: 18px 44px; font-size: 0.95rem; }
-  .hero-trust-badges  { gap: 36px; }
-  .trust-badge        { font-size: 0.88rem; }
-
-  /* ── Expertise ── */
-  .expertise-section   { padding: 12px 40px 30px; }
-  .expertise-container { max-width: 1100px; padding: 0 0 20px; }
-  .expertise-header    { margin-bottom: 12px; }
-  .expertise-header h2 { font-size: 1.6rem; margin-bottom: 8px; }
-  .expertise-header p  { font-size: 0.9rem; line-height: 1.6; }
-  .expertise-grid {
-    gap: 1.25rem;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .expertise-card-inner   { padding: 14px; gap: 0.6rem; }
-  .expertise-icon-wrap    { width: 44px; height: 44px; }
-  .expertise-card-header h3 { font-size: 0.95rem; }
-  .expertise-tag          { font-size: 0.65rem; }
-  .expertise-desc         { font-size: 0.78rem; }
-  .expertise-features     { gap: 0.35rem; }
-  .expertise-features li  { font-size: 0.78rem; }
-  .expertise-cta          { font-size: 0.8rem; padding-top: 0.5rem; margin-top: 0; }
+  .expertise-grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  .expertise-card-inner { padding: 1.4rem; gap: 0.7rem; }
+  .expertise-card-header h3 { font-size: 0.92rem; }
+  .expertise-desc    { font-size: 0.78rem; }
+  .expertise-features li { font-size: 0.76rem; }
 }
 
-
-/* ============================================================
-   HAUTEUR — H-desk : min-height 1200px (desktop haut)
-   Cible : fenêtre 1190–1439px de large, hauteur ≥ 1200px
-   Ex : 34 pouces fenêtré, iMac 27, 4K portrait
-   ============================================================ */
-@media (min-width: 1190px) and (max-width: 1439px) and (min-height: 1200px) {
-
-  /* — Hero : on exploite la hauteur disponible — */
-  .hero-section         { min-height: 95vh; padding: 120px 8% 100px; }
-  .hero-content h1      { margin-bottom: 56px; }
-  .hero-subtitle        { margin-bottom: 72px; }
-  .hero-buttons         { margin-bottom: 90px; }
-
-  /* — Expertise : cartes plus espacées — */
-  .expertise-section    { padding: 60px 40px 80px; }
-  .expertise-header     { margin-bottom: 2.5rem; }
-  .expertise-card-inner { padding: 20px 18px; gap: 1rem; }
-  .expertise-desc       { font-size: 0.82rem; line-height: 1.75; }
-  .expertise-features   { gap: 0.6rem; }
-  .expertise-features li { font-size: 0.82rem; }
-}
-
-
-/* ============================================================
-   9h. DESKTOP LARGE — 1440px à 1919px
-   ============================================================ */
+/* ── 10f. Desktop large (1440px – 1919px) ── */
 @media (min-width: 1440px) and (max-width: 1919px) {
+  .hamburger { display: none; }
+  .nav-links { display: flex; }
 
+  .nav-links a        { font-size: clamp(13px, 1.1vw, 16px); }
+  .eligibilite-button { font-size: clamp(13px, 1vw, 15px); padding: 12px 24px; }
+  .logo img           { width: clamp(220px, 16vw, 360px); }
 
-
-  /* ── Hero ── */
-  .hero-section   { padding: 80px 10% 80px; }
-  .hero-content   { max-width: 1100px; }
-  .hero-content h1 { font-size: 2.6rem; margin-bottom: 52px; }
-  .hero-subtitle  { font-size: 1rem; margin-bottom: 64px; line-height: 2.1; }
-  .hero-buttons   { margin-bottom: 80px; gap: 24px; }
-  .btn-hero-primary,
-  .btn-hero-secondary { padding: 20px 52px; font-size: 1rem; }
-  .hero-trust-badges  { gap: 44px; }
-  .trust-badge        { font-size: 0.92rem; }
-
-  /* ── Expertise ── */
-  .expertise-section   { padding: 12px 60px 40px; }
-  .expertise-container { max-width: 1300px; padding: 0 0 20px; }
-  .expertise-header    { margin-bottom: 14px; }
-  .expertise-header h2 { font-size: 1.8rem; margin-bottom: 8px; }
-  .expertise-header p  { font-size: 0.95rem; line-height: 1.6; }
-  .expertise-grid      { gap: 1.5rem; }
-  .expertise-card-inner   { padding: 16px; gap: 0.7rem; }
-  .expertise-icon-wrap    { width: 46px; height: 46px; }
-  .expertise-card-header h3 { font-size: 1rem; }
-  .expertise-tag          { font-size: 0.66rem; }
-  .expertise-desc         { font-size: 0.8rem; }
-  .expertise-features     { gap: 0.4rem; }
-  .expertise-features li  { font-size: 0.8rem; }
-  .expertise-cta          { font-size: 0.82rem; padding-top: 0.6rem; margin-top: 0; }
-
-  /* ── Footer ── */
-  footer h3 { font-size: 1.25rem; }
-  .footer-grid { gap: 45px; padding: 50px 0; }
+  .expertise-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .expertise-card-inner { padding: 1.6rem; gap: 0.8rem; }
+  .expertise-card-header h3 { font-size: 1.4rem; }
+  .expertise-desc    { font-size: 0.82rem; }
+  .expertise-features li { font-size: 0.8rem; }
 }
 
-
-/* ============================================================
-   HAUTEUR — H-uhd : min-height 1440px (34 pouces plein écran)
-   Cible : 34 pouces (3440×1440) plein écran, iMac 27 natif,
-           fenêtre 1440–1919px avec hauteur ≥ 1440px
-   Problème ciblé : 1600px large / 1440px haut → responsive
-   desktop moyen mais hauteur ultra généreuse → tout s'écrase
-   ============================================================ */
-@media (min-width: 1440px) and (max-width: 1919px) and (min-height: 1440px) {
-
-  /* — Hero : exploiter la hauteur sans laisser du vide — */
-  .hero-section         { min-height: 94vh; padding: 130px 10% 110px; }
-  .hero-content h1      { margin-bottom: 64px; }
-  .hero-subtitle        { margin-bottom: 80px; line-height: 2.2; }
-  .hero-buttons         { margin-bottom: 100px; }
-  .hero-trust-badges    { gap: 52px; }
-  .trust-badge          { padding: 16px 28px; }
-
-  /* — Expertise : cartes vraiment aérées — */
-  .expertise-section    { padding: 80px 60px 100px; }
-  .expertise-header     { margin-bottom: 3rem; }
-  .expertise-header h2  { font-size: 2rem; margin-bottom: 1rem; }
-  .expertise-header p   { font-size: 1rem; line-height: 1.9; }
-  .expertise-container  { max-width: 1500px; }
-  .expertise-grid       { gap: 2rem; }
-  .expertise-card-inner { padding: 2rem 1.75rem; gap: 1.25rem; }
-  .expertise-icon-wrap  { width: 56px; height: 56px; }
-  .expertise-card-header h3 { font-size: 1.1rem; }
-  .expertise-desc       { font-size: 0.9rem; line-height: 1.9; }
-  .expertise-features   { gap: 0.85rem; }
-  .expertise-features li { font-size: 0.87rem; }
-  .expertise-cta        { font-size: 0.88rem; padding-top: 0.9rem; }
-}
-
-
-/* ============================================================
-   9i. ULTRA WIDE — min-width: 1920px
-   Cible : moniteurs 1920px+, 34 pouces full, dual screen
-   ============================================================ */
+/* ── 10g. Ultra-wide (min 1920px) — CORRECTION PRINCIPALE ── */
 @media (min-width: 1920px) {
+  .hamburger { display: none; }
+  .nav-links { display: flex; }
 
-  /* ── Hero ── */
+  .nav-container      { padding: 14px 4%; }
+  .nav-links          { gap: 28px; }
+  .nav-links a        { font-size: 15px; }
+  .eligibilite-button { font-size: 15px; padding: 13px 30px; }
+  .logo img           { width: clamp(260px, 18vw, 420px); }
+
+  /* Hero — on garde min-height uniquement ici */
   .hero-section { padding: 90px 12% 80px; }
   .hero-content { max-width: 1300px; }
-  .hero-content h1 { font-size: 3rem; margin-bottom: 48px; }
-  .hero-subtitle { font-size: 1.1rem; margin-bottom: 60px; }
-  .btn-hero-primary,
-  .btn-hero-secondary { padding: 22px 56px; font-size: 1.05rem; }
-  .hero-buttons { margin-bottom: 72px; }
-  .hero-trust-badges { gap: 52px; }
-  .trust-badge { font-size: 0.98rem; }
 
-  /* ── Expertise : pleine respiration ── */
-  .expertise-section    { padding: 80px 80px 100px; }
-  .expertise-container  { max-width: 1900px; width: 100%; padding: 0; }
-  .expertise-header     { margin-bottom: 4rem; }
-  .expertise-header h2  { font-size: 2.6rem; margin-bottom: 1.5rem; }
-  .expertise-header p   { font-size: 1.2rem; line-height: 2; }
+  /* Expertise — PAS de min-height, padding adapté */
+  .expertise-section   { padding: 60px 5% 80px; }
+  .expertise-container { max-width: 1800px; }
+  .expertise-header    { margin-bottom: 3rem; }
+  .expertise-header h2 { font-size: 2.4rem; }
+  .expertise-header p  { font-size: 1.1rem; }
   .expertise-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 2.75rem;
+    gap: 2rem;
   }
-  .expertise-card-inner    { padding: 2.75rem 2.5rem; gap: 1.75rem; }
-  .expertise-icon-wrap     { width: 70px; height: 70px; border-radius: 18px; }
-  .expertise-icon-wrap i   { font-size: 30px !important; }
-  .expertise-card-header h3 { font-size: 1.35rem; }
-  .expertise-tag           { font-size: 0.76rem; padding: 3px 14px; }
-  .expertise-desc          { font-size: 1rem; line-height: 2; }
-  .expertise-features      { gap: 1.1rem; }
-  .expertise-features li   { font-size: 0.97rem; }
-  .expertise-cta           { font-size: 0.95rem; padding-top: 1.1rem; }
+  .expertise-card-inner    { padding: 2rem 1.75rem; gap: 1.2rem; }
+  .expertise-icon-wrap     { width: 60px; height: 60px; }
+  .expertise-icon-wrap i   { font-size: 24px !important; }
+  .expertise-card-header h3 { font-size: 1.15rem; }
+  .expertise-tag           { font-size: 0.7rem; }
+  .expertise-desc          { font-size: 0.9rem; line-height: 1.85; }
+  .expertise-features      { gap: 0.9rem; }
+  .expertise-features li   { font-size: 0.88rem; }
+  .expertise-cta           { font-size: 0.88rem; }
+
+  /* Partners */
+  .partner-logo { height: 70px; }
+
+  /* Stats — PAS de min-height */
+  .stats-section    { padding: 60px 5% 80px; }
+  .stats-container  { max-width: 1800px; }
+  .stat-count       { font-size: 5.5rem; }
+
+  /* Newsletter — PAS de min-height */
+  .newsletter-section   { padding: 60px 5% 80px; }
+  .newsletter-container { max-width: 720px; }
+
+  /* Footer */
+  .footer-grid { max-width: 1800px; }
 }
 
-
-/* ============================================================
-   9j. 4K+ — min-width: 3440px
-   Cible : écrans ultra-wide 34 pouces natif, 4K grand format
-   ============================================================ */
+/* ── 10h. 4K+ (min 3440px) ── */
 @media (min-width: 3440px) {
+  .nav-container      { max-width: 3440px; padding: 14px 5%; }
+  .nav-links a        { font-size: 20px; }
+  .eligibilite-button { font-size: 18px; padding: 15px 34px; }
+  .logo img           { width: 500px; }
 
+  .expertise-section   { padding: 80px 8% 100px; }
+  .expertise-container { max-width: 3200px; }
+  .expertise-header h2 { font-size: 3rem; }
+  .expertise-grid { gap: 3rem; max-width: 1900px; margin: 0 auto; }
+  .expertise-card-inner { padding: 3rem 2.5rem; gap: 1.75rem; }
+  .expertise-icon-wrap  { width: 80px; height: 80px; }
+  .expertise-icon-wrap i { font-size: 34px !important; }
+  .expertise-card-header h3 { font-size: 1.7rem; }
+  .expertise-desc { font-size: 1.1rem; }
+  .expertise-features li { font-size: 1rem; }
+  .expertise-cta { font-size: 1rem; }
 
+  .stats-section   { padding: 80px 8% 100px; }
+  .stats-container { max-width: 3000px; }
+  .stat-count      { font-size: 8rem; }
 
-  /* ── Hero ── */
-  .hero-section { padding: 120px 15% 80px; }
-  .hero-content { max-width: 1600px; }
-  .hero-content h1 { font-size: 4rem; margin-bottom: 54px; }
-  .hero-subtitle { font-size: 1.4rem; margin-bottom: 66px; }
-  .btn-hero-primary,
-  .btn-hero-secondary { padding: 24px 64px; font-size: 1.2rem; }
-  .hero-buttons { margin-bottom: 78px; }
-  .hero-trust-badges { gap: 64px; }
-  .trust-badge { font-size: 1.1rem; }
+  .newsletter-section   { padding: 80px 8% 100px; }
+  .newsletter-container { max-width: 800px; }
 
-  /* ── Expertise ── */
-  .expertise-section    { padding: 100px 120px 140px; }
-  .expertise-container  { max-width: 3200px; width: 100%; }
-  .expertise-header     { margin-bottom: 5rem; }
-  .expertise-header h2  { font-size: 3.2rem; }
-  .expertise-header p   { font-size: 1.4rem; }
-  .expertise-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3.5rem;
+  .footer-grid { max-width: 3200px; }
+}
+
+/* ── 10i. Paysage mobile (max-height 600px) ── */
+@media (max-height: 600px) and (orientation: landscape) {
+  .hero-section    { min-height: auto; padding: 65px 5% 40px; }
+  .hero-content h1 { font-size: 1.4rem; margin-bottom: 14px; }
+  .hero-subtitle   { font-size: 0.82rem; margin-bottom: 18px; }
+  .hero-buttons    { margin-bottom: 22px; gap: 12px; }
+  .trust-badge     { padding: 6px 10px; font-size: 0.76rem; }
+
+  .expertise-section { padding: 30px 4% 40px; }
+  .expertise-header  { margin-bottom: 1.25rem; }
+}
+
+/* ── 10k. Hauteur > 1080px — espacement et textes hero agrandis ── */
+@media (min-height: 1081px) {
+  .hero-content h1 {
+    font-size: clamp(1.5rem, 5.5vw, 4rem);
+    margin-bottom: clamp(60px, 8vh, 110px);
+    line-height: 1.3;
   }
-  .expertise-card-inner    { padding: 3.5rem 3rem; gap: 2rem; }
-  .expertise-icon-wrap     { width: 84px; height: 84px; }
-  .expertise-icon-wrap i   { font-size: 36px !important; }
-  .expertise-card-header h3 { font-size: 1.6rem; }
-  .expertise-desc          { font-size: 1.15rem; }
-  .expertise-features li   { font-size: 1.1rem; }
-  .expertise-cta           { font-size: 1.1rem; }
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+    margin-bottom: clamp(70px, 9vh, 130px);
+    line-height: 2;
+  }
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    padding: clamp(16px, 1.8vh, 22px) clamp(36px, 4vw, 60px);
+  }
+  .hero-buttons      { margin-bottom: clamp(90px, 12vh, 160px); }
+  .hero-trust-badges { gap: clamp(36px, 5vw, 64px); }
+  .trust-badge {
+    padding: clamp(14px, 1.8vh, 20px) clamp(22px, 2.5vw, 32px);
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  }
+}
+
+/* ── 10j. Accessibilité animations ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

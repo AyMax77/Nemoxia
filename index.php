@@ -12,23 +12,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Prestataire informatique pour PME en France | Infogérance, Téléphonie IP & Cybersécurité – Nemoxia</title>
+  <title>Informatique, Télécom & Cybersécurité pour PME – Nemoxia</title>
   <meta name="description" content="Nemoxia accompagne les PME partout en France : infogérance 24/7, maintenance, cybersécurité, cloud et téléphonie IP (3CX). Interventions locales en 77, 91, 45. Devis en 24h.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://www.nemoxia.fr/">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  <!-- Open Graph --> 
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Nemoxia">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.nemoxia.fr/">
-  <meta property="og:title" content="Prestataire informatique pour PME en France | Nemoxia">
+  <meta property="og:title" content="Informatique, Télécom & Cybersécurité pour PME – Nemoxia">
   <meta property="og:description" content="Infogérance, cybersécurité, téléphonie IP & réseaux pour PME. Interventions locales rapides (77, 91, 45).">
   <meta property="og:image" content="https://www.nemoxia.fr/images/og-nemoxia.jpg">
-  <meta property="og:image:alt" content="Nemoxia – prestataire informatique & télécom pour PME">
+  <meta property="og:image:alt" content="Nemoxia – informatique & télécom pour PME">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nemoxia – Prestataire informatique & téléphonie IP">
-  <meta name="twitter:description" content="Infogérance 24/7, cybersécurité, 3CX/VoIP, réseaux & Internet pro.">
+  <meta name="twitter:site" content="@nemoxia">
+  <meta name="twitter:title" content="Nemoxia – Informatique, Télécom & Cybersécurité pour PME">
+  <meta name="twitter:description" content="Infogérance 24/7, cybersécurité, 3CX/VoIP, réseaux & Internet pro pour PME en France.">
   <meta name="twitter:image" content="https://www.nemoxia.fr/images/og-nemoxia.jpg">
+  <meta name="twitter:image:alt" content="Nemoxia – informatique & télécom pour PME">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,8 +49,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-    html { font-family: "PT Serif", serif; }
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+    html { font-family: "DM Serif Display", serif; }
   </style>
 
   <script type="application/ld+json">
@@ -75,7 +84,7 @@
         "@type": "WebPage",
         "@id": "https://www.nemoxia.fr/#webpage",
         "url": "https://www.nemoxia.fr/",
-        "name": "Prestataire informatique pour PME en France | Nemoxia",
+        "name": "Informatique, Télécom & Cybersécurité pour PME – Nemoxia",
         "inLanguage": "fr-FR",
         "isPartOf": { "@id": "https://www.nemoxia.fr/#website" },
         "about": { "@id": "https://www.nemoxia.fr/#org" },
@@ -88,7 +97,7 @@
         "image": "https://www.nemoxia.fr/images/og-nemoxia.jpg",
         "url": "https://www.nemoxia.fr/",
         "telephone": "+33-1-75-43-91-00",
-        "description": "Prestataire informatique & télécom pour PME : infogérance, cybersécurité, cloud et téléphonie IP (3CX).",
+        "description": "Nemoxia accompagne les PME en France : infogérance, cybersécurité, cloud et téléphonie IP (3CX). Interventions locales en 77, 91, 45.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "98 rue de Paris",
@@ -155,7 +164,7 @@
       {
         "@type": "Service",
         "@id": "https://www.nemoxia.fr/#service-telephonie",
-        "serviceType": "Téléphonie IP & 3CX (prestataire téléphonique/telecom)",
+        "serviceType": "Téléphonie IP & 3CX",
         "provider": { "@id": "https://www.nemoxia.fr/#org" },
         "areaServed": "FR",
         "description": "VoIP/3CX, portabilité, mobiles pros, QoS, conferencing, intégrations CRM."
@@ -171,7 +180,7 @@
       {
         "@type": "Service",
         "@id": "https://www.nemoxia.fr/#service-77",
-        "serviceType": "Prestataire informatique 77 (Seine-et-Marne)",
+        "serviceType": "Infogérance & télécom en Seine-et-Marne (77)",
         "provider": { "@id": "https://www.nemoxia.fr/#org" },
         "areaServed": "Seine-et-Marne",
         "description": "Infogérance PME, téléphonie IP, cybersécurité & réseaux en Seine-et-Marne (77)."
@@ -179,7 +188,7 @@
       {
         "@type": "Service",
         "@id": "https://www.nemoxia.fr/#service-91",
-        "serviceType": "Prestataire informatique 91 (Essonne)",
+        "serviceType": "Infogérance & télécom en Essonne (91)",
         "provider": { "@id": "https://www.nemoxia.fr/#org" },
         "areaServed": "Essonne",
         "description": "Support IT local en Essonne (91) : maintenance, 3CX/VoIP, sécurité & Internet pro."
@@ -187,7 +196,7 @@
       {
         "@type": "Service",
         "@id": "https://www.nemoxia.fr/#service-45",
-        "serviceType": "Prestataire informatique 45 (Loiret)",
+        "serviceType": "Infogérance & télécom dans le Loiret (45)",
         "provider": { "@id": "https://www.nemoxia.fr/#org" },
         "areaServed": "Loiret",
         "description": "Accompagnement PME à Orléans, Montargis, Pithiviers : infogérance, téléphonie IP, cybersécurité."
@@ -220,7 +229,7 @@
         et l'évolution de votre environnement numérique
       </p>
       <div class="hero-buttons">
-        <a href="Contact/contact.html" class="btn-hero-primary">Demander un Audit</a>
+        <a href="Contact/contact.php" class="btn-hero-primary">Demander un Audit</a>
         <a href="tel:0175439100" class="btn-hero-secondary" data-hover="01 75 43 91 00">Discuter avec un expert</a>
       </div>
       <div class="hero-trust-badges">
@@ -248,7 +257,7 @@
  
       <div class="expertise-header">
         <h2>Proximité et accompagnement sur-mesure depuis 20 ans</h2>
-        <p>Forts d'une expérience construite auprès de nos clients issus de tous secteurs d'activité, nous supervisons, administrons et sécurisons votre système informatique, garantissant une performance optimale et une protection renforcée.</p>
+        <p>Nous nous positionnons comme votre partenaire clé pour la gestion et la sécurisation de votre système d’information. Forts d’un savoir-faire éprouvé, d’une approche sur-mesure et d’une exigence constante de qualité, nous vous proposons une offre globale et cohérente structurée autour de quatre pôles d’expertise majeurs. Grâce à cet accompagnement, nous soutenons durablement la transformation numérique et la performance de votre entreprise.</p>
       </div>
  
       <div class="expertise-grid">
@@ -270,12 +279,13 @@
               Nous supervisons votre informatique au quotidien pour prévenir les interruptions de service, accompagner vos équipes et garantir la continuité de votre activité
             </p>
             <ul class="expertise-features">
-              <li><i class="fa-solid fa-check"></i> Supervision continue des équipements</li>
+              <li><i class="fa-solid fa-check"></i> Supervision continue 24/7</li>
+              <li><i class="fa-solid fa-check"></i> Protection EDR</li>
               <li><i class="fa-solid fa-check"></i> Maintenance préventive et corrective</li>
-              <li><i class="fa-solid fa-check"></i> Mises à jour et gestion des correctifs</li>
               <li><i class="fa-solid fa-check"></i> Sauvegarde et restauration</li>
+              <li><i class="fa-solid fa-check"></i> Assistance aux utilisateurs</li>
             </ul>
-            <a href="Infogerance/Infogerance.html" class="expertise-cta">
+            <a href="/index.php" class="expertise-cta">
               En savoir plus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
@@ -291,7 +301,7 @@
               </div>
               <div>
                 <h3>Cybersécurité & Protection</h3>
-                <span class="expertise-tag">Sécurité 24/7</span>
+                <span class="expertise-tag">Sécurité renforcée 24/7</span>
               </div>
             </div>
             <p class="expertise-desc">
@@ -303,45 +313,14 @@
               <li><i class="fa-solid fa-check"></i> Détection comportementale</li>
               <li><i class="fa-solid fa-check"></i> Analyse humaine des menaces</li>
               <li><i class="fa-solid fa-check"></i> Remédiation des incidents</li>
-              <li><i class="fa-solid fa-check"></i> Rapports et tableaux de bord sécurité</li>
             </ul>
-            <a href="Cybersecurite/Cybersecurite.html" class="expertise-cta">
+            <a href="/index.php" class="expertise-cta">
               En savoir plus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
  
-        <!-- Carte 3 : Téléphonie IP & Internet -->
-        <div class="expertise-card">
-          <div class="expertise-card-accent"></div>
-          <div class="expertise-card-inner">
-            <div class="expertise-card-header">
-              <div class="expertise-icon-wrap">
-                <i class="fa-solid fa-phone-volume"></i>
-              </div>
-              <div>
-                <h3>Téléphonie IP & Internet</h3>
-                <span class="expertise-tag">Solution 3CX</span>
-              </div>
-            </div>
-            <p class="expertise-desc">
-              Nous déployons des solutions de téléphonie sur IP et d’accès Internet intégrant l’intelligence artificielle pour fluidifier les échanges, améliorer la joignabilité et accompagner les nouveaux usages de vos équipes 
-            </p>
-            <ul class="expertise-features">
-              <li><i class="fa-solid fa-check"></i> Standard intelligent</li>
-              <li><i class="fa-solid fa-check"></i> Intégration CRM</li>
-              <li><i class="fa-solid fa-check"></i> Assistant virtuel</li>
-              <li><i class="fa-solid fa-check"></i> Mobilité des équipes</li>
-              <li><i class="fa-solid fa-check"></i> Accès haut débit jusqu'à 1 Gb</li>
-              <li><i class="fa-solid fa-check"></i> Supervision et rapports d'usage</li>
-            </ul>
-            <a href="Telephonie/Telephonie.html" class="expertise-cta">
-              En savoir plus <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
- 
-        <!-- Carte 4 : Infrastructure & Cloud -->
+        <!-- Carte 3 : Infrastructure & Cloud -->
         <div class="expertise-card">
           <div class="expertise-card-accent"></div>
           <div class="expertise-card-inner">
@@ -351,7 +330,7 @@
               </div>
               <div>
                 <h3>Infrastructure & Cloud</h3>
-                <span class="expertise-tag">Communication unifiée</span>
+                <span class="expertise-tag"> Architecture sur-mesure</span>
               </div>
             </div>
             <p class="expertise-desc">
@@ -359,16 +338,47 @@
             </p>
             <ul class="expertise-features">
               <li><i class="fa-solid fa-check"></i> Déploiement et virtualisation des ressources</li>
-              <li><i class="fa-solid fa-check"></i> Protection et sauvegardes des données</li>
-              <li><i class="fa-solid fa-check"></i> Plan de reprise d'activité (PRA)</li>
-              <li><i class="fa-solid fa-check"></i> Mobilité et accès sécurisé aux applications</li>
-              <li><i class="fa-solid fa-check"></i> Gestion et évolution des environnements hybrides/cloud</li>
+              <li><i class="fa-solid fa-check"></i> Protection des données</li>
+              <li><i class="fa-solid fa-check"></i> Plan de reprise d'activité (PCA/PRA)</li>
+              <li><i class="fa-solid fa-check"></i> Mobilité et accès sécurisé</li>
+              <li><i class="fa-solid fa-check"></i> Environnements hybrides/cloud</li>
             </ul>
-            <a href="Informatique/informatique.html" class="expertise-cta">
+            <a href="/index.php" class="expertise-cta">
               En savoir plus <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
+        
+        <!-- Carte 4 : Téléphonie IP & Internet -->
+        <div class="expertise-card">
+          <div class="expertise-card-accent"></div>
+          <div class="expertise-card-inner">
+            <div class="expertise-card-header">
+              <div class="expertise-icon-wrap">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <h3>Téléphonie IP & Internet</h3>
+                <span class="expertise-tag">Communication unifiée</span>
+              </div>
+            </div>
+            <p class="expertise-desc">
+              Nous déployons des solutions de téléphonie sur IP et d’accès Internet intégrant l’intelligence artificielle pour fluidifier les échanges, améliorer la joignabilité et accompagner les nouveaux usages de vos équipes 
+            </p>
+            <ul class="expertise-features">
+              <li><i class="fa-solid fa-check"></i> Standard intelligent</li>
+              <li><i class="fa-solid fa-check"></i> Assistant virtuel (IA)</li>
+              <li><i class="fa-solid fa-check"></i> Intégration CRM</li>
+              <li><i class="fa-solid fa-check"></i> Mobilité des équipes</li>
+              <li><i class="fa-solid fa-check"></i> Accès haut débit jusqu'à 1 Gb</li>
+            </ul>
+            <a href="/index.php" class="expertise-cta">
+              En savoir plus <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+ 
+        
  
       </div>
     </div>
@@ -380,8 +390,7 @@
        ============================================================ -->
   <section class="partners-section">
     <div class="partners-header">
-      <h2>Nos Partenaires</h2>
-      <p>Des technologies de référence au service de votre entreprise</p>
+      <h2>L’innovation et la performance de nos offres s’appuient sur des partenaires technologiques majeurs, leaders dans leur domaine.<br> Ensemble, nous faisons évoluer votre système d’information pour répondre aux défis d’aujourd’hui et de demain.</h2>
     </div>
     <div class="marquee-wrapper">
       <div class="marquee-track">
@@ -393,153 +402,52 @@
     </div>
   </section>
 
-
   <!-- ============================================================
-       NEWSLETTER SECTION
-       ============================================================ -->
-  <section class="newsletter-section">
-    <div class="newsletter-container">
-      <div class="newsletter-icon">
-        <i class="fa-solid fa-envelope-open-text"></i>
+   STATS SECTION
+   ============================================================ -->
+<section class="stats-section" id="stats-section">
+  <div class="stats-header">
+    <h2>Nos chiffres sont là pour une seule raison : vous.</h2>
+    <p>Nos performances s'évaluent à travers des indicateurs concrets, véritables preuves de notre exigence au service de votre entreprise. Chaque donnée représente notre volonté d'amélioration continue et de réactivité à vos côtés.</p>
+  </div>
+  <div class="stats-container">
+
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-headset"></i></div>
+      <div class="stat-number">
+        <span class="stat-count" data-target="98" id="stat-tickets">0</span>
+        <span class="stat-unit">%</span>
       </div>
-      <h2>Restez informé des dernières actualités IT</h2>
-      <p>
-        Conseils cybersécurité, nouveautés 3CX, offres exclusives PME —
-        une newsletter mensuelle, sans spam.
-      </p>
-      <div class="newsletter-form-wrap">
-        <input
-          type="email"
-          id="newsletter-email"
-          class="newsletter-input"
-          placeholder="votre@email.fr"
-          autocomplete="email"
-        >
-        <button class="newsletter-btn" onclick="handleNewsletter()">
-          <span>Je m'inscris</span>
-          <i class="fa-solid fa-paper-plane"></i>
-        </button>
-      </div>
-      <p id="newsletter-confirm" class="newsletter-confirm" style="display:none;">
-        ✓ Inscription confirmée — à très bientôt !
-      </p>
-      <p class="newsletter-legal">
-        En vous inscrivant, vous acceptez notre
-        <a href="/politique_confidentialite/politique_confidentialite.php">politique de confidentialité</a>.
-        Désinscription en un clic.
-      </p>
+      <div class="stat-label">tickets résolus au 1er contact</div>
+      <div class="stat-line"></div>
     </div>
-  </section>
 
-
-  <!-- ============================================================
-       STATS SECTION
-       ============================================================ -->
-  <section class="stats-section" id="stats-section">
-    <div class="stats-header">
-      <h2>Nos chiffres sont là pour une seule raison : vous.</h2>
-      <p>Chaque indicateur reflète notre engagement envers vos besoins.</p>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div class="stat-number">
+        <span class="stat-count">24</span>
+        <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">/7</span>
+      </div>
+      <div class="stat-label">monitoring actif</div>
+      <div class="stat-line"></div>
     </div>
-    <div class="stats-container">
 
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-rocket"></i></div>
-        <div class="stat-number">
-          <span class="stat-unit">-</span>
-          <span class="stat-count">48</span>
-          <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">h</span>
-        </div>
-        <div class="stat-label">délai moyen de déploiement</div>
-        <div class="stat-line"></div>
+    <div class="stat-card">
+      <div class="stat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+      <div class="stat-number">
+        <span class="stat-unit">-</span>
+        <span class="stat-count">2</span>
+        <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">h</span>
       </div>
-
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-headset"></i></div>
-        <div class="stat-number">
-          <span class="stat-count" data-target="98" id="stat-tickets">0</span>
-          <span class="stat-unit">%</span>
-        </div>
-        <div class="stat-label">tickets résolus au 1er contact</div>
-        <div class="stat-line"></div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <div class="stat-number">
-          <span class="stat-count">24</span>
-          <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">/7</span>
-        </div>
-        <div class="stat-label">monitoring actif</div>
-        <div class="stat-line"></div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-gauge-high"></i></div>
-        <div class="stat-number">
-          <span class="stat-unit">-</span>
-          <span class="stat-count">2</span>
-          <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">h</span>
-        </div>
-        <div class="stat-label">temps de résolution critique</div>
-        <div class="stat-line"></div>
-      </div>
-
+      <div class="stat-label">temps de résolution critique</div>
+      <div class="stat-line"></div>
     </div>
-  </section>
+
+  </div>
+</section>
 
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
-  <footer>
-    <div class="container mx-auto px-4 py-12">
-      <div class="footer-grid grid md:grid-cols-4 gap-8">
-
-        <div>
-          <h3 class="font-bold mb-4">Nos Activités</h3>
-          <ul class="space-y-2">
-            <li>Conseil en systèmes informatiques</li>
-            <li><strong>Infogérance et maintenance IT</strong></li>
-            <li>Conception infrastructures</li>
-            <li><strong>Téléphonie fixe/mobile IP</strong></li>
-            <li>Accès Internet haut débit</li>
-            <li>Audit cybersécurité</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="font-bold mb-4">Nos Offres PME</h3>
-          <ul class="space-y-2">
-            <li><strong>Infogérance PME 77</strong></li>
-            <li>Standard téléphonique IP</li>
-            <li>Solutions mobiles</li>
-            <li>Liens Internet fiables</li>
-            <li>Support infrastructure</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="font-bold mb-4">Contact</h3>
-          <p>📞 <a href="tel:+33175439100">01 75 43 91 00</a></p>
-          <p>📍 98 rue de Paris, 77140 Nemours</p>
-          <p>Du lundi au vendredi, 9h-18h</p>
-          <p><a href="/Contact/contact.php">Contactez-nous</a></p>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <p>Nemoxia, spécialiste en informatique et télécom depuis 2007 en Seine-et-Marne.</p>
-        <p>
-          <a href="/RGPD/rgpd.php">Mentions légales & RGPD</a> |
-          <a href="/politique_confidentialite/politique_confidentialite.php">Politique de confidentialité</a>
-          © 2025 Nemoxia. Tous droits réservés.
-        </p>
-      </div>
-
-    </div>
-  </footer>
-
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
 
   <!-- ============================================================
        SCRIPTS

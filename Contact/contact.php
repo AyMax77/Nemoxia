@@ -54,151 +54,196 @@
 
 </head>
 <body>
-
+<div class="page-wrap">
+ 
+  <!-- NAVBAR -->
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/header.php'; ?>
-
-
-  <!-- Hero contact -->
-  <section class="hero-container">
-    <div class="container">
-
-      <div class="text-section">
-        <h1>
-          <span class="Titre">Contactez Nemoxia</span>
-          <span class="relative">
-            <span class="absolute"></span>
-            <span class="relative-inner"><strong>Votre Expert IT & Télécom</strong></span>
-          </span>
-        </h1>
-        <br>
-        <h2>Une question sur nos services ? Un projet d'infogérance, de téléphonie IP ou de cybersécurité ? Notre équipe est à votre écoute pour vous accompagner.</h2>
-        <h3>Réponse garantie sous 24h - Devis gratuit et sans engagement</h3>
-        <h3>📞 01 75 43 91 00 | 📍 Nemours (77) | ✉️ contact@nemoxia.fr</h3>
-      </div>
-
-      <div class="form-section">
-        <h3>Vous avez un projet IT ou télécom ?<br>Parlons-en !</h3>
-
-        <form id="contact-form">
-          <div>
-            <label>Société*</label>
-            <input type="text" name="societe" required>
-          </div>
-          <div class="grid">
-            <div>
-              <label>Nom*</label>
-              <input type="text" name="nom" required>
-            </div>
-            <div>
-              <label>Prénom*</label>
-              <input type="text" name="prenom" required>
-            </div>
-          </div>
-          <div>
-            <label>Email*</label>
-            <input type="email" name="email" required>
-          </div>
-          <div>
-            <label>Numéro de téléphone*</label>
-            <input type="tel" name="telephone" placeholder="01 75 43 91 00" required>
-          </div>
-          <div class="grid">
-            <div>
-              <label>Taille de la Société*</label>
-              <select name="taille" required>
-                <option value="">Sélectionnez...</option>
-                <option>1-10</option>
-                <option>11-50</option>
-                <option>51-200</option>
-                <option>+200</option>
-              </select>
-            </div>
-            <div>
-              <label>Nature de la demande*</label>
-              <select name="nature" required>
-                <option value="">Sélectionnez...</option>
-                <option>Informatique & Infogérance</option>
-                <option>Cloud & Cybersécurité</option>
-                <option>Télécom & Téléphonie IP</option>
-                <option>Matériel & Infrastructure</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label>Décrivez votre projet (ex. : besoin d'infogérance pour 20 postes)</label>
-            <textarea name="message" rows="3"></textarea>
-          </div>
-          <div class="text-center">
-            <button type="submit">Contacter Prestataire IT</button>
-          </div>
-        </form>
-      </div>
-
+ 
+ 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">
+      <i class="fa-regular fa-envelope"></i>
+      Contactez-nous
+    </div>
+    <h1>Une question ?<br><em>Parlons de votre projet.</em></h1>
+    <p class="hero-sub">Notre équipe répond sous 24h. Devis gratuit et sans engagement pour tout projet d'infogérance, téléphonie IP ou cybersécurité.</p>
+    <div class="hero-badges">
+      <div class="hero-badge"><i class="fa-solid fa-clock"></i> Réponse sous 24h</div>
+      <div class="hero-badge"><i class="fa-solid fa-location-dot"></i> Nemours (77)</div>
+      <div class="hero-badge"><i class="fa-solid fa-phone"></i> 01 75 43 91 00</div>
+      <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Devis gratuit</div>
     </div>
   </section>
-
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h3>Nos Activités</h3>
-          <ul>
-            <li>Conseil en systèmes informatiques</li>
-            <li><strong>Infogérance et maintenance IT</strong></li>
-            <li>Conception infrastructures</li>
-            <li><strong>Téléphonie fixe/mobile IP</strong></li>
-            <li>Accès Internet haut débit</li>
-            <li>Audit cybersécurité</li>
-          </ul>
+ 
+ 
+  <!-- CONTENU PRINCIPAL -->
+  <div class="contact-wrap">
+ 
+    <!-- Colonne gauche : infos -->
+    <div class="contact-info">
+ 
+      <div class="info-block">
+        <div class="info-block-title">Nos coordonnées</div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="info-text">
+            <strong>Adresse</strong>
+            <span>98 rue de Paris, 77140 Nemours</span>
+          </div>
         </div>
-        <div>
-          <h3>Nos Offres PME</h3>
-          <ul>
-            <li><strong>Infogérance PME 77</strong></li>
-            <li>Standard téléphonique IP</li>
-            <li>Solutions mobiles</li>
-            <li>Liens Internet fiables</li>
-            <li>Support infrastructure</li>
-          </ul>
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="info-text">
+            <strong>Téléphone</strong>
+            <a href="tel:+33175439100">01 75 43 91 00</a>
+          </div>
         </div>
-        <div>
-          <h3>Contact</h3>
-          <p>📞 <a href="tel:+33175439100">01 75 43 91 00</a></p>
-          <p>📍 98 rue de Paris, 77140 Nemours</p>
-          <p>Du lundi au vendredi, 9h-18h</p>
-          <p><a href="/Contact/contact.php">Contactez-nous</a></p>
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="info-text">
+            <strong>Email</strong>
+            <a href="mailto:contact@nemoxia.fr">contact@nemoxia.fr</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fa-regular fa-clock"></i></div>
+          <div class="info-text">
+            <strong>Horaires</strong>
+            <span>Lundi – Vendredi, 9h – 18h</span>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>Nemoxia, spécialiste en informatique et télécom depuis 2007 en Seine-et-Marne.</p>
-        <p>
-          <a href="/RGPD/rgpd.php">Mentions légales & RGPD</a> |
-          <a href="/politique_confidentialite/politique_confidentialite.php">Politique de confidentialité</a>
-          © 2025 Nemoxia. Tous droits réservés.
-        </p>
+ 
+      <div class="info-block">
+        <div class="info-block-title">Nos domaines d'intervention</div>
+        <div class="services-grid">
+          <div class="service-chip"><i class="fa-solid fa-server"></i> Infogérance</div>
+          <div class="service-chip"><i class="fa-solid fa-shield-halved"></i> Cybersécurité</div>
+          <div class="service-chip"><i class="fa-solid fa-phone-volume"></i> Téléphonie IP</div>
+          <div class="service-chip"><i class="fa-solid fa-cloud"></i> Infrastructure & Cloud</div>
+          <div class="service-chip"><i class="fa-solid fa-wifi"></i> Internet & Réseaux</div>
+          <div class="service-chip"><i class="fa-solid fa-headset"></i> Support 24/7</div>
+        </div>
       </div>
+ 
+      
+ 
     </div>
-  </footer>
-
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    emailjs.init("CSG-1U1qvDoCAEnGX");
-
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      emailjs.sendForm('service_krd25xa', 'template_1ss2u2z', this)
-        .then(() => {
-          alert('✅ Message envoyé avec succès !');
-          this.reset();
-        }, (error) => {
-          alert('❌ Une erreur est survenue : ' + JSON.stringify(error));
-        });
-    });
-  </script>
-
+ 
+    <!-- Colonne droite : formulaire -->
+    <div class="form-card">
+      <div class="form-card-header">
+        <h2>Décrivez votre<br>projet IT</h2>
+        <p>Tous les champs marqués * sont obligatoires.</p>
+      </div>
+ 
+      <form id="contact-form">
+ 
+        <div class="form-group">
+          <label>Société *</label>
+          <input type="text" name="societe" placeholder="Nom de votre entreprise" required>
+        </div>
+ 
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nom *</label>
+            <input type="text" name="nom" placeholder="Dupont" required>
+          </div>
+          <div class="form-group">
+            <label>Prénom *</label>
+            <input type="text" name="prenom" placeholder="Jean" required>
+          </div>
+        </div>
+ 
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="email" placeholder="jean@societe.fr" required>
+          </div>
+          <div class="form-group">
+            <label>Téléphone *</label>
+            <input type="tel" name="telephone" placeholder="01 75 43 91 00" required>
+          </div>
+        </div>
+ 
+        <div class="form-divider"></div>
+ 
+        <div class="form-row">
+          <div class="form-group">
+            <label>Taille de la société *</label>
+            <select name="taille" required>
+              <option value="">Sélectionnez…</option>
+              <option>1 – 10</option>
+              <option>11 – 50</option>
+              <option>51 – 200</option>
+              <option>+ 200</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Nature de la demande *</label>
+            <select name="nature" required>
+              <option value="">Sélectionnez…</option>
+              <option>Informatique & Infogérance</option>
+              <option>Cloud & Cybersécurité</option>
+              <option>Télécom & Téléphonie IP</option>
+              <option>Matériel & Infrastructure</option>
+            </select>
+          </div>
+        </div>
+ 
+        <div class="form-group">
+          <label>Décrivez votre projet</label>
+          <textarea name="message" placeholder="Ex : besoin d'infogérance pour 20 postes, migration vers le cloud, installation 3CX…"></textarea>
+        </div>
+ 
+        <button type="submit" class="btn-submit">
+          <i class="fa-solid fa-paper-plane"></i>
+          Envoyer ma demande
+        </button>
+        <p class="form-note">Réponse garantie sous 24h — Devis gratuit et sans engagement</p>
+ 
+      </form>
+    </div>
+ 
+  </div>
+ 
+ 
+ <?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
+ 
+</div><!-- /.page-wrap -->
+ 
+<!-- Scripts -->
+<script>
+  // Navbar scroll
+  const nav = document.querySelector('.nav-container');
+  window.addEventListener('scroll', () => {
+    nav?.classList.toggle('scrolled', window.scrollY > 30);
+  });
+ 
+  // Hamburger
+  const ham = document.querySelector('.hamburger');
+  ham?.addEventListener('click', () => nav.classList.toggle('open'));
+ 
+  // EmailJS
+  emailjs.init("CSG-1U1qvDoCAEnGX");
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.btn-submit');
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi en cours…';
+    btn.disabled = true;
+    emailjs.sendForm('service_krd25xa', 'template_1ss2u2z', this)
+      .then(() => {
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Message envoyé !';
+        btn.style.background = 'linear-gradient(90deg,#0a7a4a,#0fa360)';
+        this.reset();
+      }, () => {
+        btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Erreur, réessayez';
+        btn.style.background = 'linear-gradient(90deg,#7a0a0a,#c0392b)';
+        btn.disabled = false;
+      });
+  });
+</script>
+ 
 </body>
 </html>

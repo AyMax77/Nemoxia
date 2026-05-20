@@ -303,50 +303,7 @@
   </section>
 
 
-  <!-- Footer -->
-  <footer>
-    <div class="container mx-auto px-4 py-12">
-      <div class="footer-grid grid md:grid-cols-4 gap-8">
-        <div>
-          <h3 class="font-bold mb-4">Nos Activités</h3>
-          <ul class="space-y-2">
-            <li>Conseil en systèmes informatiques</li>
-            <li><strong>Infogérance et maintenance IT</strong></li>
-            <li>Conception infrastructures</li>
-            <li><strong>Téléphonie fixe/mobile IP</strong></li>
-            <li>Accès Internet haut débit</li>
-            <li>Audit cybersécurité</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-bold mb-4">Nos Offres PME</h3>
-          <ul class="space-y-2">
-            <li><strong>Infogérance PME 77</strong></li>
-            <li>Standard téléphonique IP</li>
-            <li>Solutions mobiles</li>
-            <li>Liens Internet fiables</li>
-            <li>Support infrastructure</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-bold mb-4">Contact</h3>
-          <p>📞 <a href="tel:+33175439100">01 75 43 91 00</a></p>
-          <p>📍 98 rue de Paris, 77140 Nemours</p>
-          <p>Du lundi au vendredi, 9h-18h</p>
-          <p><a href="/Contact/contact.php">Contactez-nous</a></p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>Nemoxia, spécialiste en informatique et télécom depuis 2007 en Seine-et-Marne.</p>
-        <p>
-          <a href="/RGPD/rgpd.php">Mentions légales & RGPD</a> |
-          <a href="/politique_confidentialite/politique_confidentialite.php">Politique de confidentialité</a>
-          © 2025 Nemoxia. Tous droits réservés.
-        </p>
-      </div>
-    </div>
-  </footer>
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/footer.php'; ?>
 
   <!-- Scripts -->
   <script>
