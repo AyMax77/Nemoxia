@@ -848,8 +848,7 @@ img {
   color: white;
   margin-bottom: clamp(12px, 2vh, 20px);
   line-height: 1.4;
-  /* Nouvelle police pour le titre */
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Outfit', sans-serif;
 }
 
 .stats-header p {

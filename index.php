@@ -122,9 +122,7 @@
         "@type": "BreadcrumbList",
         "@id": "https://www.nemoxia.fr/#breadcrumb",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Accueil",    "item": "https://www.nemoxia.fr/" },
-          { "@type": "ListItem", "position": 2, "name": "Services",   "item": "https://www.nemoxia.fr/#services" },
-          { "@type": "ListItem", "position": 3, "name": "Couverture", "item": "https://www.nemoxia.fr/#couverture" }
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.nemoxia.fr/" }
         ]
       },
       {
@@ -204,7 +202,7 @@
     ]
   }
   </script>
-
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -394,10 +392,10 @@
     </div>
     <div class="marquee-wrapper">
       <div class="marquee-track">
-        <div class="marquee-item"><img src="images/3CX Partner.jpg" alt="3CX" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/dell-vertical-logo.png" alt="Dell" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/Logo-Ricoh-Partner-vert.jpg" alt="Ricoh" class="partner-logo"></div>
-        <div class="marquee-item"><img src="images/VCSP_registered_color_rgb.png" alt="Vcsp" class="partner-logo"></div>
+        <div class="marquee-item"><a href="https://www.3cx.fr/commander/trouver-revendeur/" target="_blank" rel="noopener noreferrer"><img src="images/3CX Partner.jpg" alt="3CX" class="partner-logo"></a></div>
+        <div class="marquee-item"><a href="https://www.dell.com" target="_blank" rel="noopener noreferrer"><img src="images/dell-vertical-logo.png" alt="Dell" class="partner-logo"></a></div>
+        <div class="marquee-item"><a href="https://www.ricoh.fr" target="_blank" rel="noopener noreferrer"><img src="images/Logo-Ricoh-Partner-vert.jpg" alt="Ricoh" class="partner-logo"></a></div>
+        <div class="marquee-item"><a href="https://www.veeam.com/fr/become-a-partner/service-providers.html" target="_blank" rel="noopener noreferrer"><img src="images/VCSP_registered_color_rgb.png" alt="Vcsp" class="partner-logo"></a></div>
       </div>
     </div>
   </section>
