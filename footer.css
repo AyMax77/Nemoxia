@@ -34,55 +34,18 @@ footer * {
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 1px 1fr 1fr;
-  gap: clamp(24px, 4vw, 50px);
-  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(60px, 10vw, 160px);
   padding-bottom: clamp(30px, 4vw, 50px);
 }
 
-/* ── Séparateur vertical ── */
-
-.footer-sep {
-  align-self: stretch;
-  min-height: 120px;
-  background: rgba(0, 153, 255, 0.2);
-}
-
-/* ── Brand ── */
-
-.footer-brand-name {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-  font-weight: 400;
-  background: linear-gradient(135deg, #fff 0%, #4ab3ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0 0 14px 0;
-}
-
-.footer-brand p {
-  font-size: 13px;
-  line-height: 1.75;
-  color: rgba(180, 210, 255, 0.6);
-  max-width: 300px;
-  margin: 0 0 16px 0;
-}
-
-.footer-tagline {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--blue-light, #4ab3ff);
-  border: 1px solid rgba(0, 153, 255, 0.3);
-  padding: 5px 12px;
-  border-radius: 20px;
-}
-
 /* ── Colonnes ── */
+
+.footer-col {
+  min-width: 180px;
+}
 
 .footer-col h3 {
   margin: 0 0 18px 0;

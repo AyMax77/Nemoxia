@@ -84,7 +84,7 @@
         "@type": "WebPage",
         "@id": "https://www.nemoxia.fr/#webpage",
         "url": "https://www.nemoxia.fr/",
-        "name": "Informatique, Télécom & Cybersécurité pour PME – Nemoxia",
+        "name": "Infogérance, Cybersécurité & Télécom  – Nemoxia",
         "inLanguage": "fr-FR",
         "isPartOf": { "@id": "https://www.nemoxia.fr/#website" },
         "about": { "@id": "https://www.nemoxia.fr/#org" },
@@ -202,7 +202,8 @@
     ]
   }
   </script>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap" rel="stylesheet">
+<!-- Dans le <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -277,8 +278,9 @@
               Nous supervisons votre informatique au quotidien pour prévenir les interruptions de service, accompagner vos équipes et garantir la continuité de votre activité
             </p>
             <ul class="expertise-features">
-              <li><i class="fa-solid fa-check"></i> Supervision continue 24/7</li>
+              <li><i class="fa-solid fa-check"></i> Supervision continue</li>
               <li><i class="fa-solid fa-check"></i> Protection EDR</li>
+              <li><i class="fa-solid fa-check"></i> Services managés</li>
               <li><i class="fa-solid fa-check"></i> Maintenance préventive et corrective</li>
               <li><i class="fa-solid fa-check"></i> Sauvegarde et restauration</li>
               <li><i class="fa-solid fa-check"></i> Assistance aux utilisateurs</li>
@@ -307,8 +309,9 @@
             </p>
             <ul class="expertise-features">
               <li><i class="fa-solid fa-check"></i> Surveillance SOC 24/7</li>
-              <li><i class="fa-solid fa-check"></i> Protection EDR</li>
+              <li><i class="fa-solid fa-check"></i> Protection avancée (NAGAV, EDR, XDR)</li>
               <li><i class="fa-solid fa-check"></i> Détection comportementale</li>
+              <li><i class="fa-solid fa-check"></i> Automatisation IA</li>
               <li><i class="fa-solid fa-check"></i> Analyse humaine des menaces</li>
               <li><i class="fa-solid fa-check"></i> Remédiation des incidents</li>
             </ul>
@@ -335,11 +338,12 @@
               Nous concevons des infrastructure robustes, adaptées, hybrides et cloud, pour garantir la fiabilité et la sécurité de votre système d'information
             </p>
             <ul class="expertise-features">
-              <li><i class="fa-solid fa-check"></i> Déploiement et virtualisation des ressources</li>
+              <li><i class="fa-solid fa-check"></i> Déploiement et virtualisation</li>
               <li><i class="fa-solid fa-check"></i> Protection des données</li>
               <li><i class="fa-solid fa-check"></i> Plan de reprise d'activité (PCA/PRA)</li>
-              <li><i class="fa-solid fa-check"></i> Mobilité et accès sécurisé</li>
+              <li><i class="fa-solid fa-check"></i> Hébergement sécurisé</li>
               <li><i class="fa-solid fa-check"></i> Environnements hybrides/cloud</li>
+              <li><i class="fa-solid fa-check"></i> Mobilité et accès sécurisé</li>
             </ul>
             <a href="/index.php" class="expertise-cta">
               En savoir plus <i class="fa-solid fa-arrow-right"></i>
@@ -365,10 +369,11 @@
             </p>
             <ul class="expertise-features">
               <li><i class="fa-solid fa-check"></i> Standard intelligent</li>
-              <li><i class="fa-solid fa-check"></i> Assistant virtuel (IA)</li>
+              <li><i class="fa-solid fa-check"></i> Assistant virtuel IA</li>
               <li><i class="fa-solid fa-check"></i> Intégration CRM</li>
-              <li><i class="fa-solid fa-check"></i> Mobilité des équipes</li>
-              <li><i class="fa-solid fa-check"></i> Accès haut débit jusqu'à 1 Gb</li>
+              <li><i class="fa-solid fa-check"></i> Interconnexion</li>
+              <li><i class="fa-solid fa-check"></i> Sécurisation des accès</li>
+              <li><i class="fa-solid fa-check"></i> Accès très haut débit</li>
             </ul>
             <a href="/index.php" class="expertise-cta">
               En savoir plus <i class="fa-solid fa-arrow-right"></i>
@@ -382,13 +387,49 @@
     </div>
   </section>
 
+<!-- ============================================================
+   PRÉSENTATION SECTION
+   ============================================================ -->
+<section class="presentation-section" id="presentation">
+  <div class="presentation-inner">
 
+    <div class="presentation-header">
+      <h2>Présentation Nemoxia</h2>
+      <div class="presentation-line"></div>
+    </div>
+
+    <div class="presentation-grid">
+
+      <div class="presentation-col">
+        <p class="presentation-accroche">Nous vous accompagnons dans la gestion, la sécurisation et l'évolution de votre environnement numérique.</p>
+        <p>Dans un contexte où les systèmes d'information sont devenus indispensables à la performance des entreprises, il est essentiel de pouvoir s'appuyer sur un partenaire fiable, réactif et capable d'apporter une vision globale.</p>
+        <p>C'est précisément le rôle que nous avons choisi d'assumer chez Nemoxia : <strong>mettre notre expertise au service de votre activité</strong>, avec des solutions adaptées à vos enjeux, à votre organisation et à vos priorités.</p>
+        <p>Notre mission consiste à <strong>concevoir, déployer, exploiter et faire évoluer</strong> des environnements informatiques et télécom performants, sécurisés et durables.</p>
+      </div>
+
+      <div class="presentation-sep"></div>
+
+      <div class="presentation-col">
+        <p>Grâce à une approche globale et sur mesure, nous intervenons sur l'ensemble des composantes de votre système d'information.</p>
+        <p>Cette complémentarité nous permet de vous proposer des <strong>solutions cohérentes, évolutives et parfaitement alignées</strong> avec vos besoins opérationnels comme avec vos perspectives de développement.</p>
+        <p>Notre engagement repose sur des valeurs fortes : <strong>proximité, réactivité, exigence technique et qualité de service</strong>.</p>
+        <p>Choisir Nemoxia, c'est faire le choix d'un <strong>partenaire de confiance</strong>, capable de transformer les enjeux techniques en leviers de continuité, d'efficacité et de sérénité au quotidien.</p>
+      </div>
+
+    </div>
+
+    <div class="presentation-footer-text">
+      En collaborant avec des acteurs du marché reconnus, nous renforçons notre capacité à déployer des solutions éprouvées, innovantes et parfaitement intégrées à votre système d'information.
+    </div>
+
+  </div>
+</section>
   <!-- ============================================================
        PARTNERS SECTION
        ============================================================ -->
   <section class="partners-section">
     <div class="partners-header">
-      <h2>L’innovation et la performance de nos offres s’appuient sur des partenaires technologiques majeurs, leaders dans leur domaine.<br> Ensemble, nous faisons évoluer votre système d’information pour répondre aux défis d’aujourd’hui et de demain.</h2>
+      <h2>Nous nous appuyons sur des partenaires technologiques de référence afin de garantir à nos clients des solutions fiables, performantes et pérennes.<br> Cette exigence de qualité guide chacun de nos choix et nous permet de concevoir des environnements maîtrisés,<br> sécurisés et adaptés aux enjeux des entreprises.<br> En collaborant avec des acteurs reconnus nous renforçons notre capacité à déployer des solutions éprouvées,<br> innovantes et parfaitement intégrées à votre système d’information.</h2>
     </div>
     <div class="marquee-wrapper">
       <div class="marquee-track">
@@ -396,6 +437,11 @@
         <div class="marquee-item"><a href="https://www.dell.com" target="_blank" rel="noopener noreferrer"><img src="images/dell-vertical-logo.png" alt="Dell" class="partner-logo"></a></div>
         <div class="marquee-item"><a href="https://www.ricoh.fr" target="_blank" rel="noopener noreferrer"><img src="images/Logo-Ricoh-Partner-vert.jpg" alt="Ricoh" class="partner-logo"></a></div>
         <div class="marquee-item"><a href="https://www.veeam.com/fr/become-a-partner/service-providers.html" target="_blank" rel="noopener noreferrer"><img src="images/VCSP_registered_color_rgb.png" alt="Vcsp" class="partner-logo"></a></div>
+        <div class="marquee-item"><a href="https://www.crowdstrike.com" target="_blank" rel="noopener noreferrer"><img src="images/CrowdStrike_Logo_2023_Primary_White.png" alt="CrowdStrike" class="partner-logo"></a></div>
+        <div class="marquee-item"><a href="https://www.cisco.com" target="_blank" rel="noopener noreferrer"><img src="images/cisco-logo.png" alt="Cisco" class="partner-logo"></a></div>
+        <div class="marquee-item"><a href="https://www.lenovo.com" target="_blank" rel="noopener noreferrer"><img src="images/lenovo-logo.png" alt="Lenovo" class="partner-logo"></a></div>
+        <div class="marquee-item"><a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer"><img src="images/microsoft-365-logo.png" alt="Microsoft" class="partner-logo"></a></div>
+        <div class="marquee-item"><a href="https://www.yealink.com" target="_blank" rel="noopener noreferrer"><img src="images/yealink-logo-300x84.png" alt="Yealink" class="partner-logo"></a></div>
       </div>
     </div>
   </section>
@@ -440,6 +486,16 @@
       <div class="stat-label">temps de résolution critique</div>
       <div class="stat-line"></div>
     </div>
+
+    <div class="stat-card">
+  <div class="stat-icon"><i class="fa-solid fa-server"></i></div>
+  <div class="stat-number">
+    <span class="stat-count" data-target="99" id="stat-uptime">0</span>
+    <span class="stat-unit" style="font-size:clamp(1rem,2vw,1.4rem); margin-top:10px;">,9%</span>
+  </div>
+  <div class="stat-label">disponibilité garantie (SLA)</div>
+  <div class="stat-line"></div>
+</div>
 
   </div>
 </section>

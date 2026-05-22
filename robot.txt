@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /login/
 Allow: /
 
-Sitemap: https://www.tonsite.com/sitemap.xml
+Sitemap: https://www.nemoxia.fr/sitemap.xml
