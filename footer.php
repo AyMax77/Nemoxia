@@ -6,7 +6,7 @@
     <div class="footer-grid">
 
       <div class="footer-col">
-        <h3>Nos Activités</h3>
+        <h3>NOTRE EXPERTISE</h3>
         <ul>
           <li><span class="footer-dot"></span>Infogérance &amp; Maintenance</li>
           <li><span class="footer-dot"></span>Cybersécurité &amp; Protection</li>

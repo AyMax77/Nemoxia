@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Informatique, Télécom & Cybersécurité pour PME – Nemoxia</title>
+  <title>Infogérance, Cybersécurité & Télécom </title>
   <meta name="description" content="Nemoxia accompagne les PME partout en France : infogérance 24/7, maintenance, cybersécurité, cloud et téléphonie IP (3CX). Interventions locales en 77, 91, 45. Devis en 24h.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://www.nemoxia.fr/">
@@ -26,7 +26,7 @@
   <meta property="og:site_name" content="Nemoxia">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.nemoxia.fr/">
-  <meta property="og:title" content="Informatique, Télécom & Cybersécurité pour PME – Nemoxia">
+  <meta property="og:title" content="Infogérance, Cybersécurité & Télécom  – Nemoxia">
   <meta property="og:description" content="Infogérance, cybersécurité, téléphonie IP & réseaux pour PME. Interventions locales rapides (77, 91, 45).">
   <meta property="og:image" content="https://www.nemoxia.fr/images/og-nemoxia.jpg">
   <meta property="og:image:alt" content="Nemoxia – informatique & télécom pour PME">
@@ -34,7 +34,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@nemoxia">
-  <meta name="twitter:title" content="Nemoxia – Informatique, Télécom & Cybersécurité pour PME">
+  <meta name="twitter:title" content="Nemoxia – Infogérance, Télécom & Cybersécurité pour PME">
   <meta name="twitter:description" content="Infogérance 24/7, cybersécurité, 3CX/VoIP, réseaux & Internet pro pour PME en France.">
   <meta name="twitter:image" content="https://www.nemoxia.fr/images/og-nemoxia.jpg">
   <meta name="twitter:image:alt" content="Nemoxia – informatique & télécom pour PME">
@@ -365,7 +365,7 @@
               </div>
             </div>
             <p class="expertise-desc">
-              Nous déployons des solutions de téléphonie sur IP et d’accès Internet intégrant l’intelligence artificielle pour fluidifier les échanges, améliorer la joignabilité et accompagner les nouveaux usages de vos équipes 
+              Nous déployons des solutions de téléphonie sur IP intégrant l’intelligence artificielle pour fluidifier les échanges et accompagner les nouveaux usages de vos équipes
             </p>
             <ul class="expertise-features">
               <li><i class="fa-solid fa-check"></i> Standard intelligent</li>
@@ -393,10 +393,7 @@
 <section class="presentation-section" id="presentation">
   <div class="presentation-inner">
 
-    <div class="presentation-header">
-      <h2>Présentation Nemoxia</h2>
-      <div class="presentation-line"></div>
-    </div>
+    
 
     <div class="presentation-grid">
 
@@ -418,40 +415,49 @@
 
     </div>
 
-    <div class="presentation-footer-text">
-      En collaborant avec des acteurs du marché reconnus, nous renforçons notre capacité à déployer des solutions éprouvées, innovantes et parfaitement intégrées à votre système d'information.
-    </div>
-
   </div>
 </section>
-  <!-- ============================================================
-       PARTNERS SECTION
-       ============================================================ -->
-  <section class="partners-section">
-    <div class="partners-header">
-      <h2>Nous nous appuyons sur des partenaires technologiques de référence afin de garantir à nos clients des solutions fiables, performantes et pérennes.<br> Cette exigence de qualité guide chacun de nos choix et nous permet de concevoir des environnements maîtrisés,<br> sécurisés et adaptés aux enjeux des entreprises.<br> En collaborant avec des acteurs reconnus nous renforçons notre capacité à déployer des solutions éprouvées,<br> innovantes et parfaitement intégrées à votre système d’information.</h2>
+<!-- ============================================================
+     PARTNERS SECTION
+     ============================================================ -->
+<section class="partners-section">
+  <div class="partners-header">
+    <h2>Nous nous appuyons sur des partenaires technologiques de référence afin de garantir à nos clients des solutions fiables, performantes et pérennes.<br>
+    Cette exigence de qualité guide chacun de nos choix et nous permet de concevoir des environnements maîtrisés,<br>
+    sécurisés et adaptés aux enjeux des entreprises.</h2>
+  </div>
+
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <!-- Première série -->
+      <div class="marquee-item"><a href="https://www.3cx.fr/commander/trouver-revendeur/" target="_blank" rel="noopener noreferrer"><img src="images/3CX Partner.jpg" alt="3CX" class="partner-logo logo-white"></a></div>
+      <div class="marquee-item"><a href="https://www.dell.com" target="_blank" rel="noopener noreferrer"><img src="images/dell-vertical-logo.png" alt="Dell" class="partner-logo"></a></div>
+      <div class="marquee-item"><a href="https://www.ricoh.fr" target="_blank" rel="noopener noreferrer"><img src="images/ricoh.png" alt="Ricoh" class="partner-logo"></a></div>
+      <div class="marquee-item"><a href="https://www.veeam.com/fr/become-a-partner/service-providers.html" target="_blank" rel="noopener noreferrer"><img src="images/veeam.png" alt="Vcsp" class="partner-logo logo-white"></a></div>
+      <div class="marquee-item"><a href="https://www.crowdstrike.com" target="_blank" rel="noopener noreferrer"><img src="images/CrowdStrike_Logo_2023_Primary_White.png" alt="CrowdStrike" class="partner-logo"></a></div>
+      <div class="marquee-item"><a href="https://www.cisco.com" target="_blank" rel="noopener noreferrer"><img src="images/cisco-logo.png" alt="Cisco" class="partner-logo"></a></div>
+      <div class="marquee-item"><a href="https://www.lenovo.com" target="_blank" rel="noopener noreferrer"><img src="images/lenovo.png" alt="Lenovo" class="partner-logo logo-white"></a></div>
+      <div class="marquee-item"><a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer"><img src="images/microsoft-365-logo.png" alt="Microsoft" class="partner-logo"></a></div>
+      <div class="marquee-item"><a href="https://www.yealink.com" target="_blank" rel="noopener noreferrer"><img src="images/yealink-logo-300x84.png" alt="Yealink" class="partner-logo"></a></div>
+      <!-- Duplication pour effet infini -->
+      <div class="marquee-item"><a href="https://www.3cx.fr/commander/trouver-revendeur/" target="_blank" rel="noopener noreferrer"><img src="images/3CX Partner.jpg" alt="3CX" class="partner-logo logo-white"></a></div>
+      <div class="marquee-item"><a href="https://www.dell.com" target="_blank" rel="noopener noreferrer"><img src="images/dell-vertical-logo.png" alt="Dell" class="partner-logo"></a></div>
+      <div class="marquee-item"><a href="https://www.ricoh.fr" target="_blank" rel="noopener noreferrer"><img src="images/ricoh.png" alt="Ricoh" class="partner-logo"></a></div>
+      <div class="marquee-item"><a href="https://www.veeam.com/fr/become-a-partner/service-providers.html" target="_blank" rel="noopener noreferrer"><img src="images/veeam.png" alt="Vcsp" class="partner-logo logo-white"></a></div>
+      <div class="marquee-item"><a href="https://www.crowdstrike.com" target="_blank" rel="noopener noreferrer"><img src="images/CrowdStrike_Logo_2023_Primary_White.png" alt="CrowdStrike" class="partner-logo"></a></div>
+      <div class="marquee-item"><a href="https://www.cisco.com" target="_blank" rel="noopener noreferrer"><img src="images/cisco-logo.png" alt="Cisco" class="partner-logo"></a></div>
+      <div class="marquee-item"><a href="https://www.lenovo.com" target="_blank" rel="noopener noreferrer"><img src="images/lenovo.png" alt="Lenovo" class="partner-logo logo-white"></a></div>
+      <div class="marquee-item"><a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer"><img src="images/microsoft-365-logo.png" alt="Microsoft" class="partner-logo"></a></div>
+      <div class="marquee-item"><a href="https://www.yealink.com" target="_blank" rel="noopener noreferrer"><img src="images/yealink-logo-300x84.png" alt="Yealink" class="partner-logo"></a></div>
     </div>
-    <div class="marquee-wrapper">
-      <div class="marquee-track">
-        <div class="marquee-item"><a href="https://www.3cx.fr/commander/trouver-revendeur/" target="_blank" rel="noopener noreferrer"><img src="images/3CX Partner.jpg" alt="3CX" class="partner-logo"></a></div>
-        <div class="marquee-item"><a href="https://www.dell.com" target="_blank" rel="noopener noreferrer"><img src="images/dell-vertical-logo.png" alt="Dell" class="partner-logo"></a></div>
-        <div class="marquee-item"><a href="https://www.ricoh.fr" target="_blank" rel="noopener noreferrer"><img src="images/Logo-Ricoh-Partner-vert.jpg" alt="Ricoh" class="partner-logo"></a></div>
-        <div class="marquee-item"><a href="https://www.veeam.com/fr/become-a-partner/service-providers.html" target="_blank" rel="noopener noreferrer"><img src="images/VCSP_registered_color_rgb.png" alt="Vcsp" class="partner-logo"></a></div>
-        <div class="marquee-item"><a href="https://www.crowdstrike.com" target="_blank" rel="noopener noreferrer"><img src="images/CrowdStrike_Logo_2023_Primary_White.png" alt="CrowdStrike" class="partner-logo"></a></div>
-        <div class="marquee-item"><a href="https://www.cisco.com" target="_blank" rel="noopener noreferrer"><img src="images/cisco-logo.png" alt="Cisco" class="partner-logo"></a></div>
-        <div class="marquee-item"><a href="https://www.lenovo.com" target="_blank" rel="noopener noreferrer"><img src="images/lenovo-logo.png" alt="Lenovo" class="partner-logo"></a></div>
-        <div class="marquee-item"><a href="https://www.microsoft.com" target="_blank" rel="noopener noreferrer"><img src="images/microsoft-365-logo.png" alt="Microsoft" class="partner-logo"></a></div>
-        <div class="marquee-item"><a href="https://www.yealink.com" target="_blank" rel="noopener noreferrer"><img src="images/yealink-logo-300x84.png" alt="Yealink" class="partner-logo"></a></div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <!-- ============================================================
    STATS SECTION
    ============================================================ -->
 <section class="stats-section" id="stats-section">
   <div class="stats-header">
-    <h2>Nos chiffres sont là pour une seule raison : vous.</h2>
     <p>Nos performances s'évaluent à travers des indicateurs concrets, véritables preuves de notre exigence au service de votre entreprise. Chaque donnée représente notre volonté d'amélioration continue et de réactivité à vos côtés.</p>
   </div>
   <div class="stats-container">

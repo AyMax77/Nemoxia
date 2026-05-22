@@ -503,7 +503,7 @@ img {
 }
 
 .presentation-inner {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -540,21 +540,21 @@ img {
 }
 
 .presentation-col p {
-  font-size: 15px;
+  font-size: clamp(0.88rem, 1.6vw, 1.1rem);
   line-height: 1.8;
   color: rgb(255, 255, 255);
   margin: 0 0 16px 0;
 }
 
 .presentation-accroche {
-  font-size: 16px !important;
+  font-size: clamp(0.88rem, 1.6vw, 1.1rem);
   font-weight: 700;
   color: #ffffff !important;
   margin-bottom: 20px !important;
 }
 
 .presentation-col strong {
-  color: #4ab3ff;
+  color: inherit;
   font-weight: 600;
 }
 
@@ -581,25 +581,18 @@ img {
 
 
 /* ============================================================
-   6. PARTNERS SECTION
-   ============================================================ */
-
-/* ============================================================
    PARTNERS SECTION
    ============================================================ */
- 
+
 .partners-section {
   padding: clamp(40px, 6vh, 80px) 0 clamp(50px, 7vh, 90px);
   text-align: center;
   color: white;
   position: relative;
   overflow: hidden;
- 
-  /* Fond sombre de base — adapte cette couleur à ta page */
   background-color: #050a14;
 }
- 
-/* Lueur bleue centrale */
+
 .partners-section::before {
   content: '';
   position: absolute;
@@ -607,8 +600,7 @@ img {
   background: radial-gradient(circle at 50% 50%, rgba(0, 114, 188, 0.12) 0%, transparent 60%);
   pointer-events: none;
 }
- 
-/* Ligne bleue lumineuse en bas */
+
 .partners-section::after {
   content: '';
   position: absolute;
@@ -619,7 +611,7 @@ img {
   background: linear-gradient(to right, transparent, #0072BC, transparent);
   box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
 }
- 
+
 /* En-tête */
 .partners-header {
   margin-bottom: clamp(20px, 3vh, 40px);
@@ -627,263 +619,96 @@ img {
   position: relative;
   z-index: 1;
 }
- 
+
 .partners-header h2 {
-  font-size: clamp(1.5rem, 3vw, 1.5rem);
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.8;
   background: linear-gradient(135deg, #fff 0%, #4a9eff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
- 
-.partners-header p {
-  font-size: clamp(0.88rem, 1.5vw, 1.05rem);
-  color: rgba(220, 235, 255, 0.8);
-}
- 
+
 /* Wrapper marquee */
 .marquee-wrapper {
   position: relative;
   z-index: 1;
-  padding: 10px 0;
-}
- 
-/* Ligne de logos */
-.marquee-track {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
- 
-/* Cellule logo */
-.marquee-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(18px, 3vh, 28px) 0;
-  flex: 1;
-  background: rgba(5, 10, 20, 0.75);
-  border-top: 1px solid rgba(0, 114, 188, 0.25);
-  border-bottom: 1px solid rgba(0, 114, 188, 0.25);
-  border-right: 1px solid rgba(0, 114, 188, 0.1);
-  transition: background 0.3s ease, border-color 0.3s ease;
-}
- 
-.marquee-item:last-child {
-  border-right: none;
-}
- 
-.marquee-item:hover {
-  background: rgba(5, 10, 20, 0.9);
-  border-top-color: rgba(0, 114, 188, 0.6);
-  border-bottom-color: rgba(0, 114, 188, 0.6);
-}
- 
-/* Logo image */
-.partner-logo {
-  height: clamp(50px, 7vw, 80px);
-  width: auto;
-  max-width: 200px;
-  object-fit: contain;
-  opacity: 0.9;
-  filter: brightness(1.1);
-  transition: opacity 0.3s ease, filter 0.3s ease;
-}
- 
-.marquee-item:hover .partner-logo {
-  opacity: 1;
-  filter: brightness(1.2) drop-shadow(0 0 6px rgba(0, 153, 255, 0.4));
+  overflow: hidden;
 }
 
-
-/* ============================================================
-   7. NEWSLETTER SECTION
-   ============================================================ */
-
-.newsletter-section {
-  /* PAS de min-height */
-  padding: clamp(50px, 7vh, 100px) 5% clamp(60px, 8vh, 110px);
-  text-align: center;
-  color: white;
-  position: relative;
-}
-
-.newsletter-section::before {
+/* Fondus latéraux */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(0, 114, 188, 0.2) 0%, transparent 65%);
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
   pointer-events: none;
 }
 
-.newsletter-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
+.marquee-wrapper::before {
   left: 0;
+  background: linear-gradient(to right, #050a14, transparent);
+}
+
+.marquee-wrapper::after {
   right: 0;
-  height: 3px;
-  background: linear-gradient(to right, transparent, #0072BC, transparent);
-  box-shadow: 0 0 20px rgba(0, 114, 188, 0.8);
+  background: linear-gradient(to left, #050a14, transparent);
 }
 
-.newsletter-container {
-  max-width: 640px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.newsletter-icon { margin-bottom: clamp(16px, 2.5vh, 28px); }
-.newsletter-icon i {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  color: #0099ff;
-  padding: 0 !important;
-  border-radius: 0;
-}
-
-.newsletter-container h2 {
-  font-size: clamp(1.3rem, 2.8vw, 2.2rem);
-  font-weight: 700;
-  margin-bottom: clamp(12px, 2vh, 20px);
-  line-height: 1.4;
-  color: white;
-}
-
-.newsletter-container > p {
-  font-size: clamp(0.88rem, 1.4vw, 1.05rem);
-  color: rgba(220, 235, 255, 0.8);
-  margin-bottom: clamp(24px, 4vh, 48px);
-  line-height: 1.8;
-}
-
-.newsletter-topics {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto clamp(20px, 3vh, 36px);
-  max-width: 420px;
+/* Track animé */
+.marquee-track {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  text-align: center;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
   align-items: center;
+  border-top: 1px solid rgba(0, 114, 188, 0.25);
+  border-bottom: 1px solid rgba(0, 114, 188, 0.25);
 }
 
-.newsletter-topics li {
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Cellule logo */
+.marquee-item {
+  background-color: #050a14;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: clamp(0.82rem, 1.2vw, 0.95rem);
-  color: rgba(210, 230, 255, 0.85);
-  line-height: 1.5;
-}
-
-.newsletter-topics li i {
-  font-size: 13px;
-  color: #0099ff;
-  flex-shrink: 0;
-  width: 16px;
-  text-align: center;
-  padding: 0 !important;
-  border-radius: 0;
-}
-
-.newsletter-form-wrap {
-  display: flex;
-  gap: 0;
-  max-width: 500px;
-  margin: 0 auto 16px;
-  border-radius: 50px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 153, 255, 0.4);
-  box-shadow: 0 0 30px rgba(0, 114, 188, 0.2);
-  transition: box-shadow 0.3s ease;
-}
-.newsletter-form-wrap:focus-within {
-  box-shadow: 0 0 40px rgba(0, 114, 188, 0.4);
-  border-color: rgba(0, 153, 255, 0.7);
-}
-
-.newsletter-input {
-  flex: 1;
-  padding: 15px 24px;
-  background: rgba(255, 255, 255, 0.07);
-  border: none;
-  outline: none;
-  color: white;
-  font-size: 0.95rem;
-  font-family: inherit;
+  justify-content: center;
+  padding: clamp(18px, 3vh, 28px) 40px;
+  flex: 0 0 auto;
+  border-right: 1px solid rgba(0, 114, 188, 0.1);
   transition: background 0.3s ease;
 }
-.newsletter-input::placeholder { color: rgba(200, 220, 255, 0.45); }
-.newsletter-input:focus        { background: rgba(255, 255, 255, 0.12); }
 
-.newsletter-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 15px 28px;
-  background: linear-gradient(90deg, #0072BC, #0099ff);
-  color: white;
-  border: none;
-  font-size: 0.9rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  font-family: inherit;
-}
-.newsletter-btn:hover { background: linear-gradient(90deg, #005fa0, #007acc); gap: 12px; }
-.newsletter-btn i { font-size: 13px; padding: 0 !important; border-radius: 0; }
-
-.newsletter-confirm {
-  font-size: 1.05rem;
-  color: #7dd3fc;
-  font-weight: 600;
-  padding: 14px 0;
-  animation: fadeInUp 0.5s ease;
+.marquee-item:hover {
+  background: rgba(0, 114, 188, 0.08);
 }
 
-.newsletter-badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px auto 14px;
-  max-width: 500px;
+.partner-logo {
+  height: clamp(40px, 5vw, 70px);
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  opacity: 0.85;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.newsletter-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  background: rgba(0, 114, 188, 0.12);
-  border: 1px solid rgba(0, 153, 255, 0.2);
-  border-radius: 50px;
-  font-size: 0.78rem;
-  color: rgba(180, 215, 255, 0.8);
-  white-space: nowrap;
+.partner-logo.logo-white {
+  filter: grayscale(1) invert(1) brightness(2);
+  mix-blend-mode: screen;
+  opacity: 1;
 }
-
-.newsletter-badge i { font-size: 11px; color: #0099ff; padding: 0 !important; border-radius: 0; }
-
-.newsletter-legal {
-  font-size: 0.78rem !important;
-  color: rgba(180, 200, 230, 0.5) !important;
-  margin-top: 14px !important;
-  margin-bottom: 0 !important;
-}
-.newsletter-legal a {
-  color: rgba(100, 160, 220, 0.7);
-  text-decoration: underline;
-  transition: color 0.2s;
-}
-.newsletter-legal a:hover { color: #7dd3fc; }
-
 
 /* ============================================================
    8. STATS SECTION
